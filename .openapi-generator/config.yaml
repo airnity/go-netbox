@@ -1,0 +1,22 @@
+generatorName: go
+
+gitHost: github.com
+gitUserId: netbox-community
+gitRepoId: go-netbox/v4
+
+packageName: netbox
+
+templateDir: /local/.openapi-generator/templates  
+
+globalProperty:
+  apiDocs: "false"
+  modelDocs: "false"
+  apiTests: "false"
+  modelTests: "false"
+
+additionalProperties:
+  disallowAdditionalPropertiesIfNotPresent: "false"
+  generateInterfaces: "true"
+  packageVersion: "4"
+  enumClassPrefix: "true"
+  useDefaultValuesForRequiredVars: "true"
