@@ -20643,6 +20643,7 @@ type ApiIpamPrefixesListRequest struct {
 	vrfIdN            *[]*int32
 	within            *string
 	withinInclude     *string
+	customFields      map[string]string
 }
 
 func (r ApiIpamPrefixesListRequest) Children(children []int32) ApiIpamPrefixesListRequest {
@@ -21326,6 +21327,25 @@ func (r ApiIpamPrefixesListRequest) WithinInclude(withinInclude string) ApiIpamP
 	return r
 }
 
+// CustomField methods (enabled via x-supports-custom-fields)
+func (r ApiIpamPrefixesListRequest) CustomField(name, value string) ApiIpamPrefixesListRequest {
+	if r.customFields == nil {
+		r.customFields = make(map[string]string)
+	}
+	r.customFields[name] = value
+	return r
+}
+
+func (r ApiIpamPrefixesListRequest) CustomFields(fields map[string]string) ApiIpamPrefixesListRequest {
+	if r.customFields == nil {
+		r.customFields = make(map[string]string)
+	}
+	for k, v := range fields {
+		r.customFields[k] = v
+	}
+	return r
+}
+
 func (r ApiIpamPrefixesListRequest) Execute() (*PaginatedPrefixList, *http.Response, error) {
 	return r.ApiService.IpamPrefixesListExecute(r)
 }
@@ -21364,6 +21384,14 @@ func (a *IpamAPIService) IpamPrefixesListExecute(r ApiIpamPrefixesListRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
+
+	// Add custom fields with cf_ prefix
+	if r.customFields != nil {
+		for name, value := range r.customFields {
+			cfParam := "cf_" + name
+			localVarQueryParams.Add(cfParam, value)
+		}
+	}
 
 	if r.children != nil {
 		t := *r.children

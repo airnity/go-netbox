@@ -9,7 +9,7 @@ echo "Adding custom field extensions to OpenAPI spec..."
 # Liste des endpoints qui supportent les custom fields
 SUPPORTED_ENDPOINTS=(
     "ipam_ip_addresses_list"
-    "ipam_prefix_list" 
+    "ipam_prefixes_list" 
 )
 
 # Copier le spec original
