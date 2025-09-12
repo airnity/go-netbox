@@ -1,4 +1,4 @@
-module github.com/netbox-community/go-netbox/v4
+module github.com/airnity/go-netbox/v4
 
 go 1.23
 
