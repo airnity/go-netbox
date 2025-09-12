@@ -407,20 +407,40 @@ func (c *APIClient) prepareRequest(
 		url.Scheme = c.cfg.Scheme
 	}
 
-	// Adding Query Param
+	// Adding Query Param with special handling for 'q' parameter
 	query := url.Query()
+	var qParam string
+	var hasQParam bool
+
 	for k, v := range queryParams {
 		for _, iv := range v {
-			query.Add(k, iv)
+			if k == "q" {
+				// Special handling for 'q' parameter to avoid double URL encoding
+				qParam = iv
+				hasQParam = true
+			} else {
+				query.Add(k, iv)
+			}
 		}
 	}
 
-	// Encode the parameters.
-	url.RawQuery = queryParamSplit.ReplaceAllStringFunc(query.Encode(), func(s string) string {
+	// Encode the normal parameters
+	encodedQuery := queryParamSplit.ReplaceAllStringFunc(query.Encode(), func(s string) string {
 		pieces := strings.Split(s, "=")
 		pieces[0] = queryDescape.Replace(pieces[0])
 		return strings.Join(pieces, "=")
 	})
+
+	// Build final query string with special handling for 'q'
+	if hasQParam {
+		if encodedQuery != "" {
+			url.RawQuery = encodedQuery + "&q=" + qParam
+		} else {
+			url.RawQuery = "q=" + qParam
+		}
+	} else {
+		url.RawQuery = encodedQuery
+	}
 
 	// Generate a new request
 	if body != nil {
