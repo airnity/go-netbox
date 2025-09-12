@@ -14804,20 +14804,24 @@ func (r ApiIpamIpAddressesListRequest) VrfIdN(vrfIdN []*int32) ApiIpamIpAddresse
 }
 
 // CustomField methods (enabled via x-supports-custom-fields)
-func (r ApiIpamIpAddressesListRequest) CustomField(name, value string) ApiIpamIpAddressesListRequest {
+func (r ApiIpamIpAddressesListRequest) CustomField(field map[string]string) ApiIpamIpAddressesListRequest {
 	if r.customFields == nil {
 		r.customFields = make(map[string]string)
 	}
-	r.customFields[name] = value
+	for k, v := range field {
+		r.customFields[k] = v
+	}
 	return r
 }
 
-func (r ApiIpamIpAddressesListRequest) CustomFields(fields map[string]string) ApiIpamIpAddressesListRequest {
+func (r ApiIpamIpAddressesListRequest) CustomFields(fields []map[string]string) ApiIpamIpAddressesListRequest {
 	if r.customFields == nil {
 		r.customFields = make(map[string]string)
 	}
-	for k, v := range fields {
-		r.customFields[k] = v
+	for _, field := range fields {
+		for k, v := range field {
+			r.customFields[k] = v
+		}
 	}
 	return r
 }
@@ -21328,20 +21332,24 @@ func (r ApiIpamPrefixesListRequest) WithinInclude(withinInclude string) ApiIpamP
 }
 
 // CustomField methods (enabled via x-supports-custom-fields)
-func (r ApiIpamPrefixesListRequest) CustomField(name, value string) ApiIpamPrefixesListRequest {
+func (r ApiIpamPrefixesListRequest) CustomField(field map[string]string) ApiIpamPrefixesListRequest {
 	if r.customFields == nil {
 		r.customFields = make(map[string]string)
 	}
-	r.customFields[name] = value
+	for k, v := range field {
+		r.customFields[k] = v
+	}
 	return r
 }
 
-func (r ApiIpamPrefixesListRequest) CustomFields(fields map[string]string) ApiIpamPrefixesListRequest {
+func (r ApiIpamPrefixesListRequest) CustomFields(fields []map[string]string) ApiIpamPrefixesListRequest {
 	if r.customFields == nil {
 		r.customFields = make(map[string]string)
 	}
-	for k, v := range fields {
-		r.customFields[k] = v
+	for _, field := range fields {
+		for k, v := range field {
+			r.customFields[k] = v
+		}
 	}
 	return r
 }

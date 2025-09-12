@@ -72,20 +72,24 @@ func (r {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/s
 
 {{#vendorExtensions.x-supports-custom-fields}}
 // CustomField methods (enabled via x-supports-custom-fields)
-func (r {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request) CustomField(name, value string) {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request {
+func (r {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request) CustomField(field map[string]string) {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request {
     if r.customFields == nil {
         r.customFields = make(map[string]string)
     }
-    r.customFields[name] = value
+	for k, v := range field {
+    	r.customFields[k] = v
+	}
     return r
 }
 
-func (r {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request) CustomFields(fields map[string]string) {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request {
+func (r {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request) CustomFields(fields []map[string]string) {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request {
     if r.customFields == nil {
         r.customFields = make(map[string]string)
     }
-    for k, v := range fields {
-        r.customFields[k] = v
+    for _, field := range fields {
+		for k, v := range field {
+        	r.customFields[k] = v
+		}
     }
     return r
 }
