@@ -6,10 +6,10 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Full name of the site | 
 **Slug** | **string** |  | 
-**Status** | Pointer to [**LocationStatusValue**](LocationStatusValue.md) |  | [optional] 
-**Region** | Pointer to [**NullablePatchedWritableSiteRequestRegion**](PatchedWritableSiteRequestRegion.md) |  | [optional] 
+**Status** | Pointer to [**PatchedWritableSiteRequestStatus**](PatchedWritableSiteRequestStatus.md) |  | [optional] 
+**Region** | Pointer to [**NullablePatchedSubnetRequestRegion**](PatchedSubnetRequestRegion.md) |  | [optional] 
 **Group** | Pointer to [**NullablePatchedWritableSiteRequestGroup**](PatchedWritableSiteRequestGroup.md) |  | [optional] 
-**Tenant** | Pointer to [**NullableASNRangeRequestTenant**](ASNRangeRequestTenant.md) |  | [optional] 
+**Tenant** | Pointer to [**NullablePatchedSubnetIPAddressRequestTenant**](PatchedSubnetIPAddressRequestTenant.md) |  | [optional] 
 **Facility** | Pointer to **string** | Local facility ID or description | [optional] 
 **TimeZone** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **ShippingAddress** | Pointer to **string** | If different from the physical address | [optional] 
 **Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
+**Owner** | Pointer to [**NullableCustomFieldRequestOwner**](CustomFieldRequestOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Asns** | Pointer to **[]int32** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -83,20 +84,20 @@ SetSlug sets Slug field to given value.
 
 ### GetStatus
 
-`func (o *SiteRequest) GetStatus() LocationStatusValue`
+`func (o *SiteRequest) GetStatus() PatchedWritableSiteRequestStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *SiteRequest) GetStatusOk() (*LocationStatusValue, bool)`
+`func (o *SiteRequest) GetStatusOk() (*PatchedWritableSiteRequestStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *SiteRequest) SetStatus(v LocationStatusValue)`
+`func (o *SiteRequest) SetStatus(v PatchedWritableSiteRequestStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -108,20 +109,20 @@ HasStatus returns a boolean if a field has been set.
 
 ### GetRegion
 
-`func (o *SiteRequest) GetRegion() PatchedWritableSiteRequestRegion`
+`func (o *SiteRequest) GetRegion() PatchedSubnetRequestRegion`
 
 GetRegion returns the Region field if non-nil, zero value otherwise.
 
 ### GetRegionOk
 
-`func (o *SiteRequest) GetRegionOk() (*PatchedWritableSiteRequestRegion, bool)`
+`func (o *SiteRequest) GetRegionOk() (*PatchedSubnetRequestRegion, bool)`
 
 GetRegionOk returns a tuple with the Region field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRegion
 
-`func (o *SiteRequest) SetRegion(v PatchedWritableSiteRequestRegion)`
+`func (o *SiteRequest) SetRegion(v PatchedSubnetRequestRegion)`
 
 SetRegion sets Region field to given value.
 
@@ -178,20 +179,20 @@ HasGroup returns a boolean if a field has been set.
 UnsetGroup ensures that no value is present for Group, not even an explicit nil
 ### GetTenant
 
-`func (o *SiteRequest) GetTenant() ASNRangeRequestTenant`
+`func (o *SiteRequest) GetTenant() PatchedSubnetIPAddressRequestTenant`
 
 GetTenant returns the Tenant field if non-nil, zero value otherwise.
 
 ### GetTenantOk
 
-`func (o *SiteRequest) GetTenantOk() (*ASNRangeRequestTenant, bool)`
+`func (o *SiteRequest) GetTenantOk() (*PatchedSubnetIPAddressRequestTenant, bool)`
 
 GetTenantOk returns a tuple with the Tenant field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetTenant
 
-`func (o *SiteRequest) SetTenant(v ASNRangeRequestTenant)`
+`func (o *SiteRequest) SetTenant(v PatchedSubnetIPAddressRequestTenant)`
 
 SetTenant sets Tenant field to given value.
 
@@ -416,6 +417,41 @@ HasLongitude returns a boolean if a field has been set.
 `func (o *SiteRequest) UnsetLongitude()`
 
 UnsetLongitude ensures that no value is present for Longitude, not even an explicit nil
+### GetOwner
+
+`func (o *SiteRequest) GetOwner() CustomFieldRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *SiteRequest) GetOwnerOk() (*CustomFieldRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *SiteRequest) SetOwner(v CustomFieldRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *SiteRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *SiteRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *SiteRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *SiteRequest) GetComments() string`

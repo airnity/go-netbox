@@ -21,10 +21,11 @@ Name | Type | Description | Notes
 **Default** | Pointer to **interface{}** | Default value for the field (must be a JSON value). Encapsulate strings with double quotes (e.g. \&quot;Foo\&quot;). | [optional] 
 **RelatedObjectFilter** | Pointer to **interface{}** | Filter the object selection choices using a query_params dict (must be a JSON value).Encapsulate strings with double quotes (e.g. \&quot;Foo\&quot;). | [optional] 
 **Weight** | Pointer to **int32** | Fields with higher weights appear lower in a form. | [optional] 
-**ValidationMinimum** | Pointer to **NullableInt64** | Minimum allowed value (for numeric fields) | [optional] 
-**ValidationMaximum** | Pointer to **NullableInt64** | Maximum allowed value (for numeric fields) | [optional] 
+**ValidationMinimum** | Pointer to **NullableFloat64** | Minimum allowed value (for numeric fields) | [optional] 
+**ValidationMaximum** | Pointer to **NullableFloat64** | Maximum allowed value (for numeric fields) | [optional] 
 **ValidationRegex** | Pointer to **string** | Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, &lt;code&gt;^[A-Z]{3}$&lt;/code&gt; will limit values to exactly three uppercase letters. | [optional] 
 **ChoiceSet** | Pointer to [**NullableCustomFieldRequestChoiceSet**](CustomFieldRequestChoiceSet.md) |  | [optional] 
+**Owner** | Pointer to [**NullableCustomFieldRequestOwner**](CustomFieldRequestOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 
 ## Methods
@@ -503,20 +504,20 @@ HasWeight returns a boolean if a field has been set.
 
 ### GetValidationMinimum
 
-`func (o *PatchedWritableCustomFieldRequest) GetValidationMinimum() int64`
+`func (o *PatchedWritableCustomFieldRequest) GetValidationMinimum() float64`
 
 GetValidationMinimum returns the ValidationMinimum field if non-nil, zero value otherwise.
 
 ### GetValidationMinimumOk
 
-`func (o *PatchedWritableCustomFieldRequest) GetValidationMinimumOk() (*int64, bool)`
+`func (o *PatchedWritableCustomFieldRequest) GetValidationMinimumOk() (*float64, bool)`
 
 GetValidationMinimumOk returns a tuple with the ValidationMinimum field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValidationMinimum
 
-`func (o *PatchedWritableCustomFieldRequest) SetValidationMinimum(v int64)`
+`func (o *PatchedWritableCustomFieldRequest) SetValidationMinimum(v float64)`
 
 SetValidationMinimum sets ValidationMinimum field to given value.
 
@@ -538,20 +539,20 @@ HasValidationMinimum returns a boolean if a field has been set.
 UnsetValidationMinimum ensures that no value is present for ValidationMinimum, not even an explicit nil
 ### GetValidationMaximum
 
-`func (o *PatchedWritableCustomFieldRequest) GetValidationMaximum() int64`
+`func (o *PatchedWritableCustomFieldRequest) GetValidationMaximum() float64`
 
 GetValidationMaximum returns the ValidationMaximum field if non-nil, zero value otherwise.
 
 ### GetValidationMaximumOk
 
-`func (o *PatchedWritableCustomFieldRequest) GetValidationMaximumOk() (*int64, bool)`
+`func (o *PatchedWritableCustomFieldRequest) GetValidationMaximumOk() (*float64, bool)`
 
 GetValidationMaximumOk returns a tuple with the ValidationMaximum field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetValidationMaximum
 
-`func (o *PatchedWritableCustomFieldRequest) SetValidationMaximum(v int64)`
+`func (o *PatchedWritableCustomFieldRequest) SetValidationMaximum(v float64)`
 
 SetValidationMaximum sets ValidationMaximum field to given value.
 
@@ -631,6 +632,41 @@ HasChoiceSet returns a boolean if a field has been set.
 `func (o *PatchedWritableCustomFieldRequest) UnsetChoiceSet()`
 
 UnsetChoiceSet ensures that no value is present for ChoiceSet, not even an explicit nil
+### GetOwner
+
+`func (o *PatchedWritableCustomFieldRequest) GetOwner() CustomFieldRequestOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *PatchedWritableCustomFieldRequest) GetOwnerOk() (*CustomFieldRequestOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *PatchedWritableCustomFieldRequest) SetOwner(v CustomFieldRequestOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *PatchedWritableCustomFieldRequest) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *PatchedWritableCustomFieldRequest) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *PatchedWritableCustomFieldRequest) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *PatchedWritableCustomFieldRequest) GetComments() string`

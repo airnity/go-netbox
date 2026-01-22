@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**ChoicesCount** | Pointer to **string** |  | [optional] [readonly] 
+**ChoicesCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
 
@@ -137,20 +137,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetChoicesCount
 
-`func (o *BriefCustomFieldChoiceSet) GetChoicesCount() string`
+`func (o *BriefCustomFieldChoiceSet) GetChoicesCount() int32`
 
 GetChoicesCount returns the ChoicesCount field if non-nil, zero value otherwise.
 
 ### GetChoicesCountOk
 
-`func (o *BriefCustomFieldChoiceSet) GetChoicesCountOk() (*string, bool)`
+`func (o *BriefCustomFieldChoiceSet) GetChoicesCountOk() (*int32, bool)`
 
 GetChoicesCountOk returns a tuple with the ChoicesCount field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetChoicesCount
 
-`func (o *BriefCustomFieldChoiceSet) SetChoicesCount(v string)`
+`func (o *BriefCustomFieldChoiceSet) SetChoicesCount(v int32)`
 
 SetChoicesCount sets ChoicesCount field to given value.
 

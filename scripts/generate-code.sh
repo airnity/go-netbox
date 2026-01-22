@@ -7,7 +7,7 @@ if [ ! -f ".openapi-generator/templates/api.mustache" ]; then
     echo "The generator will use default templates"
 fi
 
-./scripts/add-custom-field-extensions.sh
+# ./scripts/add-custom-field-extensions.sh
 
 
 # Remove generated files
@@ -19,10 +19,10 @@ done
 docker run --rm --env JAVA_OPTS=-DmaxYamlCodePoints=9999999 -v "${PWD}:/local" openapitools/openapi-generator-cli:v7.11.0 \
     generate \
     --config /local/.openapi-generator/config.yaml \
-    --input-spec /local/api/openapi-with-cf.yaml \
+    --input-spec /local/api/openapi.yaml \
     --output /local \
     --inline-schema-options RESOLVE_INLINE_ENUMS=true \
     --http-user-agent go-netbox/$(cat api/netbox_version)
 
 
-rm -f api/openapi-with-cf.yaml
+# rm -f api/openapi.yaml

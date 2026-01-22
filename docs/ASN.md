@@ -12,6 +12,7 @@ Name | Type | Description | Notes
 **Rir** | Pointer to [**NullableBriefRIR**](BriefRIR.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -19,6 +20,7 @@ Name | Type | Description | Notes
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **SiteCount** | Pointer to **int64** |  | [optional] [readonly] 
 **ProviderCount** | Pointer to **int64** |  | [optional] [readonly] 
+**Sites** | Pointer to [**[]ASNSite**](ASNSite.md) |  | [optional] 
 
 ## Methods
 
@@ -239,6 +241,41 @@ SetDescription sets Description field to given value.
 
 HasDescription returns a boolean if a field has been set.
 
+### GetOwner
+
+`func (o *ASN) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *ASN) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *ASN) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *ASN) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *ASN) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *ASN) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *ASN) GetComments() string`
@@ -433,6 +470,31 @@ SetProviderCount sets ProviderCount field to given value.
 `func (o *ASN) HasProviderCount() bool`
 
 HasProviderCount returns a boolean if a field has been set.
+
+### GetSites
+
+`func (o *ASN) GetSites() []ASNSite`
+
+GetSites returns the Sites field if non-nil, zero value otherwise.
+
+### GetSitesOk
+
+`func (o *ASN) GetSitesOk() (*[]ASNSite, bool)`
+
+GetSitesOk returns a tuple with the Sites field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSites
+
+`func (o *ASN) SetSites(v []ASNSite)`
+
+SetSites sets Sites field to given value.
+
+### HasSites
+
+`func (o *ASN) HasSites() bool`
+
+HasSites returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

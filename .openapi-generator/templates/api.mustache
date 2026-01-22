@@ -1,58 +1,62 @@
 {{>partial_header}}
 package {{packageName}}
+
 {{#operations}}
 import (
-    "bytes"
-    "context"
-    "io"
-    "net/http"
-    "net/url"
+	"bytes"
+	"context"
+	"io"
+	"net/http"
+	"net/url"
 {{#imports}}	"{{import}}"
 {{/imports}}
 )
 
 {{#generateInterfaces}}
+
 type {{classname}} interface {
-    {{#operation}}
-    /*
-    {{operationId}} {{{summary}}}{{^summary}}Method for {{operationId}}{{/summary}}
-    {{#notes}}
-    {{{unescapedNotes}}}
-    {{/notes}}
-    @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().{{#pathParams}}
-    @param {{paramName}}{{#description}} {{{.}}}{{/description}}{{/pathParams}}
-    @return {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request
-    {{#isDeprecated}}
-    Deprecated
-    {{/isDeprecated}}
-    */
-    {{{nickname}}}(ctx context.Context{{#pathParams}}, {{paramName}} {{{dataType}}}{{/pathParams}}) {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request
-    // {{nickname}}Execute executes the request{{#returnType}}
-    //  @return {{{.}}}{{/returnType}}
-    {{#isDeprecated}}
-    // Deprecated
-    {{/isDeprecated}}
-    {{nickname}}Execute(r {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}{{^isResponseFile}}*{{/isResponseFile}}{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error)
-    {{/operation}}
+	{{#operation}}
+
+	/*
+	{{operationId}} {{{summary}}}{{^summary}}Method for {{operationId}}{{/summary}}
+	{{#notes}}
+
+	{{{unescapedNotes}}}
+	{{/notes}}
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().{{#pathParams}}
+	@param {{paramName}}{{#description}} {{{.}}}{{/description}}{{/pathParams}}
+	@return {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request
+	{{#isDeprecated}}
+
+	Deprecated
+	{{/isDeprecated}}
+	*/
+	{{{nickname}}}(ctx context.Context{{#pathParams}}, {{paramName}} {{{dataType}}}{{/pathParams}}) {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request
+
+	// {{nickname}}Execute executes the request{{#returnType}}
+	//  @return {{{.}}}{{/returnType}}
+	{{#isDeprecated}}
+	// Deprecated
+	{{/isDeprecated}}
+	{{nickname}}Execute(r {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}{{^isResponseFile}}*{{/isResponseFile}}{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error)
+	{{/operation}}
 }
 {{/generateInterfaces}}
 
 // {{classname}}Service {{classname}} service
 type {{classname}}Service service
-
 {{#operation}}
+
 type {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request struct {
-    ctx context.Context{{#generateInterfaces}}
-    ApiService {{classname}}
+	ctx context.Context{{#generateInterfaces}}
+	ApiService {{classname}}
 {{/generateInterfaces}}{{^generateInterfaces}}
-    ApiService *{{classname}}Service
+	ApiService *{{classname}}Service
 {{/generateInterfaces}}
 {{#allParams}}
-    {{paramName}} {{^isPathParam}}{{^isFile}}*{{/isFile}}{{/isPathParam}}{{{dataType}}}
+	{{paramName}} {{^isPathParam}}{{^isFile}}*{{/isFile}}{{/isPathParam}}{{{dataType}}}
 {{/allParams}}
-{{#vendorExtensions.x-supports-custom-fields}}
-    customFields map[string]string
-{{/vendorExtensions.x-supports-custom-fields}}
 }
 
 {{#allParams}}
@@ -64,40 +68,15 @@ type {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/stru
 // Deprecated
 {{/isDeprecated}}
 func (r {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request) {{vendorExtensions.x-export-param-name}}({{paramName}} {{{dataType}}}) {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request {
-    r.{{paramName}} = {{^isFile}}&{{/isFile}}{{paramName}}
-    return r
+	r.{{paramName}} = {{^isFile}}&{{/isFile}}{{paramName}}
+	return r
 }
+
 {{/isPathParam}}
 {{/allParams}}
-
-{{#vendorExtensions.x-supports-custom-fields}}
-// CustomField methods (enabled via x-supports-custom-fields)
-func (r {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request) CustomField(field map[string]string) {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request {
-    if r.customFields == nil {
-        r.customFields = make(map[string]string)
-    }
-	for k, v := range field {
-    	r.customFields[k] = v
-	}
-    return r
-}
-
-func (r {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request) CustomFields(fields []map[string]string) {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request {
-    if r.customFields == nil {
-        r.customFields = make(map[string]string)
-    }
-    for _, field := range fields {
-		for k, v := range field {
-        	r.customFields[k] = v
-		}
-    }
-    return r
-}
-{{/vendorExtensions.x-supports-custom-fields}}
-
 func (r {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request) Execute() ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}{{^isResponseFile}}*{{/isResponseFile}}{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error) {
-    return r.ApiService.{{nickname}}Execute(r)
-}		
+	return r.ApiService.{{nickname}}Execute(r)
+}
 
 /*
 {{operationId}} {{{summary}}}{{^summary}}Method for {{operationId}}{{/summary}}
@@ -130,35 +109,26 @@ func (a *{{{classname}}}Service) {{{nickname}}}(ctx context.Context{{#pathParams
 // Deprecated
 {{/isDeprecated}}
 func (a *{{{classname}}}Service) {{nickname}}Execute(r {{#structPrefix}}{{&classname}}{{/structPrefix}}{{^structPrefix}}Api{{/structPrefix}}{{operationId}}Request) ({{#returnType}}{{^isArray}}{{^returnTypeIsPrimitive}}{{^isResponseFile}}*{{/isResponseFile}}{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}, {{/returnType}}*http.Response, error) {
-    var (
-        localVarHTTPMethod   = http.Method{{httpMethod}}
-        localVarPostBody     interface{}
-        formFiles            []formFile
-        {{#returnType}}
-        localVarReturnValue  {{^isArray}}{{^returnTypeIsPrimitive}}{{^isResponseFile}}*{{/isResponseFile}}{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}
-        {{/returnType}}
-    )
-    localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "{{{classname}}}Service.{{{nickname}}}")
-    if err != nil {
-        return {{#returnType}}localVarReturnValue, {{/returnType}}nil, &GenericOpenAPIError{error: err.Error()}
-    }
-    localVarPath := localBasePath + "{{{path}}}"{{#pathParams}}
-    localVarPath = strings.Replace(localVarPath, "{"+"{{{baseName}}}"+"}", url.PathEscape(parameterValueToString(r.{{paramName}}, "{{paramName}}")), -1){{/pathParams}}
-    
-    localVarHeaderParams := make(map[string]string)
-    localVarQueryParams := url.Values{}
-    localVarFormParams := url.Values{}
-    
+	var (
+		localVarHTTPMethod   = http.Method{{httpMethod}}
+		localVarPostBody     interface{}
+		formFiles            []formFile
+		{{#returnType}}
+		localVarReturnValue  {{^isArray}}{{^returnTypeIsPrimitive}}{{^isResponseFile}}*{{/isResponseFile}}{{/returnTypeIsPrimitive}}{{/isArray}}{{{.}}}
+		{{/returnType}}
+	)
 
-	{{#vendorExtensions.x-supports-custom-fields}}
-    // Add custom fields with cf_ prefix
-    if r.customFields != nil {
-        for name, value := range r.customFields {
-            cfParam := "cf_" + name
-            localVarQueryParams.Add(cfParam, value)
-        }
-    }
-	{{/vendorExtensions.x-supports-custom-fields}}
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "{{{classname}}}Service.{{{nickname}}}")
+	if err != nil {
+		return {{#returnType}}localVarReturnValue, {{/returnType}}nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "{{{path}}}"{{#pathParams}}
+	localVarPath = strings.Replace(localVarPath, "{"+"{{{baseName}}}"+"}", url.PathEscape(parameterValueToString(r.{{paramName}}, "{{paramName}}")), -1){{/pathParams}}
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
 	{{#allParams}}
 	{{#required}}
 	{{^isPathParam}}

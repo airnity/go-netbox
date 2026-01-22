@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Name** | **string** | Full name of the site | 
 **Slug** | **string** |  | 
-**Status** | Pointer to [**LocationStatus**](LocationStatus.md) |  | [optional] 
+**Status** | Pointer to [**SiteStatus**](SiteStatus.md) |  | [optional] 
 **Region** | Pointer to [**NullableBriefRegion**](BriefRegion.md) |  | [optional] 
 **Group** | Pointer to [**NullableBriefSiteGroup**](BriefSiteGroup.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **ShippingAddress** | Pointer to **string** | If different from the physical address | [optional] 
 **Latitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
+**Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Asns** | Pointer to [**[]ASN**](ASN.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -180,20 +181,20 @@ SetSlug sets Slug field to given value.
 
 ### GetStatus
 
-`func (o *Site) GetStatus() LocationStatus`
+`func (o *Site) GetStatus() SiteStatus`
 
 GetStatus returns the Status field if non-nil, zero value otherwise.
 
 ### GetStatusOk
 
-`func (o *Site) GetStatusOk() (*LocationStatus, bool)`
+`func (o *Site) GetStatusOk() (*SiteStatus, bool)`
 
 GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStatus
 
-`func (o *Site) SetStatus(v LocationStatus)`
+`func (o *Site) SetStatus(v SiteStatus)`
 
 SetStatus sets Status field to given value.
 
@@ -513,6 +514,41 @@ HasLongitude returns a boolean if a field has been set.
 `func (o *Site) UnsetLongitude()`
 
 UnsetLongitude ensures that no value is present for Longitude, not even an explicit nil
+### GetOwner
+
+`func (o *Site) GetOwner() BriefOwner`
+
+GetOwner returns the Owner field if non-nil, zero value otherwise.
+
+### GetOwnerOk
+
+`func (o *Site) GetOwnerOk() (*BriefOwner, bool)`
+
+GetOwnerOk returns a tuple with the Owner field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOwner
+
+`func (o *Site) SetOwner(v BriefOwner)`
+
+SetOwner sets Owner field to given value.
+
+### HasOwner
+
+`func (o *Site) HasOwner() bool`
+
+HasOwner returns a boolean if a field has been set.
+
+### SetOwnerNil
+
+`func (o *Site) SetOwnerNil(b bool)`
+
+ SetOwnerNil sets the value for Owner to be an explicit nil
+
+### UnsetOwner
+`func (o *Site) UnsetOwner()`
+
+UnsetOwner ensures that no value is present for Owner, not even an explicit nil
 ### GetComments
 
 `func (o *Site) GetComments() string`
