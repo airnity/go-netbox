@@ -9,7 +9,10 @@ Name | Type | Description | Notes
 **Label** | Pointer to **string** | Name of the Subnet | [optional] 
 **IsSecondary** | Pointer to **bool** | Set Prefix subnet as secondary | [optional] 
 **AutoReserveIps** | Pointer to **bool** | Automatically reserve IPs based on plugin configuration | [optional] [default to false]
+**MarkUtilized** | Pointer to **bool** | Treat this prefix as fully utilized | [optional] 
 **Status** | Pointer to [**NestedSubnetPrefixStatusValue**](NestedSubnetPrefixStatusValue.md) |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
+**Comments** | Pointer to **string** |  | [optional] 
 
 ## Methods
 
@@ -160,6 +163,31 @@ SetAutoReserveIps sets AutoReserveIps field to given value.
 
 HasAutoReserveIps returns a boolean if a field has been set.
 
+### GetMarkUtilized
+
+`func (o *WritableNestedSubnetPrefixRequest) GetMarkUtilized() bool`
+
+GetMarkUtilized returns the MarkUtilized field if non-nil, zero value otherwise.
+
+### GetMarkUtilizedOk
+
+`func (o *WritableNestedSubnetPrefixRequest) GetMarkUtilizedOk() (*bool, bool)`
+
+GetMarkUtilizedOk returns a tuple with the MarkUtilized field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMarkUtilized
+
+`func (o *WritableNestedSubnetPrefixRequest) SetMarkUtilized(v bool)`
+
+SetMarkUtilized sets MarkUtilized field to given value.
+
+### HasMarkUtilized
+
+`func (o *WritableNestedSubnetPrefixRequest) HasMarkUtilized() bool`
+
+HasMarkUtilized returns a boolean if a field has been set.
+
 ### GetStatus
 
 `func (o *WritableNestedSubnetPrefixRequest) GetStatus() NestedSubnetPrefixStatusValue`
@@ -184,6 +212,56 @@ SetStatus sets Status field to given value.
 `func (o *WritableNestedSubnetPrefixRequest) HasStatus() bool`
 
 HasStatus returns a boolean if a field has been set.
+
+### GetDescription
+
+`func (o *WritableNestedSubnetPrefixRequest) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *WritableNestedSubnetPrefixRequest) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *WritableNestedSubnetPrefixRequest) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *WritableNestedSubnetPrefixRequest) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
+### GetComments
+
+`func (o *WritableNestedSubnetPrefixRequest) GetComments() string`
+
+GetComments returns the Comments field if non-nil, zero value otherwise.
+
+### GetCommentsOk
+
+`func (o *WritableNestedSubnetPrefixRequest) GetCommentsOk() (*string, bool)`
+
+GetCommentsOk returns a tuple with the Comments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetComments
+
+`func (o *WritableNestedSubnetPrefixRequest) SetComments(v string)`
+
+SetComments sets Comments field to given value.
+
+### HasComments
+
+`func (o *WritableNestedSubnetPrefixRequest) HasComments() bool`
+
+HasComments returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

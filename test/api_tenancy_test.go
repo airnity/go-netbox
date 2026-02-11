@@ -23,6 +23,17 @@ func Test_netbox_TenancyAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test TenancyAPIService TenancyTenantGroupsBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.TenancyAPI.TenancyTenantGroupsBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test TenancyAPIService TenancyTenantGroupsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -52,6 +63,31 @@ func Test_netbox_TenancyAPIService(t *testing.T) {
 		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.TenancyAPI.TenancyTenantGroupsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TenancyAPIService TenancyTenantGroupsDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		httpRes, err := apiClient.TenancyAPI.TenancyTenantGroupsDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test TenancyAPIService TenancyTenantGroupsList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.TenancyAPI.TenancyTenantGroupsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

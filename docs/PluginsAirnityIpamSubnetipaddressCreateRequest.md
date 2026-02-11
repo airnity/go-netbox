@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Address** | **string** |  | 
 **Vpc** | Pointer to [**NullablePatchedSubnetIPAddressRequestVpc**](PatchedSubnetIPAddressRequestVpc.md) |  | [optional] 
-**Country** | Pointer to [**NullablePatchedSubnetIPAddressRequestCountry**](PatchedSubnetIPAddressRequestCountry.md) |  | [optional] 
+**Country** | Pointer to [**PatchedSubnetIPAddressRequestCountry**](PatchedSubnetIPAddressRequestCountry.md) |  | [optional] 
 **SubnetPrefix** | **int32** | The subnet prefix this IP belongs to | 
 **Tenant** | Pointer to [**NullablePatchedSubnetIPAddressRequestTenant**](PatchedSubnetIPAddressRequestTenant.md) |  | [optional] 
 **Status** | Pointer to [**PatchedSubnetIPAddressRequestStatus**](PatchedSubnetIPAddressRequestStatus.md) |  | [optional] 
@@ -117,16 +117,6 @@ SetCountry sets Country field to given value.
 
 HasCountry returns a boolean if a field has been set.
 
-### SetCountryNil
-
-`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCountryNil(b bool)`
-
- SetCountryNil sets the value for Country to be an explicit nil
-
-### UnsetCountry
-`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) UnsetCountry()`
-
-UnsetCountry ensures that no value is present for Country, not even an explicit nil
 ### GetSubnetPrefix
 
 `func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetSubnetPrefix() int32`

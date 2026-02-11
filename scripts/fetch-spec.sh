@@ -22,6 +22,7 @@ rm -rf "${REPO_DIR}"
 # docker compose --project-directory="${REPO_DIR}" up --detach --quiet-pull
 
 while ! curl --silent https://netbox.central.sandbox.airnity.private/api/schema/ > api/openapi.yaml 2> /dev/null; do
+# while ! curl --silent https://netbox.netbox-airnity-plugin.orb.local/api/schema/ > api/openapi.yaml 2> /dev/null; do
   sleep 1
 done
 

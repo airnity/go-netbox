@@ -1,4 +1,4 @@
-# PaginatedObjectPermissionList
+# PaginatedSiteGroupList
 
 ## Properties
 
@@ -7,133 +7,133 @@ Name | Type | Description | Notes
 **Count** | **int32** |  | 
 **Next** | Pointer to **NullableString** |  | [optional] 
 **Previous** | Pointer to **NullableString** |  | [optional] 
-**Results** | [**[]ObjectPermission**](ObjectPermission.md) |  | 
+**Results** | [**[]SiteGroup**](SiteGroup.md) |  | 
 
 ## Methods
 
-### NewPaginatedObjectPermissionList
+### NewPaginatedSiteGroupList
 
-`func NewPaginatedObjectPermissionList(count int32, results []ObjectPermission, ) *PaginatedObjectPermissionList`
+`func NewPaginatedSiteGroupList(count int32, results []SiteGroup, ) *PaginatedSiteGroupList`
 
-NewPaginatedObjectPermissionList instantiates a new PaginatedObjectPermissionList object
+NewPaginatedSiteGroupList instantiates a new PaginatedSiteGroupList object
 This constructor will assign default values to properties that have it defined,
 and makes sure properties required by API are set, but the set of arguments
 will change when the set of required properties is changed
 
-### NewPaginatedObjectPermissionListWithDefaults
+### NewPaginatedSiteGroupListWithDefaults
 
-`func NewPaginatedObjectPermissionListWithDefaults() *PaginatedObjectPermissionList`
+`func NewPaginatedSiteGroupListWithDefaults() *PaginatedSiteGroupList`
 
-NewPaginatedObjectPermissionListWithDefaults instantiates a new PaginatedObjectPermissionList object
+NewPaginatedSiteGroupListWithDefaults instantiates a new PaginatedSiteGroupList object
 This constructor will only assign default values to properties that have it defined,
 but it doesn't guarantee that properties required by API are set
 
 ### GetCount
 
-`func (o *PaginatedObjectPermissionList) GetCount() int32`
+`func (o *PaginatedSiteGroupList) GetCount() int32`
 
 GetCount returns the Count field if non-nil, zero value otherwise.
 
 ### GetCountOk
 
-`func (o *PaginatedObjectPermissionList) GetCountOk() (*int32, bool)`
+`func (o *PaginatedSiteGroupList) GetCountOk() (*int32, bool)`
 
 GetCountOk returns a tuple with the Count field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCount
 
-`func (o *PaginatedObjectPermissionList) SetCount(v int32)`
+`func (o *PaginatedSiteGroupList) SetCount(v int32)`
 
 SetCount sets Count field to given value.
 
 
 ### GetNext
 
-`func (o *PaginatedObjectPermissionList) GetNext() string`
+`func (o *PaginatedSiteGroupList) GetNext() string`
 
 GetNext returns the Next field if non-nil, zero value otherwise.
 
 ### GetNextOk
 
-`func (o *PaginatedObjectPermissionList) GetNextOk() (*string, bool)`
+`func (o *PaginatedSiteGroupList) GetNextOk() (*string, bool)`
 
 GetNextOk returns a tuple with the Next field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetNext
 
-`func (o *PaginatedObjectPermissionList) SetNext(v string)`
+`func (o *PaginatedSiteGroupList) SetNext(v string)`
 
 SetNext sets Next field to given value.
 
 ### HasNext
 
-`func (o *PaginatedObjectPermissionList) HasNext() bool`
+`func (o *PaginatedSiteGroupList) HasNext() bool`
 
 HasNext returns a boolean if a field has been set.
 
 ### SetNextNil
 
-`func (o *PaginatedObjectPermissionList) SetNextNil(b bool)`
+`func (o *PaginatedSiteGroupList) SetNextNil(b bool)`
 
  SetNextNil sets the value for Next to be an explicit nil
 
 ### UnsetNext
-`func (o *PaginatedObjectPermissionList) UnsetNext()`
+`func (o *PaginatedSiteGroupList) UnsetNext()`
 
 UnsetNext ensures that no value is present for Next, not even an explicit nil
 ### GetPrevious
 
-`func (o *PaginatedObjectPermissionList) GetPrevious() string`
+`func (o *PaginatedSiteGroupList) GetPrevious() string`
 
 GetPrevious returns the Previous field if non-nil, zero value otherwise.
 
 ### GetPreviousOk
 
-`func (o *PaginatedObjectPermissionList) GetPreviousOk() (*string, bool)`
+`func (o *PaginatedSiteGroupList) GetPreviousOk() (*string, bool)`
 
 GetPreviousOk returns a tuple with the Previous field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrevious
 
-`func (o *PaginatedObjectPermissionList) SetPrevious(v string)`
+`func (o *PaginatedSiteGroupList) SetPrevious(v string)`
 
 SetPrevious sets Previous field to given value.
 
 ### HasPrevious
 
-`func (o *PaginatedObjectPermissionList) HasPrevious() bool`
+`func (o *PaginatedSiteGroupList) HasPrevious() bool`
 
 HasPrevious returns a boolean if a field has been set.
 
 ### SetPreviousNil
 
-`func (o *PaginatedObjectPermissionList) SetPreviousNil(b bool)`
+`func (o *PaginatedSiteGroupList) SetPreviousNil(b bool)`
 
  SetPreviousNil sets the value for Previous to be an explicit nil
 
 ### UnsetPrevious
-`func (o *PaginatedObjectPermissionList) UnsetPrevious()`
+`func (o *PaginatedSiteGroupList) UnsetPrevious()`
 
 UnsetPrevious ensures that no value is present for Previous, not even an explicit nil
 ### GetResults
 
-`func (o *PaginatedObjectPermissionList) GetResults() []ObjectPermission`
+`func (o *PaginatedSiteGroupList) GetResults() []SiteGroup`
 
 GetResults returns the Results field if non-nil, zero value otherwise.
 
 ### GetResultsOk
 
-`func (o *PaginatedObjectPermissionList) GetResultsOk() (*[]ObjectPermission, bool)`
+`func (o *PaginatedSiteGroupList) GetResultsOk() (*[]SiteGroup, bool)`
 
 GetResultsOk returns a tuple with the Results field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetResults
 
-`func (o *PaginatedObjectPermissionList) SetResults(v []ObjectPermission)`
+`func (o *PaginatedSiteGroupList) SetResults(v []SiteGroup)`
 
 SetResults sets Results field to given value.
 

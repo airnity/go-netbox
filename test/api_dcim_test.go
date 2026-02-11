@@ -137,6 +137,17 @@ func Test_netbox_DcimAPIService(t *testing.T) {
 
 	})
 
+	t.Run("Test DcimAPIService DcimSiteGroupsBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.DcimAPI.DcimSiteGroupsBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test DcimAPIService DcimSiteGroupsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -166,6 +177,31 @@ func Test_netbox_DcimAPIService(t *testing.T) {
 		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.DcimAPI.DcimSiteGroupsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DcimAPIService DcimSiteGroupsDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		httpRes, err := apiClient.DcimAPI.DcimSiteGroupsDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test DcimAPIService DcimSiteGroupsList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.DcimAPI.DcimSiteGroupsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

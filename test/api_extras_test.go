@@ -23,6 +23,17 @@ func Test_netbox_ExtrasAPIService(t *testing.T) {
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
 
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldsBulkDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsBulkDestroy(context.Background()).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
 	t.Run("Test ExtrasAPIService ExtrasCustomFieldsBulkPartialUpdate", func(t *testing.T) {
 
 		t.Skip("skip test") // remove to run test
@@ -52,6 +63,31 @@ func Test_netbox_ExtrasAPIService(t *testing.T) {
 		t.Skip("skip test") // remove to run test
 
 		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsCreate(context.Background()).Execute()
+
+		require.Nil(t, err)
+		require.NotNil(t, resp)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldsDestroy", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		var id int32
+
+		httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsDestroy(context.Background(), id).Execute()
+
+		require.Nil(t, err)
+		assert.Equal(t, 200, httpRes.StatusCode)
+
+	})
+
+	t.Run("Test ExtrasAPIService ExtrasCustomFieldsList", func(t *testing.T) {
+
+		t.Skip("skip test") // remove to run test
+
+		resp, httpRes, err := apiClient.ExtrasAPI.ExtrasCustomFieldsList(context.Background()).Execute()
 
 		require.Nil(t, err)
 		require.NotNil(t, resp)

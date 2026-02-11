@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **Prefix** | **string** |  | 
 **Label** | Pointer to **string** | Name of the Subnet | [optional] 
 **IsSecondary** | Pointer to **bool** | Set Prefix subnet as secondary | [optional] 
+**AutoReserveIps** | Pointer to **bool** | Automatically reserve IP addresses based on plugin configuration | [optional] 
+**MarkUtilized** | Pointer to **bool** | Treat this prefix as fully utilized | [optional] 
 **Status** | Pointer to [**PatchedWritableSubnetPrefixRequestStatus**](PatchedWritableSubnetPrefixRequestStatus.md) |  | [optional] 
 
 ## Methods
@@ -97,6 +99,56 @@ SetIsSecondary sets IsSecondary field to given value.
 `func (o *PluginsAirnityIpamSubnetprefixCreateRequest) HasIsSecondary() bool`
 
 HasIsSecondary returns a boolean if a field has been set.
+
+### GetAutoReserveIps
+
+`func (o *PluginsAirnityIpamSubnetprefixCreateRequest) GetAutoReserveIps() bool`
+
+GetAutoReserveIps returns the AutoReserveIps field if non-nil, zero value otherwise.
+
+### GetAutoReserveIpsOk
+
+`func (o *PluginsAirnityIpamSubnetprefixCreateRequest) GetAutoReserveIpsOk() (*bool, bool)`
+
+GetAutoReserveIpsOk returns a tuple with the AutoReserveIps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoReserveIps
+
+`func (o *PluginsAirnityIpamSubnetprefixCreateRequest) SetAutoReserveIps(v bool)`
+
+SetAutoReserveIps sets AutoReserveIps field to given value.
+
+### HasAutoReserveIps
+
+`func (o *PluginsAirnityIpamSubnetprefixCreateRequest) HasAutoReserveIps() bool`
+
+HasAutoReserveIps returns a boolean if a field has been set.
+
+### GetMarkUtilized
+
+`func (o *PluginsAirnityIpamSubnetprefixCreateRequest) GetMarkUtilized() bool`
+
+GetMarkUtilized returns the MarkUtilized field if non-nil, zero value otherwise.
+
+### GetMarkUtilizedOk
+
+`func (o *PluginsAirnityIpamSubnetprefixCreateRequest) GetMarkUtilizedOk() (*bool, bool)`
+
+GetMarkUtilizedOk returns a tuple with the MarkUtilized field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMarkUtilized
+
+`func (o *PluginsAirnityIpamSubnetprefixCreateRequest) SetMarkUtilized(v bool)`
+
+SetMarkUtilized sets MarkUtilized field to given value.
+
+### HasMarkUtilized
+
+`func (o *PluginsAirnityIpamSubnetprefixCreateRequest) HasMarkUtilized() bool`
+
+HasMarkUtilized returns a boolean if a field has been set.
 
 ### GetStatus
 

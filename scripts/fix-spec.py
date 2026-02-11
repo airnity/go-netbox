@@ -4,7 +4,6 @@ import re
 import shutil
 from datetime import datetime
 SPEC_PATH = 'api/openapi.yaml'
-
 def backup_openapi_file(spec_path):
     """
     Creates a backup copy of the OpenAPI file with a timestamp.
@@ -14,7 +13,6 @@ def backup_openapi_file(spec_path):
     shutil.copy2(spec_path, backup_path)
     print(f"💾 Backup created: {backup_path}\n")
     return backup_path
-
 # ==============================================================================
 # Models filter
 # ==============================================================================
@@ -31,11 +29,10 @@ MODELS_TO_FILTER = [
     'CustomField',
     'Site',
     'SiteGroup',
-    'Groups',
-    'Permissions',
+    'Group',
+    'ObjectPermission',
 ]
 # ==============================================================================
-
 def find_refs_in_object(obj, found_refs):
     """
     Recursive function to find all '$ref' references in an object.
@@ -51,7 +48,6 @@ def find_refs_in_object(obj, found_refs):
     elif isinstance(obj, list):
         for item in obj:
             find_refs_in_object(item, found_refs)
-
 def resolve_all_dependencies(initial_models, all_schemas):
     """
     Recursively resolves ALL transitive dependencies.
@@ -76,6 +72,24 @@ def resolve_all_dependencies(initial_models, all_schemas):
         models_to_process.update(dependencies)
     return final_models
 
+def path_matches_model(path_str, model_name):
+    """
+    Check if a path matches a model name, handling kebab-case URLs.
+    Examples:
+      - CustomField matches /custom-fields/
+      - SubnetPrefix matches /subnet-prefixes/
+    """
+    # Convert CamelCase to kebab-case
+    kebab = re.sub(r'(?<!^)(?=[A-Z])', '-', model_name).lower()
+    
+    # Try both singular and plural forms
+    patterns = [
+        r'/{}(s)?(/|$)'.format(re.escape(model_name.lower())),  # customfield(s)
+        r'/{}(s)?(/|$)'.format(re.escape(kebab)),                # custom-field(s)
+    ]
+    
+    return any(re.search(pattern, path_str.lower()) for pattern in patterns)
+
 # Load the spec file
 with open(SPEC_PATH, 'r') as file:
     data = yaml.load(file, Loader=yaml.CLoader)
@@ -96,19 +110,18 @@ if MODELS_TO_FILTER:
         
         # Check 1: Does the URL contain one of our models?
         for model_name in MODELS_TO_FILTER:
-            if re.search(r'/{}(s)?(/|$)'.format(re.escape(model_name.lower())), path_str.lower()):
+            if path_matches_model(path_str, model_name):
                 path_is_relevant = True
+                # Collect ALL methods for this path
                 for method, operation in path_item.items():
                     if isinstance(operation, dict):
-                        relevant_methods[method] = operation
+                        if method not in relevant_methods:  # Avoid duplicates
+                            relevant_methods[method] = operation
                         refs = set()
                         find_refs_in_object(operation, refs)
                         models_from_paths.update(refs)
-                break 
+                # DON'T break - continue checking other models
         
-        if path_is_relevant:
-            relevant_paths_info[path_str] = relevant_methods
-            continue
         # Check 2: Does an operation directly reference our models?
         for method, operation in path_item.items():
             if not isinstance(operation, dict):
@@ -119,8 +132,10 @@ if MODELS_TO_FILTER:
             
             if not refs.isdisjoint(set(MODELS_TO_FILTER)):
                 path_is_relevant = True
-                relevant_methods[method] = operation
+                if method not in relevant_methods:  # Avoid duplicates
+                    relevant_methods[method] = operation
                 models_from_paths.update(refs)
+        
         if path_is_relevant:
             relevant_paths_info[path_str] = relevant_methods
     
@@ -192,7 +207,6 @@ if MODELS_TO_FILTER:
         print("✅ No missing dependencies!\n")
         
 # backup_openapi_file(SPEC_PATH)
-
 if 'components' in data and 'schemas' in data['components']:
     for name, schema in data['components']['schemas'].items():
         if 'properties' in schema:

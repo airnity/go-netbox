@@ -7,6 +7,8 @@ Name | Type | Description | Notes
 **Prefix** | Pointer to **string** |  | [optional] 
 **Label** | Pointer to **string** | Name of the Subnet | [optional] 
 **IsSecondary** | Pointer to **bool** | Set Prefix subnet as secondary | [optional] 
+**AutoReserveIps** | Pointer to **bool** | Automatically reserve IP addresses based on plugin configuration | [optional] 
+**MarkUtilized** | Pointer to **bool** | Treat this prefix as fully utilized | [optional] 
 **Status** | Pointer to [**PatchedWritableSubnetPrefixRequestStatus**](PatchedWritableSubnetPrefixRequestStatus.md) |  | [optional] 
 
 ## Methods
@@ -102,6 +104,56 @@ SetIsSecondary sets IsSecondary field to given value.
 `func (o *PatchedWritableSubnetPrefixRequest) HasIsSecondary() bool`
 
 HasIsSecondary returns a boolean if a field has been set.
+
+### GetAutoReserveIps
+
+`func (o *PatchedWritableSubnetPrefixRequest) GetAutoReserveIps() bool`
+
+GetAutoReserveIps returns the AutoReserveIps field if non-nil, zero value otherwise.
+
+### GetAutoReserveIpsOk
+
+`func (o *PatchedWritableSubnetPrefixRequest) GetAutoReserveIpsOk() (*bool, bool)`
+
+GetAutoReserveIpsOk returns a tuple with the AutoReserveIps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoReserveIps
+
+`func (o *PatchedWritableSubnetPrefixRequest) SetAutoReserveIps(v bool)`
+
+SetAutoReserveIps sets AutoReserveIps field to given value.
+
+### HasAutoReserveIps
+
+`func (o *PatchedWritableSubnetPrefixRequest) HasAutoReserveIps() bool`
+
+HasAutoReserveIps returns a boolean if a field has been set.
+
+### GetMarkUtilized
+
+`func (o *PatchedWritableSubnetPrefixRequest) GetMarkUtilized() bool`
+
+GetMarkUtilized returns the MarkUtilized field if non-nil, zero value otherwise.
+
+### GetMarkUtilizedOk
+
+`func (o *PatchedWritableSubnetPrefixRequest) GetMarkUtilizedOk() (*bool, bool)`
+
+GetMarkUtilizedOk returns a tuple with the MarkUtilized field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMarkUtilized
+
+`func (o *PatchedWritableSubnetPrefixRequest) SetMarkUtilized(v bool)`
+
+SetMarkUtilized sets MarkUtilized field to given value.
+
+### HasMarkUtilized
+
+`func (o *PatchedWritableSubnetPrefixRequest) HasMarkUtilized() bool`
+
+HasMarkUtilized returns a boolean if a field has been set.
 
 ### GetStatus
 

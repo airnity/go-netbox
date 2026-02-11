@@ -2538,7 +2538,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetprefixAvailableIpsCreate
 
-> []SubnetIPAddress PluginsAirnityIpamSubnetprefixAvailableIpsCreate(ctx, id).SubnetIPAddressRequest(subnetIPAddressRequest).Execute()
+> []SubnetIPAddress PluginsAirnityIpamSubnetprefixAvailableIpsCreate(ctx, id).AvailablePrefixIPRequest(availablePrefixIPRequest).Execute()
 
 
 
@@ -2558,11 +2558,11 @@ import (
 
 func main() {
 	id := int32(56) // int32 | 
-	subnetIPAddressRequest := []openapiclient.SubnetIPAddressRequest{*openapiclient.NewSubnetIPAddressRequest("Address_example", int32(123))} // []SubnetIPAddressRequest | 
+	availablePrefixIPRequest := *openapiclient.NewAvailablePrefixIPRequest() // AvailablePrefixIPRequest |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixAvailableIpsCreate(context.Background(), id).SubnetIPAddressRequest(subnetIPAddressRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixAvailableIpsCreate(context.Background(), id).AvailablePrefixIPRequest(availablePrefixIPRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetprefixAvailableIpsCreate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2588,7 +2588,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetpr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
- **subnetIPAddressRequest** | [**[]SubnetIPAddressRequest**](SubnetIPAddressRequest.md) |  | 
+ **availablePrefixIPRequest** | [**AvailablePrefixIPRequest**](AvailablePrefixIPRequest.md) |  | 
 
 ### Return type
 
@@ -3010,7 +3010,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetprefixList
 
-> PaginatedSubnetPrefixList PluginsAirnityIpamSubnetprefixList(ctx).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsSecondary(isSecondary).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).PresentInVpcId(presentInVpcId).Q(q).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VpcId(vpcId).VpcIdN(vpcIdN).Within(within).WithinInclude(withinInclude).Execute()
+> PaginatedSubnetPrefixList PluginsAirnityIpamSubnetprefixList(ctx).AutoReserveIps(autoReserveIps).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsSecondary(isSecondary).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIregex(labelIregex).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LabelRegex(labelRegex).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).PresentInVpcId(presentInVpcId).Q(q).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetName(subnetName).SubnetNameEmpty(subnetNameEmpty).SubnetNameIc(subnetNameIc).SubnetNameIe(subnetNameIe).SubnetNameIew(subnetNameIew).SubnetNameIregex(subnetNameIregex).SubnetNameIsw(subnetNameIsw).SubnetNameN(subnetNameN).SubnetNameNic(subnetNameNic).SubnetNameNie(subnetNameNie).SubnetNameNiew(subnetNameNiew).SubnetNameNisw(subnetNameNisw).SubnetNameRegex(subnetNameRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VpcId(vpcId).VpcIdN(vpcIdN).VpcName(vpcName).VpcNameEmpty(vpcNameEmpty).VpcNameIc(vpcNameIc).VpcNameIe(vpcNameIe).VpcNameIew(vpcNameIew).VpcNameIregex(vpcNameIregex).VpcNameIsw(vpcNameIsw).VpcNameN(vpcNameN).VpcNameNic(vpcNameNic).VpcNameNie(vpcNameNie).VpcNameNiew(vpcNameNiew).VpcNameNisw(vpcNameNisw).VpcNameRegex(vpcNameRegex).Within(within).WithinInclude(withinInclude).Execute()
 
 
 
@@ -3030,6 +3030,7 @@ import (
 )
 
 func main() {
+	autoReserveIps := true // bool |  (optional)
 	children := []int32{int32(123)} // []int32 |  (optional)
 	childrenEmpty := []int32{int32(123)} // []int32 |  (optional)
 	childrenGt := []int32{int32(123)} // []int32 |  (optional)
@@ -3053,19 +3054,6 @@ func main() {
 	depthLt := []int32{int32(123)} // []int32 |  (optional)
 	depthLte := []int32{int32(123)} // []int32 |  (optional)
 	depthN := []int32{int32(123)} // []int32 |  (optional)
-	description := []string{"Inner_example"} // []string |  (optional)
-	descriptionEmpty := true // bool |  (optional)
-	descriptionIc := []string{"Inner_example"} // []string |  (optional)
-	descriptionIe := []string{"Inner_example"} // []string |  (optional)
-	descriptionIew := []string{"Inner_example"} // []string |  (optional)
-	descriptionIregex := []string{"Inner_example"} // []string |  (optional)
-	descriptionIsw := []string{"Inner_example"} // []string |  (optional)
-	descriptionN := []string{"Inner_example"} // []string |  (optional)
-	descriptionNic := []string{"Inner_example"} // []string |  (optional)
-	descriptionNie := []string{"Inner_example"} // []string |  (optional)
-	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
-	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
-	descriptionRegex := []string{"Inner_example"} // []string |  (optional)
 	family := float32(8.14) // float32 |  (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
 	idEmpty := true // bool |  (optional)
@@ -3075,6 +3063,19 @@ func main() {
 	idLte := []int32{int32(123)} // []int32 |  (optional)
 	idN := []int32{int32(123)} // []int32 |  (optional)
 	isSecondary := true // bool |  (optional)
+	label := []string{"Inner_example"} // []string |  (optional)
+	labelEmpty := true // bool | Label (optional)
+	labelIc := []string{"Inner_example"} // []string |  (optional)
+	labelIe := []string{"Inner_example"} // []string |  (optional)
+	labelIew := []string{"Inner_example"} // []string |  (optional)
+	labelIregex := []string{"Inner_example"} // []string |  (optional)
+	labelIsw := []string{"Inner_example"} // []string |  (optional)
+	labelN := []string{"Inner_example"} // []string |  (optional)
+	labelNic := []string{"Inner_example"} // []string |  (optional)
+	labelNie := []string{"Inner_example"} // []string |  (optional)
+	labelNiew := []string{"Inner_example"} // []string |  (optional)
+	labelNisw := []string{"Inner_example"} // []string |  (optional)
+	labelRegex := []string{"Inner_example"} // []string |  (optional)
 	lastUpdated := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -3083,6 +3084,7 @@ func main() {
 	lastUpdatedLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	lastUpdatedN := []time.Time{time.Now()} // []time.Time |  (optional)
 	limit := int32(56) // int32 | Number of results to return per page. (optional)
+	markUtilized := true // bool |  (optional)
 	maskLength := []int32{int32(123)} // []int32 |  (optional)
 	maskLengthGte := float32(8.14) // float32 |  (optional)
 	maskLengthLte := float32(8.14) // float32 |  (optional)
@@ -3105,6 +3107,21 @@ func main() {
 	statusNiew := []string{"Inner_example"} // []string | Operational status of this prefix (optional)
 	statusNisw := []string{"Inner_example"} // []string | Operational status of this prefix (optional)
 	statusRegex := []string{"Inner_example"} // []string | Operational status of this prefix (optional)
+	subnetId := []int32{int32(123)} // []int32 | Subnet (optional)
+	subnetIdN := []int32{int32(123)} // []int32 | Subnet (optional)
+	subnetName := []string{"Inner_example"} // []string |  (optional)
+	subnetNameEmpty := true // bool | Subnet name (exact) (optional)
+	subnetNameIc := []string{"Inner_example"} // []string |  (optional)
+	subnetNameIe := []string{"Inner_example"} // []string |  (optional)
+	subnetNameIew := []string{"Inner_example"} // []string |  (optional)
+	subnetNameIregex := []string{"Inner_example"} // []string |  (optional)
+	subnetNameIsw := []string{"Inner_example"} // []string |  (optional)
+	subnetNameN := []string{"Inner_example"} // []string |  (optional)
+	subnetNameNic := []string{"Inner_example"} // []string |  (optional)
+	subnetNameNie := []string{"Inner_example"} // []string |  (optional)
+	subnetNameNiew := []string{"Inner_example"} // []string |  (optional)
+	subnetNameNisw := []string{"Inner_example"} // []string |  (optional)
+	subnetNameRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
 	tagId := []string{"Inner_example"} // []string |  (optional)
@@ -3112,12 +3129,25 @@ func main() {
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	vpcId := []*int32{int32(123)} // []*int32 | VPC (optional)
 	vpcIdN := []*int32{int32(123)} // []*int32 | VPC (optional)
+	vpcName := []string{"Inner_example"} // []string |  (optional)
+	vpcNameEmpty := true // bool |  (optional)
+	vpcNameIc := []string{"Inner_example"} // []string |  (optional)
+	vpcNameIe := []string{"Inner_example"} // []string |  (optional)
+	vpcNameIew := []string{"Inner_example"} // []string |  (optional)
+	vpcNameIregex := []string{"Inner_example"} // []string |  (optional)
+	vpcNameIsw := []string{"Inner_example"} // []string |  (optional)
+	vpcNameN := []string{"Inner_example"} // []string |  (optional)
+	vpcNameNic := []string{"Inner_example"} // []string |  (optional)
+	vpcNameNie := []string{"Inner_example"} // []string |  (optional)
+	vpcNameNiew := []string{"Inner_example"} // []string |  (optional)
+	vpcNameNisw := []string{"Inner_example"} // []string |  (optional)
+	vpcNameRegex := []string{"Inner_example"} // []string |  (optional)
 	within := "within_example" // string | Within prefix (optional)
 	withinInclude := "withinInclude_example" // string | Within and including prefix (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixList(context.Background()).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsSecondary(isSecondary).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).PresentInVpcId(presentInVpcId).Q(q).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VpcId(vpcId).VpcIdN(vpcIdN).Within(within).WithinInclude(withinInclude).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixList(context.Background()).AutoReserveIps(autoReserveIps).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Family(family).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsSecondary(isSecondary).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIregex(labelIregex).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LabelRegex(labelRegex).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).PresentInVpcId(presentInVpcId).Q(q).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetName(subnetName).SubnetNameEmpty(subnetNameEmpty).SubnetNameIc(subnetNameIc).SubnetNameIe(subnetNameIe).SubnetNameIew(subnetNameIew).SubnetNameIregex(subnetNameIregex).SubnetNameIsw(subnetNameIsw).SubnetNameN(subnetNameN).SubnetNameNic(subnetNameNic).SubnetNameNie(subnetNameNie).SubnetNameNiew(subnetNameNiew).SubnetNameNisw(subnetNameNisw).SubnetNameRegex(subnetNameRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VpcId(vpcId).VpcIdN(vpcIdN).VpcName(vpcName).VpcNameEmpty(vpcNameEmpty).VpcNameIc(vpcNameIc).VpcNameIe(vpcNameIe).VpcNameIew(vpcNameIew).VpcNameIregex(vpcNameIregex).VpcNameIsw(vpcNameIsw).VpcNameN(vpcNameN).VpcNameNic(vpcNameNic).VpcNameNie(vpcNameNie).VpcNameNiew(vpcNameNiew).VpcNameNisw(vpcNameNisw).VpcNameRegex(vpcNameRegex).Within(within).WithinInclude(withinInclude).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetprefixList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3138,6 +3168,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetpr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **autoReserveIps** | **bool** |  | 
  **children** | **[]int32** |  | 
  **childrenEmpty** | **[]int32** |  | 
  **childrenGt** | **[]int32** |  | 
@@ -3161,19 +3192,6 @@ Name | Type | Description  | Notes
  **depthLt** | **[]int32** |  | 
  **depthLte** | **[]int32** |  | 
  **depthN** | **[]int32** |  | 
- **description** | **[]string** |  | 
- **descriptionEmpty** | **bool** |  | 
- **descriptionIc** | **[]string** |  | 
- **descriptionIe** | **[]string** |  | 
- **descriptionIew** | **[]string** |  | 
- **descriptionIregex** | **[]string** |  | 
- **descriptionIsw** | **[]string** |  | 
- **descriptionN** | **[]string** |  | 
- **descriptionNic** | **[]string** |  | 
- **descriptionNie** | **[]string** |  | 
- **descriptionNiew** | **[]string** |  | 
- **descriptionNisw** | **[]string** |  | 
- **descriptionRegex** | **[]string** |  | 
  **family** | **float32** |  | 
  **id** | **[]int32** |  | 
  **idEmpty** | **bool** |  | 
@@ -3183,6 +3201,19 @@ Name | Type | Description  | Notes
  **idLte** | **[]int32** |  | 
  **idN** | **[]int32** |  | 
  **isSecondary** | **bool** |  | 
+ **label** | **[]string** |  | 
+ **labelEmpty** | **bool** | Label | 
+ **labelIc** | **[]string** |  | 
+ **labelIe** | **[]string** |  | 
+ **labelIew** | **[]string** |  | 
+ **labelIregex** | **[]string** |  | 
+ **labelIsw** | **[]string** |  | 
+ **labelN** | **[]string** |  | 
+ **labelNic** | **[]string** |  | 
+ **labelNie** | **[]string** |  | 
+ **labelNiew** | **[]string** |  | 
+ **labelNisw** | **[]string** |  | 
+ **labelRegex** | **[]string** |  | 
  **lastUpdated** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -3191,6 +3222,7 @@ Name | Type | Description  | Notes
  **lastUpdatedLte** | [**[]time.Time**](time.Time.md) |  | 
  **lastUpdatedN** | [**[]time.Time**](time.Time.md) |  | 
  **limit** | **int32** | Number of results to return per page. | 
+ **markUtilized** | **bool** |  | 
  **maskLength** | **[]int32** |  | 
  **maskLengthGte** | **float32** |  | 
  **maskLengthLte** | **float32** |  | 
@@ -3213,6 +3245,21 @@ Name | Type | Description  | Notes
  **statusNiew** | **[]string** | Operational status of this prefix | 
  **statusNisw** | **[]string** | Operational status of this prefix | 
  **statusRegex** | **[]string** | Operational status of this prefix | 
+ **subnetId** | **[]int32** | Subnet | 
+ **subnetIdN** | **[]int32** | Subnet | 
+ **subnetName** | **[]string** |  | 
+ **subnetNameEmpty** | **bool** | Subnet name (exact) | 
+ **subnetNameIc** | **[]string** |  | 
+ **subnetNameIe** | **[]string** |  | 
+ **subnetNameIew** | **[]string** |  | 
+ **subnetNameIregex** | **[]string** |  | 
+ **subnetNameIsw** | **[]string** |  | 
+ **subnetNameN** | **[]string** |  | 
+ **subnetNameNic** | **[]string** |  | 
+ **subnetNameNie** | **[]string** |  | 
+ **subnetNameNiew** | **[]string** |  | 
+ **subnetNameNisw** | **[]string** |  | 
+ **subnetNameRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
  **tagN** | **[]string** |  | 
  **tagId** | **[]string** |  | 
@@ -3220,6 +3267,19 @@ Name | Type | Description  | Notes
  **updatedByRequest** | **string** |  | 
  **vpcId** | **[]int32** | VPC | 
  **vpcIdN** | **[]int32** | VPC | 
+ **vpcName** | **[]string** |  | 
+ **vpcNameEmpty** | **bool** |  | 
+ **vpcNameIc** | **[]string** |  | 
+ **vpcNameIe** | **[]string** |  | 
+ **vpcNameIew** | **[]string** |  | 
+ **vpcNameIregex** | **[]string** |  | 
+ **vpcNameIsw** | **[]string** |  | 
+ **vpcNameN** | **[]string** |  | 
+ **vpcNameNic** | **[]string** |  | 
+ **vpcNameNie** | **[]string** |  | 
+ **vpcNameNiew** | **[]string** |  | 
+ **vpcNameNisw** | **[]string** |  | 
+ **vpcNameRegex** | **[]string** |  | 
  **within** | **string** | Within prefix | 
  **withinInclude** | **string** | Within and including prefix | 
 
@@ -3787,7 +3847,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetpurposeList
 
-> PaginatedSubnetPurposeList PluginsAirnityIpamSubnetpurposeList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedSubnetPurposeList PluginsAirnityIpamSubnetpurposeList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -3861,6 +3921,10 @@ func main() {
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
 	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
+	ownerGroup := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupN := []string{"Inner_example"} // []string | Owner Group (name) (optional)
+	ownerGroupId := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
+	ownerGroupIdN := []int32{int32(123)} // []int32 | Owner Group (ID) (optional)
 	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
@@ -3885,7 +3949,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetpurposeList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetpurposeList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetpurposeList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3960,6 +4024,10 @@ Name | Type | Description  | Notes
  **ordering** | **string** | Which field to use when ordering the results. | 
  **owner** | **[]string** | Owner (name) | 
  **ownerN** | **[]string** | Owner (name) | 
+ **ownerGroup** | **[]string** | Owner Group (name) | 
+ **ownerGroupN** | **[]string** | Owner Group (name) | 
+ **ownerGroupId** | **[]int32** | Owner Group (ID) | 
+ **ownerGroupIdN** | **[]int32** | Owner Group (ID) | 
  **ownerId** | **[]int32** | Owner (ID) | 
  **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
