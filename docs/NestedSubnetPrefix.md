@@ -10,7 +10,8 @@ Name | Type | Description | Notes
 **Prefix** | **string** |  | 
 **Label** | Pointer to **string** | Name of the Subnet | [optional] 
 **IsSecondary** | Pointer to **bool** | Set Prefix subnet as secondary | [optional] 
-**AutoReserveIps** | Pointer to **bool** | Automatically reserve IP addresses based on plugin configuration | [optional] 
+**AutoReserveFirstIps** | Pointer to **bool** | Automatically reserve first IP addresses (network, gateway, etc.) | [optional] 
+**AutoReserveLastIps** | Pointer to **bool** | Automatically reserve last IP addresses (broadcast, etc.) | [optional] 
 **MarkUtilized** | Pointer to **bool** | Treat this prefix as fully utilized | [optional] 
 **Status** | Pointer to [**NestedSubnetPrefixStatus**](NestedSubnetPrefixStatus.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -165,30 +166,55 @@ SetIsSecondary sets IsSecondary field to given value.
 
 HasIsSecondary returns a boolean if a field has been set.
 
-### GetAutoReserveIps
+### GetAutoReserveFirstIps
 
-`func (o *NestedSubnetPrefix) GetAutoReserveIps() bool`
+`func (o *NestedSubnetPrefix) GetAutoReserveFirstIps() bool`
 
-GetAutoReserveIps returns the AutoReserveIps field if non-nil, zero value otherwise.
+GetAutoReserveFirstIps returns the AutoReserveFirstIps field if non-nil, zero value otherwise.
 
-### GetAutoReserveIpsOk
+### GetAutoReserveFirstIpsOk
 
-`func (o *NestedSubnetPrefix) GetAutoReserveIpsOk() (*bool, bool)`
+`func (o *NestedSubnetPrefix) GetAutoReserveFirstIpsOk() (*bool, bool)`
 
-GetAutoReserveIpsOk returns a tuple with the AutoReserveIps field if it's non-nil, zero value otherwise
+GetAutoReserveFirstIpsOk returns a tuple with the AutoReserveFirstIps field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetAutoReserveIps
+### SetAutoReserveFirstIps
 
-`func (o *NestedSubnetPrefix) SetAutoReserveIps(v bool)`
+`func (o *NestedSubnetPrefix) SetAutoReserveFirstIps(v bool)`
 
-SetAutoReserveIps sets AutoReserveIps field to given value.
+SetAutoReserveFirstIps sets AutoReserveFirstIps field to given value.
 
-### HasAutoReserveIps
+### HasAutoReserveFirstIps
 
-`func (o *NestedSubnetPrefix) HasAutoReserveIps() bool`
+`func (o *NestedSubnetPrefix) HasAutoReserveFirstIps() bool`
 
-HasAutoReserveIps returns a boolean if a field has been set.
+HasAutoReserveFirstIps returns a boolean if a field has been set.
+
+### GetAutoReserveLastIps
+
+`func (o *NestedSubnetPrefix) GetAutoReserveLastIps() bool`
+
+GetAutoReserveLastIps returns the AutoReserveLastIps field if non-nil, zero value otherwise.
+
+### GetAutoReserveLastIpsOk
+
+`func (o *NestedSubnetPrefix) GetAutoReserveLastIpsOk() (*bool, bool)`
+
+GetAutoReserveLastIpsOk returns a tuple with the AutoReserveLastIps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoReserveLastIps
+
+`func (o *NestedSubnetPrefix) SetAutoReserveLastIps(v bool)`
+
+SetAutoReserveLastIps sets AutoReserveLastIps field to given value.
+
+### HasAutoReserveLastIps
+
+`func (o *NestedSubnetPrefix) HasAutoReserveLastIps() bool`
+
+HasAutoReserveLastIps returns a boolean if a field has been set.
 
 ### GetMarkUtilized
 

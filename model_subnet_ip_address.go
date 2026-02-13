@@ -37,15 +37,14 @@ type SubnetIPAddress struct {
 	NatInside    NullableNestedSubnetIPAddress        `json:"nat_inside,omitempty"`
 	NatOutside   []NestedSubnetIPAddress              `json:"nat_outside"`
 	// Hostname or FQDN (not case-sensitive)
-	DnsName      *string                `json:"dns_name,omitempty" validate:"regexp=^([0-9A-Za-z_-]+|\\\\*)(\\\\.[0-9A-Za-z_-]+)*\\\\.?$"`
-	Description  *string                `json:"description,omitempty"`
-	Comments     *string                `json:"comments,omitempty"`
-	Tags         []NestedTag            `json:"tags,omitempty"`
-	CustomFields map[string]interface{} `json:"custom_fields,omitempty"`
-	Created      NullableTime           `json:"created,omitempty"`
-	LastUpdated  NullableTime           `json:"last_updated,omitempty"`
-	// Return the subnet with its associated prefix.
-	Subnet               map[string]interface{} `json:"subnet"`
+	DnsName              *string                  `json:"dns_name,omitempty" validate:"regexp=^([0-9A-Za-z_-]+|\\\\*)(\\\\.[0-9A-Za-z_-]+)*\\\\.?$"`
+	Description          *string                  `json:"description,omitempty"`
+	Comments             *string                  `json:"comments,omitempty"`
+	Tags                 []NestedTag              `json:"tags,omitempty"`
+	CustomFields         map[string]interface{}   `json:"custom_fields,omitempty"`
+	Created              NullableTime             `json:"created,omitempty"`
+	LastUpdated          NullableTime             `json:"last_updated,omitempty"`
+	Subnet               NullableSubnetWithPrefix `json:"subnet,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -55,7 +54,7 @@ type _SubnetIPAddress SubnetIPAddress
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSubnetIPAddress(id int32, url string, display string, family int32, address string, subnetPrefix int32, natOutside []NestedSubnetIPAddress, subnet map[string]interface{}) *SubnetIPAddress {
+func NewSubnetIPAddress(id int32, url string, display string, family int32, address string, subnetPrefix int32, natOutside []NestedSubnetIPAddress) *SubnetIPAddress {
 	this := SubnetIPAddress{}
 	this.Id = id
 	this.Url = url
@@ -64,7 +63,6 @@ func NewSubnetIPAddress(id int32, url string, display string, family int32, addr
 	this.Address = address
 	this.SubnetPrefix = subnetPrefix
 	this.NatOutside = natOutside
-	this.Subnet = subnet
 	return &this
 }
 
@@ -747,28 +745,47 @@ func (o *SubnetIPAddress) UnsetLastUpdated() {
 	o.LastUpdated.Unset()
 }
 
-// GetSubnet returns the Subnet field value
-func (o *SubnetIPAddress) GetSubnet() map[string]interface{} {
-	if o == nil {
-		var ret map[string]interface{}
+// GetSubnet returns the Subnet field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SubnetIPAddress) GetSubnet() SubnetWithPrefix {
+	if o == nil || IsNil(o.Subnet.Get()) {
+		var ret SubnetWithPrefix
 		return ret
 	}
-
-	return o.Subnet
+	return *o.Subnet.Get()
 }
 
-// GetSubnetOk returns a tuple with the Subnet field value
+// GetSubnetOk returns a tuple with the Subnet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SubnetIPAddress) GetSubnetOk() (map[string]interface{}, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SubnetIPAddress) GetSubnetOk() (*SubnetWithPrefix, bool) {
 	if o == nil {
-		return map[string]interface{}{}, false
+		return nil, false
 	}
-	return o.Subnet, true
+	return o.Subnet.Get(), o.Subnet.IsSet()
 }
 
-// SetSubnet sets field value
-func (o *SubnetIPAddress) SetSubnet(v map[string]interface{}) {
-	o.Subnet = v
+// HasSubnet returns a boolean if a field has been set.
+func (o *SubnetIPAddress) HasSubnet() bool {
+	if o != nil && o.Subnet.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetSubnet gets a reference to the given NullableSubnetWithPrefix and assigns it to the Subnet field.
+func (o *SubnetIPAddress) SetSubnet(v SubnetWithPrefix) {
+	o.Subnet.Set(&v)
+}
+
+// SetSubnetNil sets the value for Subnet to be an explicit nil
+func (o *SubnetIPAddress) SetSubnetNil() {
+	o.Subnet.Set(nil)
+}
+
+// UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
+func (o *SubnetIPAddress) UnsetSubnet() {
+	o.Subnet.Unset()
 }
 
 func (o SubnetIPAddress) MarshalJSON() ([]byte, error) {
@@ -830,7 +847,9 @@ func (o SubnetIPAddress) ToMap() (map[string]interface{}, error) {
 	if o.LastUpdated.IsSet() {
 		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
-	toSerialize["subnet"] = o.Subnet
+	if o.Subnet.IsSet() {
+		toSerialize["subnet"] = o.Subnet.Get()
+	}
 
 	for key, value := range o.AdditionalProperties {
 		toSerialize[key] = value
@@ -851,7 +870,6 @@ func (o *SubnetIPAddress) UnmarshalJSON(data []byte) (err error) {
 		"address",
 		"subnet_prefix",
 		"nat_outside",
-		"subnet",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

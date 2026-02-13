@@ -7991,7 +7991,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 6e0f8a42156c082b
+            x-spec-enum-id: 18f5e74b68afd4fe
         description: The functional role of this IP
         explode: true
         style: form
@@ -8005,7 +8005,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 6e0f8a42156c082b
+            x-spec-enum-id: 18f5e74b68afd4fe
         description: The functional role of this IP
         explode: true
         style: form
@@ -8015,7 +8015,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 6e0f8a42156c082b
+            x-spec-enum-id: 18f5e74b68afd4fe
         description: The functional role of this IP
         explode: true
         style: form
@@ -8025,7 +8025,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 6e0f8a42156c082b
+            x-spec-enum-id: 18f5e74b68afd4fe
         description: The functional role of this IP
         explode: true
         style: form
@@ -8035,7 +8035,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 6e0f8a42156c082b
+            x-spec-enum-id: 18f5e74b68afd4fe
         description: The functional role of this IP
         explode: true
         style: form
@@ -8045,7 +8045,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 6e0f8a42156c082b
+            x-spec-enum-id: 18f5e74b68afd4fe
         description: The functional role of this IP
         explode: true
         style: form
@@ -8055,7 +8055,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 6e0f8a42156c082b
+            x-spec-enum-id: 18f5e74b68afd4fe
         description: The functional role of this IP
         explode: true
         style: form
@@ -8065,7 +8065,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 6e0f8a42156c082b
+            x-spec-enum-id: 18f5e74b68afd4fe
         description: The functional role of this IP
         explode: true
         style: form
@@ -8075,7 +8075,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 6e0f8a42156c082b
+            x-spec-enum-id: 18f5e74b68afd4fe
         description: The functional role of this IP
         explode: true
         style: form
@@ -8085,7 +8085,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 6e0f8a42156c082b
+            x-spec-enum-id: 18f5e74b68afd4fe
         description: The functional role of this IP
         explode: true
         style: form
@@ -8095,7 +8095,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 6e0f8a42156c082b
+            x-spec-enum-id: 18f5e74b68afd4fe
         description: The functional role of this IP
         explode: true
         style: form
@@ -8105,7 +8105,7 @@ paths:
           type: array
           items:
             type: string
-            x-spec-enum-id: 6e0f8a42156c082b
+            x-spec-enum-id: 18f5e74b68afd4fe
         description: The functional role of this IP
         explode: true
         style: form
@@ -8676,7 +8676,11 @@ paths:
       description: Get a list of subnet prefix objects.
       parameters:
       - in: query
-        name: auto_reserve_ips
+        name: auto_reserve_first_ips
+        schema:
+          type: boolean
+      - in: query
+        name: auto_reserve_last_ips
         schema:
           type: boolean
       - in: query
@@ -9164,6 +9168,42 @@ paths:
         name: present_in_vpc_id
         schema:
           type: string
+      - in: query
+        name: purpose
+        schema:
+          type: array
+          items:
+            type: string
+        description: Purpose (name)
+        explode: true
+        style: form
+      - in: query
+        name: purpose__n
+        schema:
+          type: array
+          items:
+            type: string
+        description: Purpose (name)
+        explode: true
+        style: form
+      - in: query
+        name: purpose_id
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Purpose (ID)
+        explode: true
+        style: form
+      - in: query
+        name: purpose_id__n
+        schema:
+          type: array
+          items:
+            type: integer
+        description: Purpose (ID)
+        explode: true
+        style: form
       - in: query
         name: q
         schema:
@@ -14324,6 +14364,7 @@ components:
         mask_length:
           type: integer
           readOnly: true
+          nullable: true
         vpc:
           allOf:
           - $ref: '#/components/schemas/VPC'
@@ -14338,7 +14379,6 @@ components:
       required:
       - address
       - family
-      - mask_length
       - subnet_prefix
     AvailablePrefixIPRequest:
       type: object
@@ -15652,6 +15692,10 @@ components:
           type: string
           format: uri
           readOnly: true
+        display_url:
+          type: string
+          format: uri
+          readOnly: true
         display:
           type: string
           readOnly: true
@@ -15660,6 +15704,37 @@ components:
           description: Name of the Subnet
           pattern: ^[a-z0-9_-]+$
           maxLength: 100
+        vpc:
+          type: integer
+          nullable: true
+        region:
+          type: integer
+          nullable: true
+        tenant:
+          type: integer
+          nullable: true
+        purpose:
+          type: integer
+          nullable: true
+          description: The primary function of this subnet
+        description:
+          type: string
+          maxLength: 200
+        comments:
+          type: string
+        custom_fields:
+          type: object
+          additionalProperties: {}
+        created:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
+        last_updated:
+          type: string
+          format: date-time
+          readOnly: true
+          nullable: true
       required:
       - display
       - id
@@ -15681,9 +15756,6 @@ components:
         address:
           type: string
           description: IPv4 or IPv6 address (with mask)
-        mask_length:
-          type: string
-          readOnly: true
         family:
           type: string
           readOnly: true
@@ -15692,7 +15764,6 @@ components:
       - display
       - family
       - id
-      - mask_length
       - url
     NestedSubnetIPAddressRequest:
       type: object
@@ -15706,9 +15777,7 @@ components:
       - address
     NestedSubnetPrefix:
       type: object
-      description: 'Nested SubnetPrefix representation (read-only).
-
-        Used for displaying prefixes in responses.'
+      description: Adds support for custom fields and tags.
       properties:
         id:
           type: integer
@@ -15731,9 +15800,13 @@ components:
           type: boolean
           title: Mark as secondary prefix
           description: Set Prefix subnet as secondary
-        auto_reserve_ips:
+        auto_reserve_first_ips:
           type: boolean
-          description: Automatically reserve IP addresses based on plugin configuration
+          description: Automatically reserve first IP addresses (network, gateway,
+            etc.)
+        auto_reserve_last_ips:
+          type: boolean
+          description: Automatically reserve last IP addresses (broadcast, etc.)
         mark_utilized:
           type: boolean
           description: Treat this prefix as fully utilized
@@ -16800,43 +16873,43 @@ components:
         role:
           enum:
           - dns
-          - data_poi_esgw
-          - data_slice_pgwu
-          - sig_poi_dra
-          - sig_poi_stp
-          - voice_poi_rtpengine
-          - voice_poi_sbc
+          - data-poi/esgw
+          - data-slice/pgwu
+          - sig-poi/dra
+          - sig-poi/stp
+          - voice-poi/rtpengine
+          - voice-poi/sbc
           - smpp
-          - network
-          - gateway
-          - gcp_reserved
-          - broadcast
+          - gcp/network
+          - gcp/gateway
+          - gcp/reserved
+          - gcp/broadcast
           - ''
           type: string
           description: '* `dns` - dns/dns
 
-            * `data_poi_esgw` - data-poi/esgw
+            * `data-poi/esgw` - data-poi/esgw
 
-            * `data_slice_pgwu` - data-slice/pgwu
+            * `data-slice/pgwu` - data-slice/pgwu
 
-            * `sig_poi_dra` - sig-poi/dra
+            * `sig-poi/dra` - sig-poi/dra
 
-            * `sig_poi_stp` - sig-poi/stp
+            * `sig-poi/stp` - sig-poi/stp
 
-            * `voice_poi_rtpengine` - voice-poi/rtpengine
+            * `voice-poi/rtpengine` - voice-poi/rtpengine
 
-            * `voice_poi_sbc` - voice-poi/sbc
+            * `voice-poi/sbc` - voice-poi/sbc
 
             * `smpp` - smpp/smpp
 
-            * `network` - gcp/network
+            * `gcp/network` - gcp/network
 
-            * `gateway` - gcp/gateway
+            * `gcp/gateway` - gcp/gateway
 
-            * `gcp_reserved` - gcp/future
+            * `gcp/reserved` - gcp/future
 
-            * `broadcast` - gcp/broadcast'
-          x-spec-enum-id: 6e0f8a42156c082b
+            * `gcp/broadcast` - gcp/broadcast'
+          x-spec-enum-id: 18f5e74b68afd4fe
         nat_inside:
           allOf:
           - $ref: '#/components/schemas/NestedSubnetIPAddressRequest'
@@ -17363,7 +17436,7 @@ components:
           additionalProperties: {}
     PatchedWritableSubnetPrefixRequest:
       type: object
-      description: Full serializer for SubnetPrefix model.
+      description: Adds support for custom fields and tags.
       properties:
         prefix:
           type: string
@@ -17377,9 +17450,13 @@ components:
           type: boolean
           title: Mark as secondary prefix
           description: Set Prefix subnet as secondary
-        auto_reserve_ips:
+        auto_reserve_first_ips:
           type: boolean
-          description: Automatically reserve IP addresses based on plugin configuration
+          description: Automatically reserve first IP addresses (network, gateway,
+            etc.)
+        auto_reserve_last_ips:
+          type: boolean
+          description: Automatically reserve last IP addresses (broadcast, etc.)
         mark_utilized:
           type: boolean
           description: Treat this prefix as fully utilized
@@ -18377,43 +18454,43 @@ components:
         role:
           enum:
           - dns
-          - data_poi_esgw
-          - data_slice_pgwu
-          - sig_poi_dra
-          - sig_poi_stp
-          - voice_poi_rtpengine
-          - voice_poi_sbc
+          - data-poi/esgw
+          - data-slice/pgwu
+          - sig-poi/dra
+          - sig-poi/stp
+          - voice-poi/rtpengine
+          - voice-poi/sbc
           - smpp
-          - network
-          - gateway
-          - gcp_reserved
-          - broadcast
+          - gcp/network
+          - gcp/gateway
+          - gcp/reserved
+          - gcp/broadcast
           - ''
           type: string
           description: '* `dns` - dns/dns
 
-            * `data_poi_esgw` - data-poi/esgw
+            * `data-poi/esgw` - data-poi/esgw
 
-            * `data_slice_pgwu` - data-slice/pgwu
+            * `data-slice/pgwu` - data-slice/pgwu
 
-            * `sig_poi_dra` - sig-poi/dra
+            * `sig-poi/dra` - sig-poi/dra
 
-            * `sig_poi_stp` - sig-poi/stp
+            * `sig-poi/stp` - sig-poi/stp
 
-            * `voice_poi_rtpengine` - voice-poi/rtpengine
+            * `voice-poi/rtpengine` - voice-poi/rtpengine
 
-            * `voice_poi_sbc` - voice-poi/sbc
+            * `voice-poi/sbc` - voice-poi/sbc
 
             * `smpp` - smpp/smpp
 
-            * `network` - gcp/network
+            * `gcp/network` - gcp/network
 
-            * `gateway` - gcp/gateway
+            * `gcp/gateway` - gcp/gateway
 
-            * `gcp_reserved` - gcp/future
+            * `gcp/reserved` - gcp/future
 
-            * `broadcast` - gcp/broadcast'
-          x-spec-enum-id: 6e0f8a42156c082b
+            * `gcp/broadcast` - gcp/broadcast'
+          x-spec-enum-id: 18f5e74b68afd4fe
         nat_inside:
           allOf:
           - $ref: '#/components/schemas/NestedSubnetIPAddress'
@@ -18451,9 +18528,9 @@ components:
           readOnly: true
           nullable: true
         subnet:
-          type: object
-          additionalProperties: {}
-          description: Return the subnet with its associated prefix.
+          allOf:
+          - $ref: '#/components/schemas/SubnetWithPrefix'
+          nullable: true
           readOnly: true
       required:
       - address
@@ -18461,7 +18538,6 @@ components:
       - family
       - id
       - nat_outside
-      - subnet
       - subnet_prefix
       - url
     SubnetIPAddressRequest:
@@ -18840,43 +18916,43 @@ components:
         role:
           enum:
           - dns
-          - data_poi_esgw
-          - data_slice_pgwu
-          - sig_poi_dra
-          - sig_poi_stp
-          - voice_poi_rtpengine
-          - voice_poi_sbc
+          - data-poi/esgw
+          - data-slice/pgwu
+          - sig-poi/dra
+          - sig-poi/stp
+          - voice-poi/rtpengine
+          - voice-poi/sbc
           - smpp
-          - network
-          - gateway
-          - gcp_reserved
-          - broadcast
+          - gcp/network
+          - gcp/gateway
+          - gcp/reserved
+          - gcp/broadcast
           - ''
           type: string
           description: '* `dns` - dns/dns
 
-            * `data_poi_esgw` - data-poi/esgw
+            * `data-poi/esgw` - data-poi/esgw
 
-            * `data_slice_pgwu` - data-slice/pgwu
+            * `data-slice/pgwu` - data-slice/pgwu
 
-            * `sig_poi_dra` - sig-poi/dra
+            * `sig-poi/dra` - sig-poi/dra
 
-            * `sig_poi_stp` - sig-poi/stp
+            * `sig-poi/stp` - sig-poi/stp
 
-            * `voice_poi_rtpengine` - voice-poi/rtpengine
+            * `voice-poi/rtpengine` - voice-poi/rtpengine
 
-            * `voice_poi_sbc` - voice-poi/sbc
+            * `voice-poi/sbc` - voice-poi/sbc
 
             * `smpp` - smpp/smpp
 
-            * `network` - gcp/network
+            * `gcp/network` - gcp/network
 
-            * `gateway` - gcp/gateway
+            * `gcp/gateway` - gcp/gateway
 
-            * `gcp_reserved` - gcp/future
+            * `gcp/reserved` - gcp/future
 
-            * `broadcast` - gcp/broadcast'
-          x-spec-enum-id: 6e0f8a42156c082b
+            * `gcp/broadcast` - gcp/broadcast'
+          x-spec-enum-id: 18f5e74b68afd4fe
         nat_inside:
           allOf:
           - $ref: '#/components/schemas/NestedSubnetIPAddressRequest'
@@ -18903,7 +18979,7 @@ components:
       - subnet_prefix
     SubnetPrefix:
       type: object
-      description: Full serializer for SubnetPrefix model.
+      description: Adds support for custom fields and tags.
       properties:
         id:
           type: integer
@@ -18935,9 +19011,13 @@ components:
           type: boolean
           title: Mark as secondary prefix
           description: Set Prefix subnet as secondary
-        auto_reserve_ips:
+        auto_reserve_first_ips:
           type: boolean
-          description: Automatically reserve IP addresses based on plugin configuration
+          description: Automatically reserve first IP addresses (network, gateway,
+            etc.)
+        auto_reserve_last_ips:
+          type: boolean
+          description: Automatically reserve last IP addresses (broadcast, etc.)
         mark_utilized:
           type: boolean
           description: Treat this prefix as fully utilized
@@ -18986,9 +19066,56 @@ components:
       - prefix
       - subnet
       - url
+    SubnetPrefixForSubnet:
+      type: object
+      description: Adds support for custom fields and tags.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        url:
+          type: string
+          format: uri
+          readOnly: true
+        display:
+          type: string
+          readOnly: true
+        prefix:
+          type: string
+        label:
+          type: string
+          description: Name of the Subnet
+          pattern: ^[a-z0-9_-]+$
+          maxLength: 100
+        is_secondary:
+          type: boolean
+          title: Mark as secondary prefix
+          description: Set Prefix subnet as secondary
+        auto_reserve_first_ips:
+          type: boolean
+          description: Automatically reserve first IP addresses (network, gateway,
+            etc.)
+        auto_reserve_last_ips:
+          type: boolean
+          description: Automatically reserve last IP addresses (broadcast, etc.)
+        status:
+          type: object
+          additionalProperties: {}
+          readOnly: true
+        description:
+          type: string
+          maxLength: 200
+        comments:
+          type: string
+      required:
+      - display
+      - id
+      - prefix
+      - status
+      - url
     SubnetPrefixRequest:
       type: object
-      description: Full serializer for SubnetPrefix model.
+      description: Adds support for custom fields and tags.
       properties:
         prefix:
           type: string
@@ -19002,9 +19129,13 @@ components:
           type: boolean
           title: Mark as secondary prefix
           description: Set Prefix subnet as secondary
-        auto_reserve_ips:
+        auto_reserve_first_ips:
           type: boolean
-          description: Automatically reserve IP addresses based on plugin configuration
+          description: Automatically reserve first IP addresses (network, gateway,
+            etc.)
+        auto_reserve_last_ips:
+          type: boolean
+          description: Automatically reserve last IP addresses (broadcast, etc.)
         mark_utilized:
           type: boolean
           description: Treat this prefix as fully utilized
@@ -19146,6 +19277,29 @@ components:
         custom_fields:
           type: object
           additionalProperties: {}
+    SubnetWithPrefix:
+      type: object
+      description: Subnet with associated prefixes.
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        name:
+          type: string
+          description: Name of the Subnet
+          pattern: ^[a-z0-9_-]+$
+          maxLength: 100
+        purpose:
+          type: string
+          readOnly: true
+          nullable: true
+        prefix:
+          allOf:
+          - $ref: '#/components/schemas/SubnetPrefixForSubnet'
+          nullable: true
+          readOnly: true
+      required:
+      - id
     Tenant:
       type: object
       description: Base serializer class for models inheriting from PrimaryModel.
@@ -19663,11 +19817,6 @@ components:
       - object_types
     WritableNestedSubnetPrefix:
       type: object
-      description: 'Writable nested SubnetPrefix serializer.
-
-        Used for creating/updating prefixes within a Subnet.
-
-        Does NOT include ''subnet'' field to avoid circular import.'
       properties:
         id:
           type: integer
@@ -19683,10 +19832,14 @@ components:
           type: boolean
           title: Mark as secondary prefix
           description: Set Prefix subnet as secondary
-        auto_reserve_ips:
+        auto_reserve_first_ips:
           type: boolean
-          default: false
-          description: Automatically reserve IPs based on plugin configuration
+          default: true
+          description: Automatically reserve first IPs (network, gateway, etc.)
+        auto_reserve_last_ips:
+          type: boolean
+          default: true
+          description: Automatically reserve last IPs (broadcast, etc.)
         mark_utilized:
           type: boolean
           description: Treat this prefix as fully utilized
@@ -19724,11 +19877,6 @@ components:
       - prefix
     WritableNestedSubnetPrefixRequest:
       type: object
-      description: 'Writable nested SubnetPrefix serializer.
-
-        Used for creating/updating prefixes within a Subnet.
-
-        Does NOT include ''subnet'' field to avoid circular import.'
       properties:
         id:
           type: integer
@@ -19745,10 +19893,14 @@ components:
           type: boolean
           title: Mark as secondary prefix
           description: Set Prefix subnet as secondary
-        auto_reserve_ips:
+        auto_reserve_first_ips:
           type: boolean
-          default: false
-          description: Automatically reserve IPs based on plugin configuration
+          default: true
+          description: Automatically reserve first IPs (network, gateway, etc.)
+        auto_reserve_last_ips:
+          type: boolean
+          default: true
+          description: Automatically reserve last IPs (broadcast, etc.)
         mark_utilized:
           type: boolean
           description: Treat this prefix as fully utilized
@@ -19961,7 +20113,7 @@ components:
       - slug
     WritableSubnetPrefixRequest:
       type: object
-      description: Full serializer for SubnetPrefix model.
+      description: Adds support for custom fields and tags.
       properties:
         prefix:
           type: string
@@ -19975,9 +20127,13 @@ components:
           type: boolean
           title: Mark as secondary prefix
           description: Set Prefix subnet as secondary
-        auto_reserve_ips:
+        auto_reserve_first_ips:
           type: boolean
-          description: Automatically reserve IP addresses based on plugin configuration
+          description: Automatically reserve first IP addresses (network, gateway,
+            etc.)
+        auto_reserve_last_ips:
+          type: boolean
+          description: Automatically reserve last IP addresses (broadcast, etc.)
         mark_utilized:
           type: boolean
           description: Treat this prefix as fully utilized

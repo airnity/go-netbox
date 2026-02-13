@@ -141,10 +141,12 @@ docs/Subnet.md
 docs/SubnetIPAddress.md
 docs/SubnetIPAddressRequest.md
 docs/SubnetPrefix.md
+docs/SubnetPrefixForSubnet.md
 docs/SubnetPrefixRequest.md
 docs/SubnetPurpose.md
 docs/SubnetPurposeRequest.md
 docs/SubnetRequest.md
+docs/SubnetWithPrefix.md
 docs/TenancyAPI.md
 docs/TenancyTenantGroupsCreateRequest.md
 docs/TenancyTenantsCreateRequest.md
@@ -300,10 +302,12 @@ model_subnet.go
 model_subnet_ip_address.go
 model_subnet_ip_address_request.go
 model_subnet_prefix.go
+model_subnet_prefix_for_subnet.go
 model_subnet_prefix_request.go
 model_subnet_purpose.go
 model_subnet_purpose_request.go
 model_subnet_request.go
+model_subnet_with_prefix.go
 model_tenancy_tenant_groups_create_request.go
 model_tenancy_tenants_create_request.go
 model_tenant.go

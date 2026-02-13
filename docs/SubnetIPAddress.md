@@ -25,13 +25,13 @@ Name | Type | Description | Notes
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
-**Subnet** | **map[string]interface{}** | Return the subnet with its associated prefix. | [readonly] 
+**Subnet** | Pointer to [**NullableSubnetWithPrefix**](SubnetWithPrefix.md) |  | [optional] [readonly] 
 
 ## Methods
 
 ### NewSubnetIPAddress
 
-`func NewSubnetIPAddress(id int32, url string, display string, family int32, address string, subnetPrefix int32, natOutside []NestedSubnetIPAddress, subnet map[string]interface{}, ) *SubnetIPAddress`
+`func NewSubnetIPAddress(id int32, url string, display string, family int32, address string, subnetPrefix int32, natOutside []NestedSubnetIPAddress, ) *SubnetIPAddress`
 
 NewSubnetIPAddress instantiates a new SubnetIPAddress object
 This constructor will assign default values to properties that have it defined,
@@ -588,24 +588,39 @@ HasLastUpdated returns a boolean if a field has been set.
 UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
 ### GetSubnet
 
-`func (o *SubnetIPAddress) GetSubnet() map[string]interface{}`
+`func (o *SubnetIPAddress) GetSubnet() SubnetWithPrefix`
 
 GetSubnet returns the Subnet field if non-nil, zero value otherwise.
 
 ### GetSubnetOk
 
-`func (o *SubnetIPAddress) GetSubnetOk() (*map[string]interface{}, bool)`
+`func (o *SubnetIPAddress) GetSubnetOk() (*SubnetWithPrefix, bool)`
 
 GetSubnetOk returns a tuple with the Subnet field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSubnet
 
-`func (o *SubnetIPAddress) SetSubnet(v map[string]interface{})`
+`func (o *SubnetIPAddress) SetSubnet(v SubnetWithPrefix)`
 
 SetSubnet sets Subnet field to given value.
 
+### HasSubnet
 
+`func (o *SubnetIPAddress) HasSubnet() bool`
+
+HasSubnet returns a boolean if a field has been set.
+
+### SetSubnetNil
+
+`func (o *SubnetIPAddress) SetSubnetNil(b bool)`
+
+ SetSubnetNil sets the value for Subnet to be an explicit nil
+
+### UnsetSubnet
+`func (o *SubnetIPAddress) UnsetSubnet()`
+
+UnsetSubnet ensures that no value is present for Subnet, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

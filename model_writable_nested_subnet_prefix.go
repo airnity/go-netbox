@@ -18,7 +18,7 @@ import (
 // checks if the WritableNestedSubnetPrefix type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &WritableNestedSubnetPrefix{}
 
-// WritableNestedSubnetPrefix Writable nested SubnetPrefix serializer. Used for creating/updating prefixes within a Subnet. Does NOT include 'subnet' field to avoid circular import.
+// WritableNestedSubnetPrefix struct for WritableNestedSubnetPrefix
 type WritableNestedSubnetPrefix struct {
 	Id     NullableInt32 `json:"id,omitempty"`
 	Prefix string        `json:"prefix"`
@@ -26,8 +26,10 @@ type WritableNestedSubnetPrefix struct {
 	Label *string `json:"label,omitempty" validate:"regexp=^[a-z0-9_-]+$"`
 	// Set Prefix subnet as secondary
 	IsSecondary *bool `json:"is_secondary,omitempty"`
-	// Automatically reserve IPs based on plugin configuration
-	AutoReserveIps *bool `json:"auto_reserve_ips,omitempty"`
+	// Automatically reserve first IPs (network, gateway, etc.)
+	AutoReserveFirstIps *bool `json:"auto_reserve_first_ips,omitempty"`
+	// Automatically reserve last IPs (broadcast, etc.)
+	AutoReserveLastIps *bool `json:"auto_reserve_last_ips,omitempty"`
 	// Treat this prefix as fully utilized
 	MarkUtilized         *bool                     `json:"mark_utilized,omitempty"`
 	Status               *NestedSubnetPrefixStatus `json:"status,omitempty"`
@@ -45,8 +47,10 @@ type _WritableNestedSubnetPrefix WritableNestedSubnetPrefix
 func NewWritableNestedSubnetPrefix(prefix string) *WritableNestedSubnetPrefix {
 	this := WritableNestedSubnetPrefix{}
 	this.Prefix = prefix
-	var autoReserveIps bool = false
-	this.AutoReserveIps = &autoReserveIps
+	var autoReserveFirstIps bool = true
+	this.AutoReserveFirstIps = &autoReserveFirstIps
+	var autoReserveLastIps bool = true
+	this.AutoReserveLastIps = &autoReserveLastIps
 	return &this
 }
 
@@ -55,8 +59,10 @@ func NewWritableNestedSubnetPrefix(prefix string) *WritableNestedSubnetPrefix {
 // but it doesn't guarantee that properties required by API are set
 func NewWritableNestedSubnetPrefixWithDefaults() *WritableNestedSubnetPrefix {
 	this := WritableNestedSubnetPrefix{}
-	var autoReserveIps bool = false
-	this.AutoReserveIps = &autoReserveIps
+	var autoReserveFirstIps bool = true
+	this.AutoReserveFirstIps = &autoReserveFirstIps
+	var autoReserveLastIps bool = true
+	this.AutoReserveLastIps = &autoReserveLastIps
 	return &this
 }
 
@@ -191,36 +197,68 @@ func (o *WritableNestedSubnetPrefix) SetIsSecondary(v bool) {
 	o.IsSecondary = &v
 }
 
-// GetAutoReserveIps returns the AutoReserveIps field value if set, zero value otherwise.
-func (o *WritableNestedSubnetPrefix) GetAutoReserveIps() bool {
-	if o == nil || IsNil(o.AutoReserveIps) {
+// GetAutoReserveFirstIps returns the AutoReserveFirstIps field value if set, zero value otherwise.
+func (o *WritableNestedSubnetPrefix) GetAutoReserveFirstIps() bool {
+	if o == nil || IsNil(o.AutoReserveFirstIps) {
 		var ret bool
 		return ret
 	}
-	return *o.AutoReserveIps
+	return *o.AutoReserveFirstIps
 }
 
-// GetAutoReserveIpsOk returns a tuple with the AutoReserveIps field value if set, nil otherwise
+// GetAutoReserveFirstIpsOk returns a tuple with the AutoReserveFirstIps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WritableNestedSubnetPrefix) GetAutoReserveIpsOk() (*bool, bool) {
-	if o == nil || IsNil(o.AutoReserveIps) {
+func (o *WritableNestedSubnetPrefix) GetAutoReserveFirstIpsOk() (*bool, bool) {
+	if o == nil || IsNil(o.AutoReserveFirstIps) {
 		return nil, false
 	}
-	return o.AutoReserveIps, true
+	return o.AutoReserveFirstIps, true
 }
 
-// HasAutoReserveIps returns a boolean if a field has been set.
-func (o *WritableNestedSubnetPrefix) HasAutoReserveIps() bool {
-	if o != nil && !IsNil(o.AutoReserveIps) {
+// HasAutoReserveFirstIps returns a boolean if a field has been set.
+func (o *WritableNestedSubnetPrefix) HasAutoReserveFirstIps() bool {
+	if o != nil && !IsNil(o.AutoReserveFirstIps) {
 		return true
 	}
 
 	return false
 }
 
-// SetAutoReserveIps gets a reference to the given bool and assigns it to the AutoReserveIps field.
-func (o *WritableNestedSubnetPrefix) SetAutoReserveIps(v bool) {
-	o.AutoReserveIps = &v
+// SetAutoReserveFirstIps gets a reference to the given bool and assigns it to the AutoReserveFirstIps field.
+func (o *WritableNestedSubnetPrefix) SetAutoReserveFirstIps(v bool) {
+	o.AutoReserveFirstIps = &v
+}
+
+// GetAutoReserveLastIps returns the AutoReserveLastIps field value if set, zero value otherwise.
+func (o *WritableNestedSubnetPrefix) GetAutoReserveLastIps() bool {
+	if o == nil || IsNil(o.AutoReserveLastIps) {
+		var ret bool
+		return ret
+	}
+	return *o.AutoReserveLastIps
+}
+
+// GetAutoReserveLastIpsOk returns a tuple with the AutoReserveLastIps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *WritableNestedSubnetPrefix) GetAutoReserveLastIpsOk() (*bool, bool) {
+	if o == nil || IsNil(o.AutoReserveLastIps) {
+		return nil, false
+	}
+	return o.AutoReserveLastIps, true
+}
+
+// HasAutoReserveLastIps returns a boolean if a field has been set.
+func (o *WritableNestedSubnetPrefix) HasAutoReserveLastIps() bool {
+	if o != nil && !IsNil(o.AutoReserveLastIps) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoReserveLastIps gets a reference to the given bool and assigns it to the AutoReserveLastIps field.
+func (o *WritableNestedSubnetPrefix) SetAutoReserveLastIps(v bool) {
+	o.AutoReserveLastIps = &v
 }
 
 // GetMarkUtilized returns the MarkUtilized field value if set, zero value otherwise.
@@ -371,8 +409,11 @@ func (o WritableNestedSubnetPrefix) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.IsSecondary) {
 		toSerialize["is_secondary"] = o.IsSecondary
 	}
-	if !IsNil(o.AutoReserveIps) {
-		toSerialize["auto_reserve_ips"] = o.AutoReserveIps
+	if !IsNil(o.AutoReserveFirstIps) {
+		toSerialize["auto_reserve_first_ips"] = o.AutoReserveFirstIps
+	}
+	if !IsNil(o.AutoReserveLastIps) {
+		toSerialize["auto_reserve_last_ips"] = o.AutoReserveLastIps
 	}
 	if !IsNil(o.MarkUtilized) {
 		toSerialize["mark_utilized"] = o.MarkUtilized
@@ -449,7 +490,8 @@ func (o *WritableNestedSubnetPrefix) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "prefix")
 		delete(additionalProperties, "label")
 		delete(additionalProperties, "is_secondary")
-		delete(additionalProperties, "auto_reserve_ips")
+		delete(additionalProperties, "auto_reserve_first_ips")
+		delete(additionalProperties, "auto_reserve_last_ips")
 		delete(additionalProperties, "mark_utilized")
 		delete(additionalProperties, "status")
 		delete(additionalProperties, "description")

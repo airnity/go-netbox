@@ -8,14 +8,13 @@ Name | Type | Description | Notes
 **Url** | **string** |  | [readonly] 
 **Display** | **string** |  | [readonly] 
 **Address** | **string** | IPv4 or IPv6 address (with mask) | 
-**MaskLength** | **string** |  | [readonly] 
 **Family** | **string** |  | [readonly] 
 
 ## Methods
 
 ### NewNestedSubnetIPAddress
 
-`func NewNestedSubnetIPAddress(id int32, url string, display string, address string, maskLength string, family string, ) *NestedSubnetIPAddress`
+`func NewNestedSubnetIPAddress(id int32, url string, display string, address string, family string, ) *NestedSubnetIPAddress`
 
 NewNestedSubnetIPAddress instantiates a new NestedSubnetIPAddress object
 This constructor will assign default values to properties that have it defined,
@@ -108,26 +107,6 @@ and a boolean to check if the value has been set.
 `func (o *NestedSubnetIPAddress) SetAddress(v string)`
 
 SetAddress sets Address field to given value.
-
-
-### GetMaskLength
-
-`func (o *NestedSubnetIPAddress) GetMaskLength() string`
-
-GetMaskLength returns the MaskLength field if non-nil, zero value otherwise.
-
-### GetMaskLengthOk
-
-`func (o *NestedSubnetIPAddress) GetMaskLengthOk() (*string, bool)`
-
-GetMaskLengthOk returns a tuple with the MaskLength field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetMaskLength
-
-`func (o *NestedSubnetIPAddress) SetMaskLength(v string)`
-
-SetMaskLength sets MaskLength field to given value.
 
 
 ### GetFamily

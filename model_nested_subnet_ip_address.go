@@ -25,7 +25,6 @@ type NestedSubnetIPAddress struct {
 	Display string `json:"display"`
 	// IPv4 or IPv6 address (with mask)
 	Address              string `json:"address"`
-	MaskLength           string `json:"mask_length"`
 	Family               string `json:"family"`
 	AdditionalProperties map[string]interface{}
 }
@@ -36,13 +35,12 @@ type _NestedSubnetIPAddress NestedSubnetIPAddress
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedSubnetIPAddress(id int32, url string, display string, address string, maskLength string, family string) *NestedSubnetIPAddress {
+func NewNestedSubnetIPAddress(id int32, url string, display string, address string, family string) *NestedSubnetIPAddress {
 	this := NestedSubnetIPAddress{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Address = address
-	this.MaskLength = maskLength
 	this.Family = family
 	return &this
 }
@@ -151,30 +149,6 @@ func (o *NestedSubnetIPAddress) SetAddress(v string) {
 	o.Address = v
 }
 
-// GetMaskLength returns the MaskLength field value
-func (o *NestedSubnetIPAddress) GetMaskLength() string {
-	if o == nil {
-		var ret string
-		return ret
-	}
-
-	return o.MaskLength
-}
-
-// GetMaskLengthOk returns a tuple with the MaskLength field value
-// and a boolean to check if the value has been set.
-func (o *NestedSubnetIPAddress) GetMaskLengthOk() (*string, bool) {
-	if o == nil {
-		return nil, false
-	}
-	return &o.MaskLength, true
-}
-
-// SetMaskLength sets field value
-func (o *NestedSubnetIPAddress) SetMaskLength(v string) {
-	o.MaskLength = v
-}
-
 // GetFamily returns the Family field value
 func (o *NestedSubnetIPAddress) GetFamily() string {
 	if o == nil {
@@ -213,7 +187,6 @@ func (o NestedSubnetIPAddress) ToMap() (map[string]interface{}, error) {
 	toSerialize["url"] = o.Url
 	toSerialize["display"] = o.Display
 	toSerialize["address"] = o.Address
-	toSerialize["mask_length"] = o.MaskLength
 	toSerialize["family"] = o.Family
 
 	for key, value := range o.AdditionalProperties {
@@ -232,7 +205,6 @@ func (o *NestedSubnetIPAddress) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"display",
 		"address",
-		"mask_length",
 		"family",
 	}
 
@@ -283,7 +255,6 @@ func (o *NestedSubnetIPAddress) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "url")
 		delete(additionalProperties, "display")
 		delete(additionalProperties, "address")
-		delete(additionalProperties, "mask_length")
 		delete(additionalProperties, "family")
 		o.AdditionalProperties = additionalProperties
 	}

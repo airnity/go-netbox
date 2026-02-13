@@ -10068,126 +10068,136 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetprefixDestroyExecute(r ApiPl
 }
 
 type ApiPluginsAirnityIpamSubnetprefixListRequest struct {
-	ctx               context.Context
-	ApiService        PluginsAPI
-	autoReserveIps    *bool
-	children          *[]int32
-	childrenEmpty     *[]int32
-	childrenGt        *[]int32
-	childrenGte       *[]int32
-	childrenLt        *[]int32
-	childrenLte       *[]int32
-	childrenN         *[]int32
-	contains          *string
-	created           *[]time.Time
-	createdEmpty      *[]time.Time
-	createdGt         *[]time.Time
-	createdGte        *[]time.Time
-	createdLt         *[]time.Time
-	createdLte        *[]time.Time
-	createdN          *[]time.Time
-	createdByRequest  *string
-	depth             *[]int32
-	depthEmpty        *[]int32
-	depthGt           *[]int32
-	depthGte          *[]int32
-	depthLt           *[]int32
-	depthLte          *[]int32
-	depthN            *[]int32
-	family            *float32
-	id                *[]int32
-	idEmpty           *bool
-	idGt              *[]int32
-	idGte             *[]int32
-	idLt              *[]int32
-	idLte             *[]int32
-	idN               *[]int32
-	isSecondary       *bool
-	label             *[]string
-	labelEmpty        *bool
-	labelIc           *[]string
-	labelIe           *[]string
-	labelIew          *[]string
-	labelIregex       *[]string
-	labelIsw          *[]string
-	labelN            *[]string
-	labelNic          *[]string
-	labelNie          *[]string
-	labelNiew         *[]string
-	labelNisw         *[]string
-	labelRegex        *[]string
-	lastUpdated       *[]time.Time
-	lastUpdatedEmpty  *[]time.Time
-	lastUpdatedGt     *[]time.Time
-	lastUpdatedGte    *[]time.Time
-	lastUpdatedLt     *[]time.Time
-	lastUpdatedLte    *[]time.Time
-	lastUpdatedN      *[]time.Time
-	limit             *int32
-	markUtilized      *bool
-	maskLength        *[]int32
-	maskLengthGte     *float32
-	maskLengthLte     *float32
-	modifiedByRequest *string
-	offset            *int32
-	ordering          *string
-	prefix            *[]string
-	presentInVpcId    *string
-	q                 *string
-	status            *[]string
-	statusEmpty       *bool
-	statusIc          *[]string
-	statusIe          *[]string
-	statusIew         *[]string
-	statusIregex      *[]string
-	statusIsw         *[]string
-	statusN           *[]string
-	statusNic         *[]string
-	statusNie         *[]string
-	statusNiew        *[]string
-	statusNisw        *[]string
-	statusRegex       *[]string
-	subnetId          *[]int32
-	subnetIdN         *[]int32
-	subnetName        *[]string
-	subnetNameEmpty   *bool
-	subnetNameIc      *[]string
-	subnetNameIe      *[]string
-	subnetNameIew     *[]string
-	subnetNameIregex  *[]string
-	subnetNameIsw     *[]string
-	subnetNameN       *[]string
-	subnetNameNic     *[]string
-	subnetNameNie     *[]string
-	subnetNameNiew    *[]string
-	subnetNameNisw    *[]string
-	subnetNameRegex   *[]string
-	tag               *[]string
-	tagN              *[]string
-	tagId             *[]string
-	tagIdN            *[]string
-	updatedByRequest  *string
-	vpcId             *[]*int32
-	vpcIdN            *[]*int32
-	vpcName           *[]string
-	vpcNameEmpty      *bool
-	vpcNameIc         *[]string
-	vpcNameIe         *[]string
-	vpcNameIew        *[]string
-	vpcNameIregex     *[]string
-	vpcNameIsw        *[]string
-	vpcNameN          *[]string
-	vpcNameNic        *[]string
-	vpcNameNie        *[]string
-	vpcNameNiew       *[]string
-	vpcNameNisw       *[]string
-	vpcNameRegex      *[]string
-	within            *string
-	withinInclude     *string
+	ctx                 context.Context
+	ApiService          PluginsAPI
+	autoReserveFirstIps *bool
+	autoReserveLastIps  *bool
+	children            *[]int32
+	childrenEmpty       *[]int32
+	childrenGt          *[]int32
+	childrenGte         *[]int32
+	childrenLt          *[]int32
+	childrenLte         *[]int32
+	childrenN           *[]int32
+	contains            *string
+	created             *[]time.Time
+	createdEmpty        *[]time.Time
+	createdGt           *[]time.Time
+	createdGte          *[]time.Time
+	createdLt           *[]time.Time
+	createdLte          *[]time.Time
+	createdN            *[]time.Time
+	createdByRequest    *string
+	depth               *[]int32
+	depthEmpty          *[]int32
+	depthGt             *[]int32
+	depthGte            *[]int32
+	depthLt             *[]int32
+	depthLte            *[]int32
+	depthN              *[]int32
+	family              *float32
+	id                  *[]int32
+	idEmpty             *bool
+	idGt                *[]int32
+	idGte               *[]int32
+	idLt                *[]int32
+	idLte               *[]int32
+	idN                 *[]int32
+	isSecondary         *bool
+	label               *[]string
+	labelEmpty          *bool
+	labelIc             *[]string
+	labelIe             *[]string
+	labelIew            *[]string
+	labelIregex         *[]string
+	labelIsw            *[]string
+	labelN              *[]string
+	labelNic            *[]string
+	labelNie            *[]string
+	labelNiew           *[]string
+	labelNisw           *[]string
+	labelRegex          *[]string
+	lastUpdated         *[]time.Time
+	lastUpdatedEmpty    *[]time.Time
+	lastUpdatedGt       *[]time.Time
+	lastUpdatedGte      *[]time.Time
+	lastUpdatedLt       *[]time.Time
+	lastUpdatedLte      *[]time.Time
+	lastUpdatedN        *[]time.Time
+	limit               *int32
+	markUtilized        *bool
+	maskLength          *[]int32
+	maskLengthGte       *float32
+	maskLengthLte       *float32
+	modifiedByRequest   *string
+	offset              *int32
+	ordering            *string
+	prefix              *[]string
+	presentInVpcId      *string
+	purpose             *[]string
+	purposeN            *[]string
+	purposeId           *[]int32
+	purposeIdN          *[]int32
+	q                   *string
+	status              *[]string
+	statusEmpty         *bool
+	statusIc            *[]string
+	statusIe            *[]string
+	statusIew           *[]string
+	statusIregex        *[]string
+	statusIsw           *[]string
+	statusN             *[]string
+	statusNic           *[]string
+	statusNie           *[]string
+	statusNiew          *[]string
+	statusNisw          *[]string
+	statusRegex         *[]string
+	subnetId            *[]int32
+	subnetIdN           *[]int32
+	subnetName          *[]string
+	subnetNameEmpty     *bool
+	subnetNameIc        *[]string
+	subnetNameIe        *[]string
+	subnetNameIew       *[]string
+	subnetNameIregex    *[]string
+	subnetNameIsw       *[]string
+	subnetNameN         *[]string
+	subnetNameNic       *[]string
+	subnetNameNie       *[]string
+	subnetNameNiew      *[]string
+	subnetNameNisw      *[]string
+	subnetNameRegex     *[]string
+	tag                 *[]string
+	tagN                *[]string
+	tagId               *[]string
+	tagIdN              *[]string
+	updatedByRequest    *string
+	vpcId               *[]*int32
+	vpcIdN              *[]*int32
+	vpcName             *[]string
+	vpcNameEmpty        *bool
+	vpcNameIc           *[]string
+	vpcNameIe           *[]string
+	vpcNameIew          *[]string
+	vpcNameIregex       *[]string
+	vpcNameIsw          *[]string
+	vpcNameN            *[]string
+	vpcNameNic          *[]string
+	vpcNameNie          *[]string
+	vpcNameNiew         *[]string
+	vpcNameNisw         *[]string
+	vpcNameRegex        *[]string
+	within              *string
+	withinInclude       *string
 }
 
-func (r ApiPluginsAirnityIpamSubnetprefixListRequest) AutoReserveIps(autoReserveIps bool) ApiPluginsAirnityIpamSubnetprefixListRequest {
-	r.autoReserveIps = &autoReserveIps
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) AutoReserveFirstIps(autoReserveFirstIps bool) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.autoReserveFirstIps = &autoReserveFirstIps
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) AutoReserveLastIps(autoReserveLastIps bool) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.autoReserveLastIps = &autoReserveLastIps
 	return r
 }
 
@@ -10503,6 +10513,30 @@ func (r ApiPluginsAirnityIpamSubnetprefixListRequest) Prefix(prefix []string) Ap
 
 func (r ApiPluginsAirnityIpamSubnetprefixListRequest) PresentInVpcId(presentInVpcId string) ApiPluginsAirnityIpamSubnetprefixListRequest {
 	r.presentInVpcId = &presentInVpcId
+	return r
+}
+
+// Purpose (name)
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) Purpose(purpose []string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.purpose = &purpose
+	return r
+}
+
+// Purpose (name)
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) PurposeN(purposeN []string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.purposeN = &purposeN
+	return r
+}
+
+// Purpose (ID)
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) PurposeId(purposeId []int32) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.purposeId = &purposeId
+	return r
+}
+
+// Purpose (ID)
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) PurposeIdN(purposeIdN []int32) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.purposeIdN = &purposeIdN
 	return r
 }
 
@@ -10822,8 +10856,11 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetprefixListExecute(r ApiPlugi
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
 
-	if r.autoReserveIps != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "auto_reserve_ips", r.autoReserveIps, "form", "")
+	if r.autoReserveFirstIps != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "auto_reserve_first_ips", r.autoReserveFirstIps, "form", "")
+	}
+	if r.autoReserveLastIps != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "auto_reserve_last_ips", r.autoReserveLastIps, "form", "")
 	}
 	if r.children != nil {
 		t := *r.children
@@ -11394,6 +11431,50 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetprefixListExecute(r ApiPlugi
 	}
 	if r.presentInVpcId != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "present_in_vpc_id", r.presentInVpcId, "form", "")
+	}
+	if r.purpose != nil {
+		t := *r.purpose
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "purpose", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "purpose", t, "form", "multi")
+		}
+	}
+	if r.purposeN != nil {
+		t := *r.purposeN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "purpose__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "purpose__n", t, "form", "multi")
+		}
+	}
+	if r.purposeId != nil {
+		t := *r.purposeId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "purpose_id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "purpose_id", t, "form", "multi")
+		}
+	}
+	if r.purposeIdN != nil {
+		t := *r.purposeIdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "purpose_id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "purpose_id__n", t, "form", "multi")
+		}
 	}
 	if r.q != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")

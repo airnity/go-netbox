@@ -15,11 +15,11 @@ import (
 	"fmt"
 )
 
-// checks if the NestedSubnetPrefix type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &NestedSubnetPrefix{}
+// checks if the SubnetPrefixForSubnet type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SubnetPrefixForSubnet{}
 
-// NestedSubnetPrefix Adds support for custom fields and tags.
-type NestedSubnetPrefix struct {
+// SubnetPrefixForSubnet Adds support for custom fields and tags.
+type SubnetPrefixForSubnet struct {
 	Id      int32  `json:"id"`
 	Url     string `json:"url"`
 	Display string `json:"display"`
@@ -31,40 +31,39 @@ type NestedSubnetPrefix struct {
 	// Automatically reserve first IP addresses (network, gateway, etc.)
 	AutoReserveFirstIps *bool `json:"auto_reserve_first_ips,omitempty"`
 	// Automatically reserve last IP addresses (broadcast, etc.)
-	AutoReserveLastIps *bool `json:"auto_reserve_last_ips,omitempty"`
-	// Treat this prefix as fully utilized
-	MarkUtilized         *bool                     `json:"mark_utilized,omitempty"`
-	Status               *NestedSubnetPrefixStatus `json:"status,omitempty"`
-	Description          *string                   `json:"description,omitempty"`
-	Comments             *string                   `json:"comments,omitempty"`
+	AutoReserveLastIps   *bool                  `json:"auto_reserve_last_ips,omitempty"`
+	Status               map[string]interface{} `json:"status"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
-type _NestedSubnetPrefix NestedSubnetPrefix
+type _SubnetPrefixForSubnet SubnetPrefixForSubnet
 
-// NewNestedSubnetPrefix instantiates a new NestedSubnetPrefix object
+// NewSubnetPrefixForSubnet instantiates a new SubnetPrefixForSubnet object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedSubnetPrefix(id int32, url string, display string, prefix string) *NestedSubnetPrefix {
-	this := NestedSubnetPrefix{}
+func NewSubnetPrefixForSubnet(id int32, url string, display string, prefix string, status map[string]interface{}) *SubnetPrefixForSubnet {
+	this := SubnetPrefixForSubnet{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Prefix = prefix
+	this.Status = status
 	return &this
 }
 
-// NewNestedSubnetPrefixWithDefaults instantiates a new NestedSubnetPrefix object
+// NewSubnetPrefixForSubnetWithDefaults instantiates a new SubnetPrefixForSubnet object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewNestedSubnetPrefixWithDefaults() *NestedSubnetPrefix {
-	this := NestedSubnetPrefix{}
+func NewSubnetPrefixForSubnetWithDefaults() *SubnetPrefixForSubnet {
+	this := SubnetPrefixForSubnet{}
 	return &this
 }
 
 // GetId returns the Id field value
-func (o *NestedSubnetPrefix) GetId() int32 {
+func (o *SubnetPrefixForSubnet) GetId() int32 {
 	if o == nil {
 		var ret int32
 		return ret
@@ -75,7 +74,7 @@ func (o *NestedSubnetPrefix) GetId() int32 {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetIdOk() (*int32, bool) {
+func (o *SubnetPrefixForSubnet) GetIdOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -83,12 +82,12 @@ func (o *NestedSubnetPrefix) GetIdOk() (*int32, bool) {
 }
 
 // SetId sets field value
-func (o *NestedSubnetPrefix) SetId(v int32) {
+func (o *SubnetPrefixForSubnet) SetId(v int32) {
 	o.Id = v
 }
 
 // GetUrl returns the Url field value
-func (o *NestedSubnetPrefix) GetUrl() string {
+func (o *SubnetPrefixForSubnet) GetUrl() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -99,7 +98,7 @@ func (o *NestedSubnetPrefix) GetUrl() string {
 
 // GetUrlOk returns a tuple with the Url field value
 // and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetUrlOk() (*string, bool) {
+func (o *SubnetPrefixForSubnet) GetUrlOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -107,12 +106,12 @@ func (o *NestedSubnetPrefix) GetUrlOk() (*string, bool) {
 }
 
 // SetUrl sets field value
-func (o *NestedSubnetPrefix) SetUrl(v string) {
+func (o *SubnetPrefixForSubnet) SetUrl(v string) {
 	o.Url = v
 }
 
 // GetDisplay returns the Display field value
-func (o *NestedSubnetPrefix) GetDisplay() string {
+func (o *SubnetPrefixForSubnet) GetDisplay() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -123,7 +122,7 @@ func (o *NestedSubnetPrefix) GetDisplay() string {
 
 // GetDisplayOk returns a tuple with the Display field value
 // and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetDisplayOk() (*string, bool) {
+func (o *SubnetPrefixForSubnet) GetDisplayOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -131,12 +130,12 @@ func (o *NestedSubnetPrefix) GetDisplayOk() (*string, bool) {
 }
 
 // SetDisplay sets field value
-func (o *NestedSubnetPrefix) SetDisplay(v string) {
+func (o *SubnetPrefixForSubnet) SetDisplay(v string) {
 	o.Display = v
 }
 
 // GetPrefix returns the Prefix field value
-func (o *NestedSubnetPrefix) GetPrefix() string {
+func (o *SubnetPrefixForSubnet) GetPrefix() string {
 	if o == nil {
 		var ret string
 		return ret
@@ -147,7 +146,7 @@ func (o *NestedSubnetPrefix) GetPrefix() string {
 
 // GetPrefixOk returns a tuple with the Prefix field value
 // and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetPrefixOk() (*string, bool) {
+func (o *SubnetPrefixForSubnet) GetPrefixOk() (*string, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -155,12 +154,12 @@ func (o *NestedSubnetPrefix) GetPrefixOk() (*string, bool) {
 }
 
 // SetPrefix sets field value
-func (o *NestedSubnetPrefix) SetPrefix(v string) {
+func (o *SubnetPrefixForSubnet) SetPrefix(v string) {
 	o.Prefix = v
 }
 
 // GetLabel returns the Label field value if set, zero value otherwise.
-func (o *NestedSubnetPrefix) GetLabel() string {
+func (o *SubnetPrefixForSubnet) GetLabel() string {
 	if o == nil || IsNil(o.Label) {
 		var ret string
 		return ret
@@ -170,7 +169,7 @@ func (o *NestedSubnetPrefix) GetLabel() string {
 
 // GetLabelOk returns a tuple with the Label field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetLabelOk() (*string, bool) {
+func (o *SubnetPrefixForSubnet) GetLabelOk() (*string, bool) {
 	if o == nil || IsNil(o.Label) {
 		return nil, false
 	}
@@ -178,7 +177,7 @@ func (o *NestedSubnetPrefix) GetLabelOk() (*string, bool) {
 }
 
 // HasLabel returns a boolean if a field has been set.
-func (o *NestedSubnetPrefix) HasLabel() bool {
+func (o *SubnetPrefixForSubnet) HasLabel() bool {
 	if o != nil && !IsNil(o.Label) {
 		return true
 	}
@@ -187,12 +186,12 @@ func (o *NestedSubnetPrefix) HasLabel() bool {
 }
 
 // SetLabel gets a reference to the given string and assigns it to the Label field.
-func (o *NestedSubnetPrefix) SetLabel(v string) {
+func (o *SubnetPrefixForSubnet) SetLabel(v string) {
 	o.Label = &v
 }
 
 // GetIsSecondary returns the IsSecondary field value if set, zero value otherwise.
-func (o *NestedSubnetPrefix) GetIsSecondary() bool {
+func (o *SubnetPrefixForSubnet) GetIsSecondary() bool {
 	if o == nil || IsNil(o.IsSecondary) {
 		var ret bool
 		return ret
@@ -202,7 +201,7 @@ func (o *NestedSubnetPrefix) GetIsSecondary() bool {
 
 // GetIsSecondaryOk returns a tuple with the IsSecondary field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetIsSecondaryOk() (*bool, bool) {
+func (o *SubnetPrefixForSubnet) GetIsSecondaryOk() (*bool, bool) {
 	if o == nil || IsNil(o.IsSecondary) {
 		return nil, false
 	}
@@ -210,7 +209,7 @@ func (o *NestedSubnetPrefix) GetIsSecondaryOk() (*bool, bool) {
 }
 
 // HasIsSecondary returns a boolean if a field has been set.
-func (o *NestedSubnetPrefix) HasIsSecondary() bool {
+func (o *SubnetPrefixForSubnet) HasIsSecondary() bool {
 	if o != nil && !IsNil(o.IsSecondary) {
 		return true
 	}
@@ -219,12 +218,12 @@ func (o *NestedSubnetPrefix) HasIsSecondary() bool {
 }
 
 // SetIsSecondary gets a reference to the given bool and assigns it to the IsSecondary field.
-func (o *NestedSubnetPrefix) SetIsSecondary(v bool) {
+func (o *SubnetPrefixForSubnet) SetIsSecondary(v bool) {
 	o.IsSecondary = &v
 }
 
 // GetAutoReserveFirstIps returns the AutoReserveFirstIps field value if set, zero value otherwise.
-func (o *NestedSubnetPrefix) GetAutoReserveFirstIps() bool {
+func (o *SubnetPrefixForSubnet) GetAutoReserveFirstIps() bool {
 	if o == nil || IsNil(o.AutoReserveFirstIps) {
 		var ret bool
 		return ret
@@ -234,7 +233,7 @@ func (o *NestedSubnetPrefix) GetAutoReserveFirstIps() bool {
 
 // GetAutoReserveFirstIpsOk returns a tuple with the AutoReserveFirstIps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetAutoReserveFirstIpsOk() (*bool, bool) {
+func (o *SubnetPrefixForSubnet) GetAutoReserveFirstIpsOk() (*bool, bool) {
 	if o == nil || IsNil(o.AutoReserveFirstIps) {
 		return nil, false
 	}
@@ -242,7 +241,7 @@ func (o *NestedSubnetPrefix) GetAutoReserveFirstIpsOk() (*bool, bool) {
 }
 
 // HasAutoReserveFirstIps returns a boolean if a field has been set.
-func (o *NestedSubnetPrefix) HasAutoReserveFirstIps() bool {
+func (o *SubnetPrefixForSubnet) HasAutoReserveFirstIps() bool {
 	if o != nil && !IsNil(o.AutoReserveFirstIps) {
 		return true
 	}
@@ -251,12 +250,12 @@ func (o *NestedSubnetPrefix) HasAutoReserveFirstIps() bool {
 }
 
 // SetAutoReserveFirstIps gets a reference to the given bool and assigns it to the AutoReserveFirstIps field.
-func (o *NestedSubnetPrefix) SetAutoReserveFirstIps(v bool) {
+func (o *SubnetPrefixForSubnet) SetAutoReserveFirstIps(v bool) {
 	o.AutoReserveFirstIps = &v
 }
 
 // GetAutoReserveLastIps returns the AutoReserveLastIps field value if set, zero value otherwise.
-func (o *NestedSubnetPrefix) GetAutoReserveLastIps() bool {
+func (o *SubnetPrefixForSubnet) GetAutoReserveLastIps() bool {
 	if o == nil || IsNil(o.AutoReserveLastIps) {
 		var ret bool
 		return ret
@@ -266,7 +265,7 @@ func (o *NestedSubnetPrefix) GetAutoReserveLastIps() bool {
 
 // GetAutoReserveLastIpsOk returns a tuple with the AutoReserveLastIps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetAutoReserveLastIpsOk() (*bool, bool) {
+func (o *SubnetPrefixForSubnet) GetAutoReserveLastIpsOk() (*bool, bool) {
 	if o == nil || IsNil(o.AutoReserveLastIps) {
 		return nil, false
 	}
@@ -274,7 +273,7 @@ func (o *NestedSubnetPrefix) GetAutoReserveLastIpsOk() (*bool, bool) {
 }
 
 // HasAutoReserveLastIps returns a boolean if a field has been set.
-func (o *NestedSubnetPrefix) HasAutoReserveLastIps() bool {
+func (o *SubnetPrefixForSubnet) HasAutoReserveLastIps() bool {
 	if o != nil && !IsNil(o.AutoReserveLastIps) {
 		return true
 	}
@@ -283,76 +282,36 @@ func (o *NestedSubnetPrefix) HasAutoReserveLastIps() bool {
 }
 
 // SetAutoReserveLastIps gets a reference to the given bool and assigns it to the AutoReserveLastIps field.
-func (o *NestedSubnetPrefix) SetAutoReserveLastIps(v bool) {
+func (o *SubnetPrefixForSubnet) SetAutoReserveLastIps(v bool) {
 	o.AutoReserveLastIps = &v
 }
 
-// GetMarkUtilized returns the MarkUtilized field value if set, zero value otherwise.
-func (o *NestedSubnetPrefix) GetMarkUtilized() bool {
-	if o == nil || IsNil(o.MarkUtilized) {
-		var ret bool
+// GetStatus returns the Status field value
+func (o *SubnetPrefixForSubnet) GetStatus() map[string]interface{} {
+	if o == nil {
+		var ret map[string]interface{}
 		return ret
 	}
-	return *o.MarkUtilized
+
+	return o.Status
 }
 
-// GetMarkUtilizedOk returns a tuple with the MarkUtilized field value if set, nil otherwise
+// GetStatusOk returns a tuple with the Status field value
 // and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetMarkUtilizedOk() (*bool, bool) {
-	if o == nil || IsNil(o.MarkUtilized) {
-		return nil, false
-	}
-	return o.MarkUtilized, true
-}
-
-// HasMarkUtilized returns a boolean if a field has been set.
-func (o *NestedSubnetPrefix) HasMarkUtilized() bool {
-	if o != nil && !IsNil(o.MarkUtilized) {
-		return true
-	}
-
-	return false
-}
-
-// SetMarkUtilized gets a reference to the given bool and assigns it to the MarkUtilized field.
-func (o *NestedSubnetPrefix) SetMarkUtilized(v bool) {
-	o.MarkUtilized = &v
-}
-
-// GetStatus returns the Status field value if set, zero value otherwise.
-func (o *NestedSubnetPrefix) GetStatus() NestedSubnetPrefixStatus {
-	if o == nil || IsNil(o.Status) {
-		var ret NestedSubnetPrefixStatus
-		return ret
-	}
-	return *o.Status
-}
-
-// GetStatusOk returns a tuple with the Status field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetStatusOk() (*NestedSubnetPrefixStatus, bool) {
-	if o == nil || IsNil(o.Status) {
-		return nil, false
+func (o *SubnetPrefixForSubnet) GetStatusOk() (map[string]interface{}, bool) {
+	if o == nil {
+		return map[string]interface{}{}, false
 	}
 	return o.Status, true
 }
 
-// HasStatus returns a boolean if a field has been set.
-func (o *NestedSubnetPrefix) HasStatus() bool {
-	if o != nil && !IsNil(o.Status) {
-		return true
-	}
-
-	return false
-}
-
-// SetStatus gets a reference to the given NestedSubnetPrefixStatus and assigns it to the Status field.
-func (o *NestedSubnetPrefix) SetStatus(v NestedSubnetPrefixStatus) {
-	o.Status = &v
+// SetStatus sets field value
+func (o *SubnetPrefixForSubnet) SetStatus(v map[string]interface{}) {
+	o.Status = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
-func (o *NestedSubnetPrefix) GetDescription() string {
+func (o *SubnetPrefixForSubnet) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
 		var ret string
 		return ret
@@ -362,7 +321,7 @@ func (o *NestedSubnetPrefix) GetDescription() string {
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetDescriptionOk() (*string, bool) {
+func (o *SubnetPrefixForSubnet) GetDescriptionOk() (*string, bool) {
 	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
@@ -370,7 +329,7 @@ func (o *NestedSubnetPrefix) GetDescriptionOk() (*string, bool) {
 }
 
 // HasDescription returns a boolean if a field has been set.
-func (o *NestedSubnetPrefix) HasDescription() bool {
+func (o *SubnetPrefixForSubnet) HasDescription() bool {
 	if o != nil && !IsNil(o.Description) {
 		return true
 	}
@@ -379,12 +338,12 @@ func (o *NestedSubnetPrefix) HasDescription() bool {
 }
 
 // SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *NestedSubnetPrefix) SetDescription(v string) {
+func (o *SubnetPrefixForSubnet) SetDescription(v string) {
 	o.Description = &v
 }
 
 // GetComments returns the Comments field value if set, zero value otherwise.
-func (o *NestedSubnetPrefix) GetComments() string {
+func (o *SubnetPrefixForSubnet) GetComments() string {
 	if o == nil || IsNil(o.Comments) {
 		var ret string
 		return ret
@@ -394,7 +353,7 @@ func (o *NestedSubnetPrefix) GetComments() string {
 
 // GetCommentsOk returns a tuple with the Comments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetCommentsOk() (*string, bool) {
+func (o *SubnetPrefixForSubnet) GetCommentsOk() (*string, bool) {
 	if o == nil || IsNil(o.Comments) {
 		return nil, false
 	}
@@ -402,7 +361,7 @@ func (o *NestedSubnetPrefix) GetCommentsOk() (*string, bool) {
 }
 
 // HasComments returns a boolean if a field has been set.
-func (o *NestedSubnetPrefix) HasComments() bool {
+func (o *SubnetPrefixForSubnet) HasComments() bool {
 	if o != nil && !IsNil(o.Comments) {
 		return true
 	}
@@ -411,11 +370,11 @@ func (o *NestedSubnetPrefix) HasComments() bool {
 }
 
 // SetComments gets a reference to the given string and assigns it to the Comments field.
-func (o *NestedSubnetPrefix) SetComments(v string) {
+func (o *SubnetPrefixForSubnet) SetComments(v string) {
 	o.Comments = &v
 }
 
-func (o NestedSubnetPrefix) MarshalJSON() ([]byte, error) {
+func (o SubnetPrefixForSubnet) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
 		return []byte{}, err
@@ -423,7 +382,7 @@ func (o NestedSubnetPrefix) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-func (o NestedSubnetPrefix) ToMap() (map[string]interface{}, error) {
+func (o SubnetPrefixForSubnet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
@@ -441,12 +400,7 @@ func (o NestedSubnetPrefix) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AutoReserveLastIps) {
 		toSerialize["auto_reserve_last_ips"] = o.AutoReserveLastIps
 	}
-	if !IsNil(o.MarkUtilized) {
-		toSerialize["mark_utilized"] = o.MarkUtilized
-	}
-	if !IsNil(o.Status) {
-		toSerialize["status"] = o.Status
-	}
+	toSerialize["status"] = o.Status
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -461,7 +415,7 @@ func (o NestedSubnetPrefix) ToMap() (map[string]interface{}, error) {
 	return toSerialize, nil
 }
 
-func (o *NestedSubnetPrefix) UnmarshalJSON(data []byte) (err error) {
+func (o *SubnetPrefixForSubnet) UnmarshalJSON(data []byte) (err error) {
 	// This validates that all required properties are included in the JSON object
 	// by unmarshalling the object into a generic map with string keys and checking
 	// that every required field exists as a key in the generic map.
@@ -470,6 +424,7 @@ func (o *NestedSubnetPrefix) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"display",
 		"prefix",
+		"status",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.
@@ -502,15 +457,15 @@ func (o *NestedSubnetPrefix) UnmarshalJSON(data []byte) (err error) {
 			return err
 		}
 	}
-	varNestedSubnetPrefix := _NestedSubnetPrefix{}
+	varSubnetPrefixForSubnet := _SubnetPrefixForSubnet{}
 
-	err = json.Unmarshal(data, &varNestedSubnetPrefix)
+	err = json.Unmarshal(data, &varSubnetPrefixForSubnet)
 
 	if err != nil {
 		return err
 	}
 
-	*o = NestedSubnetPrefix(varNestedSubnetPrefix)
+	*o = SubnetPrefixForSubnet(varSubnetPrefixForSubnet)
 
 	additionalProperties := make(map[string]interface{})
 
@@ -523,7 +478,6 @@ func (o *NestedSubnetPrefix) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "is_secondary")
 		delete(additionalProperties, "auto_reserve_first_ips")
 		delete(additionalProperties, "auto_reserve_last_ips")
-		delete(additionalProperties, "mark_utilized")
 		delete(additionalProperties, "status")
 		delete(additionalProperties, "description")
 		delete(additionalProperties, "comments")
@@ -533,38 +487,38 @@ func (o *NestedSubnetPrefix) UnmarshalJSON(data []byte) (err error) {
 	return err
 }
 
-type NullableNestedSubnetPrefix struct {
-	value *NestedSubnetPrefix
+type NullableSubnetPrefixForSubnet struct {
+	value *SubnetPrefixForSubnet
 	isSet bool
 }
 
-func (v NullableNestedSubnetPrefix) Get() *NestedSubnetPrefix {
+func (v NullableSubnetPrefixForSubnet) Get() *SubnetPrefixForSubnet {
 	return v.value
 }
 
-func (v *NullableNestedSubnetPrefix) Set(val *NestedSubnetPrefix) {
+func (v *NullableSubnetPrefixForSubnet) Set(val *SubnetPrefixForSubnet) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableNestedSubnetPrefix) IsSet() bool {
+func (v NullableSubnetPrefixForSubnet) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableNestedSubnetPrefix) Unset() {
+func (v *NullableSubnetPrefixForSubnet) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableNestedSubnetPrefix(val *NestedSubnetPrefix) *NullableNestedSubnetPrefix {
-	return &NullableNestedSubnetPrefix{value: val, isSet: true}
+func NewNullableSubnetPrefixForSubnet(val *SubnetPrefixForSubnet) *NullableSubnetPrefixForSubnet {
+	return &NullableSubnetPrefixForSubnet{value: val, isSet: true}
 }
 
-func (v NullableNestedSubnetPrefix) MarshalJSON() ([]byte, error) {
+func (v NullableSubnetPrefixForSubnet) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableNestedSubnetPrefix) UnmarshalJSON(src []byte) error {
+func (v *NullableSubnetPrefixForSubnet) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

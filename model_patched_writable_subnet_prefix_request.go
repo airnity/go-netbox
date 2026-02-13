@@ -17,15 +17,17 @@ import (
 // checks if the PatchedWritableSubnetPrefixRequest type satisfies the MappedNullable interface at compile time
 var _ MappedNullable = &PatchedWritableSubnetPrefixRequest{}
 
-// PatchedWritableSubnetPrefixRequest Full serializer for SubnetPrefix model.
+// PatchedWritableSubnetPrefixRequest Adds support for custom fields and tags.
 type PatchedWritableSubnetPrefixRequest struct {
 	Prefix *string `json:"prefix,omitempty"`
 	// Name of the Subnet
 	Label *string `json:"label,omitempty" validate:"regexp=^[a-z0-9_-]+$"`
 	// Set Prefix subnet as secondary
 	IsSecondary *bool `json:"is_secondary,omitempty"`
-	// Automatically reserve IP addresses based on plugin configuration
-	AutoReserveIps *bool `json:"auto_reserve_ips,omitempty"`
+	// Automatically reserve first IP addresses (network, gateway, etc.)
+	AutoReserveFirstIps *bool `json:"auto_reserve_first_ips,omitempty"`
+	// Automatically reserve last IP addresses (broadcast, etc.)
+	AutoReserveLastIps *bool `json:"auto_reserve_last_ips,omitempty"`
 	// Treat this prefix as fully utilized
 	MarkUtilized         *bool                                     `json:"mark_utilized,omitempty"`
 	Status               *PatchedWritableSubnetPrefixRequestStatus `json:"status,omitempty"`
@@ -147,36 +149,68 @@ func (o *PatchedWritableSubnetPrefixRequest) SetIsSecondary(v bool) {
 	o.IsSecondary = &v
 }
 
-// GetAutoReserveIps returns the AutoReserveIps field value if set, zero value otherwise.
-func (o *PatchedWritableSubnetPrefixRequest) GetAutoReserveIps() bool {
-	if o == nil || IsNil(o.AutoReserveIps) {
+// GetAutoReserveFirstIps returns the AutoReserveFirstIps field value if set, zero value otherwise.
+func (o *PatchedWritableSubnetPrefixRequest) GetAutoReserveFirstIps() bool {
+	if o == nil || IsNil(o.AutoReserveFirstIps) {
 		var ret bool
 		return ret
 	}
-	return *o.AutoReserveIps
+	return *o.AutoReserveFirstIps
 }
 
-// GetAutoReserveIpsOk returns a tuple with the AutoReserveIps field value if set, nil otherwise
+// GetAutoReserveFirstIpsOk returns a tuple with the AutoReserveFirstIps field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PatchedWritableSubnetPrefixRequest) GetAutoReserveIpsOk() (*bool, bool) {
-	if o == nil || IsNil(o.AutoReserveIps) {
+func (o *PatchedWritableSubnetPrefixRequest) GetAutoReserveFirstIpsOk() (*bool, bool) {
+	if o == nil || IsNil(o.AutoReserveFirstIps) {
 		return nil, false
 	}
-	return o.AutoReserveIps, true
+	return o.AutoReserveFirstIps, true
 }
 
-// HasAutoReserveIps returns a boolean if a field has been set.
-func (o *PatchedWritableSubnetPrefixRequest) HasAutoReserveIps() bool {
-	if o != nil && !IsNil(o.AutoReserveIps) {
+// HasAutoReserveFirstIps returns a boolean if a field has been set.
+func (o *PatchedWritableSubnetPrefixRequest) HasAutoReserveFirstIps() bool {
+	if o != nil && !IsNil(o.AutoReserveFirstIps) {
 		return true
 	}
 
 	return false
 }
 
-// SetAutoReserveIps gets a reference to the given bool and assigns it to the AutoReserveIps field.
-func (o *PatchedWritableSubnetPrefixRequest) SetAutoReserveIps(v bool) {
-	o.AutoReserveIps = &v
+// SetAutoReserveFirstIps gets a reference to the given bool and assigns it to the AutoReserveFirstIps field.
+func (o *PatchedWritableSubnetPrefixRequest) SetAutoReserveFirstIps(v bool) {
+	o.AutoReserveFirstIps = &v
+}
+
+// GetAutoReserveLastIps returns the AutoReserveLastIps field value if set, zero value otherwise.
+func (o *PatchedWritableSubnetPrefixRequest) GetAutoReserveLastIps() bool {
+	if o == nil || IsNil(o.AutoReserveLastIps) {
+		var ret bool
+		return ret
+	}
+	return *o.AutoReserveLastIps
+}
+
+// GetAutoReserveLastIpsOk returns a tuple with the AutoReserveLastIps field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PatchedWritableSubnetPrefixRequest) GetAutoReserveLastIpsOk() (*bool, bool) {
+	if o == nil || IsNil(o.AutoReserveLastIps) {
+		return nil, false
+	}
+	return o.AutoReserveLastIps, true
+}
+
+// HasAutoReserveLastIps returns a boolean if a field has been set.
+func (o *PatchedWritableSubnetPrefixRequest) HasAutoReserveLastIps() bool {
+	if o != nil && !IsNil(o.AutoReserveLastIps) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoReserveLastIps gets a reference to the given bool and assigns it to the AutoReserveLastIps field.
+func (o *PatchedWritableSubnetPrefixRequest) SetAutoReserveLastIps(v bool) {
+	o.AutoReserveLastIps = &v
 }
 
 // GetMarkUtilized returns the MarkUtilized field value if set, zero value otherwise.
@@ -262,8 +296,11 @@ func (o PatchedWritableSubnetPrefixRequest) ToMap() (map[string]interface{}, err
 	if !IsNil(o.IsSecondary) {
 		toSerialize["is_secondary"] = o.IsSecondary
 	}
-	if !IsNil(o.AutoReserveIps) {
-		toSerialize["auto_reserve_ips"] = o.AutoReserveIps
+	if !IsNil(o.AutoReserveFirstIps) {
+		toSerialize["auto_reserve_first_ips"] = o.AutoReserveFirstIps
+	}
+	if !IsNil(o.AutoReserveLastIps) {
+		toSerialize["auto_reserve_last_ips"] = o.AutoReserveLastIps
 	}
 	if !IsNil(o.MarkUtilized) {
 		toSerialize["mark_utilized"] = o.MarkUtilized
@@ -296,7 +333,8 @@ func (o *PatchedWritableSubnetPrefixRequest) UnmarshalJSON(data []byte) (err err
 		delete(additionalProperties, "prefix")
 		delete(additionalProperties, "label")
 		delete(additionalProperties, "is_secondary")
-		delete(additionalProperties, "auto_reserve_ips")
+		delete(additionalProperties, "auto_reserve_first_ips")
+		delete(additionalProperties, "auto_reserve_last_ips")
 		delete(additionalProperties, "mark_utilized")
 		delete(additionalProperties, "status")
 		o.AdditionalProperties = additionalProperties

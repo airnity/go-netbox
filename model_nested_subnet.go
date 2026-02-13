@@ -13,6 +13,7 @@ package netbox
 import (
 	"encoding/json"
 	"fmt"
+	"time"
 )
 
 // checks if the NestedSubnet type satisfies the MappedNullable interface at compile time
@@ -20,11 +21,22 @@ var _ MappedNullable = &NestedSubnet{}
 
 // NestedSubnet Nested Subnet representation (read-only).
 type NestedSubnet struct {
-	Id      int32  `json:"id"`
-	Url     string `json:"url"`
-	Display string `json:"display"`
+	Id         int32   `json:"id"`
+	Url        string  `json:"url"`
+	DisplayUrl *string `json:"display_url,omitempty"`
+	Display    string  `json:"display"`
 	// Name of the Subnet
-	Name                 *string `json:"name,omitempty" validate:"regexp=^[a-z0-9_-]+$"`
+	Name   *string       `json:"name,omitempty" validate:"regexp=^[a-z0-9_-]+$"`
+	Vpc    NullableInt32 `json:"vpc,omitempty"`
+	Region NullableInt32 `json:"region,omitempty"`
+	Tenant NullableInt32 `json:"tenant,omitempty"`
+	// The primary function of this subnet
+	Purpose              NullableInt32          `json:"purpose,omitempty"`
+	Description          *string                `json:"description,omitempty"`
+	Comments             *string                `json:"comments,omitempty"`
+	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
+	Created              NullableTime           `json:"created,omitempty"`
+	LastUpdated          NullableTime           `json:"last_updated,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -98,6 +110,38 @@ func (o *NestedSubnet) SetUrl(v string) {
 	o.Url = v
 }
 
+// GetDisplayUrl returns the DisplayUrl field value if set, zero value otherwise.
+func (o *NestedSubnet) GetDisplayUrl() string {
+	if o == nil || IsNil(o.DisplayUrl) {
+		var ret string
+		return ret
+	}
+	return *o.DisplayUrl
+}
+
+// GetDisplayUrlOk returns a tuple with the DisplayUrl field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NestedSubnet) GetDisplayUrlOk() (*string, bool) {
+	if o == nil || IsNil(o.DisplayUrl) {
+		return nil, false
+	}
+	return o.DisplayUrl, true
+}
+
+// HasDisplayUrl returns a boolean if a field has been set.
+func (o *NestedSubnet) HasDisplayUrl() bool {
+	if o != nil && !IsNil(o.DisplayUrl) {
+		return true
+	}
+
+	return false
+}
+
+// SetDisplayUrl gets a reference to the given string and assigns it to the DisplayUrl field.
+func (o *NestedSubnet) SetDisplayUrl(v string) {
+	o.DisplayUrl = &v
+}
+
 // GetDisplay returns the Display field value
 func (o *NestedSubnet) GetDisplay() string {
 	if o == nil {
@@ -154,6 +198,360 @@ func (o *NestedSubnet) SetName(v string) {
 	o.Name = &v
 }
 
+// GetVpc returns the Vpc field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NestedSubnet) GetVpc() int32 {
+	if o == nil || IsNil(o.Vpc.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.Vpc.Get()
+}
+
+// GetVpcOk returns a tuple with the Vpc field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NestedSubnet) GetVpcOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Vpc.Get(), o.Vpc.IsSet()
+}
+
+// HasVpc returns a boolean if a field has been set.
+func (o *NestedSubnet) HasVpc() bool {
+	if o != nil && o.Vpc.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetVpc gets a reference to the given NullableInt32 and assigns it to the Vpc field.
+func (o *NestedSubnet) SetVpc(v int32) {
+	o.Vpc.Set(&v)
+}
+
+// SetVpcNil sets the value for Vpc to be an explicit nil
+func (o *NestedSubnet) SetVpcNil() {
+	o.Vpc.Set(nil)
+}
+
+// UnsetVpc ensures that no value is present for Vpc, not even an explicit nil
+func (o *NestedSubnet) UnsetVpc() {
+	o.Vpc.Unset()
+}
+
+// GetRegion returns the Region field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NestedSubnet) GetRegion() int32 {
+	if o == nil || IsNil(o.Region.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.Region.Get()
+}
+
+// GetRegionOk returns a tuple with the Region field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NestedSubnet) GetRegionOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Region.Get(), o.Region.IsSet()
+}
+
+// HasRegion returns a boolean if a field has been set.
+func (o *NestedSubnet) HasRegion() bool {
+	if o != nil && o.Region.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetRegion gets a reference to the given NullableInt32 and assigns it to the Region field.
+func (o *NestedSubnet) SetRegion(v int32) {
+	o.Region.Set(&v)
+}
+
+// SetRegionNil sets the value for Region to be an explicit nil
+func (o *NestedSubnet) SetRegionNil() {
+	o.Region.Set(nil)
+}
+
+// UnsetRegion ensures that no value is present for Region, not even an explicit nil
+func (o *NestedSubnet) UnsetRegion() {
+	o.Region.Unset()
+}
+
+// GetTenant returns the Tenant field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NestedSubnet) GetTenant() int32 {
+	if o == nil || IsNil(o.Tenant.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.Tenant.Get()
+}
+
+// GetTenantOk returns a tuple with the Tenant field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NestedSubnet) GetTenantOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Tenant.Get(), o.Tenant.IsSet()
+}
+
+// HasTenant returns a boolean if a field has been set.
+func (o *NestedSubnet) HasTenant() bool {
+	if o != nil && o.Tenant.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetTenant gets a reference to the given NullableInt32 and assigns it to the Tenant field.
+func (o *NestedSubnet) SetTenant(v int32) {
+	o.Tenant.Set(&v)
+}
+
+// SetTenantNil sets the value for Tenant to be an explicit nil
+func (o *NestedSubnet) SetTenantNil() {
+	o.Tenant.Set(nil)
+}
+
+// UnsetTenant ensures that no value is present for Tenant, not even an explicit nil
+func (o *NestedSubnet) UnsetTenant() {
+	o.Tenant.Unset()
+}
+
+// GetPurpose returns the Purpose field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NestedSubnet) GetPurpose() int32 {
+	if o == nil || IsNil(o.Purpose.Get()) {
+		var ret int32
+		return ret
+	}
+	return *o.Purpose.Get()
+}
+
+// GetPurposeOk returns a tuple with the Purpose field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NestedSubnet) GetPurposeOk() (*int32, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Purpose.Get(), o.Purpose.IsSet()
+}
+
+// HasPurpose returns a boolean if a field has been set.
+func (o *NestedSubnet) HasPurpose() bool {
+	if o != nil && o.Purpose.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetPurpose gets a reference to the given NullableInt32 and assigns it to the Purpose field.
+func (o *NestedSubnet) SetPurpose(v int32) {
+	o.Purpose.Set(&v)
+}
+
+// SetPurposeNil sets the value for Purpose to be an explicit nil
+func (o *NestedSubnet) SetPurposeNil() {
+	o.Purpose.Set(nil)
+}
+
+// UnsetPurpose ensures that no value is present for Purpose, not even an explicit nil
+func (o *NestedSubnet) UnsetPurpose() {
+	o.Purpose.Unset()
+}
+
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *NestedSubnet) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NestedSubnet) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *NestedSubnet) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *NestedSubnet) SetDescription(v string) {
+	o.Description = &v
+}
+
+// GetComments returns the Comments field value if set, zero value otherwise.
+func (o *NestedSubnet) GetComments() string {
+	if o == nil || IsNil(o.Comments) {
+		var ret string
+		return ret
+	}
+	return *o.Comments
+}
+
+// GetCommentsOk returns a tuple with the Comments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NestedSubnet) GetCommentsOk() (*string, bool) {
+	if o == nil || IsNil(o.Comments) {
+		return nil, false
+	}
+	return o.Comments, true
+}
+
+// HasComments returns a boolean if a field has been set.
+func (o *NestedSubnet) HasComments() bool {
+	if o != nil && !IsNil(o.Comments) {
+		return true
+	}
+
+	return false
+}
+
+// SetComments gets a reference to the given string and assigns it to the Comments field.
+func (o *NestedSubnet) SetComments(v string) {
+	o.Comments = &v
+}
+
+// GetCustomFields returns the CustomFields field value if set, zero value otherwise.
+func (o *NestedSubnet) GetCustomFields() map[string]interface{} {
+	if o == nil || IsNil(o.CustomFields) {
+		var ret map[string]interface{}
+		return ret
+	}
+	return o.CustomFields
+}
+
+// GetCustomFieldsOk returns a tuple with the CustomFields field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *NestedSubnet) GetCustomFieldsOk() (map[string]interface{}, bool) {
+	if o == nil || IsNil(o.CustomFields) {
+		return map[string]interface{}{}, false
+	}
+	return o.CustomFields, true
+}
+
+// HasCustomFields returns a boolean if a field has been set.
+func (o *NestedSubnet) HasCustomFields() bool {
+	if o != nil && !IsNil(o.CustomFields) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomFields gets a reference to the given map[string]interface{} and assigns it to the CustomFields field.
+func (o *NestedSubnet) SetCustomFields(v map[string]interface{}) {
+	o.CustomFields = v
+}
+
+// GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NestedSubnet) GetCreated() time.Time {
+	if o == nil || IsNil(o.Created.Get()) {
+		var ret time.Time
+		return ret
+	}
+	return *o.Created.Get()
+}
+
+// GetCreatedOk returns a tuple with the Created field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NestedSubnet) GetCreatedOk() (*time.Time, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Created.Get(), o.Created.IsSet()
+}
+
+// HasCreated returns a boolean if a field has been set.
+func (o *NestedSubnet) HasCreated() bool {
+	if o != nil && o.Created.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCreated gets a reference to the given NullableTime and assigns it to the Created field.
+func (o *NestedSubnet) SetCreated(v time.Time) {
+	o.Created.Set(&v)
+}
+
+// SetCreatedNil sets the value for Created to be an explicit nil
+func (o *NestedSubnet) SetCreatedNil() {
+	o.Created.Set(nil)
+}
+
+// UnsetCreated ensures that no value is present for Created, not even an explicit nil
+func (o *NestedSubnet) UnsetCreated() {
+	o.Created.Unset()
+}
+
+// GetLastUpdated returns the LastUpdated field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NestedSubnet) GetLastUpdated() time.Time {
+	if o == nil || IsNil(o.LastUpdated.Get()) {
+		var ret time.Time
+		return ret
+	}
+	return *o.LastUpdated.Get()
+}
+
+// GetLastUpdatedOk returns a tuple with the LastUpdated field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NestedSubnet) GetLastUpdatedOk() (*time.Time, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.LastUpdated.Get(), o.LastUpdated.IsSet()
+}
+
+// HasLastUpdated returns a boolean if a field has been set.
+func (o *NestedSubnet) HasLastUpdated() bool {
+	if o != nil && o.LastUpdated.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetLastUpdated gets a reference to the given NullableTime and assigns it to the LastUpdated field.
+func (o *NestedSubnet) SetLastUpdated(v time.Time) {
+	o.LastUpdated.Set(&v)
+}
+
+// SetLastUpdatedNil sets the value for LastUpdated to be an explicit nil
+func (o *NestedSubnet) SetLastUpdatedNil() {
+	o.LastUpdated.Set(nil)
+}
+
+// UnsetLastUpdated ensures that no value is present for LastUpdated, not even an explicit nil
+func (o *NestedSubnet) UnsetLastUpdated() {
+	o.LastUpdated.Unset()
+}
+
 func (o NestedSubnet) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -166,9 +564,39 @@ func (o NestedSubnet) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["id"] = o.Id
 	toSerialize["url"] = o.Url
+	if !IsNil(o.DisplayUrl) {
+		toSerialize["display_url"] = o.DisplayUrl
+	}
 	toSerialize["display"] = o.Display
 	if !IsNil(o.Name) {
 		toSerialize["name"] = o.Name
+	}
+	if o.Vpc.IsSet() {
+		toSerialize["vpc"] = o.Vpc.Get()
+	}
+	if o.Region.IsSet() {
+		toSerialize["region"] = o.Region.Get()
+	}
+	if o.Tenant.IsSet() {
+		toSerialize["tenant"] = o.Tenant.Get()
+	}
+	if o.Purpose.IsSet() {
+		toSerialize["purpose"] = o.Purpose.Get()
+	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
+	if !IsNil(o.Comments) {
+		toSerialize["comments"] = o.Comments
+	}
+	if !IsNil(o.CustomFields) {
+		toSerialize["custom_fields"] = o.CustomFields
+	}
+	if o.Created.IsSet() {
+		toSerialize["created"] = o.Created.Get()
+	}
+	if o.LastUpdated.IsSet() {
+		toSerialize["last_updated"] = o.LastUpdated.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -233,8 +661,18 @@ func (o *NestedSubnet) UnmarshalJSON(data []byte) (err error) {
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "id")
 		delete(additionalProperties, "url")
+		delete(additionalProperties, "display_url")
 		delete(additionalProperties, "display")
 		delete(additionalProperties, "name")
+		delete(additionalProperties, "vpc")
+		delete(additionalProperties, "region")
+		delete(additionalProperties, "tenant")
+		delete(additionalProperties, "purpose")
+		delete(additionalProperties, "description")
+		delete(additionalProperties, "comments")
+		delete(additionalProperties, "custom_fields")
+		delete(additionalProperties, "created")
+		delete(additionalProperties, "last_updated")
 		o.AdditionalProperties = additionalProperties
 	}
 

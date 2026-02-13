@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Family** | **int32** |  | [readonly] 
 **Address** | **string** |  | [readonly] 
-**MaskLength** | **int32** |  | [readonly] 
+**MaskLength** | Pointer to **NullableInt32** |  | [optional] [readonly] 
 **Vpc** | Pointer to [**NullableVPC**](VPC.md) |  | [optional] [readonly] 
 **SubnetPrefix** | [**NestedSubnetPrefix**](NestedSubnetPrefix.md) |  | [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -15,7 +15,7 @@ Name | Type | Description | Notes
 
 ### NewAvailablePrefixIP
 
-`func NewAvailablePrefixIP(family int32, address string, maskLength int32, subnetPrefix NestedSubnetPrefix, ) *AvailablePrefixIP`
+`func NewAvailablePrefixIP(family int32, address string, subnetPrefix NestedSubnetPrefix, ) *AvailablePrefixIP`
 
 NewAvailablePrefixIP instantiates a new AvailablePrefixIP object
 This constructor will assign default values to properties that have it defined,
@@ -89,7 +89,22 @@ and a boolean to check if the value has been set.
 
 SetMaskLength sets MaskLength field to given value.
 
+### HasMaskLength
 
+`func (o *AvailablePrefixIP) HasMaskLength() bool`
+
+HasMaskLength returns a boolean if a field has been set.
+
+### SetMaskLengthNil
+
+`func (o *AvailablePrefixIP) SetMaskLengthNil(b bool)`
+
+ SetMaskLengthNil sets the value for MaskLength to be an explicit nil
+
+### UnsetMaskLength
+`func (o *AvailablePrefixIP) UnsetMaskLength()`
+
+UnsetMaskLength ensures that no value is present for MaskLength, not even an explicit nil
 ### GetVpc
 
 `func (o *AvailablePrefixIP) GetVpc() VPC`

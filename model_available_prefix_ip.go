@@ -22,7 +22,7 @@ var _ MappedNullable = &AvailablePrefixIP{}
 type AvailablePrefixIP struct {
 	Family               int32              `json:"family"`
 	Address              string             `json:"address"`
-	MaskLength           int32              `json:"mask_length"`
+	MaskLength           NullableInt32      `json:"mask_length,omitempty"`
 	Vpc                  NullableVPC        `json:"vpc,omitempty"`
 	SubnetPrefix         NestedSubnetPrefix `json:"subnet_prefix"`
 	Description          *string            `json:"description,omitempty"`
@@ -35,11 +35,10 @@ type _AvailablePrefixIP AvailablePrefixIP
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAvailablePrefixIP(family int32, address string, maskLength int32, subnetPrefix NestedSubnetPrefix) *AvailablePrefixIP {
+func NewAvailablePrefixIP(family int32, address string, subnetPrefix NestedSubnetPrefix) *AvailablePrefixIP {
 	this := AvailablePrefixIP{}
 	this.Family = family
 	this.Address = address
-	this.MaskLength = maskLength
 	this.SubnetPrefix = subnetPrefix
 	return &this
 }
@@ -100,28 +99,47 @@ func (o *AvailablePrefixIP) SetAddress(v string) {
 	o.Address = v
 }
 
-// GetMaskLength returns the MaskLength field value
+// GetMaskLength returns the MaskLength field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *AvailablePrefixIP) GetMaskLength() int32 {
-	if o == nil {
+	if o == nil || IsNil(o.MaskLength.Get()) {
 		var ret int32
 		return ret
 	}
-
-	return o.MaskLength
+	return *o.MaskLength.Get()
 }
 
-// GetMaskLengthOk returns a tuple with the MaskLength field value
+// GetMaskLengthOk returns a tuple with the MaskLength field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AvailablePrefixIP) GetMaskLengthOk() (*int32, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.MaskLength, true
+	return o.MaskLength.Get(), o.MaskLength.IsSet()
 }
 
-// SetMaskLength sets field value
+// HasMaskLength returns a boolean if a field has been set.
+func (o *AvailablePrefixIP) HasMaskLength() bool {
+	if o != nil && o.MaskLength.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetMaskLength gets a reference to the given NullableInt32 and assigns it to the MaskLength field.
 func (o *AvailablePrefixIP) SetMaskLength(v int32) {
-	o.MaskLength = v
+	o.MaskLength.Set(&v)
+}
+
+// SetMaskLengthNil sets the value for MaskLength to be an explicit nil
+func (o *AvailablePrefixIP) SetMaskLengthNil() {
+	o.MaskLength.Set(nil)
+}
+
+// UnsetMaskLength ensures that no value is present for MaskLength, not even an explicit nil
+func (o *AvailablePrefixIP) UnsetMaskLength() {
+	o.MaskLength.Unset()
 }
 
 // GetVpc returns the Vpc field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -235,7 +253,9 @@ func (o AvailablePrefixIP) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	toSerialize["family"] = o.Family
 	toSerialize["address"] = o.Address
-	toSerialize["mask_length"] = o.MaskLength
+	if o.MaskLength.IsSet() {
+		toSerialize["mask_length"] = o.MaskLength.Get()
+	}
 	if o.Vpc.IsSet() {
 		toSerialize["vpc"] = o.Vpc.Get()
 	}
@@ -258,7 +278,6 @@ func (o *AvailablePrefixIP) UnmarshalJSON(data []byte) (err error) {
 	requiredProperties := []string{
 		"family",
 		"address",
-		"mask_length",
 		"subnet_prefix",
 	}
 

@@ -15,40 +15,40 @@ import (
 	"fmt"
 )
 
-// PatchedSubnetIPAddressRequestRole * `dns` - dns/dns * `data_poi_esgw` - data-poi/esgw * `data_slice_pgwu` - data-slice/pgwu * `sig_poi_dra` - sig-poi/dra * `sig_poi_stp` - sig-poi/stp * `voice_poi_rtpengine` - voice-poi/rtpengine * `voice_poi_sbc` - voice-poi/sbc * `smpp` - smpp/smpp * `network` - gcp/network * `gateway` - gcp/gateway * `gcp_reserved` - gcp/future * `broadcast` - gcp/broadcast
+// PatchedSubnetIPAddressRequestRole * `dns` - dns/dns * `data-poi/esgw` - data-poi/esgw * `data-slice/pgwu` - data-slice/pgwu * `sig-poi/dra` - sig-poi/dra * `sig-poi/stp` - sig-poi/stp * `voice-poi/rtpengine` - voice-poi/rtpengine * `voice-poi/sbc` - voice-poi/sbc * `smpp` - smpp/smpp * `gcp/network` - gcp/network * `gcp/gateway` - gcp/gateway * `gcp/reserved` - gcp/future * `gcp/broadcast` - gcp/broadcast
 type PatchedSubnetIPAddressRequestRole string
 
 // List of PatchedSubnetIPAddressRequest_role
 const (
 	PATCHEDSUBNETIPADDRESSREQUESTROLE_DNS                 PatchedSubnetIPAddressRequestRole = "dns"
-	PATCHEDSUBNETIPADDRESSREQUESTROLE_DATA_POI_ESGW       PatchedSubnetIPAddressRequestRole = "data_poi_esgw"
-	PATCHEDSUBNETIPADDRESSREQUESTROLE_DATA_SLICE_PGWU     PatchedSubnetIPAddressRequestRole = "data_slice_pgwu"
-	PATCHEDSUBNETIPADDRESSREQUESTROLE_SIG_POI_DRA         PatchedSubnetIPAddressRequestRole = "sig_poi_dra"
-	PATCHEDSUBNETIPADDRESSREQUESTROLE_SIG_POI_STP         PatchedSubnetIPAddressRequestRole = "sig_poi_stp"
-	PATCHEDSUBNETIPADDRESSREQUESTROLE_VOICE_POI_RTPENGINE PatchedSubnetIPAddressRequestRole = "voice_poi_rtpengine"
-	PATCHEDSUBNETIPADDRESSREQUESTROLE_VOICE_POI_SBC       PatchedSubnetIPAddressRequestRole = "voice_poi_sbc"
+	PATCHEDSUBNETIPADDRESSREQUESTROLE_DATA_POI_ESGW       PatchedSubnetIPAddressRequestRole = "data-poi/esgw"
+	PATCHEDSUBNETIPADDRESSREQUESTROLE_DATA_SLICE_PGWU     PatchedSubnetIPAddressRequestRole = "data-slice/pgwu"
+	PATCHEDSUBNETIPADDRESSREQUESTROLE_SIG_POI_DRA         PatchedSubnetIPAddressRequestRole = "sig-poi/dra"
+	PATCHEDSUBNETIPADDRESSREQUESTROLE_SIG_POI_STP         PatchedSubnetIPAddressRequestRole = "sig-poi/stp"
+	PATCHEDSUBNETIPADDRESSREQUESTROLE_VOICE_POI_RTPENGINE PatchedSubnetIPAddressRequestRole = "voice-poi/rtpengine"
+	PATCHEDSUBNETIPADDRESSREQUESTROLE_VOICE_POI_SBC       PatchedSubnetIPAddressRequestRole = "voice-poi/sbc"
 	PATCHEDSUBNETIPADDRESSREQUESTROLE_SMPP                PatchedSubnetIPAddressRequestRole = "smpp"
-	PATCHEDSUBNETIPADDRESSREQUESTROLE_NETWORK             PatchedSubnetIPAddressRequestRole = "network"
-	PATCHEDSUBNETIPADDRESSREQUESTROLE_GATEWAY             PatchedSubnetIPAddressRequestRole = "gateway"
-	PATCHEDSUBNETIPADDRESSREQUESTROLE_GCP_RESERVED        PatchedSubnetIPAddressRequestRole = "gcp_reserved"
-	PATCHEDSUBNETIPADDRESSREQUESTROLE_BROADCAST           PatchedSubnetIPAddressRequestRole = "broadcast"
+	PATCHEDSUBNETIPADDRESSREQUESTROLE_GCP_NETWORK         PatchedSubnetIPAddressRequestRole = "gcp/network"
+	PATCHEDSUBNETIPADDRESSREQUESTROLE_GCP_GATEWAY         PatchedSubnetIPAddressRequestRole = "gcp/gateway"
+	PATCHEDSUBNETIPADDRESSREQUESTROLE_GCP_RESERVED        PatchedSubnetIPAddressRequestRole = "gcp/reserved"
+	PATCHEDSUBNETIPADDRESSREQUESTROLE_GCP_BROADCAST       PatchedSubnetIPAddressRequestRole = "gcp/broadcast"
 	PATCHEDSUBNETIPADDRESSREQUESTROLE_EMPTY               PatchedSubnetIPAddressRequestRole = ""
 )
 
 // All allowed values of PatchedSubnetIPAddressRequestRole enum
 var AllowedPatchedSubnetIPAddressRequestRoleEnumValues = []PatchedSubnetIPAddressRequestRole{
 	"dns",
-	"data_poi_esgw",
-	"data_slice_pgwu",
-	"sig_poi_dra",
-	"sig_poi_stp",
-	"voice_poi_rtpengine",
-	"voice_poi_sbc",
+	"data-poi/esgw",
+	"data-slice/pgwu",
+	"sig-poi/dra",
+	"sig-poi/stp",
+	"voice-poi/rtpengine",
+	"voice-poi/sbc",
 	"smpp",
-	"network",
-	"gateway",
-	"gcp_reserved",
-	"broadcast",
+	"gcp/network",
+	"gcp/gateway",
+	"gcp/reserved",
+	"gcp/broadcast",
 	"",
 }
 

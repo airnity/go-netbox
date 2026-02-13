@@ -5,27 +5,27 @@
 
 * `DNS` (value: `"dns"`)
 
-* `DATA_POI_ESGW` (value: `"data_poi_esgw"`)
+* `DATA_POI_ESGW` (value: `"data-poi/esgw"`)
 
-* `DATA_SLICE_PGWU` (value: `"data_slice_pgwu"`)
+* `DATA_SLICE_PGWU` (value: `"data-slice/pgwu"`)
 
-* `SIG_POI_DRA` (value: `"sig_poi_dra"`)
+* `SIG_POI_DRA` (value: `"sig-poi/dra"`)
 
-* `SIG_POI_STP` (value: `"sig_poi_stp"`)
+* `SIG_POI_STP` (value: `"sig-poi/stp"`)
 
-* `VOICE_POI_RTPENGINE` (value: `"voice_poi_rtpengine"`)
+* `VOICE_POI_RTPENGINE` (value: `"voice-poi/rtpengine"`)
 
-* `VOICE_POI_SBC` (value: `"voice_poi_sbc"`)
+* `VOICE_POI_SBC` (value: `"voice-poi/sbc"`)
 
 * `SMPP` (value: `"smpp"`)
 
-* `NETWORK` (value: `"network"`)
+* `GCP_NETWORK` (value: `"gcp/network"`)
 
-* `GATEWAY` (value: `"gateway"`)
+* `GCP_GATEWAY` (value: `"gcp/gateway"`)
 
-* `GCP_RESERVED` (value: `"gcp_reserved"`)
+* `GCP_RESERVED` (value: `"gcp/reserved"`)
 
-* `BROADCAST` (value: `"broadcast"`)
+* `GCP_BROADCAST` (value: `"gcp/broadcast"`)
 
 * `EMPTY` (value: `""`)
 
