@@ -136,9 +136,11 @@ if MODELS_TO_FILTER:
 
             if not refs.isdisjoint(models_filter_set):
                 path_is_relevant = True
-                if method not in relevant_methods:  # Avoid duplicates
-                    relevant_methods[method] = operation
                 models_from_paths.update(refs)
+                # Add ALL methods of this path (consistent with Check 1)
+                for m, op in path_item.items():
+                    if isinstance(op, dict) and m not in relevant_methods:
+                        relevant_methods[m] = op
         
         if path_is_relevant:
             relevant_paths_info[path_str] = relevant_methods

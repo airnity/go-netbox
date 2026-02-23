@@ -13,9 +13,11 @@ Method | HTTP request | Description
 [**UsersGroupsPartialUpdate**](UsersAPI.md#UsersGroupsPartialUpdate) | **Patch** /api/users/groups/{id}/ | 
 [**UsersGroupsRetrieve**](UsersAPI.md#UsersGroupsRetrieve) | **Get** /api/users/groups/{id}/ | 
 [**UsersGroupsUpdate**](UsersAPI.md#UsersGroupsUpdate) | **Put** /api/users/groups/{id}/ | 
+[**UsersPermissionsBulkDestroy**](UsersAPI.md#UsersPermissionsBulkDestroy) | **Delete** /api/users/permissions/ | 
 [**UsersPermissionsBulkPartialUpdate**](UsersAPI.md#UsersPermissionsBulkPartialUpdate) | **Patch** /api/users/permissions/ | 
 [**UsersPermissionsBulkUpdate**](UsersAPI.md#UsersPermissionsBulkUpdate) | **Put** /api/users/permissions/ | 
 [**UsersPermissionsCreate**](UsersAPI.md#UsersPermissionsCreate) | **Post** /api/users/permissions/ | 
+[**UsersPermissionsDestroy**](UsersAPI.md#UsersPermissionsDestroy) | **Delete** /api/users/permissions/{id}/ | 
 [**UsersPermissionsList**](UsersAPI.md#UsersPermissionsList) | **Get** /api/users/permissions/ | 
 [**UsersPermissionsPartialUpdate**](UsersAPI.md#UsersPermissionsPartialUpdate) | **Patch** /api/users/permissions/{id}/ | 
 [**UsersPermissionsRetrieve**](UsersAPI.md#UsersPermissionsRetrieve) | **Get** /api/users/permissions/{id}/ | 
@@ -725,6 +727,70 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## UsersPermissionsBulkDestroy
+
+> UsersPermissionsBulkDestroy(ctx).ObjectPermissionRequest(objectPermissionRequest).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/airnity/go-netbox/v4"
+)
+
+func main() {
+	objectPermissionRequest := []openapiclient.ObjectPermissionRequest{*openapiclient.NewObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"})} // []ObjectPermissionRequest | 
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UsersAPI.UsersPermissionsBulkDestroy(context.Background()).ObjectPermissionRequest(objectPermissionRequest).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsBulkDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersPermissionsBulkDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **objectPermissionRequest** | [**[]ObjectPermissionRequest**](ObjectPermissionRequest.md) |  | 
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: application/json, multipart/form-data
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## UsersPermissionsBulkPartialUpdate
 
 > []ObjectPermission UsersPermissionsBulkPartialUpdate(ctx).ObjectPermissionRequest(objectPermissionRequest).Execute()
@@ -917,6 +983,74 @@ Name | Type | Description  | Notes
 
 - **Content-Type**: application/json, multipart/form-data
 - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## UsersPermissionsDestroy
+
+> UsersPermissionsDestroy(ctx, id).Execute()
+
+
+
+
+
+### Example
+
+```go
+package main
+
+import (
+	"context"
+	"fmt"
+	"os"
+	openapiclient "github.com/airnity/go-netbox/v4"
+)
+
+func main() {
+	id := int32(56) // int32 | A unique integer value identifying this permission.
+
+	configuration := openapiclient.NewConfiguration()
+	apiClient := openapiclient.NewAPIClient(configuration)
+	r, err := apiClient.UsersAPI.UsersPermissionsDestroy(context.Background(), id).Execute()
+	if err != nil {
+		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsDestroy``: %v\n", err)
+		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+	}
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**id** | **int32** | A unique integer value identifying this permission. | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiUsersPermissionsDestroyRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[cookieAuth](../README.md#cookieAuth), [tokenAuth](../README.md#tokenAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)

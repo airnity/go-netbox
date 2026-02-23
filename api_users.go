@@ -151,6 +151,19 @@ type UsersAPI interface {
 	UsersGroupsUpdateExecute(r ApiUsersGroupsUpdateRequest) (*Group, *http.Response, error)
 
 	/*
+		UsersPermissionsBulkDestroy Method for UsersPermissionsBulkDestroy
+
+		Delete a list of permission objects.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiUsersPermissionsBulkDestroyRequest
+	*/
+	UsersPermissionsBulkDestroy(ctx context.Context) ApiUsersPermissionsBulkDestroyRequest
+
+	// UsersPermissionsBulkDestroyExecute executes the request
+	UsersPermissionsBulkDestroyExecute(r ApiUsersPermissionsBulkDestroyRequest) (*http.Response, error)
+
+	/*
 		UsersPermissionsBulkPartialUpdate Method for UsersPermissionsBulkPartialUpdate
 
 		Patch a list of permission objects.
@@ -191,6 +204,20 @@ type UsersAPI interface {
 	// UsersPermissionsCreateExecute executes the request
 	//  @return ObjectPermission
 	UsersPermissionsCreateExecute(r ApiUsersPermissionsCreateRequest) (*ObjectPermission, *http.Response, error)
+
+	/*
+		UsersPermissionsDestroy Method for UsersPermissionsDestroy
+
+		Delete a permission object.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param id A unique integer value identifying this permission.
+		@return ApiUsersPermissionsDestroyRequest
+	*/
+	UsersPermissionsDestroy(ctx context.Context, id int32) ApiUsersPermissionsDestroyRequest
+
+	// UsersPermissionsDestroyExecute executes the request
+	UsersPermissionsDestroyExecute(r ApiUsersPermissionsDestroyRequest) (*http.Response, error)
 
 	/*
 		UsersPermissionsList Method for UsersPermissionsList
@@ -2093,6 +2120,119 @@ func (a *UsersAPIService) UsersGroupsUpdateExecute(r ApiUsersGroupsUpdateRequest
 	return localVarReturnValue, localVarHTTPResponse, nil
 }
 
+type ApiUsersPermissionsBulkDestroyRequest struct {
+	ctx                     context.Context
+	ApiService              UsersAPI
+	objectPermissionRequest *[]ObjectPermissionRequest
+}
+
+func (r ApiUsersPermissionsBulkDestroyRequest) ObjectPermissionRequest(objectPermissionRequest []ObjectPermissionRequest) ApiUsersPermissionsBulkDestroyRequest {
+	r.objectPermissionRequest = &objectPermissionRequest
+	return r
+}
+
+func (r ApiUsersPermissionsBulkDestroyRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UsersPermissionsBulkDestroyExecute(r)
+}
+
+/*
+UsersPermissionsBulkDestroy Method for UsersPermissionsBulkDestroy
+
+Delete a list of permission objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiUsersPermissionsBulkDestroyRequest
+*/
+func (a *UsersAPIService) UsersPermissionsBulkDestroy(ctx context.Context) ApiUsersPermissionsBulkDestroyRequest {
+	return ApiUsersPermissionsBulkDestroyRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+func (a *UsersAPIService) UsersPermissionsBulkDestroyExecute(r ApiUsersPermissionsBulkDestroyRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersPermissionsBulkDestroy")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/users/permissions/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.objectPermissionRequest == nil {
+		return nil, reportError("objectPermissionRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.objectPermissionRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type ApiUsersPermissionsBulkPartialUpdateRequest struct {
 	ctx                     context.Context
 	ApiService              UsersAPI
@@ -2466,6 +2606,112 @@ func (a *UsersAPIService) UsersPermissionsCreateExecute(r ApiUsersPermissionsCre
 	}
 
 	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiUsersPermissionsDestroyRequest struct {
+	ctx        context.Context
+	ApiService UsersAPI
+	id         int32
+}
+
+func (r ApiUsersPermissionsDestroyRequest) Execute() (*http.Response, error) {
+	return r.ApiService.UsersPermissionsDestroyExecute(r)
+}
+
+/*
+UsersPermissionsDestroy Method for UsersPermissionsDestroy
+
+Delete a permission object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this permission.
+	@return ApiUsersPermissionsDestroyRequest
+*/
+func (a *UsersAPIService) UsersPermissionsDestroy(ctx context.Context, id int32) ApiUsersPermissionsDestroyRequest {
+	return ApiUsersPermissionsDestroyRequest{
+		ApiService: a,
+		ctx:        ctx,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+func (a *UsersAPIService) UsersPermissionsDestroyExecute(r ApiUsersPermissionsDestroyRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "UsersAPIService.UsersPermissionsDestroy")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/users/permissions/{id}/"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
 }
 
 type ApiUsersPermissionsListRequest struct {
