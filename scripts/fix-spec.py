@@ -104,10 +104,14 @@ if MODELS_TO_FILTER:
     relevant_paths_info = {}
     models_from_paths = set()
     
+    # Build set of paginated list variants (e.g. ObjectPermission -> PaginatedObjectPermissionList)
+    paginated_variants = {f'Paginated{m}List' for m in MODELS_TO_FILTER}
+    models_filter_set = set(MODELS_TO_FILTER) | paginated_variants
+
     for path_str, path_item in original_paths.items():
         path_is_relevant = False
         relevant_methods = {}
-        
+
         # Check 1: Does the URL contain one of our models?
         for model_name in MODELS_TO_FILTER:
             if path_matches_model(path_str, model_name):
@@ -121,16 +125,16 @@ if MODELS_TO_FILTER:
                         find_refs_in_object(operation, refs)
                         models_from_paths.update(refs)
                 # DON'T break - continue checking other models
-        
-        # Check 2: Does an operation directly reference our models?
+
+        # Check 2: Does an operation directly reference our models or their paginated lists?
         for method, operation in path_item.items():
             if not isinstance(operation, dict):
                 continue
-                
+
             refs = set()
             find_refs_in_object(operation, refs)
-            
-            if not refs.isdisjoint(set(MODELS_TO_FILTER)):
+
+            if not refs.isdisjoint(models_filter_set):
                 path_is_relevant = True
                 if method not in relevant_methods:  # Avoid duplicates
                     relevant_methods[method] = operation

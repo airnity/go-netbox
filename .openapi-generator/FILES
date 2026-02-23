@@ -82,6 +82,7 @@ docs/ObjectPermissionRequest.md
 docs/PaginatedCustomFieldList.md
 docs/PaginatedEnvironmentList.md
 docs/PaginatedGroupList.md
+docs/PaginatedObjectPermissionList.md
 docs/PaginatedRegionList.md
 docs/PaginatedSiteGroupList.md
 docs/PaginatedSiteList.md
@@ -244,6 +245,7 @@ model_object_permission_request.go
 model_paginated_custom_field_list.go
 model_paginated_environment_list.go
 model_paginated_group_list.go
+model_paginated_object_permission_list.go
 model_paginated_region_list.go
 model_paginated_site_group_list.go
 model_paginated_site_list.go
