@@ -7,9 +7,6 @@ if [ ! -f ".openapi-generator/templates/api.mustache" ]; then
     echo "The generator will use default templates"
 fi
 
-# ./scripts/add-custom-field-extensions.sh
-
-
 # Remove generated files
 for F in $(cat .openapi-generator/FILES) ; do
     rm -f "${F}"
