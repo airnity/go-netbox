@@ -17,7 +17,7 @@ Name | Type | Description | Notes
 **MarkUtilized** | Pointer to **bool** | Treat this prefix as fully utilized | [optional] 
 **Status** | Pointer to [**NestedSubnetPrefixStatus**](NestedSubnetPrefixStatus.md) |  | [optional] 
 **Family** | **int32** |  | [readonly] 
-**IsFull** | **string** |  | [readonly] 
+**IsFull** | Pointer to **NullableBool** |  | [optional] [readonly] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
@@ -25,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewSubnetPrefix
 
-`func NewSubnetPrefix(id int32, url string, display string, subnet NestedSubnet, prefix string, family int32, isFull string, ) *SubnetPrefix`
+`func NewSubnetPrefix(id int32, url string, display string, subnet NestedSubnet, prefix string, family int32, ) *SubnetPrefix`
 
 NewSubnetPrefix instantiates a new SubnetPrefix object
 This constructor will assign default values to properties that have it defined,
@@ -347,24 +347,39 @@ SetFamily sets Family field to given value.
 
 ### GetIsFull
 
-`func (o *SubnetPrefix) GetIsFull() string`
+`func (o *SubnetPrefix) GetIsFull() bool`
 
 GetIsFull returns the IsFull field if non-nil, zero value otherwise.
 
 ### GetIsFullOk
 
-`func (o *SubnetPrefix) GetIsFullOk() (*string, bool)`
+`func (o *SubnetPrefix) GetIsFullOk() (*bool, bool)`
 
 GetIsFullOk returns a tuple with the IsFull field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsFull
 
-`func (o *SubnetPrefix) SetIsFull(v string)`
+`func (o *SubnetPrefix) SetIsFull(v bool)`
 
 SetIsFull sets IsFull field to given value.
 
+### HasIsFull
 
+`func (o *SubnetPrefix) HasIsFull() bool`
+
+HasIsFull returns a boolean if a field has been set.
+
+### SetIsFullNil
+
+`func (o *SubnetPrefix) SetIsFullNil(b bool)`
+
+ SetIsFullNil sets the value for IsFull to be an explicit nil
+
+### UnsetIsFull
+`func (o *SubnetPrefix) UnsetIsFull()`
+
+UnsetIsFull ensures that no value is present for IsFull, not even an explicit nil
 ### GetCreated
 
 `func (o *SubnetPrefix) GetCreated() time.Time`

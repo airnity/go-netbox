@@ -10119,6 +10119,7 @@ type ApiPluginsAirnityIpamSubnetprefixListRequest struct {
 	idLt                *[]int32
 	idLte               *[]int32
 	idN                 *[]int32
+	isFull              *bool
 	isSecondary         *bool
 	label               *[]string
 	labelEmpty          *bool
@@ -10370,6 +10371,12 @@ func (r ApiPluginsAirnityIpamSubnetprefixListRequest) IdLte(idLte []int32) ApiPl
 
 func (r ApiPluginsAirnityIpamSubnetprefixListRequest) IdN(idN []int32) ApiPluginsAirnityIpamSubnetprefixListRequest {
 	r.idN = &idN
+	return r
+}
+
+// Is full
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) IsFull(isFull bool) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.isFull = &isFull
 	return r
 }
 
@@ -11186,6 +11193,9 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetprefixListExecute(r ApiPlugi
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
 		}
+	}
+	if r.isFull != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "is_full", r.isFull, "form", "")
 	}
 	if r.isSecondary != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "is_secondary", r.isSecondary, "form", "")

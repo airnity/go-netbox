@@ -39,7 +39,7 @@ type SubnetPrefix struct {
 	MarkUtilized         *bool                     `json:"mark_utilized,omitempty"`
 	Status               *NestedSubnetPrefixStatus `json:"status,omitempty"`
 	Family               int32                     `json:"family"`
-	IsFull               string                    `json:"is_full"`
+	IsFull               NullableBool              `json:"is_full,omitempty"`
 	Created              NullableTime              `json:"created,omitempty"`
 	LastUpdated          NullableTime              `json:"last_updated,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -51,7 +51,7 @@ type _SubnetPrefix SubnetPrefix
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSubnetPrefix(id int32, url string, display string, subnet NestedSubnet, prefix string, family int32, isFull string) *SubnetPrefix {
+func NewSubnetPrefix(id int32, url string, display string, subnet NestedSubnet, prefix string, family int32) *SubnetPrefix {
 	this := SubnetPrefix{}
 	this.Id = id
 	this.Url = url
@@ -59,7 +59,6 @@ func NewSubnetPrefix(id int32, url string, display string, subnet NestedSubnet, 
 	this.Subnet = subnet
 	this.Prefix = prefix
 	this.Family = family
-	this.IsFull = isFull
 	return &this
 }
 
@@ -450,28 +449,47 @@ func (o *SubnetPrefix) SetFamily(v int32) {
 	o.Family = v
 }
 
-// GetIsFull returns the IsFull field value
-func (o *SubnetPrefix) GetIsFull() string {
-	if o == nil {
-		var ret string
+// GetIsFull returns the IsFull field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SubnetPrefix) GetIsFull() bool {
+	if o == nil || IsNil(o.IsFull.Get()) {
+		var ret bool
 		return ret
 	}
-
-	return o.IsFull
+	return *o.IsFull.Get()
 }
 
-// GetIsFullOk returns a tuple with the IsFull field value
+// GetIsFullOk returns a tuple with the IsFull field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SubnetPrefix) GetIsFullOk() (*string, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SubnetPrefix) GetIsFullOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.IsFull, true
+	return o.IsFull.Get(), o.IsFull.IsSet()
 }
 
-// SetIsFull sets field value
-func (o *SubnetPrefix) SetIsFull(v string) {
-	o.IsFull = v
+// HasIsFull returns a boolean if a field has been set.
+func (o *SubnetPrefix) HasIsFull() bool {
+	if o != nil && o.IsFull.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetIsFull gets a reference to the given NullableBool and assigns it to the IsFull field.
+func (o *SubnetPrefix) SetIsFull(v bool) {
+	o.IsFull.Set(&v)
+}
+
+// SetIsFullNil sets the value for IsFull to be an explicit nil
+func (o *SubnetPrefix) SetIsFullNil() {
+	o.IsFull.Set(nil)
+}
+
+// UnsetIsFull ensures that no value is present for IsFull, not even an explicit nil
+func (o *SubnetPrefix) UnsetIsFull() {
+	o.IsFull.Unset()
 }
 
 // GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
@@ -597,7 +615,9 @@ func (o SubnetPrefix) ToMap() (map[string]interface{}, error) {
 		toSerialize["status"] = o.Status
 	}
 	toSerialize["family"] = o.Family
-	toSerialize["is_full"] = o.IsFull
+	if o.IsFull.IsSet() {
+		toSerialize["is_full"] = o.IsFull.Get()
+	}
 	if o.Created.IsSet() {
 		toSerialize["created"] = o.Created.Get()
 	}
@@ -623,7 +643,6 @@ func (o *SubnetPrefix) UnmarshalJSON(data []byte) (err error) {
 		"subnet",
 		"prefix",
 		"family",
-		"is_full",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.

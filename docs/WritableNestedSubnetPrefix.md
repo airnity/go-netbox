@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **IsSecondary** | Pointer to **bool** | Set Prefix subnet as secondary | [optional] 
 **AutoReserveFirstIps** | Pointer to **bool** | Automatically reserve first IPs (network, gateway, etc.) | [optional] [default to true]
 **AutoReserveLastIps** | Pointer to **bool** | Automatically reserve last IPs (broadcast, etc.) | [optional] [default to true]
-**IsFull** | **bool** |  | [readonly] 
+**IsFull** | Pointer to **NullableBool** |  | [optional] [readonly] 
 **MarkUtilized** | Pointer to **bool** | Treat this prefix as fully utilized | [optional] 
 **Status** | Pointer to [**NestedSubnetPrefixStatus**](NestedSubnetPrefixStatus.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -20,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewWritableNestedSubnetPrefix
 
-`func NewWritableNestedSubnetPrefix(prefix string, isFull bool, ) *WritableNestedSubnetPrefix`
+`func NewWritableNestedSubnetPrefix(prefix string, ) *WritableNestedSubnetPrefix`
 
 NewWritableNestedSubnetPrefix instantiates a new WritableNestedSubnetPrefix object
 This constructor will assign default values to properties that have it defined,
@@ -209,7 +209,22 @@ and a boolean to check if the value has been set.
 
 SetIsFull sets IsFull field to given value.
 
+### HasIsFull
 
+`func (o *WritableNestedSubnetPrefix) HasIsFull() bool`
+
+HasIsFull returns a boolean if a field has been set.
+
+### SetIsFullNil
+
+`func (o *WritableNestedSubnetPrefix) SetIsFullNil(b bool)`
+
+ SetIsFullNil sets the value for IsFull to be an explicit nil
+
+### UnsetIsFull
+`func (o *WritableNestedSubnetPrefix) UnsetIsFull()`
+
+UnsetIsFull ensures that no value is present for IsFull, not even an explicit nil
 ### GetMarkUtilized
 
 `func (o *WritableNestedSubnetPrefix) GetMarkUtilized() bool`

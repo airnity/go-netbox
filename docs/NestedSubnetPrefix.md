@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **IsSecondary** | Pointer to **bool** | Set Prefix subnet as secondary | [optional] 
 **AutoReserveFirstIps** | Pointer to **bool** | Automatically reserve first IP addresses (network, gateway, etc.) | [optional] 
 **AutoReserveLastIps** | Pointer to **bool** | Automatically reserve last IP addresses (broadcast, etc.) | [optional] 
-**IsFull** | **string** |  | [readonly] 
+**IsFull** | Pointer to **NullableBool** |  | [optional] [readonly] 
 **MarkUtilized** | Pointer to **bool** | Treat this prefix as fully utilized | [optional] 
 **Status** | Pointer to [**NestedSubnetPrefixStatus**](NestedSubnetPrefixStatus.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -22,7 +22,7 @@ Name | Type | Description | Notes
 
 ### NewNestedSubnetPrefix
 
-`func NewNestedSubnetPrefix(id int32, url string, display string, prefix string, isFull string, ) *NestedSubnetPrefix`
+`func NewNestedSubnetPrefix(id int32, url string, display string, prefix string, ) *NestedSubnetPrefix`
 
 NewNestedSubnetPrefix instantiates a new NestedSubnetPrefix object
 This constructor will assign default values to properties that have it defined,
@@ -219,24 +219,39 @@ HasAutoReserveLastIps returns a boolean if a field has been set.
 
 ### GetIsFull
 
-`func (o *NestedSubnetPrefix) GetIsFull() string`
+`func (o *NestedSubnetPrefix) GetIsFull() bool`
 
 GetIsFull returns the IsFull field if non-nil, zero value otherwise.
 
 ### GetIsFullOk
 
-`func (o *NestedSubnetPrefix) GetIsFullOk() (*string, bool)`
+`func (o *NestedSubnetPrefix) GetIsFullOk() (*bool, bool)`
 
 GetIsFullOk returns a tuple with the IsFull field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsFull
 
-`func (o *NestedSubnetPrefix) SetIsFull(v string)`
+`func (o *NestedSubnetPrefix) SetIsFull(v bool)`
 
 SetIsFull sets IsFull field to given value.
 
+### HasIsFull
 
+`func (o *NestedSubnetPrefix) HasIsFull() bool`
+
+HasIsFull returns a boolean if a field has been set.
+
+### SetIsFullNil
+
+`func (o *NestedSubnetPrefix) SetIsFullNil(b bool)`
+
+ SetIsFullNil sets the value for IsFull to be an explicit nil
+
+### UnsetIsFull
+`func (o *NestedSubnetPrefix) UnsetIsFull()`
+
+UnsetIsFull ensures that no value is present for IsFull, not even an explicit nil
 ### GetMarkUtilized
 
 `func (o *NestedSubnetPrefix) GetMarkUtilized() bool`

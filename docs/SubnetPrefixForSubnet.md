@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 **IsSecondary** | Pointer to **bool** | Set Prefix subnet as secondary | [optional] 
 **AutoReserveFirstIps** | Pointer to **bool** | Automatically reserve first IP addresses (network, gateway, etc.) | [optional] 
 **AutoReserveLastIps** | Pointer to **bool** | Automatically reserve last IP addresses (broadcast, etc.) | [optional] 
-**IsFull** | **string** |  | [readonly] 
+**IsFull** | Pointer to **NullableBool** |  | [optional] [readonly] 
 **Status** | **map[string]interface{}** |  | [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewSubnetPrefixForSubnet
 
-`func NewSubnetPrefixForSubnet(id int32, url string, display string, prefix string, isFull string, status map[string]interface{}, ) *SubnetPrefixForSubnet`
+`func NewSubnetPrefixForSubnet(id int32, url string, display string, prefix string, status map[string]interface{}, ) *SubnetPrefixForSubnet`
 
 NewSubnetPrefixForSubnet instantiates a new SubnetPrefixForSubnet object
 This constructor will assign default values to properties that have it defined,
@@ -218,24 +218,39 @@ HasAutoReserveLastIps returns a boolean if a field has been set.
 
 ### GetIsFull
 
-`func (o *SubnetPrefixForSubnet) GetIsFull() string`
+`func (o *SubnetPrefixForSubnet) GetIsFull() bool`
 
 GetIsFull returns the IsFull field if non-nil, zero value otherwise.
 
 ### GetIsFullOk
 
-`func (o *SubnetPrefixForSubnet) GetIsFullOk() (*string, bool)`
+`func (o *SubnetPrefixForSubnet) GetIsFullOk() (*bool, bool)`
 
 GetIsFullOk returns a tuple with the IsFull field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetIsFull
 
-`func (o *SubnetPrefixForSubnet) SetIsFull(v string)`
+`func (o *SubnetPrefixForSubnet) SetIsFull(v bool)`
 
 SetIsFull sets IsFull field to given value.
 
+### HasIsFull
 
+`func (o *SubnetPrefixForSubnet) HasIsFull() bool`
+
+HasIsFull returns a boolean if a field has been set.
+
+### SetIsFullNil
+
+`func (o *SubnetPrefixForSubnet) SetIsFullNil(b bool)`
+
+ SetIsFullNil sets the value for IsFull to be an explicit nil
+
+### UnsetIsFull
+`func (o *SubnetPrefixForSubnet) UnsetIsFull()`
+
+UnsetIsFull ensures that no value is present for IsFull, not even an explicit nil
 ### GetStatus
 
 `func (o *SubnetPrefixForSubnet) GetStatus() map[string]interface{}`

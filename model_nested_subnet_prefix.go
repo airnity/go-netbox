@@ -31,8 +31,8 @@ type NestedSubnetPrefix struct {
 	// Automatically reserve first IP addresses (network, gateway, etc.)
 	AutoReserveFirstIps *bool `json:"auto_reserve_first_ips,omitempty"`
 	// Automatically reserve last IP addresses (broadcast, etc.)
-	AutoReserveLastIps *bool  `json:"auto_reserve_last_ips,omitempty"`
-	IsFull             string `json:"is_full"`
+	AutoReserveLastIps *bool        `json:"auto_reserve_last_ips,omitempty"`
+	IsFull             NullableBool `json:"is_full,omitempty"`
 	// Treat this prefix as fully utilized
 	MarkUtilized         *bool                     `json:"mark_utilized,omitempty"`
 	Status               *NestedSubnetPrefixStatus `json:"status,omitempty"`
@@ -47,13 +47,12 @@ type _NestedSubnetPrefix NestedSubnetPrefix
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewNestedSubnetPrefix(id int32, url string, display string, prefix string, isFull string) *NestedSubnetPrefix {
+func NewNestedSubnetPrefix(id int32, url string, display string, prefix string) *NestedSubnetPrefix {
 	this := NestedSubnetPrefix{}
 	this.Id = id
 	this.Url = url
 	this.Display = display
 	this.Prefix = prefix
-	this.IsFull = isFull
 	return &this
 }
 
@@ -289,28 +288,47 @@ func (o *NestedSubnetPrefix) SetAutoReserveLastIps(v bool) {
 	o.AutoReserveLastIps = &v
 }
 
-// GetIsFull returns the IsFull field value
-func (o *NestedSubnetPrefix) GetIsFull() string {
-	if o == nil {
-		var ret string
+// GetIsFull returns the IsFull field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NestedSubnetPrefix) GetIsFull() bool {
+	if o == nil || IsNil(o.IsFull.Get()) {
+		var ret bool
 		return ret
 	}
-
-	return o.IsFull
+	return *o.IsFull.Get()
 }
 
-// GetIsFullOk returns a tuple with the IsFull field value
+// GetIsFullOk returns a tuple with the IsFull field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *NestedSubnetPrefix) GetIsFullOk() (*string, bool) {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NestedSubnetPrefix) GetIsFullOk() (*bool, bool) {
 	if o == nil {
 		return nil, false
 	}
-	return &o.IsFull, true
+	return o.IsFull.Get(), o.IsFull.IsSet()
 }
 
-// SetIsFull sets field value
-func (o *NestedSubnetPrefix) SetIsFull(v string) {
-	o.IsFull = v
+// HasIsFull returns a boolean if a field has been set.
+func (o *NestedSubnetPrefix) HasIsFull() bool {
+	if o != nil && o.IsFull.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetIsFull gets a reference to the given NullableBool and assigns it to the IsFull field.
+func (o *NestedSubnetPrefix) SetIsFull(v bool) {
+	o.IsFull.Set(&v)
+}
+
+// SetIsFullNil sets the value for IsFull to be an explicit nil
+func (o *NestedSubnetPrefix) SetIsFullNil() {
+	o.IsFull.Set(nil)
+}
+
+// UnsetIsFull ensures that no value is present for IsFull, not even an explicit nil
+func (o *NestedSubnetPrefix) UnsetIsFull() {
+	o.IsFull.Unset()
 }
 
 // GetMarkUtilized returns the MarkUtilized field value if set, zero value otherwise.
@@ -467,7 +485,9 @@ func (o NestedSubnetPrefix) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.AutoReserveLastIps) {
 		toSerialize["auto_reserve_last_ips"] = o.AutoReserveLastIps
 	}
-	toSerialize["is_full"] = o.IsFull
+	if o.IsFull.IsSet() {
+		toSerialize["is_full"] = o.IsFull.Get()
+	}
 	if !IsNil(o.MarkUtilized) {
 		toSerialize["mark_utilized"] = o.MarkUtilized
 	}
@@ -497,7 +517,6 @@ func (o *NestedSubnetPrefix) UnmarshalJSON(data []byte) (err error) {
 		"url",
 		"display",
 		"prefix",
-		"is_full",
 	}
 
 	// defaultValueFuncMap captures the default values for required properties.
