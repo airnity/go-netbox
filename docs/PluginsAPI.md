@@ -1247,8 +1247,8 @@ func main() {
 	regionN := []string{"Inner_example"} // []string |  (optional)
 	regionId := []string{"Inner_example"} // []string |  (optional)
 	regionIdN := []string{"Inner_example"} // []string |  (optional)
-	scopeType := "scopeType_example" // string |  (optional)
-	scopeTypeN := "scopeTypeN_example" // string |  (optional)
+	scopeType := []string{"Inner_example"} // []string |  (optional)
+	scopeTypeN := []string{"Inner_example"} // []string |  (optional)
 	site := []string{"Inner_example"} // []string | Site (slug) (optional)
 	siteN := []string{"Inner_example"} // []string | Site (slug) (optional)
 	siteGroup := []string{"Inner_example"} // []string |  (optional)
@@ -1419,8 +1419,8 @@ Name | Type | Description  | Notes
  **regionN** | **[]string** |  | 
  **regionId** | **[]string** |  | 
  **regionIdN** | **[]string** |  | 
- **scopeType** | **string** |  | 
- **scopeTypeN** | **string** |  | 
+ **scopeType** | **[]string** |  | 
+ **scopeTypeN** | **[]string** |  | 
  **site** | **[]string** | Site (slug) | 
  **siteN** | **[]string** | Site (slug) | 
  **siteGroup** | **[]string** |  | 

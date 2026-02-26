@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **IsSecondary** | Pointer to **bool** | Set Prefix subnet as secondary | [optional] 
 **AutoReserveFirstIps** | Pointer to **bool** | Automatically reserve first IPs (network, gateway, etc.) | [optional] [default to true]
 **AutoReserveLastIps** | Pointer to **bool** | Automatically reserve last IPs (broadcast, etc.) | [optional] [default to true]
+**IsFull** | **bool** |  | [readonly] 
 **MarkUtilized** | Pointer to **bool** | Treat this prefix as fully utilized | [optional] 
 **Status** | Pointer to [**NestedSubnetPrefixStatus**](NestedSubnetPrefixStatus.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -19,7 +20,7 @@ Name | Type | Description | Notes
 
 ### NewWritableNestedSubnetPrefix
 
-`func NewWritableNestedSubnetPrefix(prefix string, ) *WritableNestedSubnetPrefix`
+`func NewWritableNestedSubnetPrefix(prefix string, isFull bool, ) *WritableNestedSubnetPrefix`
 
 NewWritableNestedSubnetPrefix instantiates a new WritableNestedSubnetPrefix object
 This constructor will assign default values to properties that have it defined,
@@ -188,6 +189,26 @@ SetAutoReserveLastIps sets AutoReserveLastIps field to given value.
 `func (o *WritableNestedSubnetPrefix) HasAutoReserveLastIps() bool`
 
 HasAutoReserveLastIps returns a boolean if a field has been set.
+
+### GetIsFull
+
+`func (o *WritableNestedSubnetPrefix) GetIsFull() bool`
+
+GetIsFull returns the IsFull field if non-nil, zero value otherwise.
+
+### GetIsFullOk
+
+`func (o *WritableNestedSubnetPrefix) GetIsFullOk() (*bool, bool)`
+
+GetIsFullOk returns a tuple with the IsFull field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsFull
+
+`func (o *WritableNestedSubnetPrefix) SetIsFull(v bool)`
+
+SetIsFull sets IsFull field to given value.
+
 
 ### GetMarkUtilized
 

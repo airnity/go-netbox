@@ -17,6 +17,7 @@ Name | Type | Description | Notes
 **MarkUtilized** | Pointer to **bool** | Treat this prefix as fully utilized | [optional] 
 **Status** | Pointer to [**NestedSubnetPrefixStatus**](NestedSubnetPrefixStatus.md) |  | [optional] 
 **Family** | **int32** |  | [readonly] 
+**IsFull** | **string** |  | [readonly] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
@@ -24,7 +25,7 @@ Name | Type | Description | Notes
 
 ### NewSubnetPrefix
 
-`func NewSubnetPrefix(id int32, url string, display string, subnet NestedSubnet, prefix string, family int32, ) *SubnetPrefix`
+`func NewSubnetPrefix(id int32, url string, display string, subnet NestedSubnet, prefix string, family int32, isFull string, ) *SubnetPrefix`
 
 NewSubnetPrefix instantiates a new SubnetPrefix object
 This constructor will assign default values to properties that have it defined,
@@ -342,6 +343,26 @@ and a boolean to check if the value has been set.
 `func (o *SubnetPrefix) SetFamily(v int32)`
 
 SetFamily sets Family field to given value.
+
+
+### GetIsFull
+
+`func (o *SubnetPrefix) GetIsFull() string`
+
+GetIsFull returns the IsFull field if non-nil, zero value otherwise.
+
+### GetIsFullOk
+
+`func (o *SubnetPrefix) GetIsFullOk() (*string, bool)`
+
+GetIsFullOk returns a tuple with the IsFull field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsFull
+
+`func (o *SubnetPrefix) SetIsFull(v string)`
+
+SetIsFull sets IsFull field to given value.
 
 
 ### GetCreated

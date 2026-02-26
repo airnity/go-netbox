@@ -1121,18 +1121,18 @@ func main() {
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
-	objectType := "objectType_example" // string |  (optional)
-	objectTypeIc := "objectTypeIc_example" // string |  (optional)
-	objectTypeIe := "objectTypeIe_example" // string |  (optional)
-	objectTypeIew := "objectTypeIew_example" // string |  (optional)
-	objectTypeIregex := "objectTypeIregex_example" // string |  (optional)
-	objectTypeIsw := "objectTypeIsw_example" // string |  (optional)
-	objectTypeN := "objectTypeN_example" // string |  (optional)
-	objectTypeNic := "objectTypeNic_example" // string |  (optional)
-	objectTypeNie := "objectTypeNie_example" // string |  (optional)
-	objectTypeNiew := "objectTypeNiew_example" // string |  (optional)
-	objectTypeNisw := "objectTypeNisw_example" // string |  (optional)
-	objectTypeRegex := "objectTypeRegex_example" // string |  (optional)
+	objectType := []string{"Inner_example"} // []string |  (optional)
+	objectTypeIc := []string{"Inner_example"} // []string |  (optional)
+	objectTypeIe := []string{"Inner_example"} // []string |  (optional)
+	objectTypeIew := []string{"Inner_example"} // []string |  (optional)
+	objectTypeIregex := []string{"Inner_example"} // []string |  (optional)
+	objectTypeIsw := []string{"Inner_example"} // []string |  (optional)
+	objectTypeN := []string{"Inner_example"} // []string |  (optional)
+	objectTypeNic := []string{"Inner_example"} // []string |  (optional)
+	objectTypeNie := []string{"Inner_example"} // []string |  (optional)
+	objectTypeNiew := []string{"Inner_example"} // []string |  (optional)
+	objectTypeNisw := []string{"Inner_example"} // []string |  (optional)
+	objectTypeRegex := []string{"Inner_example"} // []string |  (optional)
 	objectTypeId := []int32{int32(123)} // []int32 |  (optional)
 	objectTypeIdN := []int32{int32(123)} // []int32 |  (optional)
 	objectTypes := []int32{int32(123)} // []int32 |  (optional)
@@ -1211,18 +1211,18 @@ Name | Type | Description  | Notes
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
  **nameRegex** | **[]string** |  | 
- **objectType** | **string** |  | 
- **objectTypeIc** | **string** |  | 
- **objectTypeIe** | **string** |  | 
- **objectTypeIew** | **string** |  | 
- **objectTypeIregex** | **string** |  | 
- **objectTypeIsw** | **string** |  | 
- **objectTypeN** | **string** |  | 
- **objectTypeNic** | **string** |  | 
- **objectTypeNie** | **string** |  | 
- **objectTypeNiew** | **string** |  | 
- **objectTypeNisw** | **string** |  | 
- **objectTypeRegex** | **string** |  | 
+ **objectType** | **[]string** |  | 
+ **objectTypeIc** | **[]string** |  | 
+ **objectTypeIe** | **[]string** |  | 
+ **objectTypeIew** | **[]string** |  | 
+ **objectTypeIregex** | **[]string** |  | 
+ **objectTypeIsw** | **[]string** |  | 
+ **objectTypeN** | **[]string** |  | 
+ **objectTypeNic** | **[]string** |  | 
+ **objectTypeNie** | **[]string** |  | 
+ **objectTypeNiew** | **[]string** |  | 
+ **objectTypeNisw** | **[]string** |  | 
+ **objectTypeRegex** | **[]string** |  | 
  **objectTypeId** | **[]int32** |  | 
  **objectTypeIdN** | **[]int32** |  | 
  **objectTypes** | **[]int32** |  | 
