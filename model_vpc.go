@@ -27,6 +27,7 @@ type VPC struct {
 	// Name of the VPC
 	Name                 string                   `json:"name" validate:"regexp=^[a-z0-9_-]+$"`
 	Environment          NullableBriefEnvironment `json:"environment,omitempty"`
+	Description          *string                  `json:"description,omitempty"`
 	Created              NullableTime             `json:"created,omitempty"`
 	LastUpdated          NullableTime             `json:"last_updated,omitempty"`
 	CustomFieldData      interface{}              `json:"custom_field_data,omitempty"`
@@ -204,6 +205,38 @@ func (o *VPC) UnsetEnvironment() {
 	o.Environment.Unset()
 }
 
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *VPC) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *VPC) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *VPC) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *VPC) SetDescription(v string) {
+	o.Description = &v
+}
+
 // GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *VPC) GetCreated() time.Time {
 	if o == nil || IsNil(o.Created.Get()) {
@@ -374,6 +407,9 @@ func (o VPC) ToMap() (map[string]interface{}, error) {
 	if o.Environment.IsSet() {
 		toSerialize["environment"] = o.Environment.Get()
 	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
 	if o.Created.IsSet() {
 		toSerialize["created"] = o.Created.Get()
 	}
@@ -452,6 +488,7 @@ func (o *VPC) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "display")
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "environment")
+		delete(additionalProperties, "description")
 		delete(additionalProperties, "created")
 		delete(additionalProperties, "last_updated")
 		delete(additionalProperties, "custom_field_data")

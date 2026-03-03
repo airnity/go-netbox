@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | Name of the VPC | [optional] 
 **Environment** | Pointer to [**NullableBriefVPCRequestEnvironment**](BriefVPCRequestEnvironment.md) |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **CustomFieldData** | Pointer to **interface{}** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 
@@ -88,6 +89,31 @@ HasEnvironment returns a boolean if a field has been set.
 `func (o *PatchedVPCRequest) UnsetEnvironment()`
 
 UnsetEnvironment ensures that no value is present for Environment, not even an explicit nil
+### GetDescription
+
+`func (o *PatchedVPCRequest) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *PatchedVPCRequest) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *PatchedVPCRequest) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *PatchedVPCRequest) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
 ### GetCustomFieldData
 
 `func (o *PatchedVPCRequest) GetCustomFieldData() interface{}`

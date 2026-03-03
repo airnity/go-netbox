@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **Display** | Pointer to **interface{}** |  | [optional] [readonly] 
 **Name** | **string** | Name of the VPC | 
 **Environment** | Pointer to [**NullableBriefEnvironment**](BriefEnvironment.md) |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **CustomFieldData** | Pointer to **interface{}** |  | [optional] 
@@ -163,6 +164,31 @@ HasEnvironment returns a boolean if a field has been set.
 `func (o *VPC) UnsetEnvironment()`
 
 UnsetEnvironment ensures that no value is present for Environment, not even an explicit nil
+### GetDescription
+
+`func (o *VPC) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *VPC) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *VPC) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *VPC) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
 ### GetCreated
 
 `func (o *VPC) GetCreated() time.Time`

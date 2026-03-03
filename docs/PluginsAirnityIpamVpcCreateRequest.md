@@ -6,6 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | Name of the VPC | 
 **Environment** | Pointer to [**NullableBriefVPCRequestEnvironment**](BriefVPCRequestEnvironment.md) |  | [optional] 
+**Description** | Pointer to **string** |  | [optional] 
 **CustomFieldData** | Pointer to **interface{}** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 
@@ -83,6 +84,31 @@ HasEnvironment returns a boolean if a field has been set.
 `func (o *PluginsAirnityIpamVpcCreateRequest) UnsetEnvironment()`
 
 UnsetEnvironment ensures that no value is present for Environment, not even an explicit nil
+### GetDescription
+
+`func (o *PluginsAirnityIpamVpcCreateRequest) GetDescription() string`
+
+GetDescription returns the Description field if non-nil, zero value otherwise.
+
+### GetDescriptionOk
+
+`func (o *PluginsAirnityIpamVpcCreateRequest) GetDescriptionOk() (*string, bool)`
+
+GetDescriptionOk returns a tuple with the Description field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetDescription
+
+`func (o *PluginsAirnityIpamVpcCreateRequest) SetDescription(v string)`
+
+SetDescription sets Description field to given value.
+
+### HasDescription
+
+`func (o *PluginsAirnityIpamVpcCreateRequest) HasDescription() bool`
+
+HasDescription returns a boolean if a field has been set.
+
 ### GetCustomFieldData
 
 `func (o *PluginsAirnityIpamVpcCreateRequest) GetCustomFieldData() interface{}`

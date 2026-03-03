@@ -22,6 +22,7 @@ type PatchedVPCRequest struct {
 	// Name of the VPC
 	Name                 *string                            `json:"name,omitempty" validate:"regexp=^[a-z0-9_-]+$"`
 	Environment          NullableBriefVPCRequestEnvironment `json:"environment,omitempty"`
+	Description          *string                            `json:"description,omitempty"`
 	CustomFieldData      interface{}                        `json:"custom_field_data,omitempty"`
 	Tags                 []NestedTagRequest                 `json:"tags,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -121,6 +122,38 @@ func (o *PatchedVPCRequest) UnsetEnvironment() {
 	o.Environment.Unset()
 }
 
+// GetDescription returns the Description field value if set, zero value otherwise.
+func (o *PatchedVPCRequest) GetDescription() string {
+	if o == nil || IsNil(o.Description) {
+		var ret string
+		return ret
+	}
+	return *o.Description
+}
+
+// GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PatchedVPCRequest) GetDescriptionOk() (*string, bool) {
+	if o == nil || IsNil(o.Description) {
+		return nil, false
+	}
+	return o.Description, true
+}
+
+// HasDescription returns a boolean if a field has been set.
+func (o *PatchedVPCRequest) HasDescription() bool {
+	if o != nil && !IsNil(o.Description) {
+		return true
+	}
+
+	return false
+}
+
+// SetDescription gets a reference to the given string and assigns it to the Description field.
+func (o *PatchedVPCRequest) SetDescription(v string) {
+	o.Description = &v
+}
+
 // GetCustomFieldData returns the CustomFieldData field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *PatchedVPCRequest) GetCustomFieldData() interface{} {
 	if o == nil {
@@ -202,6 +235,9 @@ func (o PatchedVPCRequest) ToMap() (map[string]interface{}, error) {
 	if o.Environment.IsSet() {
 		toSerialize["environment"] = o.Environment.Get()
 	}
+	if !IsNil(o.Description) {
+		toSerialize["description"] = o.Description
+	}
 	if o.CustomFieldData != nil {
 		toSerialize["custom_field_data"] = o.CustomFieldData
 	}
@@ -232,6 +268,7 @@ func (o *PatchedVPCRequest) UnmarshalJSON(data []byte) (err error) {
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "environment")
+		delete(additionalProperties, "description")
 		delete(additionalProperties, "custom_field_data")
 		delete(additionalProperties, "tags")
 		o.AdditionalProperties = additionalProperties

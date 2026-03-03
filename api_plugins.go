@@ -6858,6 +6858,19 @@ type ApiPluginsAirnityIpamSubnetipaddressListRequest struct {
 	ctx               context.Context
 	ApiService        PluginsAPI
 	address           *[]string
+	country           *PluginsAirnityIpamSubnetipaddressListCountryParameter
+	countryEmpty      *bool
+	countryIc         *[]string
+	countryIe         *[]string
+	countryIew        *[]string
+	countryIregex     *[]string
+	countryIsw        *[]string
+	countryN          *PluginsAirnityIpamSubnetipaddressListCountryParameter
+	countryNic        *[]string
+	countryNie        *[]string
+	countryNiew       *[]string
+	countryNisw       *[]string
+	countryRegex      *[]string
 	created           *[]time.Time
 	createdEmpty      *[]time.Time
 	createdGt         *[]time.Time
@@ -6978,6 +6991,73 @@ type ApiPluginsAirnityIpamSubnetipaddressListRequest struct {
 
 func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) Address(address []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
 	r.address = &address
+	return r
+}
+
+// GeoIP of this IPAddress  * &#x60;AD&#x60; - Andorra * &#x60;AE&#x60; - United Arab Emirates * &#x60;AF&#x60; - Afghanistan * &#x60;AG&#x60; - Antigua and Barbuda * &#x60;AI&#x60; - Anguilla * &#x60;AL&#x60; - Albania * &#x60;AM&#x60; - Armenia * &#x60;AO&#x60; - Angola * &#x60;AQ&#x60; - Antarctica * &#x60;AR&#x60; - Argentina * &#x60;AS&#x60; - American Samoa * &#x60;AT&#x60; - Austria * &#x60;AU&#x60; - Australia * &#x60;AW&#x60; - Aruba * &#x60;AX&#x60; - Åland Islands * &#x60;AZ&#x60; - Azerbaijan * &#x60;BA&#x60; - Bosnia and Herzegovina * &#x60;BB&#x60; - Barbados * &#x60;BD&#x60; - Bangladesh * &#x60;BE&#x60; - Belgium * &#x60;BF&#x60; - Burkina Faso * &#x60;BG&#x60; - Bulgaria * &#x60;BH&#x60; - Bahrain * &#x60;BI&#x60; - Burundi * &#x60;BJ&#x60; - Benin * &#x60;BL&#x60; - Saint Barthélemy * &#x60;BM&#x60; - Bermuda * &#x60;BN&#x60; - Brunei * &#x60;BO&#x60; - Bolivia * &#x60;BQ&#x60; - Caribbean Netherlands * &#x60;BR&#x60; - Brazil * &#x60;BS&#x60; - The Bahamas * &#x60;BT&#x60; - Bhutan * &#x60;BV&#x60; - Bouvet Island * &#x60;BW&#x60; - Botswana * &#x60;BY&#x60; - Belarus * &#x60;BZ&#x60; - Belize * &#x60;CA&#x60; - Canada * &#x60;CC&#x60; - Cocos (Keeling) Islands * &#x60;CD&#x60; - Democratic Republic of the Congo * &#x60;CF&#x60; - Central African Republic * &#x60;CG&#x60; - Republic of the Congo * &#x60;CH&#x60; - Switzerland * &#x60;CI&#x60; - Côte d&#39;Ivoire * &#x60;CK&#x60; - Cook Islands * &#x60;CL&#x60; - Chile * &#x60;CM&#x60; - Cameroon * &#x60;CN&#x60; - China * &#x60;CO&#x60; - Colombia * &#x60;CR&#x60; - Costa Rica * &#x60;CU&#x60; - Cuba * &#x60;CV&#x60; - Cape Verde * &#x60;CW&#x60; - Curaçao * &#x60;CX&#x60; - Christmas Island * &#x60;CY&#x60; - Cyprus * &#x60;CZ&#x60; - Czech Republic * &#x60;DE&#x60; - Germany * &#x60;DJ&#x60; - Djibouti * &#x60;DK&#x60; - Denmark * &#x60;DM&#x60; - Dominica * &#x60;DO&#x60; - Dominican Republic * &#x60;DZ&#x60; - Algeria * &#x60;EC&#x60; - Ecuador * &#x60;EE&#x60; - Estonia * &#x60;EG&#x60; - Egypt * &#x60;EH&#x60; - Western Sahara * &#x60;ER&#x60; - Eritrea * &#x60;ES&#x60; - Spain * &#x60;ET&#x60; - Ethiopia * &#x60;FI&#x60; - Finland * &#x60;FJ&#x60; - Fiji * &#x60;FK&#x60; - Falkland Islands * &#x60;FM&#x60; - Federated States of Micronesia * &#x60;FO&#x60; - Faroe Islands * &#x60;FR&#x60; - France * &#x60;GA&#x60; - Gabon * &#x60;GB&#x60; - United Kingdom * &#x60;GD&#x60; - Grenada * &#x60;GE&#x60; - Georgia (country) * &#x60;GF&#x60; - French Guiana * &#x60;GG&#x60; - Bailiwick of Guernsey * &#x60;GH&#x60; - Ghana * &#x60;GI&#x60; - Gibraltar * &#x60;GL&#x60; - Greenland * &#x60;GM&#x60; - The Gambia * &#x60;GN&#x60; - Guinea * &#x60;GP&#x60; - Guadeloupe * &#x60;GQ&#x60; - Equatorial Guinea * &#x60;GR&#x60; - Greece * &#x60;GS&#x60; - South Georgia and the South Sandwich Islands * &#x60;GT&#x60; - Guatemala * &#x60;GU&#x60; - Guam * &#x60;GW&#x60; - Guinea-Bissau * &#x60;GY&#x60; - Guyana * &#x60;HK&#x60; - Hong Kong * &#x60;HM&#x60; - Heard Island and McDonald Islands * &#x60;HN&#x60; - Honduras * &#x60;HR&#x60; - Croatia * &#x60;HT&#x60; - Haiti * &#x60;HU&#x60; - Hungary * &#x60;ID&#x60; - Indonesia * &#x60;IE&#x60; - Republic of Ireland * &#x60;IL&#x60; - Israel * &#x60;IM&#x60; - Isle of Man * &#x60;IN&#x60; - India * &#x60;IO&#x60; - British Indian Ocean Territory * &#x60;IQ&#x60; - Iraq * &#x60;IR&#x60; - Iran * &#x60;IS&#x60; - Iceland * &#x60;IT&#x60; - Italy * &#x60;JE&#x60; - Jersey * &#x60;JM&#x60; - Jamaica * &#x60;JO&#x60; - Jordan * &#x60;JP&#x60; - Japan * &#x60;KE&#x60; - Kenya * &#x60;KG&#x60; - Kyrgyzstan * &#x60;KH&#x60; - Cambodia * &#x60;KI&#x60; - Kiribati * &#x60;KM&#x60; - Comoros * &#x60;KN&#x60; - Saint Kitts and Nevis * &#x60;KP&#x60; - North Korea * &#x60;KR&#x60; - South Korea * &#x60;KW&#x60; - Kuwait * &#x60;KY&#x60; - Cayman Islands * &#x60;KZ&#x60; - Kazakhstan * &#x60;LA&#x60; - Laos * &#x60;LB&#x60; - Lebanon * &#x60;LC&#x60; - Saint Lucia * &#x60;LI&#x60; - Liechtenstein * &#x60;LK&#x60; - Sri Lanka * &#x60;LR&#x60; - Liberia * &#x60;LS&#x60; - Lesotho * &#x60;LT&#x60; - Lithuania * &#x60;LU&#x60; - Luxembourg * &#x60;LV&#x60; - Latvia * &#x60;LY&#x60; - Libya * &#x60;MA&#x60; - Morocco * &#x60;MC&#x60; - Monaco * &#x60;MD&#x60; - Moldova * &#x60;ME&#x60; - Montenegro * &#x60;MF&#x60; - Collectivity of Saint Martin * &#x60;MG&#x60; - Madagascar * &#x60;MH&#x60; - Marshall Islands * &#x60;MK&#x60; - North Macedonia * &#x60;ML&#x60; - Mali * &#x60;MM&#x60; - Myanmar * &#x60;MN&#x60; - Mongolia * &#x60;MO&#x60; - Macau * &#x60;MP&#x60; - Northern Mariana Islands * &#x60;MQ&#x60; - Martinique * &#x60;MR&#x60; - Mauritania * &#x60;MS&#x60; - Montserrat * &#x60;MT&#x60; - Malta * &#x60;MU&#x60; - Mauritius * &#x60;MV&#x60; - Maldives * &#x60;MW&#x60; - Malawi * &#x60;MX&#x60; - Mexico * &#x60;MY&#x60; - Malaysia * &#x60;MZ&#x60; - Mozambique * &#x60;NA&#x60; - Namibia * &#x60;NC&#x60; - New Caledonia * &#x60;NE&#x60; - Niger * &#x60;NF&#x60; - Norfolk Island * &#x60;NG&#x60; - Nigeria * &#x60;NI&#x60; - Nicaragua * &#x60;NL&#x60; - Kingdom of the Netherlands * &#x60;NO&#x60; - Norway * &#x60;NP&#x60; - Nepal * &#x60;NR&#x60; - Nauru * &#x60;NU&#x60; - Niue * &#x60;NZ&#x60; - New Zealand * &#x60;OM&#x60; - Oman * &#x60;PA&#x60; - Panama * &#x60;PE&#x60; - Peru * &#x60;PF&#x60; - French Polynesia * &#x60;PG&#x60; - Papua New Guinea * &#x60;PH&#x60; - Philippines * &#x60;PK&#x60; - Pakistan * &#x60;PL&#x60; - Poland * &#x60;PM&#x60; - Saint Pierre and Miquelon * &#x60;PN&#x60; - Pitcairn Islands * &#x60;PR&#x60; - Puerto Rico * &#x60;PS&#x60; - Palestine * &#x60;PT&#x60; - Portugal * &#x60;PW&#x60; - Palau * &#x60;PY&#x60; - Paraguay * &#x60;QA&#x60; - Qatar * &#x60;RE&#x60; - Réunion * &#x60;RO&#x60; - Romania * &#x60;RS&#x60; - Serbia * &#x60;RU&#x60; - Russia * &#x60;RW&#x60; - Rwanda * &#x60;SA&#x60; - Saudi Arabia * &#x60;SB&#x60; - Solomon Islands * &#x60;SC&#x60; - Seychelles * &#x60;SD&#x60; - Sudan * &#x60;SE&#x60; - Sweden * &#x60;SG&#x60; - Singapore * &#x60;SH&#x60; - Saint Helena, Ascension and Tristan da Cunha * &#x60;SI&#x60; - Slovenia * &#x60;SJ&#x60; - Svalbard and Jan Mayen * &#x60;SK&#x60; - Slovakia * &#x60;SL&#x60; - Sierra Leone * &#x60;SM&#x60; - San Marino * &#x60;SN&#x60; - Senegal * &#x60;SO&#x60; - Somalia * &#x60;SR&#x60; - Suriname * &#x60;SS&#x60; - South Sudan * &#x60;ST&#x60; - São Tomé and Príncipe * &#x60;SV&#x60; - El Salvador * &#x60;SX&#x60; - Sint Maarten * &#x60;SY&#x60; - Syria * &#x60;SZ&#x60; - Eswatini * &#x60;TC&#x60; - Turks and Caicos Islands * &#x60;TD&#x60; - Chad * &#x60;TF&#x60; - French Southern and Antarctic Lands * &#x60;TG&#x60; - Togo * &#x60;TH&#x60; - Thailand * &#x60;TJ&#x60; - Tajikistan * &#x60;TK&#x60; - Tokelau * &#x60;TL&#x60; - East Timor * &#x60;TM&#x60; - Turkmenistan * &#x60;TN&#x60; - Tunisia * &#x60;TO&#x60; - Tonga * &#x60;TR&#x60; - Turkey * &#x60;TT&#x60; - Trinidad and Tobago * &#x60;TV&#x60; - Tuvalu * &#x60;TW&#x60; - Taiwan, China * &#x60;TZ&#x60; - Tanzania * &#x60;UA&#x60; - Ukraine * &#x60;UG&#x60; - Uganda * &#x60;UM&#x60; - United States Minor Outlying Islands * &#x60;US&#x60; - United States * &#x60;UY&#x60; - Uruguay * &#x60;UZ&#x60; - Uzbekistan * &#x60;VA&#x60; - Vatican City * &#x60;VC&#x60; - Saint Vincent and the Grenadines * &#x60;VE&#x60; - Venezuela * &#x60;VG&#x60; - British Virgin Islands * &#x60;VI&#x60; - United States Virgin Islands * &#x60;VN&#x60; - Vietnam * &#x60;VU&#x60; - Vanuatu * &#x60;WF&#x60; - Wallis and Futuna * &#x60;WS&#x60; - Samoa * &#x60;YE&#x60; - Yemen * &#x60;YT&#x60; - Mayotte * &#x60;ZA&#x60; - South Africa * &#x60;ZM&#x60; - Zambia * &#x60;ZW&#x60; - Zimbabwe
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) Country(country PluginsAirnityIpamSubnetipaddressListCountryParameter) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.country = &country
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryEmpty(countryEmpty bool) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.countryEmpty = &countryEmpty
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryIc(countryIc []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.countryIc = &countryIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryIe(countryIe []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.countryIe = &countryIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryIew(countryIew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.countryIew = &countryIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryIregex(countryIregex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.countryIregex = &countryIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryIsw(countryIsw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.countryIsw = &countryIsw
+	return r
+}
+
+// GeoIP of this IPAddress  * &#x60;AD&#x60; - Andorra * &#x60;AE&#x60; - United Arab Emirates * &#x60;AF&#x60; - Afghanistan * &#x60;AG&#x60; - Antigua and Barbuda * &#x60;AI&#x60; - Anguilla * &#x60;AL&#x60; - Albania * &#x60;AM&#x60; - Armenia * &#x60;AO&#x60; - Angola * &#x60;AQ&#x60; - Antarctica * &#x60;AR&#x60; - Argentina * &#x60;AS&#x60; - American Samoa * &#x60;AT&#x60; - Austria * &#x60;AU&#x60; - Australia * &#x60;AW&#x60; - Aruba * &#x60;AX&#x60; - Åland Islands * &#x60;AZ&#x60; - Azerbaijan * &#x60;BA&#x60; - Bosnia and Herzegovina * &#x60;BB&#x60; - Barbados * &#x60;BD&#x60; - Bangladesh * &#x60;BE&#x60; - Belgium * &#x60;BF&#x60; - Burkina Faso * &#x60;BG&#x60; - Bulgaria * &#x60;BH&#x60; - Bahrain * &#x60;BI&#x60; - Burundi * &#x60;BJ&#x60; - Benin * &#x60;BL&#x60; - Saint Barthélemy * &#x60;BM&#x60; - Bermuda * &#x60;BN&#x60; - Brunei * &#x60;BO&#x60; - Bolivia * &#x60;BQ&#x60; - Caribbean Netherlands * &#x60;BR&#x60; - Brazil * &#x60;BS&#x60; - The Bahamas * &#x60;BT&#x60; - Bhutan * &#x60;BV&#x60; - Bouvet Island * &#x60;BW&#x60; - Botswana * &#x60;BY&#x60; - Belarus * &#x60;BZ&#x60; - Belize * &#x60;CA&#x60; - Canada * &#x60;CC&#x60; - Cocos (Keeling) Islands * &#x60;CD&#x60; - Democratic Republic of the Congo * &#x60;CF&#x60; - Central African Republic * &#x60;CG&#x60; - Republic of the Congo * &#x60;CH&#x60; - Switzerland * &#x60;CI&#x60; - Côte d&#39;Ivoire * &#x60;CK&#x60; - Cook Islands * &#x60;CL&#x60; - Chile * &#x60;CM&#x60; - Cameroon * &#x60;CN&#x60; - China * &#x60;CO&#x60; - Colombia * &#x60;CR&#x60; - Costa Rica * &#x60;CU&#x60; - Cuba * &#x60;CV&#x60; - Cape Verde * &#x60;CW&#x60; - Curaçao * &#x60;CX&#x60; - Christmas Island * &#x60;CY&#x60; - Cyprus * &#x60;CZ&#x60; - Czech Republic * &#x60;DE&#x60; - Germany * &#x60;DJ&#x60; - Djibouti * &#x60;DK&#x60; - Denmark * &#x60;DM&#x60; - Dominica * &#x60;DO&#x60; - Dominican Republic * &#x60;DZ&#x60; - Algeria * &#x60;EC&#x60; - Ecuador * &#x60;EE&#x60; - Estonia * &#x60;EG&#x60; - Egypt * &#x60;EH&#x60; - Western Sahara * &#x60;ER&#x60; - Eritrea * &#x60;ES&#x60; - Spain * &#x60;ET&#x60; - Ethiopia * &#x60;FI&#x60; - Finland * &#x60;FJ&#x60; - Fiji * &#x60;FK&#x60; - Falkland Islands * &#x60;FM&#x60; - Federated States of Micronesia * &#x60;FO&#x60; - Faroe Islands * &#x60;FR&#x60; - France * &#x60;GA&#x60; - Gabon * &#x60;GB&#x60; - United Kingdom * &#x60;GD&#x60; - Grenada * &#x60;GE&#x60; - Georgia (country) * &#x60;GF&#x60; - French Guiana * &#x60;GG&#x60; - Bailiwick of Guernsey * &#x60;GH&#x60; - Ghana * &#x60;GI&#x60; - Gibraltar * &#x60;GL&#x60; - Greenland * &#x60;GM&#x60; - The Gambia * &#x60;GN&#x60; - Guinea * &#x60;GP&#x60; - Guadeloupe * &#x60;GQ&#x60; - Equatorial Guinea * &#x60;GR&#x60; - Greece * &#x60;GS&#x60; - South Georgia and the South Sandwich Islands * &#x60;GT&#x60; - Guatemala * &#x60;GU&#x60; - Guam * &#x60;GW&#x60; - Guinea-Bissau * &#x60;GY&#x60; - Guyana * &#x60;HK&#x60; - Hong Kong * &#x60;HM&#x60; - Heard Island and McDonald Islands * &#x60;HN&#x60; - Honduras * &#x60;HR&#x60; - Croatia * &#x60;HT&#x60; - Haiti * &#x60;HU&#x60; - Hungary * &#x60;ID&#x60; - Indonesia * &#x60;IE&#x60; - Republic of Ireland * &#x60;IL&#x60; - Israel * &#x60;IM&#x60; - Isle of Man * &#x60;IN&#x60; - India * &#x60;IO&#x60; - British Indian Ocean Territory * &#x60;IQ&#x60; - Iraq * &#x60;IR&#x60; - Iran * &#x60;IS&#x60; - Iceland * &#x60;IT&#x60; - Italy * &#x60;JE&#x60; - Jersey * &#x60;JM&#x60; - Jamaica * &#x60;JO&#x60; - Jordan * &#x60;JP&#x60; - Japan * &#x60;KE&#x60; - Kenya * &#x60;KG&#x60; - Kyrgyzstan * &#x60;KH&#x60; - Cambodia * &#x60;KI&#x60; - Kiribati * &#x60;KM&#x60; - Comoros * &#x60;KN&#x60; - Saint Kitts and Nevis * &#x60;KP&#x60; - North Korea * &#x60;KR&#x60; - South Korea * &#x60;KW&#x60; - Kuwait * &#x60;KY&#x60; - Cayman Islands * &#x60;KZ&#x60; - Kazakhstan * &#x60;LA&#x60; - Laos * &#x60;LB&#x60; - Lebanon * &#x60;LC&#x60; - Saint Lucia * &#x60;LI&#x60; - Liechtenstein * &#x60;LK&#x60; - Sri Lanka * &#x60;LR&#x60; - Liberia * &#x60;LS&#x60; - Lesotho * &#x60;LT&#x60; - Lithuania * &#x60;LU&#x60; - Luxembourg * &#x60;LV&#x60; - Latvia * &#x60;LY&#x60; - Libya * &#x60;MA&#x60; - Morocco * &#x60;MC&#x60; - Monaco * &#x60;MD&#x60; - Moldova * &#x60;ME&#x60; - Montenegro * &#x60;MF&#x60; - Collectivity of Saint Martin * &#x60;MG&#x60; - Madagascar * &#x60;MH&#x60; - Marshall Islands * &#x60;MK&#x60; - North Macedonia * &#x60;ML&#x60; - Mali * &#x60;MM&#x60; - Myanmar * &#x60;MN&#x60; - Mongolia * &#x60;MO&#x60; - Macau * &#x60;MP&#x60; - Northern Mariana Islands * &#x60;MQ&#x60; - Martinique * &#x60;MR&#x60; - Mauritania * &#x60;MS&#x60; - Montserrat * &#x60;MT&#x60; - Malta * &#x60;MU&#x60; - Mauritius * &#x60;MV&#x60; - Maldives * &#x60;MW&#x60; - Malawi * &#x60;MX&#x60; - Mexico * &#x60;MY&#x60; - Malaysia * &#x60;MZ&#x60; - Mozambique * &#x60;NA&#x60; - Namibia * &#x60;NC&#x60; - New Caledonia * &#x60;NE&#x60; - Niger * &#x60;NF&#x60; - Norfolk Island * &#x60;NG&#x60; - Nigeria * &#x60;NI&#x60; - Nicaragua * &#x60;NL&#x60; - Kingdom of the Netherlands * &#x60;NO&#x60; - Norway * &#x60;NP&#x60; - Nepal * &#x60;NR&#x60; - Nauru * &#x60;NU&#x60; - Niue * &#x60;NZ&#x60; - New Zealand * &#x60;OM&#x60; - Oman * &#x60;PA&#x60; - Panama * &#x60;PE&#x60; - Peru * &#x60;PF&#x60; - French Polynesia * &#x60;PG&#x60; - Papua New Guinea * &#x60;PH&#x60; - Philippines * &#x60;PK&#x60; - Pakistan * &#x60;PL&#x60; - Poland * &#x60;PM&#x60; - Saint Pierre and Miquelon * &#x60;PN&#x60; - Pitcairn Islands * &#x60;PR&#x60; - Puerto Rico * &#x60;PS&#x60; - Palestine * &#x60;PT&#x60; - Portugal * &#x60;PW&#x60; - Palau * &#x60;PY&#x60; - Paraguay * &#x60;QA&#x60; - Qatar * &#x60;RE&#x60; - Réunion * &#x60;RO&#x60; - Romania * &#x60;RS&#x60; - Serbia * &#x60;RU&#x60; - Russia * &#x60;RW&#x60; - Rwanda * &#x60;SA&#x60; - Saudi Arabia * &#x60;SB&#x60; - Solomon Islands * &#x60;SC&#x60; - Seychelles * &#x60;SD&#x60; - Sudan * &#x60;SE&#x60; - Sweden * &#x60;SG&#x60; - Singapore * &#x60;SH&#x60; - Saint Helena, Ascension and Tristan da Cunha * &#x60;SI&#x60; - Slovenia * &#x60;SJ&#x60; - Svalbard and Jan Mayen * &#x60;SK&#x60; - Slovakia * &#x60;SL&#x60; - Sierra Leone * &#x60;SM&#x60; - San Marino * &#x60;SN&#x60; - Senegal * &#x60;SO&#x60; - Somalia * &#x60;SR&#x60; - Suriname * &#x60;SS&#x60; - South Sudan * &#x60;ST&#x60; - São Tomé and Príncipe * &#x60;SV&#x60; - El Salvador * &#x60;SX&#x60; - Sint Maarten * &#x60;SY&#x60; - Syria * &#x60;SZ&#x60; - Eswatini * &#x60;TC&#x60; - Turks and Caicos Islands * &#x60;TD&#x60; - Chad * &#x60;TF&#x60; - French Southern and Antarctic Lands * &#x60;TG&#x60; - Togo * &#x60;TH&#x60; - Thailand * &#x60;TJ&#x60; - Tajikistan * &#x60;TK&#x60; - Tokelau * &#x60;TL&#x60; - East Timor * &#x60;TM&#x60; - Turkmenistan * &#x60;TN&#x60; - Tunisia * &#x60;TO&#x60; - Tonga * &#x60;TR&#x60; - Turkey * &#x60;TT&#x60; - Trinidad and Tobago * &#x60;TV&#x60; - Tuvalu * &#x60;TW&#x60; - Taiwan, China * &#x60;TZ&#x60; - Tanzania * &#x60;UA&#x60; - Ukraine * &#x60;UG&#x60; - Uganda * &#x60;UM&#x60; - United States Minor Outlying Islands * &#x60;US&#x60; - United States * &#x60;UY&#x60; - Uruguay * &#x60;UZ&#x60; - Uzbekistan * &#x60;VA&#x60; - Vatican City * &#x60;VC&#x60; - Saint Vincent and the Grenadines * &#x60;VE&#x60; - Venezuela * &#x60;VG&#x60; - British Virgin Islands * &#x60;VI&#x60; - United States Virgin Islands * &#x60;VN&#x60; - Vietnam * &#x60;VU&#x60; - Vanuatu * &#x60;WF&#x60; - Wallis and Futuna * &#x60;WS&#x60; - Samoa * &#x60;YE&#x60; - Yemen * &#x60;YT&#x60; - Mayotte * &#x60;ZA&#x60; - South Africa * &#x60;ZM&#x60; - Zambia * &#x60;ZW&#x60; - Zimbabwe
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryN(countryN PluginsAirnityIpamSubnetipaddressListCountryParameter) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.countryN = &countryN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryNic(countryNic []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.countryNic = &countryNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryNie(countryNie []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.countryNie = &countryNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryNiew(countryNiew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.countryNiew = &countryNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryNisw(countryNisw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.countryNisw = &countryNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryRegex(countryRegex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.countryRegex = &countryRegex
 	return r
 }
 
@@ -7662,6 +7742,125 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetipaddressListExecute(r ApiPl
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address", t, "form", "multi")
+		}
+	}
+	if r.country != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "country", r.country, "form", "")
+	}
+	if r.countryEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "country__empty", r.countryEmpty, "form", "")
+	}
+	if r.countryIc != nil {
+		t := *r.countryIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "country__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "country__ic", t, "form", "multi")
+		}
+	}
+	if r.countryIe != nil {
+		t := *r.countryIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "country__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "country__ie", t, "form", "multi")
+		}
+	}
+	if r.countryIew != nil {
+		t := *r.countryIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "country__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "country__iew", t, "form", "multi")
+		}
+	}
+	if r.countryIregex != nil {
+		t := *r.countryIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "country__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "country__iregex", t, "form", "multi")
+		}
+	}
+	if r.countryIsw != nil {
+		t := *r.countryIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "country__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "country__isw", t, "form", "multi")
+		}
+	}
+	if r.countryN != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "country__n", r.countryN, "form", "")
+	}
+	if r.countryNic != nil {
+		t := *r.countryNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "country__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "country__nic", t, "form", "multi")
+		}
+	}
+	if r.countryNie != nil {
+		t := *r.countryNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "country__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "country__nie", t, "form", "multi")
+		}
+	}
+	if r.countryNiew != nil {
+		t := *r.countryNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "country__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "country__niew", t, "form", "multi")
+		}
+	}
+	if r.countryNisw != nil {
+		t := *r.countryNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "country__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "country__nisw", t, "form", "multi")
+		}
+	}
+	if r.countryRegex != nil {
+		t := *r.countryRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "country__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "country__regex", t, "form", "multi")
 		}
 	}
 	if r.created != nil {
