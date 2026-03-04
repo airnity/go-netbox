@@ -150,6 +150,262 @@ type ExtrasAPI interface {
 	// ExtrasCustomFieldsUpdateExecute executes the request
 	//  @return CustomField
 	ExtrasCustomFieldsUpdateExecute(r ApiExtrasCustomFieldsUpdateRequest) (*CustomField, *http.Response, error)
+
+	/*
+		ExtrasEventRulesBulkDestroy Method for ExtrasEventRulesBulkDestroy
+
+		Delete a list of event rule objects.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiExtrasEventRulesBulkDestroyRequest
+	*/
+	ExtrasEventRulesBulkDestroy(ctx context.Context) ApiExtrasEventRulesBulkDestroyRequest
+
+	// ExtrasEventRulesBulkDestroyExecute executes the request
+	ExtrasEventRulesBulkDestroyExecute(r ApiExtrasEventRulesBulkDestroyRequest) (*http.Response, error)
+
+	/*
+		ExtrasEventRulesBulkPartialUpdate Method for ExtrasEventRulesBulkPartialUpdate
+
+		Patch a list of event rule objects.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiExtrasEventRulesBulkPartialUpdateRequest
+	*/
+	ExtrasEventRulesBulkPartialUpdate(ctx context.Context) ApiExtrasEventRulesBulkPartialUpdateRequest
+
+	// ExtrasEventRulesBulkPartialUpdateExecute executes the request
+	//  @return []EventRule
+	ExtrasEventRulesBulkPartialUpdateExecute(r ApiExtrasEventRulesBulkPartialUpdateRequest) ([]EventRule, *http.Response, error)
+
+	/*
+		ExtrasEventRulesBulkUpdate Method for ExtrasEventRulesBulkUpdate
+
+		Put a list of event rule objects.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiExtrasEventRulesBulkUpdateRequest
+	*/
+	ExtrasEventRulesBulkUpdate(ctx context.Context) ApiExtrasEventRulesBulkUpdateRequest
+
+	// ExtrasEventRulesBulkUpdateExecute executes the request
+	//  @return []EventRule
+	ExtrasEventRulesBulkUpdateExecute(r ApiExtrasEventRulesBulkUpdateRequest) ([]EventRule, *http.Response, error)
+
+	/*
+		ExtrasEventRulesCreate Method for ExtrasEventRulesCreate
+
+		Post a list of event rule objects.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiExtrasEventRulesCreateRequest
+	*/
+	ExtrasEventRulesCreate(ctx context.Context) ApiExtrasEventRulesCreateRequest
+
+	// ExtrasEventRulesCreateExecute executes the request
+	//  @return EventRule
+	ExtrasEventRulesCreateExecute(r ApiExtrasEventRulesCreateRequest) (*EventRule, *http.Response, error)
+
+	/*
+		ExtrasEventRulesDestroy Method for ExtrasEventRulesDestroy
+
+		Delete a event rule object.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param id A unique integer value identifying this event rule.
+		@return ApiExtrasEventRulesDestroyRequest
+	*/
+	ExtrasEventRulesDestroy(ctx context.Context, id int32) ApiExtrasEventRulesDestroyRequest
+
+	// ExtrasEventRulesDestroyExecute executes the request
+	ExtrasEventRulesDestroyExecute(r ApiExtrasEventRulesDestroyRequest) (*http.Response, error)
+
+	/*
+		ExtrasEventRulesList Method for ExtrasEventRulesList
+
+		Get a list of event rule objects.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiExtrasEventRulesListRequest
+	*/
+	ExtrasEventRulesList(ctx context.Context) ApiExtrasEventRulesListRequest
+
+	// ExtrasEventRulesListExecute executes the request
+	//  @return PaginatedEventRuleList
+	ExtrasEventRulesListExecute(r ApiExtrasEventRulesListRequest) (*PaginatedEventRuleList, *http.Response, error)
+
+	/*
+		ExtrasEventRulesPartialUpdate Method for ExtrasEventRulesPartialUpdate
+
+		Patch a event rule object.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param id A unique integer value identifying this event rule.
+		@return ApiExtrasEventRulesPartialUpdateRequest
+	*/
+	ExtrasEventRulesPartialUpdate(ctx context.Context, id int32) ApiExtrasEventRulesPartialUpdateRequest
+
+	// ExtrasEventRulesPartialUpdateExecute executes the request
+	//  @return EventRule
+	ExtrasEventRulesPartialUpdateExecute(r ApiExtrasEventRulesPartialUpdateRequest) (*EventRule, *http.Response, error)
+
+	/*
+		ExtrasEventRulesRetrieve Method for ExtrasEventRulesRetrieve
+
+		Get a event rule object.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param id A unique integer value identifying this event rule.
+		@return ApiExtrasEventRulesRetrieveRequest
+	*/
+	ExtrasEventRulesRetrieve(ctx context.Context, id int32) ApiExtrasEventRulesRetrieveRequest
+
+	// ExtrasEventRulesRetrieveExecute executes the request
+	//  @return EventRule
+	ExtrasEventRulesRetrieveExecute(r ApiExtrasEventRulesRetrieveRequest) (*EventRule, *http.Response, error)
+
+	/*
+		ExtrasEventRulesUpdate Method for ExtrasEventRulesUpdate
+
+		Put a event rule object.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param id A unique integer value identifying this event rule.
+		@return ApiExtrasEventRulesUpdateRequest
+	*/
+	ExtrasEventRulesUpdate(ctx context.Context, id int32) ApiExtrasEventRulesUpdateRequest
+
+	// ExtrasEventRulesUpdateExecute executes the request
+	//  @return EventRule
+	ExtrasEventRulesUpdateExecute(r ApiExtrasEventRulesUpdateRequest) (*EventRule, *http.Response, error)
+
+	/*
+		ExtrasWebhooksBulkDestroy Method for ExtrasWebhooksBulkDestroy
+
+		Delete a list of webhook objects.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiExtrasWebhooksBulkDestroyRequest
+	*/
+	ExtrasWebhooksBulkDestroy(ctx context.Context) ApiExtrasWebhooksBulkDestroyRequest
+
+	// ExtrasWebhooksBulkDestroyExecute executes the request
+	ExtrasWebhooksBulkDestroyExecute(r ApiExtrasWebhooksBulkDestroyRequest) (*http.Response, error)
+
+	/*
+		ExtrasWebhooksBulkPartialUpdate Method for ExtrasWebhooksBulkPartialUpdate
+
+		Patch a list of webhook objects.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiExtrasWebhooksBulkPartialUpdateRequest
+	*/
+	ExtrasWebhooksBulkPartialUpdate(ctx context.Context) ApiExtrasWebhooksBulkPartialUpdateRequest
+
+	// ExtrasWebhooksBulkPartialUpdateExecute executes the request
+	//  @return []Webhook
+	ExtrasWebhooksBulkPartialUpdateExecute(r ApiExtrasWebhooksBulkPartialUpdateRequest) ([]Webhook, *http.Response, error)
+
+	/*
+		ExtrasWebhooksBulkUpdate Method for ExtrasWebhooksBulkUpdate
+
+		Put a list of webhook objects.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiExtrasWebhooksBulkUpdateRequest
+	*/
+	ExtrasWebhooksBulkUpdate(ctx context.Context) ApiExtrasWebhooksBulkUpdateRequest
+
+	// ExtrasWebhooksBulkUpdateExecute executes the request
+	//  @return []Webhook
+	ExtrasWebhooksBulkUpdateExecute(r ApiExtrasWebhooksBulkUpdateRequest) ([]Webhook, *http.Response, error)
+
+	/*
+		ExtrasWebhooksCreate Method for ExtrasWebhooksCreate
+
+		Post a list of webhook objects.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiExtrasWebhooksCreateRequest
+	*/
+	ExtrasWebhooksCreate(ctx context.Context) ApiExtrasWebhooksCreateRequest
+
+	// ExtrasWebhooksCreateExecute executes the request
+	//  @return Webhook
+	ExtrasWebhooksCreateExecute(r ApiExtrasWebhooksCreateRequest) (*Webhook, *http.Response, error)
+
+	/*
+		ExtrasWebhooksDestroy Method for ExtrasWebhooksDestroy
+
+		Delete a webhook object.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param id A unique integer value identifying this webhook.
+		@return ApiExtrasWebhooksDestroyRequest
+	*/
+	ExtrasWebhooksDestroy(ctx context.Context, id int32) ApiExtrasWebhooksDestroyRequest
+
+	// ExtrasWebhooksDestroyExecute executes the request
+	ExtrasWebhooksDestroyExecute(r ApiExtrasWebhooksDestroyRequest) (*http.Response, error)
+
+	/*
+		ExtrasWebhooksList Method for ExtrasWebhooksList
+
+		Get a list of webhook objects.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@return ApiExtrasWebhooksListRequest
+	*/
+	ExtrasWebhooksList(ctx context.Context) ApiExtrasWebhooksListRequest
+
+	// ExtrasWebhooksListExecute executes the request
+	//  @return PaginatedWebhookList
+	ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequest) (*PaginatedWebhookList, *http.Response, error)
+
+	/*
+		ExtrasWebhooksPartialUpdate Method for ExtrasWebhooksPartialUpdate
+
+		Patch a webhook object.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param id A unique integer value identifying this webhook.
+		@return ApiExtrasWebhooksPartialUpdateRequest
+	*/
+	ExtrasWebhooksPartialUpdate(ctx context.Context, id int32) ApiExtrasWebhooksPartialUpdateRequest
+
+	// ExtrasWebhooksPartialUpdateExecute executes the request
+	//  @return Webhook
+	ExtrasWebhooksPartialUpdateExecute(r ApiExtrasWebhooksPartialUpdateRequest) (*Webhook, *http.Response, error)
+
+	/*
+		ExtrasWebhooksRetrieve Method for ExtrasWebhooksRetrieve
+
+		Get a webhook object.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param id A unique integer value identifying this webhook.
+		@return ApiExtrasWebhooksRetrieveRequest
+	*/
+	ExtrasWebhooksRetrieve(ctx context.Context, id int32) ApiExtrasWebhooksRetrieveRequest
+
+	// ExtrasWebhooksRetrieveExecute executes the request
+	//  @return Webhook
+	ExtrasWebhooksRetrieveExecute(r ApiExtrasWebhooksRetrieveRequest) (*Webhook, *http.Response, error)
+
+	/*
+		ExtrasWebhooksUpdate Method for ExtrasWebhooksUpdate
+
+		Put a webhook object.
+
+		@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+		@param id A unique integer value identifying this webhook.
+		@return ApiExtrasWebhooksUpdateRequest
+	*/
+	ExtrasWebhooksUpdate(ctx context.Context, id int32) ApiExtrasWebhooksUpdateRequest
+
+	// ExtrasWebhooksUpdateExecute executes the request
+	//  @return Webhook
+	ExtrasWebhooksUpdateExecute(r ApiExtrasWebhooksUpdateRequest) (*Webhook, *http.Response, error)
 }
 
 // ExtrasAPIService ExtrasAPI service
@@ -4477,6 +4733,5784 @@ func (a *ExtrasAPIService) ExtrasCustomFieldsUpdateExecute(r ApiExtrasCustomFiel
 	}
 	// body params
 	localVarPostBody = r.writableCustomFieldRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasEventRulesBulkDestroyRequest struct {
+	ctx              context.Context
+	ApiService       ExtrasAPI
+	eventRuleRequest *[]EventRuleRequest
+}
+
+func (r ApiExtrasEventRulesBulkDestroyRequest) EventRuleRequest(eventRuleRequest []EventRuleRequest) ApiExtrasEventRulesBulkDestroyRequest {
+	r.eventRuleRequest = &eventRuleRequest
+	return r
+}
+
+func (r ApiExtrasEventRulesBulkDestroyRequest) Execute() (*http.Response, error) {
+	return r.ApiService.ExtrasEventRulesBulkDestroyExecute(r)
+}
+
+/*
+ExtrasEventRulesBulkDestroy Method for ExtrasEventRulesBulkDestroy
+
+Delete a list of event rule objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesBulkDestroyRequest
+*/
+func (a *ExtrasAPIService) ExtrasEventRulesBulkDestroy(ctx context.Context) ApiExtrasEventRulesBulkDestroyRequest {
+	return ApiExtrasEventRulesBulkDestroyRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+func (a *ExtrasAPIService) ExtrasEventRulesBulkDestroyExecute(r ApiExtrasEventRulesBulkDestroyRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesBulkDestroy")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/event-rules/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.eventRuleRequest == nil {
+		return nil, reportError("eventRuleRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.eventRuleRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiExtrasEventRulesBulkPartialUpdateRequest struct {
+	ctx              context.Context
+	ApiService       ExtrasAPI
+	eventRuleRequest *[]EventRuleRequest
+}
+
+func (r ApiExtrasEventRulesBulkPartialUpdateRequest) EventRuleRequest(eventRuleRequest []EventRuleRequest) ApiExtrasEventRulesBulkPartialUpdateRequest {
+	r.eventRuleRequest = &eventRuleRequest
+	return r
+}
+
+func (r ApiExtrasEventRulesBulkPartialUpdateRequest) Execute() ([]EventRule, *http.Response, error) {
+	return r.ApiService.ExtrasEventRulesBulkPartialUpdateExecute(r)
+}
+
+/*
+ExtrasEventRulesBulkPartialUpdate Method for ExtrasEventRulesBulkPartialUpdate
+
+Patch a list of event rule objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesBulkPartialUpdateRequest
+*/
+func (a *ExtrasAPIService) ExtrasEventRulesBulkPartialUpdate(ctx context.Context) ApiExtrasEventRulesBulkPartialUpdateRequest {
+	return ApiExtrasEventRulesBulkPartialUpdateRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+//
+//	@return []EventRule
+func (a *ExtrasAPIService) ExtrasEventRulesBulkPartialUpdateExecute(r ApiExtrasEventRulesBulkPartialUpdateRequest) ([]EventRule, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []EventRule
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesBulkPartialUpdate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/event-rules/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.eventRuleRequest == nil {
+		return localVarReturnValue, nil, reportError("eventRuleRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.eventRuleRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasEventRulesBulkUpdateRequest struct {
+	ctx              context.Context
+	ApiService       ExtrasAPI
+	eventRuleRequest *[]EventRuleRequest
+}
+
+func (r ApiExtrasEventRulesBulkUpdateRequest) EventRuleRequest(eventRuleRequest []EventRuleRequest) ApiExtrasEventRulesBulkUpdateRequest {
+	r.eventRuleRequest = &eventRuleRequest
+	return r
+}
+
+func (r ApiExtrasEventRulesBulkUpdateRequest) Execute() ([]EventRule, *http.Response, error) {
+	return r.ApiService.ExtrasEventRulesBulkUpdateExecute(r)
+}
+
+/*
+ExtrasEventRulesBulkUpdate Method for ExtrasEventRulesBulkUpdate
+
+Put a list of event rule objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesBulkUpdateRequest
+*/
+func (a *ExtrasAPIService) ExtrasEventRulesBulkUpdate(ctx context.Context) ApiExtrasEventRulesBulkUpdateRequest {
+	return ApiExtrasEventRulesBulkUpdateRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+//
+//	@return []EventRule
+func (a *ExtrasAPIService) ExtrasEventRulesBulkUpdateExecute(r ApiExtrasEventRulesBulkUpdateRequest) ([]EventRule, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []EventRule
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesBulkUpdate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/event-rules/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.eventRuleRequest == nil {
+		return localVarReturnValue, nil, reportError("eventRuleRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.eventRuleRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasEventRulesCreateRequest struct {
+	ctx                           context.Context
+	ApiService                    ExtrasAPI
+	extrasEventRulesCreateRequest *ExtrasEventRulesCreateRequest
+}
+
+func (r ApiExtrasEventRulesCreateRequest) ExtrasEventRulesCreateRequest(extrasEventRulesCreateRequest ExtrasEventRulesCreateRequest) ApiExtrasEventRulesCreateRequest {
+	r.extrasEventRulesCreateRequest = &extrasEventRulesCreateRequest
+	return r
+}
+
+func (r ApiExtrasEventRulesCreateRequest) Execute() (*EventRule, *http.Response, error) {
+	return r.ApiService.ExtrasEventRulesCreateExecute(r)
+}
+
+/*
+ExtrasEventRulesCreate Method for ExtrasEventRulesCreate
+
+Post a list of event rule objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesCreateRequest
+*/
+func (a *ExtrasAPIService) ExtrasEventRulesCreate(ctx context.Context) ApiExtrasEventRulesCreateRequest {
+	return ApiExtrasEventRulesCreateRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+//
+//	@return EventRule
+func (a *ExtrasAPIService) ExtrasEventRulesCreateExecute(r ApiExtrasEventRulesCreateRequest) (*EventRule, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EventRule
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesCreate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/event-rules/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.extrasEventRulesCreateRequest == nil {
+		return localVarReturnValue, nil, reportError("extrasEventRulesCreateRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.extrasEventRulesCreateRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasEventRulesDestroyRequest struct {
+	ctx        context.Context
+	ApiService ExtrasAPI
+	id         int32
+}
+
+func (r ApiExtrasEventRulesDestroyRequest) Execute() (*http.Response, error) {
+	return r.ApiService.ExtrasEventRulesDestroyExecute(r)
+}
+
+/*
+ExtrasEventRulesDestroy Method for ExtrasEventRulesDestroy
+
+Delete a event rule object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this event rule.
+	@return ApiExtrasEventRulesDestroyRequest
+*/
+func (a *ExtrasAPIService) ExtrasEventRulesDestroy(ctx context.Context, id int32) ApiExtrasEventRulesDestroyRequest {
+	return ApiExtrasEventRulesDestroyRequest{
+		ApiService: a,
+		ctx:        ctx,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+func (a *ExtrasAPIService) ExtrasEventRulesDestroyExecute(r ApiExtrasEventRulesDestroyRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesDestroy")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/event-rules/{id}/"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiExtrasEventRulesListRequest struct {
+	ctx                 context.Context
+	ApiService          ExtrasAPI
+	actionObjectId      *[]int32
+	actionObjectIdEmpty *[]int32
+	actionObjectIdGt    *[]int32
+	actionObjectIdGte   *[]int32
+	actionObjectIdLt    *[]int32
+	actionObjectIdLte   *[]int32
+	actionObjectIdN     *[]int32
+	actionObjectType    *[]string
+	actionObjectTypeN   *[]string
+	actionType          *[]string
+	actionTypeEmpty     *bool
+	actionTypeIc        *[]string
+	actionTypeIe        *[]string
+	actionTypeIew       *[]string
+	actionTypeIregex    *[]string
+	actionTypeIsw       *[]string
+	actionTypeN         *[]string
+	actionTypeNic       *[]string
+	actionTypeNie       *[]string
+	actionTypeNiew      *[]string
+	actionTypeNisw      *[]string
+	actionTypeRegex     *[]string
+	created             *[]time.Time
+	createdEmpty        *[]time.Time
+	createdGt           *[]time.Time
+	createdGte          *[]time.Time
+	createdLt           *[]time.Time
+	createdLte          *[]time.Time
+	createdN            *[]time.Time
+	createdByRequest    *string
+	description         *[]string
+	descriptionEmpty    *bool
+	descriptionIc       *[]string
+	descriptionIe       *[]string
+	descriptionIew      *[]string
+	descriptionIregex   *[]string
+	descriptionIsw      *[]string
+	descriptionN        *[]string
+	descriptionNic      *[]string
+	descriptionNie      *[]string
+	descriptionNiew     *[]string
+	descriptionNisw     *[]string
+	descriptionRegex    *[]string
+	enabled             *bool
+	eventType           *[]string
+	id                  *[]int32
+	idEmpty             *bool
+	idGt                *[]int32
+	idGte               *[]int32
+	idLt                *[]int32
+	idLte               *[]int32
+	idN                 *[]int32
+	lastUpdated         *[]time.Time
+	lastUpdatedEmpty    *[]time.Time
+	lastUpdatedGt       *[]time.Time
+	lastUpdatedGte      *[]time.Time
+	lastUpdatedLt       *[]time.Time
+	lastUpdatedLte      *[]time.Time
+	lastUpdatedN        *[]time.Time
+	limit               *int32
+	modifiedByRequest   *string
+	name                *[]string
+	nameEmpty           *bool
+	nameIc              *[]string
+	nameIe              *[]string
+	nameIew             *[]string
+	nameIregex          *[]string
+	nameIsw             *[]string
+	nameN               *[]string
+	nameNic             *[]string
+	nameNie             *[]string
+	nameNiew            *[]string
+	nameNisw            *[]string
+	nameRegex           *[]string
+	objectType          *[]string
+	objectTypeIc        *[]string
+	objectTypeIe        *[]string
+	objectTypeIew       *[]string
+	objectTypeIregex    *[]string
+	objectTypeIsw       *[]string
+	objectTypeN         *[]string
+	objectTypeNic       *[]string
+	objectTypeNie       *[]string
+	objectTypeNiew      *[]string
+	objectTypeNisw      *[]string
+	objectTypeRegex     *[]string
+	objectTypeId        *[]int32
+	objectTypeIdN       *[]int32
+	offset              *int32
+	ordering            *string
+	owner               *[]string
+	ownerN              *[]string
+	ownerGroup          *[]string
+	ownerGroupN         *[]string
+	ownerGroupId        *[]int32
+	ownerGroupIdN       *[]int32
+	ownerId             *[]*int32
+	ownerIdN            *[]*int32
+	q                   *string
+	tag                 *[]string
+	tagN                *[]string
+	tagId               *[]string
+	tagIdN              *[]string
+	updatedByRequest    *string
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionObjectId(actionObjectId []int32) ApiExtrasEventRulesListRequest {
+	r.actionObjectId = &actionObjectId
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionObjectIdEmpty(actionObjectIdEmpty []int32) ApiExtrasEventRulesListRequest {
+	r.actionObjectIdEmpty = &actionObjectIdEmpty
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionObjectIdGt(actionObjectIdGt []int32) ApiExtrasEventRulesListRequest {
+	r.actionObjectIdGt = &actionObjectIdGt
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionObjectIdGte(actionObjectIdGte []int32) ApiExtrasEventRulesListRequest {
+	r.actionObjectIdGte = &actionObjectIdGte
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionObjectIdLt(actionObjectIdLt []int32) ApiExtrasEventRulesListRequest {
+	r.actionObjectIdLt = &actionObjectIdLt
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionObjectIdLte(actionObjectIdLte []int32) ApiExtrasEventRulesListRequest {
+	r.actionObjectIdLte = &actionObjectIdLte
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionObjectIdN(actionObjectIdN []int32) ApiExtrasEventRulesListRequest {
+	r.actionObjectIdN = &actionObjectIdN
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionObjectType(actionObjectType []string) ApiExtrasEventRulesListRequest {
+	r.actionObjectType = &actionObjectType
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionObjectTypeN(actionObjectTypeN []string) ApiExtrasEventRulesListRequest {
+	r.actionObjectTypeN = &actionObjectTypeN
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionType(actionType []string) ApiExtrasEventRulesListRequest {
+	r.actionType = &actionType
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionTypeEmpty(actionTypeEmpty bool) ApiExtrasEventRulesListRequest {
+	r.actionTypeEmpty = &actionTypeEmpty
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionTypeIc(actionTypeIc []string) ApiExtrasEventRulesListRequest {
+	r.actionTypeIc = &actionTypeIc
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionTypeIe(actionTypeIe []string) ApiExtrasEventRulesListRequest {
+	r.actionTypeIe = &actionTypeIe
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionTypeIew(actionTypeIew []string) ApiExtrasEventRulesListRequest {
+	r.actionTypeIew = &actionTypeIew
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionTypeIregex(actionTypeIregex []string) ApiExtrasEventRulesListRequest {
+	r.actionTypeIregex = &actionTypeIregex
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionTypeIsw(actionTypeIsw []string) ApiExtrasEventRulesListRequest {
+	r.actionTypeIsw = &actionTypeIsw
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionTypeN(actionTypeN []string) ApiExtrasEventRulesListRequest {
+	r.actionTypeN = &actionTypeN
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionTypeNic(actionTypeNic []string) ApiExtrasEventRulesListRequest {
+	r.actionTypeNic = &actionTypeNic
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionTypeNie(actionTypeNie []string) ApiExtrasEventRulesListRequest {
+	r.actionTypeNie = &actionTypeNie
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionTypeNiew(actionTypeNiew []string) ApiExtrasEventRulesListRequest {
+	r.actionTypeNiew = &actionTypeNiew
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionTypeNisw(actionTypeNisw []string) ApiExtrasEventRulesListRequest {
+	r.actionTypeNisw = &actionTypeNisw
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ActionTypeRegex(actionTypeRegex []string) ApiExtrasEventRulesListRequest {
+	r.actionTypeRegex = &actionTypeRegex
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) Created(created []time.Time) ApiExtrasEventRulesListRequest {
+	r.created = &created
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) CreatedEmpty(createdEmpty []time.Time) ApiExtrasEventRulesListRequest {
+	r.createdEmpty = &createdEmpty
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) CreatedGt(createdGt []time.Time) ApiExtrasEventRulesListRequest {
+	r.createdGt = &createdGt
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) CreatedGte(createdGte []time.Time) ApiExtrasEventRulesListRequest {
+	r.createdGte = &createdGte
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) CreatedLt(createdLt []time.Time) ApiExtrasEventRulesListRequest {
+	r.createdLt = &createdLt
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) CreatedLte(createdLte []time.Time) ApiExtrasEventRulesListRequest {
+	r.createdLte = &createdLte
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) CreatedN(createdN []time.Time) ApiExtrasEventRulesListRequest {
+	r.createdN = &createdN
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) CreatedByRequest(createdByRequest string) ApiExtrasEventRulesListRequest {
+	r.createdByRequest = &createdByRequest
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) Description(description []string) ApiExtrasEventRulesListRequest {
+	r.description = &description
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) DescriptionEmpty(descriptionEmpty bool) ApiExtrasEventRulesListRequest {
+	r.descriptionEmpty = &descriptionEmpty
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) DescriptionIc(descriptionIc []string) ApiExtrasEventRulesListRequest {
+	r.descriptionIc = &descriptionIc
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) DescriptionIe(descriptionIe []string) ApiExtrasEventRulesListRequest {
+	r.descriptionIe = &descriptionIe
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) DescriptionIew(descriptionIew []string) ApiExtrasEventRulesListRequest {
+	r.descriptionIew = &descriptionIew
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) DescriptionIregex(descriptionIregex []string) ApiExtrasEventRulesListRequest {
+	r.descriptionIregex = &descriptionIregex
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) DescriptionIsw(descriptionIsw []string) ApiExtrasEventRulesListRequest {
+	r.descriptionIsw = &descriptionIsw
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) DescriptionN(descriptionN []string) ApiExtrasEventRulesListRequest {
+	r.descriptionN = &descriptionN
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) DescriptionNic(descriptionNic []string) ApiExtrasEventRulesListRequest {
+	r.descriptionNic = &descriptionNic
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) DescriptionNie(descriptionNie []string) ApiExtrasEventRulesListRequest {
+	r.descriptionNie = &descriptionNie
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) DescriptionNiew(descriptionNiew []string) ApiExtrasEventRulesListRequest {
+	r.descriptionNiew = &descriptionNiew
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) DescriptionNisw(descriptionNisw []string) ApiExtrasEventRulesListRequest {
+	r.descriptionNisw = &descriptionNisw
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) DescriptionRegex(descriptionRegex []string) ApiExtrasEventRulesListRequest {
+	r.descriptionRegex = &descriptionRegex
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) Enabled(enabled bool) ApiExtrasEventRulesListRequest {
+	r.enabled = &enabled
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) EventType(eventType []string) ApiExtrasEventRulesListRequest {
+	r.eventType = &eventType
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) Id(id []int32) ApiExtrasEventRulesListRequest {
+	r.id = &id
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) IdEmpty(idEmpty bool) ApiExtrasEventRulesListRequest {
+	r.idEmpty = &idEmpty
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) IdGt(idGt []int32) ApiExtrasEventRulesListRequest {
+	r.idGt = &idGt
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) IdGte(idGte []int32) ApiExtrasEventRulesListRequest {
+	r.idGte = &idGte
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) IdLt(idLt []int32) ApiExtrasEventRulesListRequest {
+	r.idLt = &idLt
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) IdLte(idLte []int32) ApiExtrasEventRulesListRequest {
+	r.idLte = &idLte
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) IdN(idN []int32) ApiExtrasEventRulesListRequest {
+	r.idN = &idN
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) LastUpdated(lastUpdated []time.Time) ApiExtrasEventRulesListRequest {
+	r.lastUpdated = &lastUpdated
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) LastUpdatedEmpty(lastUpdatedEmpty []time.Time) ApiExtrasEventRulesListRequest {
+	r.lastUpdatedEmpty = &lastUpdatedEmpty
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) LastUpdatedGt(lastUpdatedGt []time.Time) ApiExtrasEventRulesListRequest {
+	r.lastUpdatedGt = &lastUpdatedGt
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) LastUpdatedGte(lastUpdatedGte []time.Time) ApiExtrasEventRulesListRequest {
+	r.lastUpdatedGte = &lastUpdatedGte
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) LastUpdatedLt(lastUpdatedLt []time.Time) ApiExtrasEventRulesListRequest {
+	r.lastUpdatedLt = &lastUpdatedLt
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) LastUpdatedLte(lastUpdatedLte []time.Time) ApiExtrasEventRulesListRequest {
+	r.lastUpdatedLte = &lastUpdatedLte
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) LastUpdatedN(lastUpdatedN []time.Time) ApiExtrasEventRulesListRequest {
+	r.lastUpdatedN = &lastUpdatedN
+	return r
+}
+
+// Number of results to return per page.
+func (r ApiExtrasEventRulesListRequest) Limit(limit int32) ApiExtrasEventRulesListRequest {
+	r.limit = &limit
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ModifiedByRequest(modifiedByRequest string) ApiExtrasEventRulesListRequest {
+	r.modifiedByRequest = &modifiedByRequest
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) Name(name []string) ApiExtrasEventRulesListRequest {
+	r.name = &name
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) NameEmpty(nameEmpty bool) ApiExtrasEventRulesListRequest {
+	r.nameEmpty = &nameEmpty
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) NameIc(nameIc []string) ApiExtrasEventRulesListRequest {
+	r.nameIc = &nameIc
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) NameIe(nameIe []string) ApiExtrasEventRulesListRequest {
+	r.nameIe = &nameIe
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) NameIew(nameIew []string) ApiExtrasEventRulesListRequest {
+	r.nameIew = &nameIew
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) NameIregex(nameIregex []string) ApiExtrasEventRulesListRequest {
+	r.nameIregex = &nameIregex
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) NameIsw(nameIsw []string) ApiExtrasEventRulesListRequest {
+	r.nameIsw = &nameIsw
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) NameN(nameN []string) ApiExtrasEventRulesListRequest {
+	r.nameN = &nameN
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) NameNic(nameNic []string) ApiExtrasEventRulesListRequest {
+	r.nameNic = &nameNic
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) NameNie(nameNie []string) ApiExtrasEventRulesListRequest {
+	r.nameNie = &nameNie
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) NameNiew(nameNiew []string) ApiExtrasEventRulesListRequest {
+	r.nameNiew = &nameNiew
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) NameNisw(nameNisw []string) ApiExtrasEventRulesListRequest {
+	r.nameNisw = &nameNisw
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) NameRegex(nameRegex []string) ApiExtrasEventRulesListRequest {
+	r.nameRegex = &nameRegex
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectType(objectType []string) ApiExtrasEventRulesListRequest {
+	r.objectType = &objectType
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeIc(objectTypeIc []string) ApiExtrasEventRulesListRequest {
+	r.objectTypeIc = &objectTypeIc
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeIe(objectTypeIe []string) ApiExtrasEventRulesListRequest {
+	r.objectTypeIe = &objectTypeIe
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeIew(objectTypeIew []string) ApiExtrasEventRulesListRequest {
+	r.objectTypeIew = &objectTypeIew
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeIregex(objectTypeIregex []string) ApiExtrasEventRulesListRequest {
+	r.objectTypeIregex = &objectTypeIregex
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeIsw(objectTypeIsw []string) ApiExtrasEventRulesListRequest {
+	r.objectTypeIsw = &objectTypeIsw
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeN(objectTypeN []string) ApiExtrasEventRulesListRequest {
+	r.objectTypeN = &objectTypeN
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeNic(objectTypeNic []string) ApiExtrasEventRulesListRequest {
+	r.objectTypeNic = &objectTypeNic
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeNie(objectTypeNie []string) ApiExtrasEventRulesListRequest {
+	r.objectTypeNie = &objectTypeNie
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeNiew(objectTypeNiew []string) ApiExtrasEventRulesListRequest {
+	r.objectTypeNiew = &objectTypeNiew
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeNisw(objectTypeNisw []string) ApiExtrasEventRulesListRequest {
+	r.objectTypeNisw = &objectTypeNisw
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeRegex(objectTypeRegex []string) ApiExtrasEventRulesListRequest {
+	r.objectTypeRegex = &objectTypeRegex
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeId(objectTypeId []int32) ApiExtrasEventRulesListRequest {
+	r.objectTypeId = &objectTypeId
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) ObjectTypeIdN(objectTypeIdN []int32) ApiExtrasEventRulesListRequest {
+	r.objectTypeIdN = &objectTypeIdN
+	return r
+}
+
+// The initial index from which to return the results.
+func (r ApiExtrasEventRulesListRequest) Offset(offset int32) ApiExtrasEventRulesListRequest {
+	r.offset = &offset
+	return r
+}
+
+// Which field to use when ordering the results.
+func (r ApiExtrasEventRulesListRequest) Ordering(ordering string) ApiExtrasEventRulesListRequest {
+	r.ordering = &ordering
+	return r
+}
+
+// Owner (name)
+func (r ApiExtrasEventRulesListRequest) Owner(owner []string) ApiExtrasEventRulesListRequest {
+	r.owner = &owner
+	return r
+}
+
+// Owner (name)
+func (r ApiExtrasEventRulesListRequest) OwnerN(ownerN []string) ApiExtrasEventRulesListRequest {
+	r.ownerN = &ownerN
+	return r
+}
+
+// Owner Group (name)
+func (r ApiExtrasEventRulesListRequest) OwnerGroup(ownerGroup []string) ApiExtrasEventRulesListRequest {
+	r.ownerGroup = &ownerGroup
+	return r
+}
+
+// Owner Group (name)
+func (r ApiExtrasEventRulesListRequest) OwnerGroupN(ownerGroupN []string) ApiExtrasEventRulesListRequest {
+	r.ownerGroupN = &ownerGroupN
+	return r
+}
+
+// Owner Group (ID)
+func (r ApiExtrasEventRulesListRequest) OwnerGroupId(ownerGroupId []int32) ApiExtrasEventRulesListRequest {
+	r.ownerGroupId = &ownerGroupId
+	return r
+}
+
+// Owner Group (ID)
+func (r ApiExtrasEventRulesListRequest) OwnerGroupIdN(ownerGroupIdN []int32) ApiExtrasEventRulesListRequest {
+	r.ownerGroupIdN = &ownerGroupIdN
+	return r
+}
+
+// Owner (ID)
+func (r ApiExtrasEventRulesListRequest) OwnerId(ownerId []*int32) ApiExtrasEventRulesListRequest {
+	r.ownerId = &ownerId
+	return r
+}
+
+// Owner (ID)
+func (r ApiExtrasEventRulesListRequest) OwnerIdN(ownerIdN []*int32) ApiExtrasEventRulesListRequest {
+	r.ownerIdN = &ownerIdN
+	return r
+}
+
+// Search
+func (r ApiExtrasEventRulesListRequest) Q(q string) ApiExtrasEventRulesListRequest {
+	r.q = &q
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) Tag(tag []string) ApiExtrasEventRulesListRequest {
+	r.tag = &tag
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) TagN(tagN []string) ApiExtrasEventRulesListRequest {
+	r.tagN = &tagN
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) TagId(tagId []string) ApiExtrasEventRulesListRequest {
+	r.tagId = &tagId
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) TagIdN(tagIdN []string) ApiExtrasEventRulesListRequest {
+	r.tagIdN = &tagIdN
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) UpdatedByRequest(updatedByRequest string) ApiExtrasEventRulesListRequest {
+	r.updatedByRequest = &updatedByRequest
+	return r
+}
+
+func (r ApiExtrasEventRulesListRequest) Execute() (*PaginatedEventRuleList, *http.Response, error) {
+	return r.ApiService.ExtrasEventRulesListExecute(r)
+}
+
+/*
+ExtrasEventRulesList Method for ExtrasEventRulesList
+
+Get a list of event rule objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasEventRulesListRequest
+*/
+func (a *ExtrasAPIService) ExtrasEventRulesList(ctx context.Context) ApiExtrasEventRulesListRequest {
+	return ApiExtrasEventRulesListRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+//
+//	@return PaginatedEventRuleList
+func (a *ExtrasAPIService) ExtrasEventRulesListExecute(r ApiExtrasEventRulesListRequest) (*PaginatedEventRuleList, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedEventRuleList
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/event-rules/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.actionObjectId != nil {
+		t := *r.actionObjectId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id", t, "form", "multi")
+		}
+	}
+	if r.actionObjectIdEmpty != nil {
+		t := *r.actionObjectIdEmpty
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__empty", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__empty", t, "form", "multi")
+		}
+	}
+	if r.actionObjectIdGt != nil {
+		t := *r.actionObjectIdGt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__gt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__gt", t, "form", "multi")
+		}
+	}
+	if r.actionObjectIdGte != nil {
+		t := *r.actionObjectIdGte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__gte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__gte", t, "form", "multi")
+		}
+	}
+	if r.actionObjectIdLt != nil {
+		t := *r.actionObjectIdLt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__lt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__lt", t, "form", "multi")
+		}
+	}
+	if r.actionObjectIdLte != nil {
+		t := *r.actionObjectIdLte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__lte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__lte", t, "form", "multi")
+		}
+	}
+	if r.actionObjectIdN != nil {
+		t := *r.actionObjectIdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_id__n", t, "form", "multi")
+		}
+	}
+	if r.actionObjectType != nil {
+		t := *r.actionObjectType
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_type", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_type", t, "form", "multi")
+		}
+	}
+	if r.actionObjectTypeN != nil {
+		t := *r.actionObjectTypeN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_type__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_object_type__n", t, "form", "multi")
+		}
+	}
+	if r.actionType != nil {
+		t := *r.actionType
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type", t, "form", "multi")
+		}
+	}
+	if r.actionTypeEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__empty", r.actionTypeEmpty, "form", "")
+	}
+	if r.actionTypeIc != nil {
+		t := *r.actionTypeIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__ic", t, "form", "multi")
+		}
+	}
+	if r.actionTypeIe != nil {
+		t := *r.actionTypeIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__ie", t, "form", "multi")
+		}
+	}
+	if r.actionTypeIew != nil {
+		t := *r.actionTypeIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__iew", t, "form", "multi")
+		}
+	}
+	if r.actionTypeIregex != nil {
+		t := *r.actionTypeIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__iregex", t, "form", "multi")
+		}
+	}
+	if r.actionTypeIsw != nil {
+		t := *r.actionTypeIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__isw", t, "form", "multi")
+		}
+	}
+	if r.actionTypeN != nil {
+		t := *r.actionTypeN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__n", t, "form", "multi")
+		}
+	}
+	if r.actionTypeNic != nil {
+		t := *r.actionTypeNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nic", t, "form", "multi")
+		}
+	}
+	if r.actionTypeNie != nil {
+		t := *r.actionTypeNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nie", t, "form", "multi")
+		}
+	}
+	if r.actionTypeNiew != nil {
+		t := *r.actionTypeNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__niew", t, "form", "multi")
+		}
+	}
+	if r.actionTypeNisw != nil {
+		t := *r.actionTypeNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__nisw", t, "form", "multi")
+		}
+	}
+	if r.actionTypeRegex != nil {
+		t := *r.actionTypeRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "action_type__regex", t, "form", "multi")
+		}
+	}
+	if r.created != nil {
+		t := *r.created
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
+		}
+	}
+	if r.createdEmpty != nil {
+		t := *r.createdEmpty
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
+		}
+	}
+	if r.createdGt != nil {
+		t := *r.createdGt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
+		}
+	}
+	if r.createdGte != nil {
+		t := *r.createdGte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
+		}
+	}
+	if r.createdLt != nil {
+		t := *r.createdLt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
+		}
+	}
+	if r.createdLte != nil {
+		t := *r.createdLte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
+		}
+	}
+	if r.createdN != nil {
+		t := *r.createdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
+		}
+	}
+	if r.createdByRequest != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
+	}
+	if r.description != nil {
+		t := *r.description
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
+		}
+	}
+	if r.descriptionEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
+	}
+	if r.descriptionIc != nil {
+		t := *r.descriptionIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
+		}
+	}
+	if r.descriptionIe != nil {
+		t := *r.descriptionIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
+		}
+	}
+	if r.descriptionIew != nil {
+		t := *r.descriptionIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
+		}
+	}
+	if r.descriptionIregex != nil {
+		t := *r.descriptionIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iregex", t, "form", "multi")
+		}
+	}
+	if r.descriptionIsw != nil {
+		t := *r.descriptionIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
+		}
+	}
+	if r.descriptionN != nil {
+		t := *r.descriptionN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
+		}
+	}
+	if r.descriptionNic != nil {
+		t := *r.descriptionNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
+		}
+	}
+	if r.descriptionNie != nil {
+		t := *r.descriptionNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
+		}
+	}
+	if r.descriptionNiew != nil {
+		t := *r.descriptionNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
+		}
+	}
+	if r.descriptionNisw != nil {
+		t := *r.descriptionNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
+		}
+	}
+	if r.descriptionRegex != nil {
+		t := *r.descriptionRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__regex", t, "form", "multi")
+		}
+	}
+	if r.enabled != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "enabled", r.enabled, "form", "")
+	}
+	if r.eventType != nil {
+		t := *r.eventType
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "event_type", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "event_type", t, "form", "multi")
+		}
+	}
+	if r.id != nil {
+		t := *r.id
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
+		}
+	}
+	if r.idEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
+	}
+	if r.idGt != nil {
+		t := *r.idGt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
+		}
+	}
+	if r.idGte != nil {
+		t := *r.idGte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
+		}
+	}
+	if r.idLt != nil {
+		t := *r.idLt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
+		}
+	}
+	if r.idLte != nil {
+		t := *r.idLte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
+		}
+	}
+	if r.idN != nil {
+		t := *r.idN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
+		}
+	}
+	if r.lastUpdated != nil {
+		t := *r.lastUpdated
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
+		}
+	}
+	if r.lastUpdatedEmpty != nil {
+		t := *r.lastUpdatedEmpty
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
+		}
+	}
+	if r.lastUpdatedGt != nil {
+		t := *r.lastUpdatedGt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
+		}
+	}
+	if r.lastUpdatedGte != nil {
+		t := *r.lastUpdatedGte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
+		}
+	}
+	if r.lastUpdatedLt != nil {
+		t := *r.lastUpdatedLt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
+		}
+	}
+	if r.lastUpdatedLte != nil {
+		t := *r.lastUpdatedLte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
+		}
+	}
+	if r.lastUpdatedN != nil {
+		t := *r.lastUpdatedN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
+		}
+	}
+	if r.limit != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
+	}
+	if r.modifiedByRequest != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
+	}
+	if r.name != nil {
+		t := *r.name
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
+		}
+	}
+	if r.nameEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
+	}
+	if r.nameIc != nil {
+		t := *r.nameIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
+		}
+	}
+	if r.nameIe != nil {
+		t := *r.nameIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
+		}
+	}
+	if r.nameIew != nil {
+		t := *r.nameIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
+		}
+	}
+	if r.nameIregex != nil {
+		t := *r.nameIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iregex", t, "form", "multi")
+		}
+	}
+	if r.nameIsw != nil {
+		t := *r.nameIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
+		}
+	}
+	if r.nameN != nil {
+		t := *r.nameN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
+		}
+	}
+	if r.nameNic != nil {
+		t := *r.nameNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
+		}
+	}
+	if r.nameNie != nil {
+		t := *r.nameNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
+		}
+	}
+	if r.nameNiew != nil {
+		t := *r.nameNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
+		}
+	}
+	if r.nameNisw != nil {
+		t := *r.nameNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
+		}
+	}
+	if r.nameRegex != nil {
+		t := *r.nameRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__regex", t, "form", "multi")
+		}
+	}
+	if r.objectType != nil {
+		t := *r.objectType
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type", t, "form", "multi")
+		}
+	}
+	if r.objectTypeIc != nil {
+		t := *r.objectTypeIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ic", t, "form", "multi")
+		}
+	}
+	if r.objectTypeIe != nil {
+		t := *r.objectTypeIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__ie", t, "form", "multi")
+		}
+	}
+	if r.objectTypeIew != nil {
+		t := *r.objectTypeIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iew", t, "form", "multi")
+		}
+	}
+	if r.objectTypeIregex != nil {
+		t := *r.objectTypeIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__iregex", t, "form", "multi")
+		}
+	}
+	if r.objectTypeIsw != nil {
+		t := *r.objectTypeIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__isw", t, "form", "multi")
+		}
+	}
+	if r.objectTypeN != nil {
+		t := *r.objectTypeN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__n", t, "form", "multi")
+		}
+	}
+	if r.objectTypeNic != nil {
+		t := *r.objectTypeNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nic", t, "form", "multi")
+		}
+	}
+	if r.objectTypeNie != nil {
+		t := *r.objectTypeNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nie", t, "form", "multi")
+		}
+	}
+	if r.objectTypeNiew != nil {
+		t := *r.objectTypeNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__niew", t, "form", "multi")
+		}
+	}
+	if r.objectTypeNisw != nil {
+		t := *r.objectTypeNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__nisw", t, "form", "multi")
+		}
+	}
+	if r.objectTypeRegex != nil {
+		t := *r.objectTypeRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type__regex", t, "form", "multi")
+		}
+	}
+	if r.objectTypeId != nil {
+		t := *r.objectTypeId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id", t, "form", "multi")
+		}
+	}
+	if r.objectTypeIdN != nil {
+		t := *r.objectTypeIdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "object_type_id__n", t, "form", "multi")
+		}
+	}
+	if r.offset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
+	}
+	if r.ordering != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
+	}
+	if r.owner != nil {
+		t := *r.owner
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner", t, "form", "multi")
+		}
+	}
+	if r.ownerN != nil {
+		t := *r.ownerN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner__n", t, "form", "multi")
+		}
+	}
+	if r.ownerGroup != nil {
+		t := *r.ownerGroup
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group", t, "form", "multi")
+		}
+	}
+	if r.ownerGroupN != nil {
+		t := *r.ownerGroupN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group__n", t, "form", "multi")
+		}
+	}
+	if r.ownerGroupId != nil {
+		t := *r.ownerGroupId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group_id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group_id", t, "form", "multi")
+		}
+	}
+	if r.ownerGroupIdN != nil {
+		t := *r.ownerGroupIdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group_id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group_id__n", t, "form", "multi")
+		}
+	}
+	if r.ownerId != nil {
+		t := *r.ownerId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner_id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner_id", t, "form", "multi")
+		}
+	}
+	if r.ownerIdN != nil {
+		t := *r.ownerIdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner_id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner_id__n", t, "form", "multi")
+		}
+	}
+	if r.q != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
+	}
+	if r.tag != nil {
+		t := *r.tag
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
+		}
+	}
+	if r.tagN != nil {
+		t := *r.tagN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
+		}
+	}
+	if r.tagId != nil {
+		t := *r.tagId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id", t, "form", "multi")
+		}
+	}
+	if r.tagIdN != nil {
+		t := *r.tagIdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id__n", t, "form", "multi")
+		}
+	}
+	if r.updatedByRequest != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasEventRulesPartialUpdateRequest struct {
+	ctx                             context.Context
+	ApiService                      ExtrasAPI
+	id                              int32
+	patchedWritableEventRuleRequest *PatchedWritableEventRuleRequest
+}
+
+func (r ApiExtrasEventRulesPartialUpdateRequest) PatchedWritableEventRuleRequest(patchedWritableEventRuleRequest PatchedWritableEventRuleRequest) ApiExtrasEventRulesPartialUpdateRequest {
+	r.patchedWritableEventRuleRequest = &patchedWritableEventRuleRequest
+	return r
+}
+
+func (r ApiExtrasEventRulesPartialUpdateRequest) Execute() (*EventRule, *http.Response, error) {
+	return r.ApiService.ExtrasEventRulesPartialUpdateExecute(r)
+}
+
+/*
+ExtrasEventRulesPartialUpdate Method for ExtrasEventRulesPartialUpdate
+
+Patch a event rule object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this event rule.
+	@return ApiExtrasEventRulesPartialUpdateRequest
+*/
+func (a *ExtrasAPIService) ExtrasEventRulesPartialUpdate(ctx context.Context, id int32) ApiExtrasEventRulesPartialUpdateRequest {
+	return ApiExtrasEventRulesPartialUpdateRequest{
+		ApiService: a,
+		ctx:        ctx,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+//
+//	@return EventRule
+func (a *ExtrasAPIService) ExtrasEventRulesPartialUpdateExecute(r ApiExtrasEventRulesPartialUpdateRequest) (*EventRule, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EventRule
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesPartialUpdate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/event-rules/{id}/"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.patchedWritableEventRuleRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasEventRulesRetrieveRequest struct {
+	ctx        context.Context
+	ApiService ExtrasAPI
+	id         int32
+}
+
+func (r ApiExtrasEventRulesRetrieveRequest) Execute() (*EventRule, *http.Response, error) {
+	return r.ApiService.ExtrasEventRulesRetrieveExecute(r)
+}
+
+/*
+ExtrasEventRulesRetrieve Method for ExtrasEventRulesRetrieve
+
+Get a event rule object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this event rule.
+	@return ApiExtrasEventRulesRetrieveRequest
+*/
+func (a *ExtrasAPIService) ExtrasEventRulesRetrieve(ctx context.Context, id int32) ApiExtrasEventRulesRetrieveRequest {
+	return ApiExtrasEventRulesRetrieveRequest{
+		ApiService: a,
+		ctx:        ctx,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+//
+//	@return EventRule
+func (a *ExtrasAPIService) ExtrasEventRulesRetrieveExecute(r ApiExtrasEventRulesRetrieveRequest) (*EventRule, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EventRule
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesRetrieve")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/event-rules/{id}/"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasEventRulesUpdateRequest struct {
+	ctx                      context.Context
+	ApiService               ExtrasAPI
+	id                       int32
+	writableEventRuleRequest *WritableEventRuleRequest
+}
+
+func (r ApiExtrasEventRulesUpdateRequest) WritableEventRuleRequest(writableEventRuleRequest WritableEventRuleRequest) ApiExtrasEventRulesUpdateRequest {
+	r.writableEventRuleRequest = &writableEventRuleRequest
+	return r
+}
+
+func (r ApiExtrasEventRulesUpdateRequest) Execute() (*EventRule, *http.Response, error) {
+	return r.ApiService.ExtrasEventRulesUpdateExecute(r)
+}
+
+/*
+ExtrasEventRulesUpdate Method for ExtrasEventRulesUpdate
+
+Put a event rule object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this event rule.
+	@return ApiExtrasEventRulesUpdateRequest
+*/
+func (a *ExtrasAPIService) ExtrasEventRulesUpdate(ctx context.Context, id int32) ApiExtrasEventRulesUpdateRequest {
+	return ApiExtrasEventRulesUpdateRequest{
+		ApiService: a,
+		ctx:        ctx,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+//
+//	@return EventRule
+func (a *ExtrasAPIService) ExtrasEventRulesUpdateExecute(r ApiExtrasEventRulesUpdateRequest) (*EventRule, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *EventRule
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasEventRulesUpdate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/event-rules/{id}/"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.writableEventRuleRequest == nil {
+		return localVarReturnValue, nil, reportError("writableEventRuleRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.writableEventRuleRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasWebhooksBulkDestroyRequest struct {
+	ctx            context.Context
+	ApiService     ExtrasAPI
+	webhookRequest *[]WebhookRequest
+}
+
+func (r ApiExtrasWebhooksBulkDestroyRequest) WebhookRequest(webhookRequest []WebhookRequest) ApiExtrasWebhooksBulkDestroyRequest {
+	r.webhookRequest = &webhookRequest
+	return r
+}
+
+func (r ApiExtrasWebhooksBulkDestroyRequest) Execute() (*http.Response, error) {
+	return r.ApiService.ExtrasWebhooksBulkDestroyExecute(r)
+}
+
+/*
+ExtrasWebhooksBulkDestroy Method for ExtrasWebhooksBulkDestroy
+
+Delete a list of webhook objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksBulkDestroyRequest
+*/
+func (a *ExtrasAPIService) ExtrasWebhooksBulkDestroy(ctx context.Context) ApiExtrasWebhooksBulkDestroyRequest {
+	return ApiExtrasWebhooksBulkDestroyRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+func (a *ExtrasAPIService) ExtrasWebhooksBulkDestroyExecute(r ApiExtrasWebhooksBulkDestroyRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksBulkDestroy")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/webhooks/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.webhookRequest == nil {
+		return nil, reportError("webhookRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.webhookRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiExtrasWebhooksBulkPartialUpdateRequest struct {
+	ctx            context.Context
+	ApiService     ExtrasAPI
+	webhookRequest *[]WebhookRequest
+}
+
+func (r ApiExtrasWebhooksBulkPartialUpdateRequest) WebhookRequest(webhookRequest []WebhookRequest) ApiExtrasWebhooksBulkPartialUpdateRequest {
+	r.webhookRequest = &webhookRequest
+	return r
+}
+
+func (r ApiExtrasWebhooksBulkPartialUpdateRequest) Execute() ([]Webhook, *http.Response, error) {
+	return r.ApiService.ExtrasWebhooksBulkPartialUpdateExecute(r)
+}
+
+/*
+ExtrasWebhooksBulkPartialUpdate Method for ExtrasWebhooksBulkPartialUpdate
+
+Patch a list of webhook objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksBulkPartialUpdateRequest
+*/
+func (a *ExtrasAPIService) ExtrasWebhooksBulkPartialUpdate(ctx context.Context) ApiExtrasWebhooksBulkPartialUpdateRequest {
+	return ApiExtrasWebhooksBulkPartialUpdateRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+//
+//	@return []Webhook
+func (a *ExtrasAPIService) ExtrasWebhooksBulkPartialUpdateExecute(r ApiExtrasWebhooksBulkPartialUpdateRequest) ([]Webhook, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Webhook
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksBulkPartialUpdate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/webhooks/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.webhookRequest == nil {
+		return localVarReturnValue, nil, reportError("webhookRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.webhookRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasWebhooksBulkUpdateRequest struct {
+	ctx            context.Context
+	ApiService     ExtrasAPI
+	webhookRequest *[]WebhookRequest
+}
+
+func (r ApiExtrasWebhooksBulkUpdateRequest) WebhookRequest(webhookRequest []WebhookRequest) ApiExtrasWebhooksBulkUpdateRequest {
+	r.webhookRequest = &webhookRequest
+	return r
+}
+
+func (r ApiExtrasWebhooksBulkUpdateRequest) Execute() ([]Webhook, *http.Response, error) {
+	return r.ApiService.ExtrasWebhooksBulkUpdateExecute(r)
+}
+
+/*
+ExtrasWebhooksBulkUpdate Method for ExtrasWebhooksBulkUpdate
+
+Put a list of webhook objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksBulkUpdateRequest
+*/
+func (a *ExtrasAPIService) ExtrasWebhooksBulkUpdate(ctx context.Context) ApiExtrasWebhooksBulkUpdateRequest {
+	return ApiExtrasWebhooksBulkUpdateRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+//
+//	@return []Webhook
+func (a *ExtrasAPIService) ExtrasWebhooksBulkUpdateExecute(r ApiExtrasWebhooksBulkUpdateRequest) ([]Webhook, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue []Webhook
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksBulkUpdate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/webhooks/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.webhookRequest == nil {
+		return localVarReturnValue, nil, reportError("webhookRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.webhookRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasWebhooksCreateRequest struct {
+	ctx                         context.Context
+	ApiService                  ExtrasAPI
+	extrasWebhooksCreateRequest *ExtrasWebhooksCreateRequest
+}
+
+func (r ApiExtrasWebhooksCreateRequest) ExtrasWebhooksCreateRequest(extrasWebhooksCreateRequest ExtrasWebhooksCreateRequest) ApiExtrasWebhooksCreateRequest {
+	r.extrasWebhooksCreateRequest = &extrasWebhooksCreateRequest
+	return r
+}
+
+func (r ApiExtrasWebhooksCreateRequest) Execute() (*Webhook, *http.Response, error) {
+	return r.ApiService.ExtrasWebhooksCreateExecute(r)
+}
+
+/*
+ExtrasWebhooksCreate Method for ExtrasWebhooksCreate
+
+Post a list of webhook objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksCreateRequest
+*/
+func (a *ExtrasAPIService) ExtrasWebhooksCreate(ctx context.Context) ApiExtrasWebhooksCreateRequest {
+	return ApiExtrasWebhooksCreateRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+//
+//	@return Webhook
+func (a *ExtrasAPIService) ExtrasWebhooksCreateExecute(r ApiExtrasWebhooksCreateRequest) (*Webhook, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPost
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Webhook
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksCreate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/webhooks/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.extrasWebhooksCreateRequest == nil {
+		return localVarReturnValue, nil, reportError("extrasWebhooksCreateRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.extrasWebhooksCreateRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasWebhooksDestroyRequest struct {
+	ctx        context.Context
+	ApiService ExtrasAPI
+	id         int32
+}
+
+func (r ApiExtrasWebhooksDestroyRequest) Execute() (*http.Response, error) {
+	return r.ApiService.ExtrasWebhooksDestroyExecute(r)
+}
+
+/*
+ExtrasWebhooksDestroy Method for ExtrasWebhooksDestroy
+
+Delete a webhook object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this webhook.
+	@return ApiExtrasWebhooksDestroyRequest
+*/
+func (a *ExtrasAPIService) ExtrasWebhooksDestroy(ctx context.Context, id int32) ApiExtrasWebhooksDestroyRequest {
+	return ApiExtrasWebhooksDestroyRequest{
+		ApiService: a,
+		ctx:        ctx,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+func (a *ExtrasAPIService) ExtrasWebhooksDestroyExecute(r ApiExtrasWebhooksDestroyRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodDelete
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksDestroy")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/webhooks/{id}/"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type ApiExtrasWebhooksListRequest struct {
+	ctx                   context.Context
+	ApiService            ExtrasAPI
+	caFilePath            *[]string
+	caFilePathEmpty       *bool
+	caFilePathIc          *[]string
+	caFilePathIe          *[]string
+	caFilePathIew         *[]string
+	caFilePathIregex      *[]string
+	caFilePathIsw         *[]string
+	caFilePathN           *[]string
+	caFilePathNic         *[]string
+	caFilePathNie         *[]string
+	caFilePathNiew        *[]string
+	caFilePathNisw        *[]string
+	caFilePathRegex       *[]string
+	created               *[]time.Time
+	createdEmpty          *[]time.Time
+	createdGt             *[]time.Time
+	createdGte            *[]time.Time
+	createdLt             *[]time.Time
+	createdLte            *[]time.Time
+	createdN              *[]time.Time
+	createdByRequest      *string
+	description           *[]string
+	descriptionEmpty      *bool
+	descriptionIc         *[]string
+	descriptionIe         *[]string
+	descriptionIew        *[]string
+	descriptionIregex     *[]string
+	descriptionIsw        *[]string
+	descriptionN          *[]string
+	descriptionNic        *[]string
+	descriptionNie        *[]string
+	descriptionNiew       *[]string
+	descriptionNisw       *[]string
+	descriptionRegex      *[]string
+	httpContentType       *[]string
+	httpContentTypeEmpty  *bool
+	httpContentTypeIc     *[]string
+	httpContentTypeIe     *[]string
+	httpContentTypeIew    *[]string
+	httpContentTypeIregex *[]string
+	httpContentTypeIsw    *[]string
+	httpContentTypeN      *[]string
+	httpContentTypeNic    *[]string
+	httpContentTypeNie    *[]string
+	httpContentTypeNiew   *[]string
+	httpContentTypeNisw   *[]string
+	httpContentTypeRegex  *[]string
+	httpMethod            *[]string
+	httpMethodEmpty       *bool
+	httpMethodIc          *[]string
+	httpMethodIe          *[]string
+	httpMethodIew         *[]string
+	httpMethodIregex      *[]string
+	httpMethodIsw         *[]string
+	httpMethodN           *[]string
+	httpMethodNic         *[]string
+	httpMethodNie         *[]string
+	httpMethodNiew        *[]string
+	httpMethodNisw        *[]string
+	httpMethodRegex       *[]string
+	id                    *[]int32
+	idEmpty               *bool
+	idGt                  *[]int32
+	idGte                 *[]int32
+	idLt                  *[]int32
+	idLte                 *[]int32
+	idN                   *[]int32
+	lastUpdated           *[]time.Time
+	lastUpdatedEmpty      *[]time.Time
+	lastUpdatedGt         *[]time.Time
+	lastUpdatedGte        *[]time.Time
+	lastUpdatedLt         *[]time.Time
+	lastUpdatedLte        *[]time.Time
+	lastUpdatedN          *[]time.Time
+	limit                 *int32
+	modifiedByRequest     *string
+	name                  *[]string
+	nameEmpty             *bool
+	nameIc                *[]string
+	nameIe                *[]string
+	nameIew               *[]string
+	nameIregex            *[]string
+	nameIsw               *[]string
+	nameN                 *[]string
+	nameNic               *[]string
+	nameNie               *[]string
+	nameNiew              *[]string
+	nameNisw              *[]string
+	nameRegex             *[]string
+	offset                *int32
+	ordering              *string
+	owner                 *[]string
+	ownerN                *[]string
+	ownerGroup            *[]string
+	ownerGroupN           *[]string
+	ownerGroupId          *[]int32
+	ownerGroupIdN         *[]int32
+	ownerId               *[]*int32
+	ownerIdN              *[]*int32
+	payloadUrl            *[]string
+	q                     *string
+	secret                *[]string
+	secretEmpty           *bool
+	secretIc              *[]string
+	secretIe              *[]string
+	secretIew             *[]string
+	secretIregex          *[]string
+	secretIsw             *[]string
+	secretN               *[]string
+	secretNic             *[]string
+	secretNie             *[]string
+	secretNiew            *[]string
+	secretNisw            *[]string
+	secretRegex           *[]string
+	sslVerification       *bool
+	tag                   *[]string
+	tagN                  *[]string
+	tagId                 *[]string
+	tagIdN                *[]string
+	updatedByRequest      *string
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePath(caFilePath []string) ApiExtrasWebhooksListRequest {
+	r.caFilePath = &caFilePath
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePathEmpty(caFilePathEmpty bool) ApiExtrasWebhooksListRequest {
+	r.caFilePathEmpty = &caFilePathEmpty
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePathIc(caFilePathIc []string) ApiExtrasWebhooksListRequest {
+	r.caFilePathIc = &caFilePathIc
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePathIe(caFilePathIe []string) ApiExtrasWebhooksListRequest {
+	r.caFilePathIe = &caFilePathIe
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePathIew(caFilePathIew []string) ApiExtrasWebhooksListRequest {
+	r.caFilePathIew = &caFilePathIew
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePathIregex(caFilePathIregex []string) ApiExtrasWebhooksListRequest {
+	r.caFilePathIregex = &caFilePathIregex
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePathIsw(caFilePathIsw []string) ApiExtrasWebhooksListRequest {
+	r.caFilePathIsw = &caFilePathIsw
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePathN(caFilePathN []string) ApiExtrasWebhooksListRequest {
+	r.caFilePathN = &caFilePathN
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePathNic(caFilePathNic []string) ApiExtrasWebhooksListRequest {
+	r.caFilePathNic = &caFilePathNic
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePathNie(caFilePathNie []string) ApiExtrasWebhooksListRequest {
+	r.caFilePathNie = &caFilePathNie
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePathNiew(caFilePathNiew []string) ApiExtrasWebhooksListRequest {
+	r.caFilePathNiew = &caFilePathNiew
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePathNisw(caFilePathNisw []string) ApiExtrasWebhooksListRequest {
+	r.caFilePathNisw = &caFilePathNisw
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CaFilePathRegex(caFilePathRegex []string) ApiExtrasWebhooksListRequest {
+	r.caFilePathRegex = &caFilePathRegex
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) Created(created []time.Time) ApiExtrasWebhooksListRequest {
+	r.created = &created
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CreatedEmpty(createdEmpty []time.Time) ApiExtrasWebhooksListRequest {
+	r.createdEmpty = &createdEmpty
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CreatedGt(createdGt []time.Time) ApiExtrasWebhooksListRequest {
+	r.createdGt = &createdGt
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CreatedGte(createdGte []time.Time) ApiExtrasWebhooksListRequest {
+	r.createdGte = &createdGte
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CreatedLt(createdLt []time.Time) ApiExtrasWebhooksListRequest {
+	r.createdLt = &createdLt
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CreatedLte(createdLte []time.Time) ApiExtrasWebhooksListRequest {
+	r.createdLte = &createdLte
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CreatedN(createdN []time.Time) ApiExtrasWebhooksListRequest {
+	r.createdN = &createdN
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) CreatedByRequest(createdByRequest string) ApiExtrasWebhooksListRequest {
+	r.createdByRequest = &createdByRequest
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) Description(description []string) ApiExtrasWebhooksListRequest {
+	r.description = &description
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) DescriptionEmpty(descriptionEmpty bool) ApiExtrasWebhooksListRequest {
+	r.descriptionEmpty = &descriptionEmpty
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) DescriptionIc(descriptionIc []string) ApiExtrasWebhooksListRequest {
+	r.descriptionIc = &descriptionIc
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) DescriptionIe(descriptionIe []string) ApiExtrasWebhooksListRequest {
+	r.descriptionIe = &descriptionIe
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) DescriptionIew(descriptionIew []string) ApiExtrasWebhooksListRequest {
+	r.descriptionIew = &descriptionIew
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) DescriptionIregex(descriptionIregex []string) ApiExtrasWebhooksListRequest {
+	r.descriptionIregex = &descriptionIregex
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) DescriptionIsw(descriptionIsw []string) ApiExtrasWebhooksListRequest {
+	r.descriptionIsw = &descriptionIsw
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) DescriptionN(descriptionN []string) ApiExtrasWebhooksListRequest {
+	r.descriptionN = &descriptionN
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) DescriptionNic(descriptionNic []string) ApiExtrasWebhooksListRequest {
+	r.descriptionNic = &descriptionNic
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) DescriptionNie(descriptionNie []string) ApiExtrasWebhooksListRequest {
+	r.descriptionNie = &descriptionNie
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) DescriptionNiew(descriptionNiew []string) ApiExtrasWebhooksListRequest {
+	r.descriptionNiew = &descriptionNiew
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) DescriptionNisw(descriptionNisw []string) ApiExtrasWebhooksListRequest {
+	r.descriptionNisw = &descriptionNisw
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) DescriptionRegex(descriptionRegex []string) ApiExtrasWebhooksListRequest {
+	r.descriptionRegex = &descriptionRegex
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentType(httpContentType []string) ApiExtrasWebhooksListRequest {
+	r.httpContentType = &httpContentType
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentTypeEmpty(httpContentTypeEmpty bool) ApiExtrasWebhooksListRequest {
+	r.httpContentTypeEmpty = &httpContentTypeEmpty
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentTypeIc(httpContentTypeIc []string) ApiExtrasWebhooksListRequest {
+	r.httpContentTypeIc = &httpContentTypeIc
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentTypeIe(httpContentTypeIe []string) ApiExtrasWebhooksListRequest {
+	r.httpContentTypeIe = &httpContentTypeIe
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentTypeIew(httpContentTypeIew []string) ApiExtrasWebhooksListRequest {
+	r.httpContentTypeIew = &httpContentTypeIew
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentTypeIregex(httpContentTypeIregex []string) ApiExtrasWebhooksListRequest {
+	r.httpContentTypeIregex = &httpContentTypeIregex
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentTypeIsw(httpContentTypeIsw []string) ApiExtrasWebhooksListRequest {
+	r.httpContentTypeIsw = &httpContentTypeIsw
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentTypeN(httpContentTypeN []string) ApiExtrasWebhooksListRequest {
+	r.httpContentTypeN = &httpContentTypeN
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentTypeNic(httpContentTypeNic []string) ApiExtrasWebhooksListRequest {
+	r.httpContentTypeNic = &httpContentTypeNic
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentTypeNie(httpContentTypeNie []string) ApiExtrasWebhooksListRequest {
+	r.httpContentTypeNie = &httpContentTypeNie
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentTypeNiew(httpContentTypeNiew []string) ApiExtrasWebhooksListRequest {
+	r.httpContentTypeNiew = &httpContentTypeNiew
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentTypeNisw(httpContentTypeNisw []string) ApiExtrasWebhooksListRequest {
+	r.httpContentTypeNisw = &httpContentTypeNisw
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpContentTypeRegex(httpContentTypeRegex []string) ApiExtrasWebhooksListRequest {
+	r.httpContentTypeRegex = &httpContentTypeRegex
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethod(httpMethod []string) ApiExtrasWebhooksListRequest {
+	r.httpMethod = &httpMethod
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethodEmpty(httpMethodEmpty bool) ApiExtrasWebhooksListRequest {
+	r.httpMethodEmpty = &httpMethodEmpty
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethodIc(httpMethodIc []string) ApiExtrasWebhooksListRequest {
+	r.httpMethodIc = &httpMethodIc
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethodIe(httpMethodIe []string) ApiExtrasWebhooksListRequest {
+	r.httpMethodIe = &httpMethodIe
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethodIew(httpMethodIew []string) ApiExtrasWebhooksListRequest {
+	r.httpMethodIew = &httpMethodIew
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethodIregex(httpMethodIregex []string) ApiExtrasWebhooksListRequest {
+	r.httpMethodIregex = &httpMethodIregex
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethodIsw(httpMethodIsw []string) ApiExtrasWebhooksListRequest {
+	r.httpMethodIsw = &httpMethodIsw
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethodN(httpMethodN []string) ApiExtrasWebhooksListRequest {
+	r.httpMethodN = &httpMethodN
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethodNic(httpMethodNic []string) ApiExtrasWebhooksListRequest {
+	r.httpMethodNic = &httpMethodNic
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethodNie(httpMethodNie []string) ApiExtrasWebhooksListRequest {
+	r.httpMethodNie = &httpMethodNie
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethodNiew(httpMethodNiew []string) ApiExtrasWebhooksListRequest {
+	r.httpMethodNiew = &httpMethodNiew
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethodNisw(httpMethodNisw []string) ApiExtrasWebhooksListRequest {
+	r.httpMethodNisw = &httpMethodNisw
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) HttpMethodRegex(httpMethodRegex []string) ApiExtrasWebhooksListRequest {
+	r.httpMethodRegex = &httpMethodRegex
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) Id(id []int32) ApiExtrasWebhooksListRequest {
+	r.id = &id
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) IdEmpty(idEmpty bool) ApiExtrasWebhooksListRequest {
+	r.idEmpty = &idEmpty
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) IdGt(idGt []int32) ApiExtrasWebhooksListRequest {
+	r.idGt = &idGt
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) IdGte(idGte []int32) ApiExtrasWebhooksListRequest {
+	r.idGte = &idGte
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) IdLt(idLt []int32) ApiExtrasWebhooksListRequest {
+	r.idLt = &idLt
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) IdLte(idLte []int32) ApiExtrasWebhooksListRequest {
+	r.idLte = &idLte
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) IdN(idN []int32) ApiExtrasWebhooksListRequest {
+	r.idN = &idN
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) LastUpdated(lastUpdated []time.Time) ApiExtrasWebhooksListRequest {
+	r.lastUpdated = &lastUpdated
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) LastUpdatedEmpty(lastUpdatedEmpty []time.Time) ApiExtrasWebhooksListRequest {
+	r.lastUpdatedEmpty = &lastUpdatedEmpty
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) LastUpdatedGt(lastUpdatedGt []time.Time) ApiExtrasWebhooksListRequest {
+	r.lastUpdatedGt = &lastUpdatedGt
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) LastUpdatedGte(lastUpdatedGte []time.Time) ApiExtrasWebhooksListRequest {
+	r.lastUpdatedGte = &lastUpdatedGte
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) LastUpdatedLt(lastUpdatedLt []time.Time) ApiExtrasWebhooksListRequest {
+	r.lastUpdatedLt = &lastUpdatedLt
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) LastUpdatedLte(lastUpdatedLte []time.Time) ApiExtrasWebhooksListRequest {
+	r.lastUpdatedLte = &lastUpdatedLte
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) LastUpdatedN(lastUpdatedN []time.Time) ApiExtrasWebhooksListRequest {
+	r.lastUpdatedN = &lastUpdatedN
+	return r
+}
+
+// Number of results to return per page.
+func (r ApiExtrasWebhooksListRequest) Limit(limit int32) ApiExtrasWebhooksListRequest {
+	r.limit = &limit
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) ModifiedByRequest(modifiedByRequest string) ApiExtrasWebhooksListRequest {
+	r.modifiedByRequest = &modifiedByRequest
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) Name(name []string) ApiExtrasWebhooksListRequest {
+	r.name = &name
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) NameEmpty(nameEmpty bool) ApiExtrasWebhooksListRequest {
+	r.nameEmpty = &nameEmpty
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) NameIc(nameIc []string) ApiExtrasWebhooksListRequest {
+	r.nameIc = &nameIc
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) NameIe(nameIe []string) ApiExtrasWebhooksListRequest {
+	r.nameIe = &nameIe
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) NameIew(nameIew []string) ApiExtrasWebhooksListRequest {
+	r.nameIew = &nameIew
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) NameIregex(nameIregex []string) ApiExtrasWebhooksListRequest {
+	r.nameIregex = &nameIregex
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) NameIsw(nameIsw []string) ApiExtrasWebhooksListRequest {
+	r.nameIsw = &nameIsw
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) NameN(nameN []string) ApiExtrasWebhooksListRequest {
+	r.nameN = &nameN
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) NameNic(nameNic []string) ApiExtrasWebhooksListRequest {
+	r.nameNic = &nameNic
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) NameNie(nameNie []string) ApiExtrasWebhooksListRequest {
+	r.nameNie = &nameNie
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) NameNiew(nameNiew []string) ApiExtrasWebhooksListRequest {
+	r.nameNiew = &nameNiew
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) NameNisw(nameNisw []string) ApiExtrasWebhooksListRequest {
+	r.nameNisw = &nameNisw
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) NameRegex(nameRegex []string) ApiExtrasWebhooksListRequest {
+	r.nameRegex = &nameRegex
+	return r
+}
+
+// The initial index from which to return the results.
+func (r ApiExtrasWebhooksListRequest) Offset(offset int32) ApiExtrasWebhooksListRequest {
+	r.offset = &offset
+	return r
+}
+
+// Which field to use when ordering the results.
+func (r ApiExtrasWebhooksListRequest) Ordering(ordering string) ApiExtrasWebhooksListRequest {
+	r.ordering = &ordering
+	return r
+}
+
+// Owner (name)
+func (r ApiExtrasWebhooksListRequest) Owner(owner []string) ApiExtrasWebhooksListRequest {
+	r.owner = &owner
+	return r
+}
+
+// Owner (name)
+func (r ApiExtrasWebhooksListRequest) OwnerN(ownerN []string) ApiExtrasWebhooksListRequest {
+	r.ownerN = &ownerN
+	return r
+}
+
+// Owner Group (name)
+func (r ApiExtrasWebhooksListRequest) OwnerGroup(ownerGroup []string) ApiExtrasWebhooksListRequest {
+	r.ownerGroup = &ownerGroup
+	return r
+}
+
+// Owner Group (name)
+func (r ApiExtrasWebhooksListRequest) OwnerGroupN(ownerGroupN []string) ApiExtrasWebhooksListRequest {
+	r.ownerGroupN = &ownerGroupN
+	return r
+}
+
+// Owner Group (ID)
+func (r ApiExtrasWebhooksListRequest) OwnerGroupId(ownerGroupId []int32) ApiExtrasWebhooksListRequest {
+	r.ownerGroupId = &ownerGroupId
+	return r
+}
+
+// Owner Group (ID)
+func (r ApiExtrasWebhooksListRequest) OwnerGroupIdN(ownerGroupIdN []int32) ApiExtrasWebhooksListRequest {
+	r.ownerGroupIdN = &ownerGroupIdN
+	return r
+}
+
+// Owner (ID)
+func (r ApiExtrasWebhooksListRequest) OwnerId(ownerId []*int32) ApiExtrasWebhooksListRequest {
+	r.ownerId = &ownerId
+	return r
+}
+
+// Owner (ID)
+func (r ApiExtrasWebhooksListRequest) OwnerIdN(ownerIdN []*int32) ApiExtrasWebhooksListRequest {
+	r.ownerIdN = &ownerIdN
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) PayloadUrl(payloadUrl []string) ApiExtrasWebhooksListRequest {
+	r.payloadUrl = &payloadUrl
+	return r
+}
+
+// Search
+func (r ApiExtrasWebhooksListRequest) Q(q string) ApiExtrasWebhooksListRequest {
+	r.q = &q
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) Secret(secret []string) ApiExtrasWebhooksListRequest {
+	r.secret = &secret
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SecretEmpty(secretEmpty bool) ApiExtrasWebhooksListRequest {
+	r.secretEmpty = &secretEmpty
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SecretIc(secretIc []string) ApiExtrasWebhooksListRequest {
+	r.secretIc = &secretIc
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SecretIe(secretIe []string) ApiExtrasWebhooksListRequest {
+	r.secretIe = &secretIe
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SecretIew(secretIew []string) ApiExtrasWebhooksListRequest {
+	r.secretIew = &secretIew
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SecretIregex(secretIregex []string) ApiExtrasWebhooksListRequest {
+	r.secretIregex = &secretIregex
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SecretIsw(secretIsw []string) ApiExtrasWebhooksListRequest {
+	r.secretIsw = &secretIsw
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SecretN(secretN []string) ApiExtrasWebhooksListRequest {
+	r.secretN = &secretN
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SecretNic(secretNic []string) ApiExtrasWebhooksListRequest {
+	r.secretNic = &secretNic
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SecretNie(secretNie []string) ApiExtrasWebhooksListRequest {
+	r.secretNie = &secretNie
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SecretNiew(secretNiew []string) ApiExtrasWebhooksListRequest {
+	r.secretNiew = &secretNiew
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SecretNisw(secretNisw []string) ApiExtrasWebhooksListRequest {
+	r.secretNisw = &secretNisw
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SecretRegex(secretRegex []string) ApiExtrasWebhooksListRequest {
+	r.secretRegex = &secretRegex
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) SslVerification(sslVerification bool) ApiExtrasWebhooksListRequest {
+	r.sslVerification = &sslVerification
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) Tag(tag []string) ApiExtrasWebhooksListRequest {
+	r.tag = &tag
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) TagN(tagN []string) ApiExtrasWebhooksListRequest {
+	r.tagN = &tagN
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) TagId(tagId []string) ApiExtrasWebhooksListRequest {
+	r.tagId = &tagId
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) TagIdN(tagIdN []string) ApiExtrasWebhooksListRequest {
+	r.tagIdN = &tagIdN
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) UpdatedByRequest(updatedByRequest string) ApiExtrasWebhooksListRequest {
+	r.updatedByRequest = &updatedByRequest
+	return r
+}
+
+func (r ApiExtrasWebhooksListRequest) Execute() (*PaginatedWebhookList, *http.Response, error) {
+	return r.ApiService.ExtrasWebhooksListExecute(r)
+}
+
+/*
+ExtrasWebhooksList Method for ExtrasWebhooksList
+
+Get a list of webhook objects.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApiExtrasWebhooksListRequest
+*/
+func (a *ExtrasAPIService) ExtrasWebhooksList(ctx context.Context) ApiExtrasWebhooksListRequest {
+	return ApiExtrasWebhooksListRequest{
+		ApiService: a,
+		ctx:        ctx,
+	}
+}
+
+// Execute executes the request
+//
+//	@return PaginatedWebhookList
+func (a *ExtrasAPIService) ExtrasWebhooksListExecute(r ApiExtrasWebhooksListRequest) (*PaginatedWebhookList, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *PaginatedWebhookList
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksList")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/webhooks/"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	if r.caFilePath != nil {
+		t := *r.caFilePath
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path", t, "form", "multi")
+		}
+	}
+	if r.caFilePathEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__empty", r.caFilePathEmpty, "form", "")
+	}
+	if r.caFilePathIc != nil {
+		t := *r.caFilePathIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ic", t, "form", "multi")
+		}
+	}
+	if r.caFilePathIe != nil {
+		t := *r.caFilePathIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__ie", t, "form", "multi")
+		}
+	}
+	if r.caFilePathIew != nil {
+		t := *r.caFilePathIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__iew", t, "form", "multi")
+		}
+	}
+	if r.caFilePathIregex != nil {
+		t := *r.caFilePathIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__iregex", t, "form", "multi")
+		}
+	}
+	if r.caFilePathIsw != nil {
+		t := *r.caFilePathIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__isw", t, "form", "multi")
+		}
+	}
+	if r.caFilePathN != nil {
+		t := *r.caFilePathN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__n", t, "form", "multi")
+		}
+	}
+	if r.caFilePathNic != nil {
+		t := *r.caFilePathNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nic", t, "form", "multi")
+		}
+	}
+	if r.caFilePathNie != nil {
+		t := *r.caFilePathNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nie", t, "form", "multi")
+		}
+	}
+	if r.caFilePathNiew != nil {
+		t := *r.caFilePathNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__niew", t, "form", "multi")
+		}
+	}
+	if r.caFilePathNisw != nil {
+		t := *r.caFilePathNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__nisw", t, "form", "multi")
+		}
+	}
+	if r.caFilePathRegex != nil {
+		t := *r.caFilePathRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "ca_file_path__regex", t, "form", "multi")
+		}
+	}
+	if r.created != nil {
+		t := *r.created
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created", t, "form", "multi")
+		}
+	}
+	if r.createdEmpty != nil {
+		t := *r.createdEmpty
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__empty", t, "form", "multi")
+		}
+	}
+	if r.createdGt != nil {
+		t := *r.createdGt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gt", t, "form", "multi")
+		}
+	}
+	if r.createdGte != nil {
+		t := *r.createdGte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__gte", t, "form", "multi")
+		}
+	}
+	if r.createdLt != nil {
+		t := *r.createdLt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lt", t, "form", "multi")
+		}
+	}
+	if r.createdLte != nil {
+		t := *r.createdLte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__lte", t, "form", "multi")
+		}
+	}
+	if r.createdN != nil {
+		t := *r.createdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "created__n", t, "form", "multi")
+		}
+	}
+	if r.createdByRequest != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "created_by_request", r.createdByRequest, "form", "")
+	}
+	if r.description != nil {
+		t := *r.description
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description", t, "form", "multi")
+		}
+	}
+	if r.descriptionEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "description__empty", r.descriptionEmpty, "form", "")
+	}
+	if r.descriptionIc != nil {
+		t := *r.descriptionIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ic", t, "form", "multi")
+		}
+	}
+	if r.descriptionIe != nil {
+		t := *r.descriptionIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__ie", t, "form", "multi")
+		}
+	}
+	if r.descriptionIew != nil {
+		t := *r.descriptionIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iew", t, "form", "multi")
+		}
+	}
+	if r.descriptionIregex != nil {
+		t := *r.descriptionIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__iregex", t, "form", "multi")
+		}
+	}
+	if r.descriptionIsw != nil {
+		t := *r.descriptionIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__isw", t, "form", "multi")
+		}
+	}
+	if r.descriptionN != nil {
+		t := *r.descriptionN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__n", t, "form", "multi")
+		}
+	}
+	if r.descriptionNic != nil {
+		t := *r.descriptionNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nic", t, "form", "multi")
+		}
+	}
+	if r.descriptionNie != nil {
+		t := *r.descriptionNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nie", t, "form", "multi")
+		}
+	}
+	if r.descriptionNiew != nil {
+		t := *r.descriptionNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__niew", t, "form", "multi")
+		}
+	}
+	if r.descriptionNisw != nil {
+		t := *r.descriptionNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__nisw", t, "form", "multi")
+		}
+	}
+	if r.descriptionRegex != nil {
+		t := *r.descriptionRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "description__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "description__regex", t, "form", "multi")
+		}
+	}
+	if r.httpContentType != nil {
+		t := *r.httpContentType
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type", t, "form", "multi")
+		}
+	}
+	if r.httpContentTypeEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__empty", r.httpContentTypeEmpty, "form", "")
+	}
+	if r.httpContentTypeIc != nil {
+		t := *r.httpContentTypeIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ic", t, "form", "multi")
+		}
+	}
+	if r.httpContentTypeIe != nil {
+		t := *r.httpContentTypeIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__ie", t, "form", "multi")
+		}
+	}
+	if r.httpContentTypeIew != nil {
+		t := *r.httpContentTypeIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__iew", t, "form", "multi")
+		}
+	}
+	if r.httpContentTypeIregex != nil {
+		t := *r.httpContentTypeIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__iregex", t, "form", "multi")
+		}
+	}
+	if r.httpContentTypeIsw != nil {
+		t := *r.httpContentTypeIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__isw", t, "form", "multi")
+		}
+	}
+	if r.httpContentTypeN != nil {
+		t := *r.httpContentTypeN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__n", t, "form", "multi")
+		}
+	}
+	if r.httpContentTypeNic != nil {
+		t := *r.httpContentTypeNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nic", t, "form", "multi")
+		}
+	}
+	if r.httpContentTypeNie != nil {
+		t := *r.httpContentTypeNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nie", t, "form", "multi")
+		}
+	}
+	if r.httpContentTypeNiew != nil {
+		t := *r.httpContentTypeNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__niew", t, "form", "multi")
+		}
+	}
+	if r.httpContentTypeNisw != nil {
+		t := *r.httpContentTypeNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__nisw", t, "form", "multi")
+		}
+	}
+	if r.httpContentTypeRegex != nil {
+		t := *r.httpContentTypeRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_content_type__regex", t, "form", "multi")
+		}
+	}
+	if r.httpMethod != nil {
+		t := *r.httpMethod
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method", t, "form", "multi")
+		}
+	}
+	if r.httpMethodEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__empty", r.httpMethodEmpty, "form", "")
+	}
+	if r.httpMethodIc != nil {
+		t := *r.httpMethodIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__ic", t, "form", "multi")
+		}
+	}
+	if r.httpMethodIe != nil {
+		t := *r.httpMethodIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__ie", t, "form", "multi")
+		}
+	}
+	if r.httpMethodIew != nil {
+		t := *r.httpMethodIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__iew", t, "form", "multi")
+		}
+	}
+	if r.httpMethodIregex != nil {
+		t := *r.httpMethodIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__iregex", t, "form", "multi")
+		}
+	}
+	if r.httpMethodIsw != nil {
+		t := *r.httpMethodIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__isw", t, "form", "multi")
+		}
+	}
+	if r.httpMethodN != nil {
+		t := *r.httpMethodN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__n", t, "form", "multi")
+		}
+	}
+	if r.httpMethodNic != nil {
+		t := *r.httpMethodNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nic", t, "form", "multi")
+		}
+	}
+	if r.httpMethodNie != nil {
+		t := *r.httpMethodNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nie", t, "form", "multi")
+		}
+	}
+	if r.httpMethodNiew != nil {
+		t := *r.httpMethodNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__niew", t, "form", "multi")
+		}
+	}
+	if r.httpMethodNisw != nil {
+		t := *r.httpMethodNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__nisw", t, "form", "multi")
+		}
+	}
+	if r.httpMethodRegex != nil {
+		t := *r.httpMethodRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "http_method__regex", t, "form", "multi")
+		}
+	}
+	if r.id != nil {
+		t := *r.id
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id", t, "form", "multi")
+		}
+	}
+	if r.idEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "id__empty", r.idEmpty, "form", "")
+	}
+	if r.idGt != nil {
+		t := *r.idGt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gt", t, "form", "multi")
+		}
+	}
+	if r.idGte != nil {
+		t := *r.idGte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__gte", t, "form", "multi")
+		}
+	}
+	if r.idLt != nil {
+		t := *r.idLt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lt", t, "form", "multi")
+		}
+	}
+	if r.idLte != nil {
+		t := *r.idLte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__lte", t, "form", "multi")
+		}
+	}
+	if r.idN != nil {
+		t := *r.idN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "id__n", t, "form", "multi")
+		}
+	}
+	if r.lastUpdated != nil {
+		t := *r.lastUpdated
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated", t, "form", "multi")
+		}
+	}
+	if r.lastUpdatedEmpty != nil {
+		t := *r.lastUpdatedEmpty
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__empty", t, "form", "multi")
+		}
+	}
+	if r.lastUpdatedGt != nil {
+		t := *r.lastUpdatedGt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gt", t, "form", "multi")
+		}
+	}
+	if r.lastUpdatedGte != nil {
+		t := *r.lastUpdatedGte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__gte", t, "form", "multi")
+		}
+	}
+	if r.lastUpdatedLt != nil {
+		t := *r.lastUpdatedLt
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lt", t, "form", "multi")
+		}
+	}
+	if r.lastUpdatedLte != nil {
+		t := *r.lastUpdatedLte
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__lte", t, "form", "multi")
+		}
+	}
+	if r.lastUpdatedN != nil {
+		t := *r.lastUpdatedN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "last_updated__n", t, "form", "multi")
+		}
+	}
+	if r.limit != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "limit", r.limit, "form", "")
+	}
+	if r.modifiedByRequest != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "modified_by_request", r.modifiedByRequest, "form", "")
+	}
+	if r.name != nil {
+		t := *r.name
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name", t, "form", "multi")
+		}
+	}
+	if r.nameEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "name__empty", r.nameEmpty, "form", "")
+	}
+	if r.nameIc != nil {
+		t := *r.nameIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ic", t, "form", "multi")
+		}
+	}
+	if r.nameIe != nil {
+		t := *r.nameIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__ie", t, "form", "multi")
+		}
+	}
+	if r.nameIew != nil {
+		t := *r.nameIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iew", t, "form", "multi")
+		}
+	}
+	if r.nameIregex != nil {
+		t := *r.nameIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__iregex", t, "form", "multi")
+		}
+	}
+	if r.nameIsw != nil {
+		t := *r.nameIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__isw", t, "form", "multi")
+		}
+	}
+	if r.nameN != nil {
+		t := *r.nameN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__n", t, "form", "multi")
+		}
+	}
+	if r.nameNic != nil {
+		t := *r.nameNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nic", t, "form", "multi")
+		}
+	}
+	if r.nameNie != nil {
+		t := *r.nameNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nie", t, "form", "multi")
+		}
+	}
+	if r.nameNiew != nil {
+		t := *r.nameNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__niew", t, "form", "multi")
+		}
+	}
+	if r.nameNisw != nil {
+		t := *r.nameNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__nisw", t, "form", "multi")
+		}
+	}
+	if r.nameRegex != nil {
+		t := *r.nameRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "name__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "name__regex", t, "form", "multi")
+		}
+	}
+	if r.offset != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "offset", r.offset, "form", "")
+	}
+	if r.ordering != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ordering", r.ordering, "form", "")
+	}
+	if r.owner != nil {
+		t := *r.owner
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner", t, "form", "multi")
+		}
+	}
+	if r.ownerN != nil {
+		t := *r.ownerN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner__n", t, "form", "multi")
+		}
+	}
+	if r.ownerGroup != nil {
+		t := *r.ownerGroup
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group", t, "form", "multi")
+		}
+	}
+	if r.ownerGroupN != nil {
+		t := *r.ownerGroupN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group__n", t, "form", "multi")
+		}
+	}
+	if r.ownerGroupId != nil {
+		t := *r.ownerGroupId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group_id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group_id", t, "form", "multi")
+		}
+	}
+	if r.ownerGroupIdN != nil {
+		t := *r.ownerGroupIdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group_id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner_group_id__n", t, "form", "multi")
+		}
+	}
+	if r.ownerId != nil {
+		t := *r.ownerId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner_id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner_id", t, "form", "multi")
+		}
+	}
+	if r.ownerIdN != nil {
+		t := *r.ownerIdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "owner_id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "owner_id__n", t, "form", "multi")
+		}
+	}
+	if r.payloadUrl != nil {
+		t := *r.payloadUrl
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "payload_url", t, "form", "multi")
+		}
+	}
+	if r.q != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "q", r.q, "form", "")
+	}
+	if r.secret != nil {
+		t := *r.secret
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret", t, "form", "multi")
+		}
+	}
+	if r.secretEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "secret__empty", r.secretEmpty, "form", "")
+	}
+	if r.secretIc != nil {
+		t := *r.secretIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ic", t, "form", "multi")
+		}
+	}
+	if r.secretIe != nil {
+		t := *r.secretIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__ie", t, "form", "multi")
+		}
+	}
+	if r.secretIew != nil {
+		t := *r.secretIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__iew", t, "form", "multi")
+		}
+	}
+	if r.secretIregex != nil {
+		t := *r.secretIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__iregex", t, "form", "multi")
+		}
+	}
+	if r.secretIsw != nil {
+		t := *r.secretIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__isw", t, "form", "multi")
+		}
+	}
+	if r.secretN != nil {
+		t := *r.secretN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__n", t, "form", "multi")
+		}
+	}
+	if r.secretNic != nil {
+		t := *r.secretNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nic", t, "form", "multi")
+		}
+	}
+	if r.secretNie != nil {
+		t := *r.secretNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nie", t, "form", "multi")
+		}
+	}
+	if r.secretNiew != nil {
+		t := *r.secretNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__niew", t, "form", "multi")
+		}
+	}
+	if r.secretNisw != nil {
+		t := *r.secretNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__nisw", t, "form", "multi")
+		}
+	}
+	if r.secretRegex != nil {
+		t := *r.secretRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "secret__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "secret__regex", t, "form", "multi")
+		}
+	}
+	if r.sslVerification != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "ssl_verification", r.sslVerification, "form", "")
+	}
+	if r.tag != nil {
+		t := *r.tag
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag", t, "form", "multi")
+		}
+	}
+	if r.tagN != nil {
+		t := *r.tagN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag__n", t, "form", "multi")
+		}
+	}
+	if r.tagId != nil {
+		t := *r.tagId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id", t, "form", "multi")
+		}
+	}
+	if r.tagIdN != nil {
+		t := *r.tagIdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "tag_id__n", t, "form", "multi")
+		}
+	}
+	if r.updatedByRequest != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "updated_by_request", r.updatedByRequest, "form", "")
+	}
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasWebhooksPartialUpdateRequest struct {
+	ctx                   context.Context
+	ApiService            ExtrasAPI
+	id                    int32
+	patchedWebhookRequest *PatchedWebhookRequest
+}
+
+func (r ApiExtrasWebhooksPartialUpdateRequest) PatchedWebhookRequest(patchedWebhookRequest PatchedWebhookRequest) ApiExtrasWebhooksPartialUpdateRequest {
+	r.patchedWebhookRequest = &patchedWebhookRequest
+	return r
+}
+
+func (r ApiExtrasWebhooksPartialUpdateRequest) Execute() (*Webhook, *http.Response, error) {
+	return r.ApiService.ExtrasWebhooksPartialUpdateExecute(r)
+}
+
+/*
+ExtrasWebhooksPartialUpdate Method for ExtrasWebhooksPartialUpdate
+
+Patch a webhook object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this webhook.
+	@return ApiExtrasWebhooksPartialUpdateRequest
+*/
+func (a *ExtrasAPIService) ExtrasWebhooksPartialUpdate(ctx context.Context, id int32) ApiExtrasWebhooksPartialUpdateRequest {
+	return ApiExtrasWebhooksPartialUpdateRequest{
+		ApiService: a,
+		ctx:        ctx,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+//
+//	@return Webhook
+func (a *ExtrasAPIService) ExtrasWebhooksPartialUpdateExecute(r ApiExtrasWebhooksPartialUpdateRequest) (*Webhook, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPatch
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Webhook
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksPartialUpdate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/webhooks/{id}/"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.patchedWebhookRequest
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasWebhooksRetrieveRequest struct {
+	ctx        context.Context
+	ApiService ExtrasAPI
+	id         int32
+}
+
+func (r ApiExtrasWebhooksRetrieveRequest) Execute() (*Webhook, *http.Response, error) {
+	return r.ApiService.ExtrasWebhooksRetrieveExecute(r)
+}
+
+/*
+ExtrasWebhooksRetrieve Method for ExtrasWebhooksRetrieve
+
+Get a webhook object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this webhook.
+	@return ApiExtrasWebhooksRetrieveRequest
+*/
+func (a *ExtrasAPIService) ExtrasWebhooksRetrieve(ctx context.Context, id int32) ApiExtrasWebhooksRetrieveRequest {
+	return ApiExtrasWebhooksRetrieveRequest{
+		ApiService: a,
+		ctx:        ctx,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+//
+//	@return Webhook
+func (a *ExtrasAPIService) ExtrasWebhooksRetrieveExecute(r ApiExtrasWebhooksRetrieveRequest) (*Webhook, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodGet
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Webhook
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksRetrieve")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/webhooks/{id}/"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	if r.ctx != nil {
+		// API Key Authentication
+		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {
+			if apiKey, ok := auth["tokenAuth"]; ok {
+				var key string
+				if apiKey.Prefix != "" {
+					key = apiKey.Prefix + " " + apiKey.Key
+				} else {
+					key = apiKey.Key
+				}
+				localVarHeaderParams["Authorization"] = key
+			}
+		}
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return localVarReturnValue, nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarReturnValue, localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	err = a.client.decode(&localVarReturnValue, localVarBody, localVarHTTPResponse.Header.Get("Content-Type"))
+	if err != nil {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: err.Error(),
+		}
+		return localVarReturnValue, localVarHTTPResponse, newErr
+	}
+
+	return localVarReturnValue, localVarHTTPResponse, nil
+}
+
+type ApiExtrasWebhooksUpdateRequest struct {
+	ctx            context.Context
+	ApiService     ExtrasAPI
+	id             int32
+	webhookRequest *WebhookRequest
+}
+
+func (r ApiExtrasWebhooksUpdateRequest) WebhookRequest(webhookRequest WebhookRequest) ApiExtrasWebhooksUpdateRequest {
+	r.webhookRequest = &webhookRequest
+	return r
+}
+
+func (r ApiExtrasWebhooksUpdateRequest) Execute() (*Webhook, *http.Response, error) {
+	return r.ApiService.ExtrasWebhooksUpdateExecute(r)
+}
+
+/*
+ExtrasWebhooksUpdate Method for ExtrasWebhooksUpdate
+
+Put a webhook object.
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param id A unique integer value identifying this webhook.
+	@return ApiExtrasWebhooksUpdateRequest
+*/
+func (a *ExtrasAPIService) ExtrasWebhooksUpdate(ctx context.Context, id int32) ApiExtrasWebhooksUpdateRequest {
+	return ApiExtrasWebhooksUpdateRequest{
+		ApiService: a,
+		ctx:        ctx,
+		id:         id,
+	}
+}
+
+// Execute executes the request
+//
+//	@return Webhook
+func (a *ExtrasAPIService) ExtrasWebhooksUpdateExecute(r ApiExtrasWebhooksUpdateRequest) (*Webhook, *http.Response, error) {
+	var (
+		localVarHTTPMethod  = http.MethodPut
+		localVarPostBody    interface{}
+		formFiles           []formFile
+		localVarReturnValue *Webhook
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "ExtrasAPIService.ExtrasWebhooksUpdate")
+	if err != nil {
+		return localVarReturnValue, nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/api/extras/webhooks/{id}/"
+	localVarPath = strings.Replace(localVarPath, "{"+"id"+"}", url.PathEscape(parameterValueToString(r.id, "id")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+	if r.webhookRequest == nil {
+		return localVarReturnValue, nil, reportError("webhookRequest is required and must be specified")
+	}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{"application/json", "multipart/form-data"}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{"application/json"}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	// body params
+	localVarPostBody = r.webhookRequest
 	if r.ctx != nil {
 		// API Key Authentication
 		if auth, ok := r.ctx.Value(ContextAPIKeys).(map[string]APIKey); ok {

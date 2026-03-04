@@ -31,6 +31,8 @@ MODELS_TO_FILTER = [
     'SiteGroup',
     'Group',
     'ObjectPermission',
+    'EventRules',
+    'Webhooks',
 ]
 # ==============================================================================
 def find_refs_in_object(obj, found_refs):

@@ -29,6 +29,7 @@ type SubnetIPAddress struct {
 	Address    string                                `json:"address"`
 	Vpc        NullableBriefVPC                      `json:"vpc,omitempty"`
 	Country    *PatchedSubnetIPAddressRequestCountry `json:"country,omitempty"`
+	ClaimedBy  NullableString                        `json:"claimed_by,omitempty"`
 	// The subnet prefix this IP belongs to
 	SubnetPrefix int32                                `json:"subnet_prefix"`
 	Tenant       NullableBriefTenant                  `json:"tenant,omitempty"`
@@ -299,6 +300,49 @@ func (o *SubnetIPAddress) HasCountry() bool {
 // SetCountry gets a reference to the given PatchedSubnetIPAddressRequestCountry and assigns it to the Country field.
 func (o *SubnetIPAddress) SetCountry(v PatchedSubnetIPAddressRequestCountry) {
 	o.Country = &v
+}
+
+// GetClaimedBy returns the ClaimedBy field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SubnetIPAddress) GetClaimedBy() string {
+	if o == nil || IsNil(o.ClaimedBy.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.ClaimedBy.Get()
+}
+
+// GetClaimedByOk returns a tuple with the ClaimedBy field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SubnetIPAddress) GetClaimedByOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.ClaimedBy.Get(), o.ClaimedBy.IsSet()
+}
+
+// HasClaimedBy returns a boolean if a field has been set.
+func (o *SubnetIPAddress) HasClaimedBy() bool {
+	if o != nil && o.ClaimedBy.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetClaimedBy gets a reference to the given NullableString and assigns it to the ClaimedBy field.
+func (o *SubnetIPAddress) SetClaimedBy(v string) {
+	o.ClaimedBy.Set(&v)
+}
+
+// SetClaimedByNil sets the value for ClaimedBy to be an explicit nil
+func (o *SubnetIPAddress) SetClaimedByNil() {
+	o.ClaimedBy.Set(nil)
+}
+
+// UnsetClaimedBy ensures that no value is present for ClaimedBy, not even an explicit nil
+func (o *SubnetIPAddress) UnsetClaimedBy() {
+	o.ClaimedBy.Unset()
 }
 
 // GetSubnetPrefix returns the SubnetPrefix field value
@@ -812,6 +856,9 @@ func (o SubnetIPAddress) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Country) {
 		toSerialize["country"] = o.Country
 	}
+	if o.ClaimedBy.IsSet() {
+		toSerialize["claimed_by"] = o.ClaimedBy.Get()
+	}
 	toSerialize["subnet_prefix"] = o.SubnetPrefix
 	if o.Tenant.IsSet() {
 		toSerialize["tenant"] = o.Tenant.Get()
@@ -923,6 +970,7 @@ func (o *SubnetIPAddress) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "address")
 		delete(additionalProperties, "vpc")
 		delete(additionalProperties, "country")
+		delete(additionalProperties, "claimed_by")
 		delete(additionalProperties, "subnet_prefix")
 		delete(additionalProperties, "tenant")
 		delete(additionalProperties, "status")

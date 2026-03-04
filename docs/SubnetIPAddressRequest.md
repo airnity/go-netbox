@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Address** | **string** |  | 
 **Vpc** | Pointer to [**NullablePatchedSubnetIPAddressRequestVpc**](PatchedSubnetIPAddressRequestVpc.md) |  | [optional] 
 **Country** | Pointer to [**PatchedSubnetIPAddressRequestCountry**](PatchedSubnetIPAddressRequestCountry.md) |  | [optional] 
+**ClaimedBy** | Pointer to **NullableString** |  | [optional] 
 **SubnetPrefix** | **int32** | The subnet prefix this IP belongs to | 
 **Tenant** | Pointer to [**NullablePatchedSubnetIPAddressRequestTenant**](PatchedSubnetIPAddressRequestTenant.md) |  | [optional] 
 **Status** | Pointer to [**PatchedSubnetIPAddressRequestStatus**](PatchedSubnetIPAddressRequestStatus.md) |  | [optional] 
@@ -117,6 +118,41 @@ SetCountry sets Country field to given value.
 
 HasCountry returns a boolean if a field has been set.
 
+### GetClaimedBy
+
+`func (o *SubnetIPAddressRequest) GetClaimedBy() string`
+
+GetClaimedBy returns the ClaimedBy field if non-nil, zero value otherwise.
+
+### GetClaimedByOk
+
+`func (o *SubnetIPAddressRequest) GetClaimedByOk() (*string, bool)`
+
+GetClaimedByOk returns a tuple with the ClaimedBy field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetClaimedBy
+
+`func (o *SubnetIPAddressRequest) SetClaimedBy(v string)`
+
+SetClaimedBy sets ClaimedBy field to given value.
+
+### HasClaimedBy
+
+`func (o *SubnetIPAddressRequest) HasClaimedBy() bool`
+
+HasClaimedBy returns a boolean if a field has been set.
+
+### SetClaimedByNil
+
+`func (o *SubnetIPAddressRequest) SetClaimedByNil(b bool)`
+
+ SetClaimedByNil sets the value for ClaimedBy to be an explicit nil
+
+### UnsetClaimedBy
+`func (o *SubnetIPAddressRequest) UnsetClaimedBy()`
+
+UnsetClaimedBy ensures that no value is present for ClaimedBy, not even an explicit nil
 ### GetSubnetPrefix
 
 `func (o *SubnetIPAddressRequest) GetSubnetPrefix() int32`

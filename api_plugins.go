@@ -6858,6 +6858,19 @@ type ApiPluginsAirnityIpamSubnetipaddressListRequest struct {
 	ctx               context.Context
 	ApiService        PluginsAPI
 	address           *[]string
+	claimedBy         *[]string
+	claimedByEmpty    *bool
+	claimedByIc       *[]string
+	claimedByIe       *[]string
+	claimedByIew      *[]string
+	claimedByIregex   *[]string
+	claimedByIsw      *[]string
+	claimedByN        *[]string
+	claimedByNic      *[]string
+	claimedByNie      *[]string
+	claimedByNiew     *[]string
+	claimedByNisw     *[]string
+	claimedByRegex    *[]string
 	country           *PluginsAirnityIpamSubnetipaddressListCountryParameter
 	countryEmpty      *bool
 	countryIc         *[]string
@@ -6991,6 +7004,71 @@ type ApiPluginsAirnityIpamSubnetipaddressListRequest struct {
 
 func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) Address(address []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
 	r.address = &address
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedBy(claimedBy []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedBy = &claimedBy
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedByEmpty(claimedByEmpty bool) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedByEmpty = &claimedByEmpty
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedByIc(claimedByIc []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedByIc = &claimedByIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedByIe(claimedByIe []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedByIe = &claimedByIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedByIew(claimedByIew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedByIew = &claimedByIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedByIregex(claimedByIregex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedByIregex = &claimedByIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedByIsw(claimedByIsw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedByIsw = &claimedByIsw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedByN(claimedByN []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedByN = &claimedByN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedByNic(claimedByNic []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedByNic = &claimedByNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedByNie(claimedByNie []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedByNie = &claimedByNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedByNiew(claimedByNiew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedByNiew = &claimedByNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedByNisw(claimedByNisw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedByNisw = &claimedByNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) ClaimedByRegex(claimedByRegex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.claimedByRegex = &claimedByRegex
 	return r
 }
 
@@ -7742,6 +7820,141 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetipaddressListExecute(r ApiPl
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "address", t, "form", "multi")
+		}
+	}
+	if r.claimedBy != nil {
+		t := *r.claimedBy
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by", t, "form", "multi")
+		}
+	}
+	if r.claimedByEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__empty", r.claimedByEmpty, "form", "")
+	}
+	if r.claimedByIc != nil {
+		t := *r.claimedByIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__ic", t, "form", "multi")
+		}
+	}
+	if r.claimedByIe != nil {
+		t := *r.claimedByIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__ie", t, "form", "multi")
+		}
+	}
+	if r.claimedByIew != nil {
+		t := *r.claimedByIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__iew", t, "form", "multi")
+		}
+	}
+	if r.claimedByIregex != nil {
+		t := *r.claimedByIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__iregex", t, "form", "multi")
+		}
+	}
+	if r.claimedByIsw != nil {
+		t := *r.claimedByIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__isw", t, "form", "multi")
+		}
+	}
+	if r.claimedByN != nil {
+		t := *r.claimedByN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__n", t, "form", "multi")
+		}
+	}
+	if r.claimedByNic != nil {
+		t := *r.claimedByNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__nic", t, "form", "multi")
+		}
+	}
+	if r.claimedByNie != nil {
+		t := *r.claimedByNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__nie", t, "form", "multi")
+		}
+	}
+	if r.claimedByNiew != nil {
+		t := *r.claimedByNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__niew", t, "form", "multi")
+		}
+	}
+	if r.claimedByNisw != nil {
+		t := *r.claimedByNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__nisw", t, "form", "multi")
+		}
+	}
+	if r.claimedByRegex != nil {
+		t := *r.claimedByRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "claimed_by__regex", t, "form", "multi")
 		}
 	}
 	if r.country != nil {
