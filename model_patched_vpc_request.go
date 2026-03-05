@@ -22,6 +22,7 @@ type PatchedVPCRequest struct {
 	// Name of the VPC
 	Name                 *string                            `json:"name,omitempty" validate:"regexp=^[a-z0-9_-]+$"`
 	Environment          NullableBriefVPCRequestEnvironment `json:"environment,omitempty"`
+	Metadata             interface{}                        `json:"metadata,omitempty"`
 	Description          *string                            `json:"description,omitempty"`
 	CustomFieldData      interface{}                        `json:"custom_field_data,omitempty"`
 	Tags                 []NestedTagRequest                 `json:"tags,omitempty"`
@@ -120,6 +121,39 @@ func (o *PatchedVPCRequest) SetEnvironmentNil() {
 // UnsetEnvironment ensures that no value is present for Environment, not even an explicit nil
 func (o *PatchedVPCRequest) UnsetEnvironment() {
 	o.Environment.Unset()
+}
+
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PatchedVPCRequest) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PatchedVPCRequest) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return &o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *PatchedVPCRequest) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PatchedVPCRequest) SetMetadata(v interface{}) {
+	o.Metadata = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -235,6 +269,9 @@ func (o PatchedVPCRequest) ToMap() (map[string]interface{}, error) {
 	if o.Environment.IsSet() {
 		toSerialize["environment"] = o.Environment.Get()
 	}
+	if o.Metadata != nil {
+		toSerialize["metadata"] = o.Metadata
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -268,6 +305,7 @@ func (o *PatchedVPCRequest) UnmarshalJSON(data []byte) (err error) {
 	if err = json.Unmarshal(data, &additionalProperties); err == nil {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "environment")
+		delete(additionalProperties, "metadata")
 		delete(additionalProperties, "description")
 		delete(additionalProperties, "custom_field_data")
 		delete(additionalProperties, "tags")

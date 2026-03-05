@@ -27,6 +27,7 @@ type VPC struct {
 	// Name of the VPC
 	Name                 string                   `json:"name" validate:"regexp=^[a-z0-9_-]+$"`
 	Environment          NullableBriefEnvironment `json:"environment,omitempty"`
+	Metadata             interface{}              `json:"metadata,omitempty"`
 	Description          *string                  `json:"description,omitempty"`
 	Created              NullableTime             `json:"created,omitempty"`
 	LastUpdated          NullableTime             `json:"last_updated,omitempty"`
@@ -203,6 +204,39 @@ func (o *VPC) SetEnvironmentNil() {
 // UnsetEnvironment ensures that no value is present for Environment, not even an explicit nil
 func (o *VPC) UnsetEnvironment() {
 	o.Environment.Unset()
+}
+
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *VPC) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *VPC) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return &o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *VPC) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *VPC) SetMetadata(v interface{}) {
+	o.Metadata = v
 }
 
 // GetDescription returns the Description field value if set, zero value otherwise.
@@ -407,6 +441,9 @@ func (o VPC) ToMap() (map[string]interface{}, error) {
 	if o.Environment.IsSet() {
 		toSerialize["environment"] = o.Environment.Get()
 	}
+	if o.Metadata != nil {
+		toSerialize["metadata"] = o.Metadata
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -488,6 +525,7 @@ func (o *VPC) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "display")
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "environment")
+		delete(additionalProperties, "metadata")
 		delete(additionalProperties, "description")
 		delete(additionalProperties, "created")
 		delete(additionalProperties, "last_updated")

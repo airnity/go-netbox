@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Region** | Pointer to [**NullablePatchedSubnetRequestRegion**](PatchedSubnetRequestRegion.md) |  | [optional] 
 **Tenant** | Pointer to [**NullablePatchedSubnetIPAddressRequestTenant**](PatchedSubnetIPAddressRequestTenant.md) |  | [optional] 
 **Purpose** | Pointer to [**NullablePatchedSubnetRequestPurpose**](PatchedSubnetRequestPurpose.md) |  | [optional] 
+**Metadata** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **CustomFields** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
@@ -223,6 +224,41 @@ HasPurpose returns a boolean if a field has been set.
 `func (o *PluginsAirnityIpamSubnetCreateRequest) UnsetPurpose()`
 
 UnsetPurpose ensures that no value is present for Purpose, not even an explicit nil
+### GetMetadata
+
+`func (o *PluginsAirnityIpamSubnetCreateRequest) GetMetadata() interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *PluginsAirnityIpamSubnetCreateRequest) GetMetadataOk() (*interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *PluginsAirnityIpamSubnetCreateRequest) SetMetadata(v interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *PluginsAirnityIpamSubnetCreateRequest) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
+### SetMetadataNil
+
+`func (o *PluginsAirnityIpamSubnetCreateRequest) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *PluginsAirnityIpamSubnetCreateRequest) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
 ### GetDescription
 
 `func (o *PluginsAirnityIpamSubnetCreateRequest) GetDescription() string`

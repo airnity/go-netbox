@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Role** | Pointer to [**PatchedSubnetIPAddressRequestRole**](PatchedSubnetIPAddressRequestRole.md) |  | [optional] 
 **NatInside** | Pointer to [**NullableNestedSubnetIPAddressRequest**](NestedSubnetIPAddressRequest.md) |  | [optional] 
 **DnsName** | Pointer to **string** | Hostname or FQDN (not case-sensitive) | [optional] 
+**Metadata** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
@@ -318,6 +319,41 @@ SetDnsName sets DnsName field to given value.
 
 HasDnsName returns a boolean if a field has been set.
 
+### GetMetadata
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetMetadata() interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetMetadataOk() (*interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetMetadata(v interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
+### SetMetadataNil
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
 ### GetDescription
 
 `func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetDescription() string`

@@ -20,6 +20,7 @@ Name | Type | Description | Notes
 **NatInside** | Pointer to [**NullableNestedSubnetIPAddress**](NestedSubnetIPAddress.md) |  | [optional] 
 **NatOutside** | [**[]NestedSubnetIPAddress**](NestedSubnetIPAddress.md) |  | [readonly] 
 **DnsName** | Pointer to **string** | Hostname or FQDN (not case-sensitive) | [optional] 
+**Metadata** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -452,6 +453,41 @@ SetDnsName sets DnsName field to given value.
 
 HasDnsName returns a boolean if a field has been set.
 
+### GetMetadata
+
+`func (o *SubnetIPAddress) GetMetadata() interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *SubnetIPAddress) GetMetadataOk() (*interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *SubnetIPAddress) SetMetadata(v interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *SubnetIPAddress) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
+### SetMetadataNil
+
+`func (o *SubnetIPAddress) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *SubnetIPAddress) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
 ### GetDescription
 
 `func (o *SubnetIPAddress) GetDescription() string`

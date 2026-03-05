@@ -26,6 +26,7 @@ type SubnetRequest struct {
 	Region               NullablePatchedSubnetRequestRegion          `json:"region,omitempty"`
 	Tenant               NullablePatchedSubnetIPAddressRequestTenant `json:"tenant,omitempty"`
 	Purpose              NullablePatchedSubnetRequestPurpose         `json:"purpose,omitempty"`
+	Metadata             interface{}                                 `json:"metadata,omitempty"`
 	Description          *string                                     `json:"description,omitempty"`
 	Comments             *string                                     `json:"comments,omitempty"`
 	CustomFields         map[string]interface{}                      `json:"custom_fields,omitempty"`
@@ -287,6 +288,39 @@ func (o *SubnetRequest) UnsetPurpose() {
 	o.Purpose.Unset()
 }
 
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SubnetRequest) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SubnetRequest) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return &o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *SubnetRequest) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *SubnetRequest) SetMetadata(v interface{}) {
+	o.Metadata = v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *SubnetRequest) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -411,6 +445,9 @@ func (o SubnetRequest) ToMap() (map[string]interface{}, error) {
 	if o.Purpose.IsSet() {
 		toSerialize["purpose"] = o.Purpose.Get()
 	}
+	if o.Metadata != nil {
+		toSerialize["metadata"] = o.Metadata
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -448,6 +485,7 @@ func (o *SubnetRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "region")
 		delete(additionalProperties, "tenant")
 		delete(additionalProperties, "purpose")
+		delete(additionalProperties, "metadata")
 		delete(additionalProperties, "description")
 		delete(additionalProperties, "comments")
 		delete(additionalProperties, "custom_fields")

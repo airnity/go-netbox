@@ -34,6 +34,7 @@ type NestedSubnet struct {
 	Purpose              NullableInt32          `json:"purpose,omitempty"`
 	Description          *string                `json:"description,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
+	Metadata             interface{}            `json:"metadata,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated,omitempty"`
@@ -434,6 +435,39 @@ func (o *NestedSubnet) SetComments(v string) {
 	o.Comments = &v
 }
 
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NestedSubnet) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NestedSubnet) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return &o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *NestedSubnet) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *NestedSubnet) SetMetadata(v interface{}) {
+	o.Metadata = v
+}
+
 // GetCustomFields returns the CustomFields field value if set, zero value otherwise.
 func (o *NestedSubnet) GetCustomFields() map[string]interface{} {
 	if o == nil || IsNil(o.CustomFields) {
@@ -589,6 +623,9 @@ func (o NestedSubnet) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.Comments) {
 		toSerialize["comments"] = o.Comments
 	}
+	if o.Metadata != nil {
+		toSerialize["metadata"] = o.Metadata
+	}
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
@@ -670,6 +707,7 @@ func (o *NestedSubnet) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "purpose")
 		delete(additionalProperties, "description")
 		delete(additionalProperties, "comments")
+		delete(additionalProperties, "metadata")
 		delete(additionalProperties, "custom_fields")
 		delete(additionalProperties, "created")
 		delete(additionalProperties, "last_updated")

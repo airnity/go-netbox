@@ -31,6 +31,7 @@ type PatchedSubnetIPAddressRequest struct {
 	NatInside    NullableNestedSubnetIPAddressRequest        `json:"nat_inside,omitempty"`
 	// Hostname or FQDN (not case-sensitive)
 	DnsName              *string                `json:"dns_name,omitempty" validate:"regexp=^([0-9A-Za-z_-]+|\\\\*)(\\\\.[0-9A-Za-z_-]+)*\\\\.?$"`
+	Metadata             interface{}            `json:"metadata,omitempty"`
 	Description          *string                `json:"description,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
 	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
@@ -421,6 +422,39 @@ func (o *PatchedSubnetIPAddressRequest) SetDnsName(v string) {
 	o.DnsName = &v
 }
 
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PatchedSubnetIPAddressRequest) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PatchedSubnetIPAddressRequest) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return &o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *PatchedSubnetIPAddressRequest) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PatchedSubnetIPAddressRequest) SetMetadata(v interface{}) {
+	o.Metadata = v
+}
+
 // GetDescription returns the Description field value if set, zero value otherwise.
 func (o *PatchedSubnetIPAddressRequest) GetDescription() string {
 	if o == nil || IsNil(o.Description) {
@@ -589,6 +623,9 @@ func (o PatchedSubnetIPAddressRequest) ToMap() (map[string]interface{}, error) {
 	if !IsNil(o.DnsName) {
 		toSerialize["dns_name"] = o.DnsName
 	}
+	if o.Metadata != nil {
+		toSerialize["metadata"] = o.Metadata
+	}
 	if !IsNil(o.Description) {
 		toSerialize["description"] = o.Description
 	}
@@ -633,6 +670,7 @@ func (o *PatchedSubnetIPAddressRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "role")
 		delete(additionalProperties, "nat_inside")
 		delete(additionalProperties, "dns_name")
+		delete(additionalProperties, "metadata")
 		delete(additionalProperties, "description")
 		delete(additionalProperties, "comments")
 		delete(additionalProperties, "tags")

@@ -40,6 +40,7 @@ type SubnetPrefix struct {
 	Status               *NestedSubnetPrefixStatus `json:"status,omitempty"`
 	Family               int32                     `json:"family"`
 	IsFull               NullableBool              `json:"is_full,omitempty"`
+	Metadata             interface{}               `json:"metadata,omitempty"`
 	Created              NullableTime              `json:"created,omitempty"`
 	LastUpdated          NullableTime              `json:"last_updated,omitempty"`
 	AdditionalProperties map[string]interface{}
@@ -492,6 +493,39 @@ func (o *SubnetPrefix) UnsetIsFull() {
 	o.IsFull.Unset()
 }
 
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SubnetPrefix) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SubnetPrefix) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return &o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *SubnetPrefix) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *SubnetPrefix) SetMetadata(v interface{}) {
+	o.Metadata = v
+}
+
 // GetCreated returns the Created field value if set, zero value otherwise (both if not set or set to explicit null).
 func (o *SubnetPrefix) GetCreated() time.Time {
 	if o == nil || IsNil(o.Created.Get()) {
@@ -618,6 +652,9 @@ func (o SubnetPrefix) ToMap() (map[string]interface{}, error) {
 	if o.IsFull.IsSet() {
 		toSerialize["is_full"] = o.IsFull.Get()
 	}
+	if o.Metadata != nil {
+		toSerialize["metadata"] = o.Metadata
+	}
 	if o.Created.IsSet() {
 		toSerialize["created"] = o.Created.Get()
 	}
@@ -702,6 +739,7 @@ func (o *SubnetPrefix) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "status")
 		delete(additionalProperties, "family")
 		delete(additionalProperties, "is_full")
+		delete(additionalProperties, "metadata")
 		delete(additionalProperties, "created")
 		delete(additionalProperties, "last_updated")
 		o.AdditionalProperties = additionalProperties

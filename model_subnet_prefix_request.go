@@ -32,6 +32,7 @@ type SubnetPrefixRequest struct {
 	// Treat this prefix as fully utilized
 	MarkUtilized         *bool                          `json:"mark_utilized,omitempty"`
 	Status               *NestedSubnetPrefixStatusValue `json:"status,omitempty"`
+	Metadata             interface{}                    `json:"metadata,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -271,6 +272,39 @@ func (o *SubnetPrefixRequest) SetStatus(v NestedSubnetPrefixStatusValue) {
 	o.Status = &v
 }
 
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SubnetPrefixRequest) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SubnetPrefixRequest) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return &o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *SubnetPrefixRequest) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *SubnetPrefixRequest) SetMetadata(v interface{}) {
+	o.Metadata = v
+}
+
 func (o SubnetPrefixRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -299,6 +333,9 @@ func (o SubnetPrefixRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.Status) {
 		toSerialize["status"] = o.Status
+	}
+	if o.Metadata != nil {
+		toSerialize["metadata"] = o.Metadata
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -366,6 +403,7 @@ func (o *SubnetPrefixRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "auto_reserve_last_ips")
 		delete(additionalProperties, "mark_utilized")
 		delete(additionalProperties, "status")
+		delete(additionalProperties, "metadata")
 		o.AdditionalProperties = additionalProperties
 	}
 

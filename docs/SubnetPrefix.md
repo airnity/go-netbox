@@ -18,6 +18,7 @@ Name | Type | Description | Notes
 **Status** | Pointer to [**NestedSubnetPrefixStatus**](NestedSubnetPrefixStatus.md) |  | [optional] 
 **Family** | **int32** |  | [readonly] 
 **IsFull** | Pointer to **NullableBool** |  | [optional] [readonly] 
+**Metadata** | Pointer to **interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
 **LastUpdated** | Pointer to **NullableTime** |  | [optional] [readonly] 
 
@@ -380,6 +381,41 @@ HasIsFull returns a boolean if a field has been set.
 `func (o *SubnetPrefix) UnsetIsFull()`
 
 UnsetIsFull ensures that no value is present for IsFull, not even an explicit nil
+### GetMetadata
+
+`func (o *SubnetPrefix) GetMetadata() interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *SubnetPrefix) GetMetadataOk() (*interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *SubnetPrefix) SetMetadata(v interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *SubnetPrefix) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
+### SetMetadataNil
+
+`func (o *SubnetPrefix) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *SubnetPrefix) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
 ### GetCreated
 
 `func (o *SubnetPrefix) GetCreated() time.Time`

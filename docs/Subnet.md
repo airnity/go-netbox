@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **Region** | Pointer to [**NullableBriefRegion**](BriefRegion.md) |  | [optional] 
 **Tenant** | Pointer to [**NullableBriefTenant**](BriefTenant.md) |  | [optional] 
 **Purpose** | Pointer to [**NullableBriefSubnetPurpose**](BriefSubnetPurpose.md) |  | [optional] 
+**Metadata** | Pointer to **interface{}** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -329,6 +330,41 @@ HasPurpose returns a boolean if a field has been set.
 `func (o *Subnet) UnsetPurpose()`
 
 UnsetPurpose ensures that no value is present for Purpose, not even an explicit nil
+### GetMetadata
+
+`func (o *Subnet) GetMetadata() interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *Subnet) GetMetadataOk() (*interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *Subnet) SetMetadata(v interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *Subnet) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
+### SetMetadataNil
+
+`func (o *Subnet) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *Subnet) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
 ### GetDescription
 
 `func (o *Subnet) GetDescription() string`
