@@ -29,7 +29,9 @@ type WritableNestedSubnetPrefixRequest struct {
 	// Automatically reserve first IPs (network, gateway, etc.)
 	AutoReserveFirstIps *bool `json:"auto_reserve_first_ips,omitempty"`
 	// Automatically reserve last IPs (broadcast, etc.)
-	AutoReserveLastIps *bool `json:"auto_reserve_last_ips,omitempty"`
+	AutoReserveLastIps *bool          `json:"auto_reserve_last_ips,omitempty"`
+	Metadata           interface{}    `json:"metadata,omitempty"`
+	Hash               NullableString `json:"hash,omitempty"`
 	// Treat this prefix as fully utilized
 	MarkUtilized         *bool                          `json:"mark_utilized,omitempty"`
 	Status               *NestedSubnetPrefixStatusValue `json:"status,omitempty"`
@@ -261,6 +263,82 @@ func (o *WritableNestedSubnetPrefixRequest) SetAutoReserveLastIps(v bool) {
 	o.AutoReserveLastIps = &v
 }
 
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *WritableNestedSubnetPrefixRequest) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *WritableNestedSubnetPrefixRequest) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return &o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *WritableNestedSubnetPrefixRequest) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *WritableNestedSubnetPrefixRequest) SetMetadata(v interface{}) {
+	o.Metadata = v
+}
+
+// GetHash returns the Hash field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *WritableNestedSubnetPrefixRequest) GetHash() string {
+	if o == nil || IsNil(o.Hash.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Hash.Get()
+}
+
+// GetHashOk returns a tuple with the Hash field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *WritableNestedSubnetPrefixRequest) GetHashOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Hash.Get(), o.Hash.IsSet()
+}
+
+// HasHash returns a boolean if a field has been set.
+func (o *WritableNestedSubnetPrefixRequest) HasHash() bool {
+	if o != nil && o.Hash.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetHash gets a reference to the given NullableString and assigns it to the Hash field.
+func (o *WritableNestedSubnetPrefixRequest) SetHash(v string) {
+	o.Hash.Set(&v)
+}
+
+// SetHashNil sets the value for Hash to be an explicit nil
+func (o *WritableNestedSubnetPrefixRequest) SetHashNil() {
+	o.Hash.Set(nil)
+}
+
+// UnsetHash ensures that no value is present for Hash, not even an explicit nil
+func (o *WritableNestedSubnetPrefixRequest) UnsetHash() {
+	o.Hash.Unset()
+}
+
 // GetMarkUtilized returns the MarkUtilized field value if set, zero value otherwise.
 func (o *WritableNestedSubnetPrefixRequest) GetMarkUtilized() bool {
 	if o == nil || IsNil(o.MarkUtilized) {
@@ -415,6 +493,12 @@ func (o WritableNestedSubnetPrefixRequest) ToMap() (map[string]interface{}, erro
 	if !IsNil(o.AutoReserveLastIps) {
 		toSerialize["auto_reserve_last_ips"] = o.AutoReserveLastIps
 	}
+	if o.Metadata != nil {
+		toSerialize["metadata"] = o.Metadata
+	}
+	if o.Hash.IsSet() {
+		toSerialize["hash"] = o.Hash.Get()
+	}
 	if !IsNil(o.MarkUtilized) {
 		toSerialize["mark_utilized"] = o.MarkUtilized
 	}
@@ -492,6 +576,8 @@ func (o *WritableNestedSubnetPrefixRequest) UnmarshalJSON(data []byte) (err erro
 		delete(additionalProperties, "is_secondary")
 		delete(additionalProperties, "auto_reserve_first_ips")
 		delete(additionalProperties, "auto_reserve_last_ips")
+		delete(additionalProperties, "metadata")
+		delete(additionalProperties, "hash")
 		delete(additionalProperties, "mark_utilized")
 		delete(additionalProperties, "status")
 		delete(additionalProperties, "description")

@@ -3455,6 +3455,18 @@ type ApiPluginsAirnityIpamSubnetListRequest struct {
 	environmentNameNisw   *[]string
 	environmentNameRegex  *[]string
 	hasPrefixes           *bool
+	hash                  *string
+	hashIc                *string
+	hashIe                *string
+	hashIew               *string
+	hashIregex            *string
+	hashIsw               *string
+	hashN                 *string
+	hashNic               *string
+	hashNie               *string
+	hashNiew              *string
+	hashNisw              *string
+	hashRegex             *string
 	id                    *[]int32
 	idEmpty               *bool
 	idGt                  *[]int32
@@ -3792,6 +3804,66 @@ func (r ApiPluginsAirnityIpamSubnetListRequest) EnvironmentNameRegex(environment
 // Has prefixes
 func (r ApiPluginsAirnityIpamSubnetListRequest) HasPrefixes(hasPrefixes bool) ApiPluginsAirnityIpamSubnetListRequest {
 	r.hasPrefixes = &hasPrefixes
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetListRequest) Hash(hash string) ApiPluginsAirnityIpamSubnetListRequest {
+	r.hash = &hash
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetListRequest) HashIc(hashIc string) ApiPluginsAirnityIpamSubnetListRequest {
+	r.hashIc = &hashIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetListRequest) HashIe(hashIe string) ApiPluginsAirnityIpamSubnetListRequest {
+	r.hashIe = &hashIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetListRequest) HashIew(hashIew string) ApiPluginsAirnityIpamSubnetListRequest {
+	r.hashIew = &hashIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetListRequest) HashIregex(hashIregex string) ApiPluginsAirnityIpamSubnetListRequest {
+	r.hashIregex = &hashIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetListRequest) HashIsw(hashIsw string) ApiPluginsAirnityIpamSubnetListRequest {
+	r.hashIsw = &hashIsw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetListRequest) HashN(hashN string) ApiPluginsAirnityIpamSubnetListRequest {
+	r.hashN = &hashN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetListRequest) HashNic(hashNic string) ApiPluginsAirnityIpamSubnetListRequest {
+	r.hashNic = &hashNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetListRequest) HashNie(hashNie string) ApiPluginsAirnityIpamSubnetListRequest {
+	r.hashNie = &hashNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetListRequest) HashNiew(hashNiew string) ApiPluginsAirnityIpamSubnetListRequest {
+	r.hashNiew = &hashNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetListRequest) HashNisw(hashNisw string) ApiPluginsAirnityIpamSubnetListRequest {
+	r.hashNisw = &hashNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetListRequest) HashRegex(hashRegex string) ApiPluginsAirnityIpamSubnetListRequest {
+	r.hashRegex = &hashRegex
 	return r
 }
 
@@ -4832,6 +4904,42 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetListExecute(r ApiPluginsAirn
 	}
 	if r.hasPrefixes != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "has_prefixes", r.hasPrefixes, "form", "")
+	}
+	if r.hash != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash", r.hash, "form", "")
+	}
+	if r.hashIc != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ic", r.hashIc, "form", "")
+	}
+	if r.hashIe != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ie", r.hashIe, "form", "")
+	}
+	if r.hashIew != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__iew", r.hashIew, "form", "")
+	}
+	if r.hashIregex != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__iregex", r.hashIregex, "form", "")
+	}
+	if r.hashIsw != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__isw", r.hashIsw, "form", "")
+	}
+	if r.hashN != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__n", r.hashN, "form", "")
+	}
+	if r.hashNic != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nic", r.hashNic, "form", "")
+	}
+	if r.hashNie != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nie", r.hashNie, "form", "")
+	}
+	if r.hashNiew != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__niew", r.hashNiew, "form", "")
+	}
+	if r.hashNisw != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nisw", r.hashNisw, "form", "")
+	}
+	if r.hashRegex != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__regex", r.hashRegex, "form", "")
 	}
 	if r.id != nil {
 		t := *r.id
@@ -6925,6 +7033,18 @@ type ApiPluginsAirnityIpamSubnetipaddressListRequest struct {
 	family            *float32
 	hasNatInside      *bool
 	hasNatOutside     *bool
+	hash              *string
+	hashIc            *string
+	hashIe            *string
+	hashIew           *string
+	hashIregex        *string
+	hashIsw           *string
+	hashN             *string
+	hashNic           *string
+	hashNie           *string
+	hashNiew          *string
+	hashNisw          *string
+	hashRegex         *string
 	id                *[]int32
 	idEmpty           *bool
 	idGt              *[]int32
@@ -7348,6 +7468,66 @@ func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HasNatInside(hasNatInsi
 // Has NAT outside
 func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HasNatOutside(hasNatOutside bool) ApiPluginsAirnityIpamSubnetipaddressListRequest {
 	r.hasNatOutside = &hasNatOutside
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) Hash(hash string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.hash = &hash
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HashIc(hashIc string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.hashIc = &hashIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HashIe(hashIe string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.hashIe = &hashIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HashIew(hashIew string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.hashIew = &hashIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HashIregex(hashIregex string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.hashIregex = &hashIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HashIsw(hashIsw string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.hashIsw = &hashIsw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HashN(hashN string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.hashN = &hashN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HashNic(hashNic string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.hashNic = &hashNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HashNie(hashNie string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.hashNie = &hashNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HashNiew(hashNiew string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.hashNiew = &hashNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HashNisw(hashNisw string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.hashNisw = &hashNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) HashRegex(hashRegex string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.hashRegex = &hashRegex
 	return r
 }
 
@@ -8478,6 +8658,42 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetipaddressListExecute(r ApiPl
 	}
 	if r.hasNatOutside != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "has_nat_outside", r.hasNatOutside, "form", "")
+	}
+	if r.hash != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash", r.hash, "form", "")
+	}
+	if r.hashIc != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ic", r.hashIc, "form", "")
+	}
+	if r.hashIe != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ie", r.hashIe, "form", "")
+	}
+	if r.hashIew != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__iew", r.hashIew, "form", "")
+	}
+	if r.hashIregex != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__iregex", r.hashIregex, "form", "")
+	}
+	if r.hashIsw != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__isw", r.hashIsw, "form", "")
+	}
+	if r.hashN != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__n", r.hashN, "form", "")
+	}
+	if r.hashNic != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nic", r.hashNic, "form", "")
+	}
+	if r.hashNie != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nie", r.hashNie, "form", "")
+	}
+	if r.hashNiew != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__niew", r.hashNiew, "form", "")
+	}
+	if r.hashNisw != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nisw", r.hashNisw, "form", "")
+	}
+	if r.hashRegex != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__regex", r.hashRegex, "form", "")
 	}
 	if r.id != nil {
 		t := *r.id
@@ -10524,6 +10740,18 @@ type ApiPluginsAirnityIpamSubnetprefixListRequest struct {
 	depthLte            *[]int32
 	depthN              *[]int32
 	family              *float32
+	hash                *string
+	hashIc              *string
+	hashIe              *string
+	hashIew             *string
+	hashIregex          *string
+	hashIsw             *string
+	hashN               *string
+	hashNic             *string
+	hashNie             *string
+	hashNiew            *string
+	hashNisw            *string
+	hashRegex           *string
 	id                  *[]int32
 	idEmpty             *bool
 	idGt                *[]int32
@@ -10748,6 +10976,66 @@ func (r ApiPluginsAirnityIpamSubnetprefixListRequest) DepthN(depthN []int32) Api
 
 func (r ApiPluginsAirnityIpamSubnetprefixListRequest) Family(family float32) ApiPluginsAirnityIpamSubnetprefixListRequest {
 	r.family = &family
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) Hash(hash string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.hash = &hash
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) HashIc(hashIc string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.hashIc = &hashIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) HashIe(hashIe string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.hashIe = &hashIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) HashIew(hashIew string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.hashIew = &hashIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) HashIregex(hashIregex string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.hashIregex = &hashIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) HashIsw(hashIsw string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.hashIsw = &hashIsw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) HashN(hashN string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.hashN = &hashN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) HashNic(hashNic string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.hashNic = &hashNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) HashNie(hashNie string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.hashNie = &hashNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) HashNiew(hashNiew string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.hashNiew = &hashNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) HashNisw(hashNisw string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.hashNisw = &hashNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetprefixListRequest) HashRegex(hashRegex string) ApiPluginsAirnityIpamSubnetprefixListRequest {
+	r.hashRegex = &hashRegex
 	return r
 }
 
@@ -11536,6 +11824,42 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetprefixListExecute(r ApiPlugi
 	}
 	if r.family != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "family", r.family, "form", "")
+	}
+	if r.hash != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash", r.hash, "form", "")
+	}
+	if r.hashIc != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ic", r.hashIc, "form", "")
+	}
+	if r.hashIe != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ie", r.hashIe, "form", "")
+	}
+	if r.hashIew != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__iew", r.hashIew, "form", "")
+	}
+	if r.hashIregex != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__iregex", r.hashIregex, "form", "")
+	}
+	if r.hashIsw != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__isw", r.hashIsw, "form", "")
+	}
+	if r.hashN != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__n", r.hashN, "form", "")
+	}
+	if r.hashNic != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nic", r.hashNic, "form", "")
+	}
+	if r.hashNie != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nie", r.hashNie, "form", "")
+	}
+	if r.hashNiew != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__niew", r.hashNiew, "form", "")
+	}
+	if r.hashNisw != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nisw", r.hashNisw, "form", "")
+	}
+	if r.hashRegex != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__regex", r.hashRegex, "form", "")
 	}
 	if r.id != nil {
 		t := *r.id
@@ -15831,6 +16155,18 @@ type ApiPluginsAirnityIpamVpcListRequest struct {
 	environmentN      *[]string
 	environmentId     *[]int32
 	environmentIdN    *[]int32
+	hash              *string
+	hashIc            *string
+	hashIe            *string
+	hashIew           *string
+	hashIregex        *string
+	hashIsw           *string
+	hashN             *string
+	hashNic           *string
+	hashNie           *string
+	hashNiew          *string
+	hashNisw          *string
+	hashRegex         *string
 	id                *[]int32
 	idEmpty           *bool
 	idGt              *[]int32
@@ -16009,6 +16345,66 @@ func (r ApiPluginsAirnityIpamVpcListRequest) EnvironmentId(environmentId []int32
 // Environment
 func (r ApiPluginsAirnityIpamVpcListRequest) EnvironmentIdN(environmentIdN []int32) ApiPluginsAirnityIpamVpcListRequest {
 	r.environmentIdN = &environmentIdN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamVpcListRequest) Hash(hash string) ApiPluginsAirnityIpamVpcListRequest {
+	r.hash = &hash
+	return r
+}
+
+func (r ApiPluginsAirnityIpamVpcListRequest) HashIc(hashIc string) ApiPluginsAirnityIpamVpcListRequest {
+	r.hashIc = &hashIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamVpcListRequest) HashIe(hashIe string) ApiPluginsAirnityIpamVpcListRequest {
+	r.hashIe = &hashIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamVpcListRequest) HashIew(hashIew string) ApiPluginsAirnityIpamVpcListRequest {
+	r.hashIew = &hashIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamVpcListRequest) HashIregex(hashIregex string) ApiPluginsAirnityIpamVpcListRequest {
+	r.hashIregex = &hashIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamVpcListRequest) HashIsw(hashIsw string) ApiPluginsAirnityIpamVpcListRequest {
+	r.hashIsw = &hashIsw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamVpcListRequest) HashN(hashN string) ApiPluginsAirnityIpamVpcListRequest {
+	r.hashN = &hashN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamVpcListRequest) HashNic(hashNic string) ApiPluginsAirnityIpamVpcListRequest {
+	r.hashNic = &hashNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamVpcListRequest) HashNie(hashNie string) ApiPluginsAirnityIpamVpcListRequest {
+	r.hashNie = &hashNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamVpcListRequest) HashNiew(hashNiew string) ApiPluginsAirnityIpamVpcListRequest {
+	r.hashNiew = &hashNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamVpcListRequest) HashNisw(hashNisw string) ApiPluginsAirnityIpamVpcListRequest {
+	r.hashNisw = &hashNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamVpcListRequest) HashRegex(hashRegex string) ApiPluginsAirnityIpamVpcListRequest {
+	r.hashRegex = &hashRegex
 	return r
 }
 
@@ -16547,6 +16943,42 @@ func (a *PluginsAPIService) PluginsAirnityIpamVpcListExecute(r ApiPluginsAirnity
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "environment_id__n", t, "form", "multi")
 		}
+	}
+	if r.hash != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash", r.hash, "form", "")
+	}
+	if r.hashIc != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ic", r.hashIc, "form", "")
+	}
+	if r.hashIe != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__ie", r.hashIe, "form", "")
+	}
+	if r.hashIew != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__iew", r.hashIew, "form", "")
+	}
+	if r.hashIregex != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__iregex", r.hashIregex, "form", "")
+	}
+	if r.hashIsw != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__isw", r.hashIsw, "form", "")
+	}
+	if r.hashN != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__n", r.hashN, "form", "")
+	}
+	if r.hashNic != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nic", r.hashNic, "form", "")
+	}
+	if r.hashNie != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nie", r.hashNie, "form", "")
+	}
+	if r.hashNiew != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__niew", r.hashNiew, "form", "")
+	}
+	if r.hashNisw != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__nisw", r.hashNisw, "form", "")
+	}
+	if r.hashRegex != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "hash__regex", r.hashRegex, "form", "")
 	}
 	if r.id != nil {
 		t := *r.id

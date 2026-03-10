@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **AutoReserveFirstIps** | Pointer to **bool** | Automatically reserve first IPs (network, gateway, etc.) | [optional] [default to true]
 **AutoReserveLastIps** | Pointer to **bool** | Automatically reserve last IPs (broadcast, etc.) | [optional] [default to true]
 **IsFull** | Pointer to **NullableBool** |  | [optional] [readonly] 
+**Metadata** | Pointer to **interface{}** |  | [optional] 
+**Hash** | Pointer to **NullableString** |  | [optional] 
 **MarkUtilized** | Pointer to **bool** | Treat this prefix as fully utilized | [optional] 
 **Status** | Pointer to [**NestedSubnetPrefixStatus**](NestedSubnetPrefixStatus.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
@@ -225,6 +227,76 @@ HasIsFull returns a boolean if a field has been set.
 `func (o *WritableNestedSubnetPrefix) UnsetIsFull()`
 
 UnsetIsFull ensures that no value is present for IsFull, not even an explicit nil
+### GetMetadata
+
+`func (o *WritableNestedSubnetPrefix) GetMetadata() interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *WritableNestedSubnetPrefix) GetMetadataOk() (*interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *WritableNestedSubnetPrefix) SetMetadata(v interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *WritableNestedSubnetPrefix) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
+### SetMetadataNil
+
+`func (o *WritableNestedSubnetPrefix) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *WritableNestedSubnetPrefix) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
+### GetHash
+
+`func (o *WritableNestedSubnetPrefix) GetHash() string`
+
+GetHash returns the Hash field if non-nil, zero value otherwise.
+
+### GetHashOk
+
+`func (o *WritableNestedSubnetPrefix) GetHashOk() (*string, bool)`
+
+GetHashOk returns a tuple with the Hash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHash
+
+`func (o *WritableNestedSubnetPrefix) SetHash(v string)`
+
+SetHash sets Hash field to given value.
+
+### HasHash
+
+`func (o *WritableNestedSubnetPrefix) HasHash() bool`
+
+HasHash returns a boolean if a field has been set.
+
+### SetHashNil
+
+`func (o *WritableNestedSubnetPrefix) SetHashNil(b bool)`
+
+ SetHashNil sets the value for Hash to be an explicit nil
+
+### UnsetHash
+`func (o *WritableNestedSubnetPrefix) UnsetHash()`
+
+UnsetHash ensures that no value is present for Hash, not even an explicit nil
 ### GetMarkUtilized
 
 `func (o *WritableNestedSubnetPrefix) GetMarkUtilized() bool`

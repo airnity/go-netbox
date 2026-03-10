@@ -35,6 +35,7 @@ type NestedSubnet struct {
 	Description          *string                `json:"description,omitempty"`
 	Comments             *string                `json:"comments,omitempty"`
 	Metadata             interface{}            `json:"metadata,omitempty"`
+	Hash                 NullableString         `json:"hash,omitempty"`
 	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
 	Created              NullableTime           `json:"created,omitempty"`
 	LastUpdated          NullableTime           `json:"last_updated,omitempty"`
@@ -468,6 +469,49 @@ func (o *NestedSubnet) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
+// GetHash returns the Hash field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *NestedSubnet) GetHash() string {
+	if o == nil || IsNil(o.Hash.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.Hash.Get()
+}
+
+// GetHashOk returns a tuple with the Hash field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *NestedSubnet) GetHashOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.Hash.Get(), o.Hash.IsSet()
+}
+
+// HasHash returns a boolean if a field has been set.
+func (o *NestedSubnet) HasHash() bool {
+	if o != nil && o.Hash.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetHash gets a reference to the given NullableString and assigns it to the Hash field.
+func (o *NestedSubnet) SetHash(v string) {
+	o.Hash.Set(&v)
+}
+
+// SetHashNil sets the value for Hash to be an explicit nil
+func (o *NestedSubnet) SetHashNil() {
+	o.Hash.Set(nil)
+}
+
+// UnsetHash ensures that no value is present for Hash, not even an explicit nil
+func (o *NestedSubnet) UnsetHash() {
+	o.Hash.Unset()
+}
+
 // GetCustomFields returns the CustomFields field value if set, zero value otherwise.
 func (o *NestedSubnet) GetCustomFields() map[string]interface{} {
 	if o == nil || IsNil(o.CustomFields) {
@@ -626,6 +670,9 @@ func (o NestedSubnet) ToMap() (map[string]interface{}, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
+	if o.Hash.IsSet() {
+		toSerialize["hash"] = o.Hash.Get()
+	}
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
 	}
@@ -708,6 +755,7 @@ func (o *NestedSubnet) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "description")
 		delete(additionalProperties, "comments")
 		delete(additionalProperties, "metadata")
+		delete(additionalProperties, "hash")
 		delete(additionalProperties, "custom_fields")
 		delete(additionalProperties, "created")
 		delete(additionalProperties, "last_updated")

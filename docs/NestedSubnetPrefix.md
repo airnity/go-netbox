@@ -17,6 +17,8 @@ Name | Type | Description | Notes
 **Status** | Pointer to [**NestedSubnetPrefixStatus**](NestedSubnetPrefixStatus.md) |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
+**Metadata** | Pointer to **interface{}** |  | [optional] 
+**Hash** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -352,6 +354,76 @@ SetComments sets Comments field to given value.
 
 HasComments returns a boolean if a field has been set.
 
+### GetMetadata
+
+`func (o *NestedSubnetPrefix) GetMetadata() interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *NestedSubnetPrefix) GetMetadataOk() (*interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *NestedSubnetPrefix) SetMetadata(v interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *NestedSubnetPrefix) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
+### SetMetadataNil
+
+`func (o *NestedSubnetPrefix) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *NestedSubnetPrefix) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
+### GetHash
+
+`func (o *NestedSubnetPrefix) GetHash() string`
+
+GetHash returns the Hash field if non-nil, zero value otherwise.
+
+### GetHashOk
+
+`func (o *NestedSubnetPrefix) GetHashOk() (*string, bool)`
+
+GetHashOk returns a tuple with the Hash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHash
+
+`func (o *NestedSubnetPrefix) SetHash(v string)`
+
+SetHash sets Hash field to given value.
+
+### HasHash
+
+`func (o *NestedSubnetPrefix) HasHash() bool`
+
+HasHash returns a boolean if a field has been set.
+
+### SetHashNil
+
+`func (o *NestedSubnetPrefix) SetHashNil(b bool)`
+
+ SetHashNil sets the value for Hash to be an explicit nil
+
+### UnsetHash
+`func (o *NestedSubnetPrefix) UnsetHash()`
+
+UnsetHash ensures that no value is present for Hash, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

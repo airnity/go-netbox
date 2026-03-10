@@ -21,6 +21,7 @@ Name | Type | Description | Notes
 **NatOutside** | [**[]NestedSubnetIPAddress**](NestedSubnetIPAddress.md) |  | [readonly] 
 **DnsName** | Pointer to **string** | Hostname or FQDN (not case-sensitive) | [optional] 
 **Metadata** | Pointer to **interface{}** |  | [optional] 
+**Hash** | Pointer to **NullableString** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
@@ -488,6 +489,41 @@ HasMetadata returns a boolean if a field has been set.
 `func (o *SubnetIPAddress) UnsetMetadata()`
 
 UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
+### GetHash
+
+`func (o *SubnetIPAddress) GetHash() string`
+
+GetHash returns the Hash field if non-nil, zero value otherwise.
+
+### GetHashOk
+
+`func (o *SubnetIPAddress) GetHashOk() (*string, bool)`
+
+GetHashOk returns a tuple with the Hash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHash
+
+`func (o *SubnetIPAddress) SetHash(v string)`
+
+SetHash sets Hash field to given value.
+
+### HasHash
+
+`func (o *SubnetIPAddress) HasHash() bool`
+
+HasHash returns a boolean if a field has been set.
+
+### SetHashNil
+
+`func (o *SubnetIPAddress) SetHashNil(b bool)`
+
+ SetHashNil sets the value for Hash to be an explicit nil
+
+### UnsetHash
+`func (o *SubnetIPAddress) UnsetHash()`
+
+UnsetHash ensures that no value is present for Hash, not even an explicit nil
 ### GetDescription
 
 `func (o *SubnetIPAddress) GetDescription() string`
