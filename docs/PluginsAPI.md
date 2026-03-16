@@ -2049,7 +2049,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetipaddressList
 
-> PaginatedSubnetIPAddressList PluginsAirnityIpamSubnetipaddressList(ctx).Address(address).ClaimedBy(claimedBy).ClaimedByEmpty(claimedByEmpty).ClaimedByIc(claimedByIc).ClaimedByIe(claimedByIe).ClaimedByIew(claimedByIew).ClaimedByIregex(claimedByIregex).ClaimedByIsw(claimedByIsw).ClaimedByN(claimedByN).ClaimedByNic(claimedByNic).ClaimedByNie(claimedByNie).ClaimedByNiew(claimedByNiew).ClaimedByNisw(claimedByNisw).ClaimedByRegex(claimedByRegex).Country(country).CountryEmpty(countryEmpty).CountryIc(countryIc).CountryIe(countryIe).CountryIew(countryIew).CountryIregex(countryIregex).CountryIsw(countryIsw).CountryN(countryN).CountryNic(countryNic).CountryNie(countryNie).CountryNiew(countryNiew).CountryNisw(countryNisw).CountryRegex(countryRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIregex(dnsNameIregex).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).DnsNameRegex(dnsNameRegex).Environment(environment).EnvironmentN(environmentN).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).Family(family).HasNatInside(hasNatInside).HasNatOutside(hasNatOutside).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleEmpty(roleEmpty).RoleIc(roleIc).RoleIe(roleIe).RoleIew(roleIew).RoleIregex(roleIregex).RoleIsw(roleIsw).RoleN(roleN).RoleNic(roleNic).RoleNie(roleNie).RoleNiew(roleNiew).RoleNisw(roleNisw).RoleRegex(roleRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Subnet(subnet).SubnetN(subnetN).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetPrefix(subnetPrefix).SubnetPrefixId(subnetPrefixId).SubnetPrefixIdN(subnetPrefixIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vpc(vpc).VpcN(vpcN).VpcId(vpcId).VpcIdN(vpcIdN).Execute()
+> PaginatedSubnetIPAddressList PluginsAirnityIpamSubnetipaddressList(ctx).Address(address).ClaimedBy(claimedBy).ClaimedByEmpty(claimedByEmpty).ClaimedByIc(claimedByIc).ClaimedByIe(claimedByIe).ClaimedByIew(claimedByIew).ClaimedByIregex(claimedByIregex).ClaimedByIsw(claimedByIsw).ClaimedByN(claimedByN).ClaimedByNic(claimedByNic).ClaimedByNie(claimedByNie).ClaimedByNiew(claimedByNiew).ClaimedByNisw(claimedByNisw).ClaimedByRegex(claimedByRegex).Country(country).CountryEmpty(countryEmpty).CountryIc(countryIc).CountryIe(countryIe).CountryIew(countryIew).CountryIregex(countryIregex).CountryIsw(countryIsw).CountryN(countryN).CountryNic(countryNic).CountryNie(countryNie).CountryNiew(countryNiew).CountryNisw(countryNisw).CountryRegex(countryRegex).CrIpaddressName(crIpaddressName).CrIpaddressNameEmpty(crIpaddressNameEmpty).CrIpaddressNameIc(crIpaddressNameIc).CrIpaddressNameIe(crIpaddressNameIe).CrIpaddressNameIew(crIpaddressNameIew).CrIpaddressNameIregex(crIpaddressNameIregex).CrIpaddressNameIsw(crIpaddressNameIsw).CrIpaddressNameN(crIpaddressNameN).CrIpaddressNameNic(crIpaddressNameNic).CrIpaddressNameNie(crIpaddressNameNie).CrIpaddressNameNiew(crIpaddressNameNiew).CrIpaddressNameNisw(crIpaddressNameNisw).CrIpaddressNameRegex(crIpaddressNameRegex).CrIpaddressNamespace(crIpaddressNamespace).CrIpaddressNamespaceEmpty(crIpaddressNamespaceEmpty).CrIpaddressNamespaceIc(crIpaddressNamespaceIc).CrIpaddressNamespaceIe(crIpaddressNamespaceIe).CrIpaddressNamespaceIew(crIpaddressNamespaceIew).CrIpaddressNamespaceIregex(crIpaddressNamespaceIregex).CrIpaddressNamespaceIsw(crIpaddressNamespaceIsw).CrIpaddressNamespaceN(crIpaddressNamespaceN).CrIpaddressNamespaceNic(crIpaddressNamespaceNic).CrIpaddressNamespaceNie(crIpaddressNamespaceNie).CrIpaddressNamespaceNiew(crIpaddressNamespaceNiew).CrIpaddressNamespaceNisw(crIpaddressNamespaceNisw).CrIpaddressNamespaceRegex(crIpaddressNamespaceRegex).CrIpaddressclaimName(crIpaddressclaimName).CrIpaddressclaimNameEmpty(crIpaddressclaimNameEmpty).CrIpaddressclaimNameIc(crIpaddressclaimNameIc).CrIpaddressclaimNameIe(crIpaddressclaimNameIe).CrIpaddressclaimNameIew(crIpaddressclaimNameIew).CrIpaddressclaimNameIregex(crIpaddressclaimNameIregex).CrIpaddressclaimNameIsw(crIpaddressclaimNameIsw).CrIpaddressclaimNameN(crIpaddressclaimNameN).CrIpaddressclaimNameNic(crIpaddressclaimNameNic).CrIpaddressclaimNameNie(crIpaddressclaimNameNie).CrIpaddressclaimNameNiew(crIpaddressclaimNameNiew).CrIpaddressclaimNameNisw(crIpaddressclaimNameNisw).CrIpaddressclaimNameRegex(crIpaddressclaimNameRegex).CrIpaddressclaimNamespace(crIpaddressclaimNamespace).CrIpaddressclaimNamespaceEmpty(crIpaddressclaimNamespaceEmpty).CrIpaddressclaimNamespaceIc(crIpaddressclaimNamespaceIc).CrIpaddressclaimNamespaceIe(crIpaddressclaimNamespaceIe).CrIpaddressclaimNamespaceIew(crIpaddressclaimNamespaceIew).CrIpaddressclaimNamespaceIregex(crIpaddressclaimNamespaceIregex).CrIpaddressclaimNamespaceIsw(crIpaddressclaimNamespaceIsw).CrIpaddressclaimNamespaceN(crIpaddressclaimNamespaceN).CrIpaddressclaimNamespaceNic(crIpaddressclaimNamespaceNic).CrIpaddressclaimNamespaceNie(crIpaddressclaimNamespaceNie).CrIpaddressclaimNamespaceNiew(crIpaddressclaimNamespaceNiew).CrIpaddressclaimNamespaceNisw(crIpaddressclaimNamespaceNisw).CrIpaddressclaimNamespaceRegex(crIpaddressclaimNamespaceRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIregex(dnsNameIregex).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).DnsNameRegex(dnsNameRegex).Environment(environment).EnvironmentN(environmentN).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).Family(family).GkeClusterId(gkeClusterId).GkeClusterIdEmpty(gkeClusterIdEmpty).GkeClusterIdIc(gkeClusterIdIc).GkeClusterIdIe(gkeClusterIdIe).GkeClusterIdIew(gkeClusterIdIew).GkeClusterIdIregex(gkeClusterIdIregex).GkeClusterIdIsw(gkeClusterIdIsw).GkeClusterIdN(gkeClusterIdN).GkeClusterIdNic(gkeClusterIdNic).GkeClusterIdNie(gkeClusterIdNie).GkeClusterIdNiew(gkeClusterIdNiew).GkeClusterIdNisw(gkeClusterIdNisw).GkeClusterIdRegex(gkeClusterIdRegex).HasNatInside(hasNatInside).HasNatOutside(hasNatOutside).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleEmpty(roleEmpty).RoleIc(roleIc).RoleIe(roleIe).RoleIew(roleIew).RoleIregex(roleIregex).RoleIsw(roleIsw).RoleN(roleN).RoleNic(roleNic).RoleNie(roleNie).RoleNiew(roleNiew).RoleNisw(roleNisw).RoleRegex(roleRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Subnet(subnet).SubnetN(subnetN).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetPrefix(subnetPrefix).SubnetPrefixId(subnetPrefixId).SubnetPrefixIdN(subnetPrefixIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vpc(vpc).VpcN(vpcN).VpcId(vpcId).VpcIdN(vpcIdN).Execute()
 
 
 
@@ -2096,6 +2096,58 @@ func main() {
 	countryNiew := []string{"Inner_example"} // []string |  (optional)
 	countryNisw := []string{"Inner_example"} // []string |  (optional)
 	countryRegex := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressName := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNameEmpty := true // bool |  (optional)
+	crIpaddressNameIc := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNameIe := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNameIew := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNameIregex := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNameIsw := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNameN := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNameNic := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNameNie := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNameNiew := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNameNisw := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNameRegex := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNamespace := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNamespaceEmpty := true // bool |  (optional)
+	crIpaddressNamespaceIc := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNamespaceIe := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNamespaceIew := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNamespaceIregex := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNamespaceIsw := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNamespaceN := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNamespaceNic := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNamespaceNie := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNamespaceNiew := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNamespaceNisw := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressNamespaceRegex := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimName := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNameEmpty := true // bool |  (optional)
+	crIpaddressclaimNameIc := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNameIe := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNameIew := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNameIregex := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNameIsw := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNameN := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNameNic := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNameNie := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNameNiew := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNameNisw := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNameRegex := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNamespace := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNamespaceEmpty := true // bool |  (optional)
+	crIpaddressclaimNamespaceIc := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNamespaceIe := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNamespaceIew := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNamespaceIregex := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNamespaceIsw := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNamespaceN := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNamespaceNic := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNamespaceNie := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNamespaceNiew := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNamespaceNisw := []string{"Inner_example"} // []string |  (optional)
+	crIpaddressclaimNamespaceRegex := []string{"Inner_example"} // []string |  (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -2135,6 +2187,19 @@ func main() {
 	environmentId := []*int32{int32(123)} // []*int32 | Environment (optional)
 	environmentIdN := []*int32{int32(123)} // []*int32 | Environment (optional)
 	family := float32(8.14) // float32 | IP Family (optional)
+	gkeClusterId := []string{"Inner_example"} // []string |  (optional)
+	gkeClusterIdEmpty := true // bool |  (optional)
+	gkeClusterIdIc := []string{"Inner_example"} // []string |  (optional)
+	gkeClusterIdIe := []string{"Inner_example"} // []string |  (optional)
+	gkeClusterIdIew := []string{"Inner_example"} // []string |  (optional)
+	gkeClusterIdIregex := []string{"Inner_example"} // []string |  (optional)
+	gkeClusterIdIsw := []string{"Inner_example"} // []string |  (optional)
+	gkeClusterIdN := []string{"Inner_example"} // []string |  (optional)
+	gkeClusterIdNic := []string{"Inner_example"} // []string |  (optional)
+	gkeClusterIdNie := []string{"Inner_example"} // []string |  (optional)
+	gkeClusterIdNiew := []string{"Inner_example"} // []string |  (optional)
+	gkeClusterIdNisw := []string{"Inner_example"} // []string |  (optional)
+	gkeClusterIdRegex := []string{"Inner_example"} // []string |  (optional)
 	hasNatInside := true // bool | Has NAT inside (optional)
 	hasNatOutside := true // bool | Has NAT outside (optional)
 	hash := "hash_example" // string |  (optional)
@@ -2227,7 +2292,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetipaddressList(context.Background()).Address(address).ClaimedBy(claimedBy).ClaimedByEmpty(claimedByEmpty).ClaimedByIc(claimedByIc).ClaimedByIe(claimedByIe).ClaimedByIew(claimedByIew).ClaimedByIregex(claimedByIregex).ClaimedByIsw(claimedByIsw).ClaimedByN(claimedByN).ClaimedByNic(claimedByNic).ClaimedByNie(claimedByNie).ClaimedByNiew(claimedByNiew).ClaimedByNisw(claimedByNisw).ClaimedByRegex(claimedByRegex).Country(country).CountryEmpty(countryEmpty).CountryIc(countryIc).CountryIe(countryIe).CountryIew(countryIew).CountryIregex(countryIregex).CountryIsw(countryIsw).CountryN(countryN).CountryNic(countryNic).CountryNie(countryNie).CountryNiew(countryNiew).CountryNisw(countryNisw).CountryRegex(countryRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIregex(dnsNameIregex).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).DnsNameRegex(dnsNameRegex).Environment(environment).EnvironmentN(environmentN).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).Family(family).HasNatInside(hasNatInside).HasNatOutside(hasNatOutside).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleEmpty(roleEmpty).RoleIc(roleIc).RoleIe(roleIe).RoleIew(roleIew).RoleIregex(roleIregex).RoleIsw(roleIsw).RoleN(roleN).RoleNic(roleNic).RoleNie(roleNie).RoleNiew(roleNiew).RoleNisw(roleNisw).RoleRegex(roleRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Subnet(subnet).SubnetN(subnetN).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetPrefix(subnetPrefix).SubnetPrefixId(subnetPrefixId).SubnetPrefixIdN(subnetPrefixIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vpc(vpc).VpcN(vpcN).VpcId(vpcId).VpcIdN(vpcIdN).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetipaddressList(context.Background()).Address(address).ClaimedBy(claimedBy).ClaimedByEmpty(claimedByEmpty).ClaimedByIc(claimedByIc).ClaimedByIe(claimedByIe).ClaimedByIew(claimedByIew).ClaimedByIregex(claimedByIregex).ClaimedByIsw(claimedByIsw).ClaimedByN(claimedByN).ClaimedByNic(claimedByNic).ClaimedByNie(claimedByNie).ClaimedByNiew(claimedByNiew).ClaimedByNisw(claimedByNisw).ClaimedByRegex(claimedByRegex).Country(country).CountryEmpty(countryEmpty).CountryIc(countryIc).CountryIe(countryIe).CountryIew(countryIew).CountryIregex(countryIregex).CountryIsw(countryIsw).CountryN(countryN).CountryNic(countryNic).CountryNie(countryNie).CountryNiew(countryNiew).CountryNisw(countryNisw).CountryRegex(countryRegex).CrIpaddressName(crIpaddressName).CrIpaddressNameEmpty(crIpaddressNameEmpty).CrIpaddressNameIc(crIpaddressNameIc).CrIpaddressNameIe(crIpaddressNameIe).CrIpaddressNameIew(crIpaddressNameIew).CrIpaddressNameIregex(crIpaddressNameIregex).CrIpaddressNameIsw(crIpaddressNameIsw).CrIpaddressNameN(crIpaddressNameN).CrIpaddressNameNic(crIpaddressNameNic).CrIpaddressNameNie(crIpaddressNameNie).CrIpaddressNameNiew(crIpaddressNameNiew).CrIpaddressNameNisw(crIpaddressNameNisw).CrIpaddressNameRegex(crIpaddressNameRegex).CrIpaddressNamespace(crIpaddressNamespace).CrIpaddressNamespaceEmpty(crIpaddressNamespaceEmpty).CrIpaddressNamespaceIc(crIpaddressNamespaceIc).CrIpaddressNamespaceIe(crIpaddressNamespaceIe).CrIpaddressNamespaceIew(crIpaddressNamespaceIew).CrIpaddressNamespaceIregex(crIpaddressNamespaceIregex).CrIpaddressNamespaceIsw(crIpaddressNamespaceIsw).CrIpaddressNamespaceN(crIpaddressNamespaceN).CrIpaddressNamespaceNic(crIpaddressNamespaceNic).CrIpaddressNamespaceNie(crIpaddressNamespaceNie).CrIpaddressNamespaceNiew(crIpaddressNamespaceNiew).CrIpaddressNamespaceNisw(crIpaddressNamespaceNisw).CrIpaddressNamespaceRegex(crIpaddressNamespaceRegex).CrIpaddressclaimName(crIpaddressclaimName).CrIpaddressclaimNameEmpty(crIpaddressclaimNameEmpty).CrIpaddressclaimNameIc(crIpaddressclaimNameIc).CrIpaddressclaimNameIe(crIpaddressclaimNameIe).CrIpaddressclaimNameIew(crIpaddressclaimNameIew).CrIpaddressclaimNameIregex(crIpaddressclaimNameIregex).CrIpaddressclaimNameIsw(crIpaddressclaimNameIsw).CrIpaddressclaimNameN(crIpaddressclaimNameN).CrIpaddressclaimNameNic(crIpaddressclaimNameNic).CrIpaddressclaimNameNie(crIpaddressclaimNameNie).CrIpaddressclaimNameNiew(crIpaddressclaimNameNiew).CrIpaddressclaimNameNisw(crIpaddressclaimNameNisw).CrIpaddressclaimNameRegex(crIpaddressclaimNameRegex).CrIpaddressclaimNamespace(crIpaddressclaimNamespace).CrIpaddressclaimNamespaceEmpty(crIpaddressclaimNamespaceEmpty).CrIpaddressclaimNamespaceIc(crIpaddressclaimNamespaceIc).CrIpaddressclaimNamespaceIe(crIpaddressclaimNamespaceIe).CrIpaddressclaimNamespaceIew(crIpaddressclaimNamespaceIew).CrIpaddressclaimNamespaceIregex(crIpaddressclaimNamespaceIregex).CrIpaddressclaimNamespaceIsw(crIpaddressclaimNamespaceIsw).CrIpaddressclaimNamespaceN(crIpaddressclaimNamespaceN).CrIpaddressclaimNamespaceNic(crIpaddressclaimNamespaceNic).CrIpaddressclaimNamespaceNie(crIpaddressclaimNamespaceNie).CrIpaddressclaimNamespaceNiew(crIpaddressclaimNamespaceNiew).CrIpaddressclaimNamespaceNisw(crIpaddressclaimNamespaceNisw).CrIpaddressclaimNamespaceRegex(crIpaddressclaimNamespaceRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIregex(dnsNameIregex).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).DnsNameRegex(dnsNameRegex).Environment(environment).EnvironmentN(environmentN).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).Family(family).GkeClusterId(gkeClusterId).GkeClusterIdEmpty(gkeClusterIdEmpty).GkeClusterIdIc(gkeClusterIdIc).GkeClusterIdIe(gkeClusterIdIe).GkeClusterIdIew(gkeClusterIdIew).GkeClusterIdIregex(gkeClusterIdIregex).GkeClusterIdIsw(gkeClusterIdIsw).GkeClusterIdN(gkeClusterIdN).GkeClusterIdNic(gkeClusterIdNic).GkeClusterIdNie(gkeClusterIdNie).GkeClusterIdNiew(gkeClusterIdNiew).GkeClusterIdNisw(gkeClusterIdNisw).GkeClusterIdRegex(gkeClusterIdRegex).HasNatInside(hasNatInside).HasNatOutside(hasNatOutside).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleEmpty(roleEmpty).RoleIc(roleIc).RoleIe(roleIe).RoleIew(roleIew).RoleIregex(roleIregex).RoleIsw(roleIsw).RoleN(roleN).RoleNic(roleNic).RoleNie(roleNie).RoleNiew(roleNiew).RoleNisw(roleNisw).RoleRegex(roleRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Subnet(subnet).SubnetN(subnetN).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetPrefix(subnetPrefix).SubnetPrefixId(subnetPrefixId).SubnetPrefixIdN(subnetPrefixIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vpc(vpc).VpcN(vpcN).VpcId(vpcId).VpcIdN(vpcIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetipaddressList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2275,6 +2340,58 @@ Name | Type | Description  | Notes
  **countryNiew** | **[]string** |  | 
  **countryNisw** | **[]string** |  | 
  **countryRegex** | **[]string** |  | 
+ **crIpaddressName** | **[]string** |  | 
+ **crIpaddressNameEmpty** | **bool** |  | 
+ **crIpaddressNameIc** | **[]string** |  | 
+ **crIpaddressNameIe** | **[]string** |  | 
+ **crIpaddressNameIew** | **[]string** |  | 
+ **crIpaddressNameIregex** | **[]string** |  | 
+ **crIpaddressNameIsw** | **[]string** |  | 
+ **crIpaddressNameN** | **[]string** |  | 
+ **crIpaddressNameNic** | **[]string** |  | 
+ **crIpaddressNameNie** | **[]string** |  | 
+ **crIpaddressNameNiew** | **[]string** |  | 
+ **crIpaddressNameNisw** | **[]string** |  | 
+ **crIpaddressNameRegex** | **[]string** |  | 
+ **crIpaddressNamespace** | **[]string** |  | 
+ **crIpaddressNamespaceEmpty** | **bool** |  | 
+ **crIpaddressNamespaceIc** | **[]string** |  | 
+ **crIpaddressNamespaceIe** | **[]string** |  | 
+ **crIpaddressNamespaceIew** | **[]string** |  | 
+ **crIpaddressNamespaceIregex** | **[]string** |  | 
+ **crIpaddressNamespaceIsw** | **[]string** |  | 
+ **crIpaddressNamespaceN** | **[]string** |  | 
+ **crIpaddressNamespaceNic** | **[]string** |  | 
+ **crIpaddressNamespaceNie** | **[]string** |  | 
+ **crIpaddressNamespaceNiew** | **[]string** |  | 
+ **crIpaddressNamespaceNisw** | **[]string** |  | 
+ **crIpaddressNamespaceRegex** | **[]string** |  | 
+ **crIpaddressclaimName** | **[]string** |  | 
+ **crIpaddressclaimNameEmpty** | **bool** |  | 
+ **crIpaddressclaimNameIc** | **[]string** |  | 
+ **crIpaddressclaimNameIe** | **[]string** |  | 
+ **crIpaddressclaimNameIew** | **[]string** |  | 
+ **crIpaddressclaimNameIregex** | **[]string** |  | 
+ **crIpaddressclaimNameIsw** | **[]string** |  | 
+ **crIpaddressclaimNameN** | **[]string** |  | 
+ **crIpaddressclaimNameNic** | **[]string** |  | 
+ **crIpaddressclaimNameNie** | **[]string** |  | 
+ **crIpaddressclaimNameNiew** | **[]string** |  | 
+ **crIpaddressclaimNameNisw** | **[]string** |  | 
+ **crIpaddressclaimNameRegex** | **[]string** |  | 
+ **crIpaddressclaimNamespace** | **[]string** |  | 
+ **crIpaddressclaimNamespaceEmpty** | **bool** |  | 
+ **crIpaddressclaimNamespaceIc** | **[]string** |  | 
+ **crIpaddressclaimNamespaceIe** | **[]string** |  | 
+ **crIpaddressclaimNamespaceIew** | **[]string** |  | 
+ **crIpaddressclaimNamespaceIregex** | **[]string** |  | 
+ **crIpaddressclaimNamespaceIsw** | **[]string** |  | 
+ **crIpaddressclaimNamespaceN** | **[]string** |  | 
+ **crIpaddressclaimNamespaceNic** | **[]string** |  | 
+ **crIpaddressclaimNamespaceNie** | **[]string** |  | 
+ **crIpaddressclaimNamespaceNiew** | **[]string** |  | 
+ **crIpaddressclaimNamespaceNisw** | **[]string** |  | 
+ **crIpaddressclaimNamespaceRegex** | **[]string** |  | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -2314,6 +2431,19 @@ Name | Type | Description  | Notes
  **environmentId** | **[]int32** | Environment | 
  **environmentIdN** | **[]int32** | Environment | 
  **family** | **float32** | IP Family | 
+ **gkeClusterId** | **[]string** |  | 
+ **gkeClusterIdEmpty** | **bool** |  | 
+ **gkeClusterIdIc** | **[]string** |  | 
+ **gkeClusterIdIe** | **[]string** |  | 
+ **gkeClusterIdIew** | **[]string** |  | 
+ **gkeClusterIdIregex** | **[]string** |  | 
+ **gkeClusterIdIsw** | **[]string** |  | 
+ **gkeClusterIdN** | **[]string** |  | 
+ **gkeClusterIdNic** | **[]string** |  | 
+ **gkeClusterIdNie** | **[]string** |  | 
+ **gkeClusterIdNiew** | **[]string** |  | 
+ **gkeClusterIdNisw** | **[]string** |  | 
+ **gkeClusterIdRegex** | **[]string** |  | 
  **hasNatInside** | **bool** | Has NAT inside | 
  **hasNatOutside** | **bool** | Has NAT outside | 
  **hash** | **string** |  | 

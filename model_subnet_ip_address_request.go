@@ -31,14 +31,19 @@ type SubnetIPAddressRequest struct {
 	Role         *PatchedSubnetIPAddressRequestRole          `json:"role,omitempty"`
 	NatInside    NullableNestedSubnetIPAddressRequest        `json:"nat_inside,omitempty"`
 	// Hostname or FQDN (not case-sensitive)
-	DnsName              *string                `json:"dns_name,omitempty" validate:"regexp=^([0-9A-Za-z_-]+|\\\\*)(\\\\.[0-9A-Za-z_-]+)*\\\\.?$"`
-	Metadata             interface{}            `json:"metadata,omitempty"`
-	Hash                 NullableString         `json:"hash,omitempty"`
-	Description          *string                `json:"description,omitempty"`
-	Comments             *string                `json:"comments,omitempty"`
-	Tags                 []NestedTagRequest     `json:"tags,omitempty"`
-	CustomFields         map[string]interface{} `json:"custom_fields,omitempty"`
-	AdditionalProperties map[string]interface{}
+	DnsName                   *string                `json:"dns_name,omitempty" validate:"regexp=^([0-9A-Za-z_-]+|\\\\*)(\\\\.[0-9A-Za-z_-]+)*\\\\.?$"`
+	Metadata                  interface{}            `json:"metadata,omitempty"`
+	Hash                      NullableString         `json:"hash,omitempty"`
+	Description               *string                `json:"description,omitempty"`
+	Comments                  *string                `json:"comments,omitempty"`
+	Tags                      []NestedTagRequest     `json:"tags,omitempty"`
+	CustomFields              map[string]interface{} `json:"custom_fields,omitempty"`
+	GkeClusterId              NullableString         `json:"gke_cluster_id,omitempty"`
+	CrIpaddressName           NullableString         `json:"cr_ipaddress_name,omitempty"`
+	CrIpaddressNamespace      NullableString         `json:"cr_ipaddress_namespace,omitempty"`
+	CrIpaddressclaimName      NullableString         `json:"cr_ipaddressclaim_name,omitempty"`
+	CrIpaddressclaimNamespace NullableString         `json:"cr_ipaddressclaim_namespace,omitempty"`
+	AdditionalProperties      map[string]interface{}
 }
 
 type _SubnetIPAddressRequest SubnetIPAddressRequest
@@ -614,6 +619,221 @@ func (o *SubnetIPAddressRequest) SetCustomFields(v map[string]interface{}) {
 	o.CustomFields = v
 }
 
+// GetGkeClusterId returns the GkeClusterId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SubnetIPAddressRequest) GetGkeClusterId() string {
+	if o == nil || IsNil(o.GkeClusterId.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.GkeClusterId.Get()
+}
+
+// GetGkeClusterIdOk returns a tuple with the GkeClusterId field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SubnetIPAddressRequest) GetGkeClusterIdOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.GkeClusterId.Get(), o.GkeClusterId.IsSet()
+}
+
+// HasGkeClusterId returns a boolean if a field has been set.
+func (o *SubnetIPAddressRequest) HasGkeClusterId() bool {
+	if o != nil && o.GkeClusterId.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetGkeClusterId gets a reference to the given NullableString and assigns it to the GkeClusterId field.
+func (o *SubnetIPAddressRequest) SetGkeClusterId(v string) {
+	o.GkeClusterId.Set(&v)
+}
+
+// SetGkeClusterIdNil sets the value for GkeClusterId to be an explicit nil
+func (o *SubnetIPAddressRequest) SetGkeClusterIdNil() {
+	o.GkeClusterId.Set(nil)
+}
+
+// UnsetGkeClusterId ensures that no value is present for GkeClusterId, not even an explicit nil
+func (o *SubnetIPAddressRequest) UnsetGkeClusterId() {
+	o.GkeClusterId.Unset()
+}
+
+// GetCrIpaddressName returns the CrIpaddressName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SubnetIPAddressRequest) GetCrIpaddressName() string {
+	if o == nil || IsNil(o.CrIpaddressName.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.CrIpaddressName.Get()
+}
+
+// GetCrIpaddressNameOk returns a tuple with the CrIpaddressName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SubnetIPAddressRequest) GetCrIpaddressNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CrIpaddressName.Get(), o.CrIpaddressName.IsSet()
+}
+
+// HasCrIpaddressName returns a boolean if a field has been set.
+func (o *SubnetIPAddressRequest) HasCrIpaddressName() bool {
+	if o != nil && o.CrIpaddressName.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCrIpaddressName gets a reference to the given NullableString and assigns it to the CrIpaddressName field.
+func (o *SubnetIPAddressRequest) SetCrIpaddressName(v string) {
+	o.CrIpaddressName.Set(&v)
+}
+
+// SetCrIpaddressNameNil sets the value for CrIpaddressName to be an explicit nil
+func (o *SubnetIPAddressRequest) SetCrIpaddressNameNil() {
+	o.CrIpaddressName.Set(nil)
+}
+
+// UnsetCrIpaddressName ensures that no value is present for CrIpaddressName, not even an explicit nil
+func (o *SubnetIPAddressRequest) UnsetCrIpaddressName() {
+	o.CrIpaddressName.Unset()
+}
+
+// GetCrIpaddressNamespace returns the CrIpaddressNamespace field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SubnetIPAddressRequest) GetCrIpaddressNamespace() string {
+	if o == nil || IsNil(o.CrIpaddressNamespace.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.CrIpaddressNamespace.Get()
+}
+
+// GetCrIpaddressNamespaceOk returns a tuple with the CrIpaddressNamespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SubnetIPAddressRequest) GetCrIpaddressNamespaceOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CrIpaddressNamespace.Get(), o.CrIpaddressNamespace.IsSet()
+}
+
+// HasCrIpaddressNamespace returns a boolean if a field has been set.
+func (o *SubnetIPAddressRequest) HasCrIpaddressNamespace() bool {
+	if o != nil && o.CrIpaddressNamespace.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCrIpaddressNamespace gets a reference to the given NullableString and assigns it to the CrIpaddressNamespace field.
+func (o *SubnetIPAddressRequest) SetCrIpaddressNamespace(v string) {
+	o.CrIpaddressNamespace.Set(&v)
+}
+
+// SetCrIpaddressNamespaceNil sets the value for CrIpaddressNamespace to be an explicit nil
+func (o *SubnetIPAddressRequest) SetCrIpaddressNamespaceNil() {
+	o.CrIpaddressNamespace.Set(nil)
+}
+
+// UnsetCrIpaddressNamespace ensures that no value is present for CrIpaddressNamespace, not even an explicit nil
+func (o *SubnetIPAddressRequest) UnsetCrIpaddressNamespace() {
+	o.CrIpaddressNamespace.Unset()
+}
+
+// GetCrIpaddressclaimName returns the CrIpaddressclaimName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SubnetIPAddressRequest) GetCrIpaddressclaimName() string {
+	if o == nil || IsNil(o.CrIpaddressclaimName.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.CrIpaddressclaimName.Get()
+}
+
+// GetCrIpaddressclaimNameOk returns a tuple with the CrIpaddressclaimName field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SubnetIPAddressRequest) GetCrIpaddressclaimNameOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CrIpaddressclaimName.Get(), o.CrIpaddressclaimName.IsSet()
+}
+
+// HasCrIpaddressclaimName returns a boolean if a field has been set.
+func (o *SubnetIPAddressRequest) HasCrIpaddressclaimName() bool {
+	if o != nil && o.CrIpaddressclaimName.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCrIpaddressclaimName gets a reference to the given NullableString and assigns it to the CrIpaddressclaimName field.
+func (o *SubnetIPAddressRequest) SetCrIpaddressclaimName(v string) {
+	o.CrIpaddressclaimName.Set(&v)
+}
+
+// SetCrIpaddressclaimNameNil sets the value for CrIpaddressclaimName to be an explicit nil
+func (o *SubnetIPAddressRequest) SetCrIpaddressclaimNameNil() {
+	o.CrIpaddressclaimName.Set(nil)
+}
+
+// UnsetCrIpaddressclaimName ensures that no value is present for CrIpaddressclaimName, not even an explicit nil
+func (o *SubnetIPAddressRequest) UnsetCrIpaddressclaimName() {
+	o.CrIpaddressclaimName.Unset()
+}
+
+// GetCrIpaddressclaimNamespace returns the CrIpaddressclaimNamespace field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SubnetIPAddressRequest) GetCrIpaddressclaimNamespace() string {
+	if o == nil || IsNil(o.CrIpaddressclaimNamespace.Get()) {
+		var ret string
+		return ret
+	}
+	return *o.CrIpaddressclaimNamespace.Get()
+}
+
+// GetCrIpaddressclaimNamespaceOk returns a tuple with the CrIpaddressclaimNamespace field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SubnetIPAddressRequest) GetCrIpaddressclaimNamespaceOk() (*string, bool) {
+	if o == nil {
+		return nil, false
+	}
+	return o.CrIpaddressclaimNamespace.Get(), o.CrIpaddressclaimNamespace.IsSet()
+}
+
+// HasCrIpaddressclaimNamespace returns a boolean if a field has been set.
+func (o *SubnetIPAddressRequest) HasCrIpaddressclaimNamespace() bool {
+	if o != nil && o.CrIpaddressclaimNamespace.IsSet() {
+		return true
+	}
+
+	return false
+}
+
+// SetCrIpaddressclaimNamespace gets a reference to the given NullableString and assigns it to the CrIpaddressclaimNamespace field.
+func (o *SubnetIPAddressRequest) SetCrIpaddressclaimNamespace(v string) {
+	o.CrIpaddressclaimNamespace.Set(&v)
+}
+
+// SetCrIpaddressclaimNamespaceNil sets the value for CrIpaddressclaimNamespace to be an explicit nil
+func (o *SubnetIPAddressRequest) SetCrIpaddressclaimNamespaceNil() {
+	o.CrIpaddressclaimNamespace.Set(nil)
+}
+
+// UnsetCrIpaddressclaimNamespace ensures that no value is present for CrIpaddressclaimNamespace, not even an explicit nil
+func (o *SubnetIPAddressRequest) UnsetCrIpaddressclaimNamespace() {
+	o.CrIpaddressclaimNamespace.Unset()
+}
+
 func (o SubnetIPAddressRequest) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -667,6 +887,21 @@ func (o SubnetIPAddressRequest) ToMap() (map[string]interface{}, error) {
 	}
 	if !IsNil(o.CustomFields) {
 		toSerialize["custom_fields"] = o.CustomFields
+	}
+	if o.GkeClusterId.IsSet() {
+		toSerialize["gke_cluster_id"] = o.GkeClusterId.Get()
+	}
+	if o.CrIpaddressName.IsSet() {
+		toSerialize["cr_ipaddress_name"] = o.CrIpaddressName.Get()
+	}
+	if o.CrIpaddressNamespace.IsSet() {
+		toSerialize["cr_ipaddress_namespace"] = o.CrIpaddressNamespace.Get()
+	}
+	if o.CrIpaddressclaimName.IsSet() {
+		toSerialize["cr_ipaddressclaim_name"] = o.CrIpaddressclaimName.Get()
+	}
+	if o.CrIpaddressclaimNamespace.IsSet() {
+		toSerialize["cr_ipaddressclaim_namespace"] = o.CrIpaddressclaimNamespace.Get()
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -744,6 +979,11 @@ func (o *SubnetIPAddressRequest) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "comments")
 		delete(additionalProperties, "tags")
 		delete(additionalProperties, "custom_fields")
+		delete(additionalProperties, "gke_cluster_id")
+		delete(additionalProperties, "cr_ipaddress_name")
+		delete(additionalProperties, "cr_ipaddress_namespace")
+		delete(additionalProperties, "cr_ipaddressclaim_name")
+		delete(additionalProperties, "cr_ipaddressclaim_namespace")
 		o.AdditionalProperties = additionalProperties
 	}
 

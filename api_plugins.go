@@ -6963,163 +6963,228 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetipaddressDestroyExecute(r Ap
 }
 
 type ApiPluginsAirnityIpamSubnetipaddressListRequest struct {
-	ctx               context.Context
-	ApiService        PluginsAPI
-	address           *[]string
-	claimedBy         *[]string
-	claimedByEmpty    *bool
-	claimedByIc       *[]string
-	claimedByIe       *[]string
-	claimedByIew      *[]string
-	claimedByIregex   *[]string
-	claimedByIsw      *[]string
-	claimedByN        *[]string
-	claimedByNic      *[]string
-	claimedByNie      *[]string
-	claimedByNiew     *[]string
-	claimedByNisw     *[]string
-	claimedByRegex    *[]string
-	country           *PluginsAirnityIpamSubnetipaddressListCountryParameter
-	countryEmpty      *bool
-	countryIc         *[]string
-	countryIe         *[]string
-	countryIew        *[]string
-	countryIregex     *[]string
-	countryIsw        *[]string
-	countryN          *PluginsAirnityIpamSubnetipaddressListCountryParameter
-	countryNic        *[]string
-	countryNie        *[]string
-	countryNiew       *[]string
-	countryNisw       *[]string
-	countryRegex      *[]string
-	created           *[]time.Time
-	createdEmpty      *[]time.Time
-	createdGt         *[]time.Time
-	createdGte        *[]time.Time
-	createdLt         *[]time.Time
-	createdLte        *[]time.Time
-	createdN          *[]time.Time
-	createdByRequest  *string
-	description       *[]string
-	descriptionEmpty  *bool
-	descriptionIc     *[]string
-	descriptionIe     *[]string
-	descriptionIew    *[]string
-	descriptionIregex *[]string
-	descriptionIsw    *[]string
-	descriptionN      *[]string
-	descriptionNic    *[]string
-	descriptionNie    *[]string
-	descriptionNiew   *[]string
-	descriptionNisw   *[]string
-	descriptionRegex  *[]string
-	dnsName           *[]string
-	dnsNameEmpty      *bool
-	dnsNameIc         *[]string
-	dnsNameIe         *[]string
-	dnsNameIew        *[]string
-	dnsNameIregex     *[]string
-	dnsNameIsw        *[]string
-	dnsNameN          *[]string
-	dnsNameNic        *[]string
-	dnsNameNie        *[]string
-	dnsNameNiew       *[]string
-	dnsNameNisw       *[]string
-	dnsNameRegex      *[]string
-	environment       *[]string
-	environmentN      *[]string
-	environmentId     *[]*int32
-	environmentIdN    *[]*int32
-	family            *float32
-	hasNatInside      *bool
-	hasNatOutside     *bool
-	hash              *string
-	hashIc            *string
-	hashIe            *string
-	hashIew           *string
-	hashIregex        *string
-	hashIsw           *string
-	hashN             *string
-	hashNic           *string
-	hashNie           *string
-	hashNiew          *string
-	hashNisw          *string
-	hashRegex         *string
-	id                *[]int32
-	idEmpty           *bool
-	idGt              *[]int32
-	idGte             *[]int32
-	idLt              *[]int32
-	idLte             *[]int32
-	idN               *[]int32
-	lastUpdated       *[]time.Time
-	lastUpdatedEmpty  *[]time.Time
-	lastUpdatedGt     *[]time.Time
-	lastUpdatedGte    *[]time.Time
-	lastUpdatedLt     *[]time.Time
-	lastUpdatedLte    *[]time.Time
-	lastUpdatedN      *[]time.Time
-	limit             *int32
-	maskLength        *[]int32
-	maskLengthGte     *float32
-	maskLengthLte     *float32
-	modifiedByRequest *string
-	natInsideId       *[]int32
-	natInsideIdN      *[]int32
-	offset            *int32
-	ordering          *string
-	parent            *[]string
-	q                 *string
-	role              *[]string
-	roleEmpty         *bool
-	roleIc            *[]string
-	roleIe            *[]string
-	roleIew           *[]string
-	roleIregex        *[]string
-	roleIsw           *[]string
-	roleN             *[]string
-	roleNic           *[]string
-	roleNie           *[]string
-	roleNiew          *[]string
-	roleNisw          *[]string
-	roleRegex         *[]string
-	status            *[]string
-	statusEmpty       *bool
-	statusIc          *[]string
-	statusIe          *[]string
-	statusIew         *[]string
-	statusIregex      *[]string
-	statusIsw         *[]string
-	statusN           *[]string
-	statusNic         *[]string
-	statusNie         *[]string
-	statusNiew        *[]string
-	statusNisw        *[]string
-	statusRegex       *[]string
-	subnet            *[]string
-	subnetN           *[]string
-	subnetId          *[]int32
-	subnetIdN         *[]int32
-	subnetPrefix      *[]string
-	subnetPrefixId    *[]int32
-	subnetPrefixIdN   *[]int32
-	tag               *[]string
-	tagN              *[]string
-	tagId             *[]string
-	tagIdN            *[]string
-	tenant            *[]string
-	tenantN           *[]string
-	tenantGroup       *[]string
-	tenantGroupN      *[]string
-	tenantGroupId     *[]string
-	tenantGroupIdN    *[]string
-	tenantId          *[]*int32
-	tenantIdN         *[]*int32
-	updatedByRequest  *string
-	vpc               *[]string
-	vpcN              *[]string
-	vpcId             *[]*int32
-	vpcIdN            *[]*int32
+	ctx                             context.Context
+	ApiService                      PluginsAPI
+	address                         *[]string
+	claimedBy                       *[]string
+	claimedByEmpty                  *bool
+	claimedByIc                     *[]string
+	claimedByIe                     *[]string
+	claimedByIew                    *[]string
+	claimedByIregex                 *[]string
+	claimedByIsw                    *[]string
+	claimedByN                      *[]string
+	claimedByNic                    *[]string
+	claimedByNie                    *[]string
+	claimedByNiew                   *[]string
+	claimedByNisw                   *[]string
+	claimedByRegex                  *[]string
+	country                         *PluginsAirnityIpamSubnetipaddressListCountryParameter
+	countryEmpty                    *bool
+	countryIc                       *[]string
+	countryIe                       *[]string
+	countryIew                      *[]string
+	countryIregex                   *[]string
+	countryIsw                      *[]string
+	countryN                        *PluginsAirnityIpamSubnetipaddressListCountryParameter
+	countryNic                      *[]string
+	countryNie                      *[]string
+	countryNiew                     *[]string
+	countryNisw                     *[]string
+	countryRegex                    *[]string
+	crIpaddressName                 *[]string
+	crIpaddressNameEmpty            *bool
+	crIpaddressNameIc               *[]string
+	crIpaddressNameIe               *[]string
+	crIpaddressNameIew              *[]string
+	crIpaddressNameIregex           *[]string
+	crIpaddressNameIsw              *[]string
+	crIpaddressNameN                *[]string
+	crIpaddressNameNic              *[]string
+	crIpaddressNameNie              *[]string
+	crIpaddressNameNiew             *[]string
+	crIpaddressNameNisw             *[]string
+	crIpaddressNameRegex            *[]string
+	crIpaddressNamespace            *[]string
+	crIpaddressNamespaceEmpty       *bool
+	crIpaddressNamespaceIc          *[]string
+	crIpaddressNamespaceIe          *[]string
+	crIpaddressNamespaceIew         *[]string
+	crIpaddressNamespaceIregex      *[]string
+	crIpaddressNamespaceIsw         *[]string
+	crIpaddressNamespaceN           *[]string
+	crIpaddressNamespaceNic         *[]string
+	crIpaddressNamespaceNie         *[]string
+	crIpaddressNamespaceNiew        *[]string
+	crIpaddressNamespaceNisw        *[]string
+	crIpaddressNamespaceRegex       *[]string
+	crIpaddressclaimName            *[]string
+	crIpaddressclaimNameEmpty       *bool
+	crIpaddressclaimNameIc          *[]string
+	crIpaddressclaimNameIe          *[]string
+	crIpaddressclaimNameIew         *[]string
+	crIpaddressclaimNameIregex      *[]string
+	crIpaddressclaimNameIsw         *[]string
+	crIpaddressclaimNameN           *[]string
+	crIpaddressclaimNameNic         *[]string
+	crIpaddressclaimNameNie         *[]string
+	crIpaddressclaimNameNiew        *[]string
+	crIpaddressclaimNameNisw        *[]string
+	crIpaddressclaimNameRegex       *[]string
+	crIpaddressclaimNamespace       *[]string
+	crIpaddressclaimNamespaceEmpty  *bool
+	crIpaddressclaimNamespaceIc     *[]string
+	crIpaddressclaimNamespaceIe     *[]string
+	crIpaddressclaimNamespaceIew    *[]string
+	crIpaddressclaimNamespaceIregex *[]string
+	crIpaddressclaimNamespaceIsw    *[]string
+	crIpaddressclaimNamespaceN      *[]string
+	crIpaddressclaimNamespaceNic    *[]string
+	crIpaddressclaimNamespaceNie    *[]string
+	crIpaddressclaimNamespaceNiew   *[]string
+	crIpaddressclaimNamespaceNisw   *[]string
+	crIpaddressclaimNamespaceRegex  *[]string
+	created                         *[]time.Time
+	createdEmpty                    *[]time.Time
+	createdGt                       *[]time.Time
+	createdGte                      *[]time.Time
+	createdLt                       *[]time.Time
+	createdLte                      *[]time.Time
+	createdN                        *[]time.Time
+	createdByRequest                *string
+	description                     *[]string
+	descriptionEmpty                *bool
+	descriptionIc                   *[]string
+	descriptionIe                   *[]string
+	descriptionIew                  *[]string
+	descriptionIregex               *[]string
+	descriptionIsw                  *[]string
+	descriptionN                    *[]string
+	descriptionNic                  *[]string
+	descriptionNie                  *[]string
+	descriptionNiew                 *[]string
+	descriptionNisw                 *[]string
+	descriptionRegex                *[]string
+	dnsName                         *[]string
+	dnsNameEmpty                    *bool
+	dnsNameIc                       *[]string
+	dnsNameIe                       *[]string
+	dnsNameIew                      *[]string
+	dnsNameIregex                   *[]string
+	dnsNameIsw                      *[]string
+	dnsNameN                        *[]string
+	dnsNameNic                      *[]string
+	dnsNameNie                      *[]string
+	dnsNameNiew                     *[]string
+	dnsNameNisw                     *[]string
+	dnsNameRegex                    *[]string
+	environment                     *[]string
+	environmentN                    *[]string
+	environmentId                   *[]*int32
+	environmentIdN                  *[]*int32
+	family                          *float32
+	gkeClusterId                    *[]string
+	gkeClusterIdEmpty               *bool
+	gkeClusterIdIc                  *[]string
+	gkeClusterIdIe                  *[]string
+	gkeClusterIdIew                 *[]string
+	gkeClusterIdIregex              *[]string
+	gkeClusterIdIsw                 *[]string
+	gkeClusterIdN                   *[]string
+	gkeClusterIdNic                 *[]string
+	gkeClusterIdNie                 *[]string
+	gkeClusterIdNiew                *[]string
+	gkeClusterIdNisw                *[]string
+	gkeClusterIdRegex               *[]string
+	hasNatInside                    *bool
+	hasNatOutside                   *bool
+	hash                            *string
+	hashIc                          *string
+	hashIe                          *string
+	hashIew                         *string
+	hashIregex                      *string
+	hashIsw                         *string
+	hashN                           *string
+	hashNic                         *string
+	hashNie                         *string
+	hashNiew                        *string
+	hashNisw                        *string
+	hashRegex                       *string
+	id                              *[]int32
+	idEmpty                         *bool
+	idGt                            *[]int32
+	idGte                           *[]int32
+	idLt                            *[]int32
+	idLte                           *[]int32
+	idN                             *[]int32
+	lastUpdated                     *[]time.Time
+	lastUpdatedEmpty                *[]time.Time
+	lastUpdatedGt                   *[]time.Time
+	lastUpdatedGte                  *[]time.Time
+	lastUpdatedLt                   *[]time.Time
+	lastUpdatedLte                  *[]time.Time
+	lastUpdatedN                    *[]time.Time
+	limit                           *int32
+	maskLength                      *[]int32
+	maskLengthGte                   *float32
+	maskLengthLte                   *float32
+	modifiedByRequest               *string
+	natInsideId                     *[]int32
+	natInsideIdN                    *[]int32
+	offset                          *int32
+	ordering                        *string
+	parent                          *[]string
+	q                               *string
+	role                            *[]string
+	roleEmpty                       *bool
+	roleIc                          *[]string
+	roleIe                          *[]string
+	roleIew                         *[]string
+	roleIregex                      *[]string
+	roleIsw                         *[]string
+	roleN                           *[]string
+	roleNic                         *[]string
+	roleNie                         *[]string
+	roleNiew                        *[]string
+	roleNisw                        *[]string
+	roleRegex                       *[]string
+	status                          *[]string
+	statusEmpty                     *bool
+	statusIc                        *[]string
+	statusIe                        *[]string
+	statusIew                       *[]string
+	statusIregex                    *[]string
+	statusIsw                       *[]string
+	statusN                         *[]string
+	statusNic                       *[]string
+	statusNie                       *[]string
+	statusNiew                      *[]string
+	statusNisw                      *[]string
+	statusRegex                     *[]string
+	subnet                          *[]string
+	subnetN                         *[]string
+	subnetId                        *[]int32
+	subnetIdN                       *[]int32
+	subnetPrefix                    *[]string
+	subnetPrefixId                  *[]int32
+	subnetPrefixIdN                 *[]int32
+	tag                             *[]string
+	tagN                            *[]string
+	tagId                           *[]string
+	tagIdN                          *[]string
+	tenant                          *[]string
+	tenantN                         *[]string
+	tenantGroup                     *[]string
+	tenantGroupN                    *[]string
+	tenantGroupId                   *[]string
+	tenantGroupIdN                  *[]string
+	tenantId                        *[]*int32
+	tenantIdN                       *[]*int32
+	updatedByRequest                *string
+	vpc                             *[]string
+	vpcN                            *[]string
+	vpcId                           *[]*int32
+	vpcIdN                          *[]*int32
 }
 
 func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) Address(address []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
@@ -7256,6 +7321,266 @@ func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryNisw(countryNisw
 
 func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryRegex(countryRegex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
 	r.countryRegex = &countryRegex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressName(crIpaddressName []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressName = &crIpaddressName
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNameEmpty(crIpaddressNameEmpty bool) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNameEmpty = &crIpaddressNameEmpty
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNameIc(crIpaddressNameIc []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNameIc = &crIpaddressNameIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNameIe(crIpaddressNameIe []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNameIe = &crIpaddressNameIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNameIew(crIpaddressNameIew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNameIew = &crIpaddressNameIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNameIregex(crIpaddressNameIregex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNameIregex = &crIpaddressNameIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNameIsw(crIpaddressNameIsw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNameIsw = &crIpaddressNameIsw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNameN(crIpaddressNameN []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNameN = &crIpaddressNameN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNameNic(crIpaddressNameNic []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNameNic = &crIpaddressNameNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNameNie(crIpaddressNameNie []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNameNie = &crIpaddressNameNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNameNiew(crIpaddressNameNiew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNameNiew = &crIpaddressNameNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNameNisw(crIpaddressNameNisw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNameNisw = &crIpaddressNameNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNameRegex(crIpaddressNameRegex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNameRegex = &crIpaddressNameRegex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespace(crIpaddressNamespace []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespace = &crIpaddressNamespace
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceEmpty(crIpaddressNamespaceEmpty bool) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespaceEmpty = &crIpaddressNamespaceEmpty
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceIc(crIpaddressNamespaceIc []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespaceIc = &crIpaddressNamespaceIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceIe(crIpaddressNamespaceIe []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespaceIe = &crIpaddressNamespaceIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceIew(crIpaddressNamespaceIew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespaceIew = &crIpaddressNamespaceIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceIregex(crIpaddressNamespaceIregex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespaceIregex = &crIpaddressNamespaceIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceIsw(crIpaddressNamespaceIsw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespaceIsw = &crIpaddressNamespaceIsw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceN(crIpaddressNamespaceN []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespaceN = &crIpaddressNamespaceN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceNic(crIpaddressNamespaceNic []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespaceNic = &crIpaddressNamespaceNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceNie(crIpaddressNamespaceNie []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespaceNie = &crIpaddressNamespaceNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceNiew(crIpaddressNamespaceNiew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespaceNiew = &crIpaddressNamespaceNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceNisw(crIpaddressNamespaceNisw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespaceNisw = &crIpaddressNamespaceNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceRegex(crIpaddressNamespaceRegex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressNamespaceRegex = &crIpaddressNamespaceRegex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimName(crIpaddressclaimName []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimName = &crIpaddressclaimName
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNameEmpty(crIpaddressclaimNameEmpty bool) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNameEmpty = &crIpaddressclaimNameEmpty
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNameIc(crIpaddressclaimNameIc []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNameIc = &crIpaddressclaimNameIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNameIe(crIpaddressclaimNameIe []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNameIe = &crIpaddressclaimNameIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNameIew(crIpaddressclaimNameIew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNameIew = &crIpaddressclaimNameIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNameIregex(crIpaddressclaimNameIregex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNameIregex = &crIpaddressclaimNameIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNameIsw(crIpaddressclaimNameIsw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNameIsw = &crIpaddressclaimNameIsw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNameN(crIpaddressclaimNameN []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNameN = &crIpaddressclaimNameN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNameNic(crIpaddressclaimNameNic []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNameNic = &crIpaddressclaimNameNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNameNie(crIpaddressclaimNameNie []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNameNie = &crIpaddressclaimNameNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNameNiew(crIpaddressclaimNameNiew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNameNiew = &crIpaddressclaimNameNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNameNisw(crIpaddressclaimNameNisw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNameNisw = &crIpaddressclaimNameNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNameRegex(crIpaddressclaimNameRegex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNameRegex = &crIpaddressclaimNameRegex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespace(crIpaddressclaimNamespace []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespace = &crIpaddressclaimNamespace
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespaceEmpty(crIpaddressclaimNamespaceEmpty bool) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespaceEmpty = &crIpaddressclaimNamespaceEmpty
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespaceIc(crIpaddressclaimNamespaceIc []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespaceIc = &crIpaddressclaimNamespaceIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespaceIe(crIpaddressclaimNamespaceIe []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespaceIe = &crIpaddressclaimNamespaceIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespaceIew(crIpaddressclaimNamespaceIew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespaceIew = &crIpaddressclaimNamespaceIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespaceIregex(crIpaddressclaimNamespaceIregex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespaceIregex = &crIpaddressclaimNamespaceIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespaceIsw(crIpaddressclaimNamespaceIsw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespaceIsw = &crIpaddressclaimNamespaceIsw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespaceN(crIpaddressclaimNamespaceN []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespaceN = &crIpaddressclaimNamespaceN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespaceNic(crIpaddressclaimNamespaceNic []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespaceNic = &crIpaddressclaimNamespaceNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespaceNie(crIpaddressclaimNamespaceNie []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespaceNie = &crIpaddressclaimNamespaceNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespaceNiew(crIpaddressclaimNamespaceNiew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespaceNiew = &crIpaddressclaimNamespaceNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespaceNisw(crIpaddressclaimNamespaceNisw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespaceNisw = &crIpaddressclaimNamespaceNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimNamespaceRegex(crIpaddressclaimNamespaceRegex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimNamespaceRegex = &crIpaddressclaimNamespaceRegex
 	return r
 }
 
@@ -7456,6 +7781,71 @@ func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) EnvironmentIdN(environm
 // IP Family
 func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) Family(family float32) ApiPluginsAirnityIpamSubnetipaddressListRequest {
 	r.family = &family
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterId(gkeClusterId []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterId = &gkeClusterId
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdEmpty(gkeClusterIdEmpty bool) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterIdEmpty = &gkeClusterIdEmpty
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdIc(gkeClusterIdIc []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterIdIc = &gkeClusterIdIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdIe(gkeClusterIdIe []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterIdIe = &gkeClusterIdIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdIew(gkeClusterIdIew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterIdIew = &gkeClusterIdIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdIregex(gkeClusterIdIregex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterIdIregex = &gkeClusterIdIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdIsw(gkeClusterIdIsw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterIdIsw = &gkeClusterIdIsw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdN(gkeClusterIdN []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterIdN = &gkeClusterIdN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdNic(gkeClusterIdNic []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterIdNic = &gkeClusterIdNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdNie(gkeClusterIdNie []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterIdNie = &gkeClusterIdNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdNiew(gkeClusterIdNiew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterIdNiew = &gkeClusterIdNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdNisw(gkeClusterIdNisw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterIdNisw = &gkeClusterIdNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdRegex(gkeClusterIdRegex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.gkeClusterIdRegex = &gkeClusterIdRegex
 	return r
 }
 
@@ -8256,6 +8646,546 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetipaddressListExecute(r ApiPl
 			parameterAddToHeaderOrQuery(localVarQueryParams, "country__regex", t, "form", "multi")
 		}
 	}
+	if r.crIpaddressName != nil {
+		t := *r.crIpaddressName
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNameEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__empty", r.crIpaddressNameEmpty, "form", "")
+	}
+	if r.crIpaddressNameIc != nil {
+		t := *r.crIpaddressNameIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__ic", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNameIe != nil {
+		t := *r.crIpaddressNameIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__ie", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNameIew != nil {
+		t := *r.crIpaddressNameIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__iew", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNameIregex != nil {
+		t := *r.crIpaddressNameIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__iregex", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNameIsw != nil {
+		t := *r.crIpaddressNameIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__isw", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNameN != nil {
+		t := *r.crIpaddressNameN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__n", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNameNic != nil {
+		t := *r.crIpaddressNameNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__nic", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNameNie != nil {
+		t := *r.crIpaddressNameNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__nie", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNameNiew != nil {
+		t := *r.crIpaddressNameNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__niew", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNameNisw != nil {
+		t := *r.crIpaddressNameNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__nisw", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNameRegex != nil {
+		t := *r.crIpaddressNameRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_name__regex", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNamespace != nil {
+		t := *r.crIpaddressNamespace
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNamespaceEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__empty", r.crIpaddressNamespaceEmpty, "form", "")
+	}
+	if r.crIpaddressNamespaceIc != nil {
+		t := *r.crIpaddressNamespaceIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__ic", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNamespaceIe != nil {
+		t := *r.crIpaddressNamespaceIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__ie", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNamespaceIew != nil {
+		t := *r.crIpaddressNamespaceIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__iew", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNamespaceIregex != nil {
+		t := *r.crIpaddressNamespaceIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__iregex", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNamespaceIsw != nil {
+		t := *r.crIpaddressNamespaceIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__isw", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNamespaceN != nil {
+		t := *r.crIpaddressNamespaceN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__n", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNamespaceNic != nil {
+		t := *r.crIpaddressNamespaceNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__nic", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNamespaceNie != nil {
+		t := *r.crIpaddressNamespaceNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__nie", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNamespaceNiew != nil {
+		t := *r.crIpaddressNamespaceNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__niew", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNamespaceNisw != nil {
+		t := *r.crIpaddressNamespaceNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__nisw", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressNamespaceRegex != nil {
+		t := *r.crIpaddressNamespaceRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__regex", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimName != nil {
+		t := *r.crIpaddressclaimName
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNameEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__empty", r.crIpaddressclaimNameEmpty, "form", "")
+	}
+	if r.crIpaddressclaimNameIc != nil {
+		t := *r.crIpaddressclaimNameIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__ic", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNameIe != nil {
+		t := *r.crIpaddressclaimNameIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__ie", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNameIew != nil {
+		t := *r.crIpaddressclaimNameIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__iew", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNameIregex != nil {
+		t := *r.crIpaddressclaimNameIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__iregex", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNameIsw != nil {
+		t := *r.crIpaddressclaimNameIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__isw", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNameN != nil {
+		t := *r.crIpaddressclaimNameN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__n", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNameNic != nil {
+		t := *r.crIpaddressclaimNameNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__nic", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNameNie != nil {
+		t := *r.crIpaddressclaimNameNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__nie", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNameNiew != nil {
+		t := *r.crIpaddressclaimNameNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__niew", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNameNisw != nil {
+		t := *r.crIpaddressclaimNameNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__nisw", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNameRegex != nil {
+		t := *r.crIpaddressclaimNameRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_name__regex", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNamespace != nil {
+		t := *r.crIpaddressclaimNamespace
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNamespaceEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__empty", r.crIpaddressclaimNamespaceEmpty, "form", "")
+	}
+	if r.crIpaddressclaimNamespaceIc != nil {
+		t := *r.crIpaddressclaimNamespaceIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__ic", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNamespaceIe != nil {
+		t := *r.crIpaddressclaimNamespaceIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__ie", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNamespaceIew != nil {
+		t := *r.crIpaddressclaimNamespaceIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__iew", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNamespaceIregex != nil {
+		t := *r.crIpaddressclaimNamespaceIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__iregex", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNamespaceIsw != nil {
+		t := *r.crIpaddressclaimNamespaceIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__isw", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNamespaceN != nil {
+		t := *r.crIpaddressclaimNamespaceN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__n", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNamespaceNic != nil {
+		t := *r.crIpaddressclaimNamespaceNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__nic", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNamespaceNie != nil {
+		t := *r.crIpaddressclaimNamespaceNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__nie", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNamespaceNiew != nil {
+		t := *r.crIpaddressclaimNamespaceNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__niew", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNamespaceNisw != nil {
+		t := *r.crIpaddressclaimNamespaceNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__nisw", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimNamespaceRegex != nil {
+		t := *r.crIpaddressclaimNamespaceRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_namespace__regex", t, "form", "multi")
+		}
+	}
 	if r.created != nil {
 		t := *r.created
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
@@ -8652,6 +9582,141 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetipaddressListExecute(r ApiPl
 	}
 	if r.family != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "family", r.family, "form", "")
+	}
+	if r.gkeClusterId != nil {
+		t := *r.gkeClusterId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id", t, "form", "multi")
+		}
+	}
+	if r.gkeClusterIdEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__empty", r.gkeClusterIdEmpty, "form", "")
+	}
+	if r.gkeClusterIdIc != nil {
+		t := *r.gkeClusterIdIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__ic", t, "form", "multi")
+		}
+	}
+	if r.gkeClusterIdIe != nil {
+		t := *r.gkeClusterIdIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__ie", t, "form", "multi")
+		}
+	}
+	if r.gkeClusterIdIew != nil {
+		t := *r.gkeClusterIdIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__iew", t, "form", "multi")
+		}
+	}
+	if r.gkeClusterIdIregex != nil {
+		t := *r.gkeClusterIdIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__iregex", t, "form", "multi")
+		}
+	}
+	if r.gkeClusterIdIsw != nil {
+		t := *r.gkeClusterIdIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__isw", t, "form", "multi")
+		}
+	}
+	if r.gkeClusterIdN != nil {
+		t := *r.gkeClusterIdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__n", t, "form", "multi")
+		}
+	}
+	if r.gkeClusterIdNic != nil {
+		t := *r.gkeClusterIdNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__nic", t, "form", "multi")
+		}
+	}
+	if r.gkeClusterIdNie != nil {
+		t := *r.gkeClusterIdNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__nie", t, "form", "multi")
+		}
+	}
+	if r.gkeClusterIdNiew != nil {
+		t := *r.gkeClusterIdNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__niew", t, "form", "multi")
+		}
+	}
+	if r.gkeClusterIdNisw != nil {
+		t := *r.gkeClusterIdNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__nisw", t, "form", "multi")
+		}
+	}
+	if r.gkeClusterIdRegex != nil {
+		t := *r.gkeClusterIdRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__regex", t, "form", "multi")
+		}
 	}
 	if r.hasNatInside != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "has_nat_inside", r.hasNatInside, "form", "")

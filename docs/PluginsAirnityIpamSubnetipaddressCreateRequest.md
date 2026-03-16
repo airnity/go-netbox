@@ -20,6 +20,11 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
+**GkeClusterId** | Pointer to **NullableString** |  | [optional] 
+**CrIpaddressName** | Pointer to **NullableString** |  | [optional] 
+**CrIpaddressNamespace** | Pointer to **NullableString** |  | [optional] 
+**CrIpaddressclaimName** | Pointer to **NullableString** |  | [optional] 
+**CrIpaddressclaimNamespace** | Pointer to **NullableString** |  | [optional] 
 
 ## Methods
 
@@ -490,6 +495,181 @@ SetCustomFields sets CustomFields field to given value.
 
 HasCustomFields returns a boolean if a field has been set.
 
+### GetGkeClusterId
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetGkeClusterId() string`
+
+GetGkeClusterId returns the GkeClusterId field if non-nil, zero value otherwise.
+
+### GetGkeClusterIdOk
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetGkeClusterIdOk() (*string, bool)`
+
+GetGkeClusterIdOk returns a tuple with the GkeClusterId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetGkeClusterId
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetGkeClusterId(v string)`
+
+SetGkeClusterId sets GkeClusterId field to given value.
+
+### HasGkeClusterId
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) HasGkeClusterId() bool`
+
+HasGkeClusterId returns a boolean if a field has been set.
+
+### SetGkeClusterIdNil
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetGkeClusterIdNil(b bool)`
+
+ SetGkeClusterIdNil sets the value for GkeClusterId to be an explicit nil
+
+### UnsetGkeClusterId
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) UnsetGkeClusterId()`
+
+UnsetGkeClusterId ensures that no value is present for GkeClusterId, not even an explicit nil
+### GetCrIpaddressName
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressName() string`
+
+GetCrIpaddressName returns the CrIpaddressName field if non-nil, zero value otherwise.
+
+### GetCrIpaddressNameOk
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressNameOk() (*string, bool)`
+
+GetCrIpaddressNameOk returns a tuple with the CrIpaddressName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCrIpaddressName
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCrIpaddressName(v string)`
+
+SetCrIpaddressName sets CrIpaddressName field to given value.
+
+### HasCrIpaddressName
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) HasCrIpaddressName() bool`
+
+HasCrIpaddressName returns a boolean if a field has been set.
+
+### SetCrIpaddressNameNil
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCrIpaddressNameNil(b bool)`
+
+ SetCrIpaddressNameNil sets the value for CrIpaddressName to be an explicit nil
+
+### UnsetCrIpaddressName
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) UnsetCrIpaddressName()`
+
+UnsetCrIpaddressName ensures that no value is present for CrIpaddressName, not even an explicit nil
+### GetCrIpaddressNamespace
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressNamespace() string`
+
+GetCrIpaddressNamespace returns the CrIpaddressNamespace field if non-nil, zero value otherwise.
+
+### GetCrIpaddressNamespaceOk
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressNamespaceOk() (*string, bool)`
+
+GetCrIpaddressNamespaceOk returns a tuple with the CrIpaddressNamespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCrIpaddressNamespace
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCrIpaddressNamespace(v string)`
+
+SetCrIpaddressNamespace sets CrIpaddressNamespace field to given value.
+
+### HasCrIpaddressNamespace
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) HasCrIpaddressNamespace() bool`
+
+HasCrIpaddressNamespace returns a boolean if a field has been set.
+
+### SetCrIpaddressNamespaceNil
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCrIpaddressNamespaceNil(b bool)`
+
+ SetCrIpaddressNamespaceNil sets the value for CrIpaddressNamespace to be an explicit nil
+
+### UnsetCrIpaddressNamespace
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) UnsetCrIpaddressNamespace()`
+
+UnsetCrIpaddressNamespace ensures that no value is present for CrIpaddressNamespace, not even an explicit nil
+### GetCrIpaddressclaimName
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressclaimName() string`
+
+GetCrIpaddressclaimName returns the CrIpaddressclaimName field if non-nil, zero value otherwise.
+
+### GetCrIpaddressclaimNameOk
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressclaimNameOk() (*string, bool)`
+
+GetCrIpaddressclaimNameOk returns a tuple with the CrIpaddressclaimName field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCrIpaddressclaimName
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCrIpaddressclaimName(v string)`
+
+SetCrIpaddressclaimName sets CrIpaddressclaimName field to given value.
+
+### HasCrIpaddressclaimName
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) HasCrIpaddressclaimName() bool`
+
+HasCrIpaddressclaimName returns a boolean if a field has been set.
+
+### SetCrIpaddressclaimNameNil
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCrIpaddressclaimNameNil(b bool)`
+
+ SetCrIpaddressclaimNameNil sets the value for CrIpaddressclaimName to be an explicit nil
+
+### UnsetCrIpaddressclaimName
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) UnsetCrIpaddressclaimName()`
+
+UnsetCrIpaddressclaimName ensures that no value is present for CrIpaddressclaimName, not even an explicit nil
+### GetCrIpaddressclaimNamespace
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressclaimNamespace() string`
+
+GetCrIpaddressclaimNamespace returns the CrIpaddressclaimNamespace field if non-nil, zero value otherwise.
+
+### GetCrIpaddressclaimNamespaceOk
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressclaimNamespaceOk() (*string, bool)`
+
+GetCrIpaddressclaimNamespaceOk returns a tuple with the CrIpaddressclaimNamespace field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCrIpaddressclaimNamespace
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCrIpaddressclaimNamespace(v string)`
+
+SetCrIpaddressclaimNamespace sets CrIpaddressclaimNamespace field to given value.
+
+### HasCrIpaddressclaimNamespace
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) HasCrIpaddressclaimNamespace() bool`
+
+HasCrIpaddressclaimNamespace returns a boolean if a field has been set.
+
+### SetCrIpaddressclaimNamespaceNil
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCrIpaddressclaimNamespaceNil(b bool)`
+
+ SetCrIpaddressclaimNamespaceNil sets the value for CrIpaddressclaimNamespace to be an explicit nil
+
+### UnsetCrIpaddressclaimNamespace
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) UnsetCrIpaddressclaimNamespace()`
+
+UnsetCrIpaddressclaimNamespace ensures that no value is present for CrIpaddressclaimNamespace, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -7,6 +7,8 @@
 
 * `RESERVED` (value: `"reserved"`)
 
+* `ORPHAN` (value: `"orphan"`)
+
 * `DEPRECATED` (value: `"deprecated"`)
 
 * `DHCP` (value: `"dhcp"`)
