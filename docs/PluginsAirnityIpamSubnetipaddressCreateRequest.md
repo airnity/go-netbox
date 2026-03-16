@@ -20,9 +20,10 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]map[string]interface{}** |  | [optional] 
-**GkeClusterId** | Pointer to **NullableString** |  | [optional] 
+**CrIpaddressClusterId** | Pointer to **NullableString** |  | [optional] 
 **CrIpaddressName** | Pointer to **NullableString** |  | [optional] 
 **CrIpaddressNamespace** | Pointer to **NullableString** |  | [optional] 
+**CrIpaddressclaimClusterId** | Pointer to **NullableString** |  | [optional] 
 **CrIpaddressclaimName** | Pointer to **NullableString** |  | [optional] 
 **CrIpaddressclaimNamespace** | Pointer to **NullableString** |  | [optional] 
 
@@ -495,41 +496,41 @@ SetCustomFields sets CustomFields field to given value.
 
 HasCustomFields returns a boolean if a field has been set.
 
-### GetGkeClusterId
+### GetCrIpaddressClusterId
 
-`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetGkeClusterId() string`
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressClusterId() string`
 
-GetGkeClusterId returns the GkeClusterId field if non-nil, zero value otherwise.
+GetCrIpaddressClusterId returns the CrIpaddressClusterId field if non-nil, zero value otherwise.
 
-### GetGkeClusterIdOk
+### GetCrIpaddressClusterIdOk
 
-`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetGkeClusterIdOk() (*string, bool)`
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressClusterIdOk() (*string, bool)`
 
-GetGkeClusterIdOk returns a tuple with the GkeClusterId field if it's non-nil, zero value otherwise
+GetCrIpaddressClusterIdOk returns a tuple with the CrIpaddressClusterId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGkeClusterId
+### SetCrIpaddressClusterId
 
-`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetGkeClusterId(v string)`
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCrIpaddressClusterId(v string)`
 
-SetGkeClusterId sets GkeClusterId field to given value.
+SetCrIpaddressClusterId sets CrIpaddressClusterId field to given value.
 
-### HasGkeClusterId
+### HasCrIpaddressClusterId
 
-`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) HasGkeClusterId() bool`
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) HasCrIpaddressClusterId() bool`
 
-HasGkeClusterId returns a boolean if a field has been set.
+HasCrIpaddressClusterId returns a boolean if a field has been set.
 
-### SetGkeClusterIdNil
+### SetCrIpaddressClusterIdNil
 
-`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetGkeClusterIdNil(b bool)`
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCrIpaddressClusterIdNil(b bool)`
 
- SetGkeClusterIdNil sets the value for GkeClusterId to be an explicit nil
+ SetCrIpaddressClusterIdNil sets the value for CrIpaddressClusterId to be an explicit nil
 
-### UnsetGkeClusterId
-`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) UnsetGkeClusterId()`
+### UnsetCrIpaddressClusterId
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) UnsetCrIpaddressClusterId()`
 
-UnsetGkeClusterId ensures that no value is present for GkeClusterId, not even an explicit nil
+UnsetCrIpaddressClusterId ensures that no value is present for CrIpaddressClusterId, not even an explicit nil
 ### GetCrIpaddressName
 
 `func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressName() string`
@@ -600,6 +601,41 @@ HasCrIpaddressNamespace returns a boolean if a field has been set.
 `func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) UnsetCrIpaddressNamespace()`
 
 UnsetCrIpaddressNamespace ensures that no value is present for CrIpaddressNamespace, not even an explicit nil
+### GetCrIpaddressclaimClusterId
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressclaimClusterId() string`
+
+GetCrIpaddressclaimClusterId returns the CrIpaddressclaimClusterId field if non-nil, zero value otherwise.
+
+### GetCrIpaddressclaimClusterIdOk
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressclaimClusterIdOk() (*string, bool)`
+
+GetCrIpaddressclaimClusterIdOk returns a tuple with the CrIpaddressclaimClusterId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCrIpaddressclaimClusterId
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCrIpaddressclaimClusterId(v string)`
+
+SetCrIpaddressclaimClusterId sets CrIpaddressclaimClusterId field to given value.
+
+### HasCrIpaddressclaimClusterId
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) HasCrIpaddressclaimClusterId() bool`
+
+HasCrIpaddressclaimClusterId returns a boolean if a field has been set.
+
+### SetCrIpaddressclaimClusterIdNil
+
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) SetCrIpaddressclaimClusterIdNil(b bool)`
+
+ SetCrIpaddressclaimClusterIdNil sets the value for CrIpaddressclaimClusterId to be an explicit nil
+
+### UnsetCrIpaddressclaimClusterId
+`func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) UnsetCrIpaddressclaimClusterId()`
+
+UnsetCrIpaddressclaimClusterId ensures that no value is present for CrIpaddressclaimClusterId, not even an explicit nil
 ### GetCrIpaddressclaimName
 
 `func (o *PluginsAirnityIpamSubnetipaddressCreateRequest) GetCrIpaddressclaimName() string`

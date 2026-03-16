@@ -6992,6 +6992,19 @@ type ApiPluginsAirnityIpamSubnetipaddressListRequest struct {
 	countryNiew                     *[]string
 	countryNisw                     *[]string
 	countryRegex                    *[]string
+	crIpaddressClusterId            *[]string
+	crIpaddressClusterIdEmpty       *bool
+	crIpaddressClusterIdIc          *[]string
+	crIpaddressClusterIdIe          *[]string
+	crIpaddressClusterIdIew         *[]string
+	crIpaddressClusterIdIregex      *[]string
+	crIpaddressClusterIdIsw         *[]string
+	crIpaddressClusterIdN           *[]string
+	crIpaddressClusterIdNic         *[]string
+	crIpaddressClusterIdNie         *[]string
+	crIpaddressClusterIdNiew        *[]string
+	crIpaddressClusterIdNisw        *[]string
+	crIpaddressClusterIdRegex       *[]string
 	crIpaddressName                 *[]string
 	crIpaddressNameEmpty            *bool
 	crIpaddressNameIc               *[]string
@@ -7018,6 +7031,19 @@ type ApiPluginsAirnityIpamSubnetipaddressListRequest struct {
 	crIpaddressNamespaceNiew        *[]string
 	crIpaddressNamespaceNisw        *[]string
 	crIpaddressNamespaceRegex       *[]string
+	crIpaddressclaimClusterId       *[]string
+	crIpaddressclaimClusterIdEmpty  *bool
+	crIpaddressclaimClusterIdIc     *[]string
+	crIpaddressclaimClusterIdIe     *[]string
+	crIpaddressclaimClusterIdIew    *[]string
+	crIpaddressclaimClusterIdIregex *[]string
+	crIpaddressclaimClusterIdIsw    *[]string
+	crIpaddressclaimClusterIdN      *[]string
+	crIpaddressclaimClusterIdNic    *[]string
+	crIpaddressclaimClusterIdNie    *[]string
+	crIpaddressclaimClusterIdNiew   *[]string
+	crIpaddressclaimClusterIdNisw   *[]string
+	crIpaddressclaimClusterIdRegex  *[]string
 	crIpaddressclaimName            *[]string
 	crIpaddressclaimNameEmpty       *bool
 	crIpaddressclaimNameIc          *[]string
@@ -7083,19 +7109,6 @@ type ApiPluginsAirnityIpamSubnetipaddressListRequest struct {
 	environmentId                   *[]*int32
 	environmentIdN                  *[]*int32
 	family                          *float32
-	gkeClusterId                    *[]string
-	gkeClusterIdEmpty               *bool
-	gkeClusterIdIc                  *[]string
-	gkeClusterIdIe                  *[]string
-	gkeClusterIdIew                 *[]string
-	gkeClusterIdIregex              *[]string
-	gkeClusterIdIsw                 *[]string
-	gkeClusterIdN                   *[]string
-	gkeClusterIdNic                 *[]string
-	gkeClusterIdNie                 *[]string
-	gkeClusterIdNiew                *[]string
-	gkeClusterIdNisw                *[]string
-	gkeClusterIdRegex               *[]string
 	hasNatInside                    *bool
 	hasNatOutside                   *bool
 	hash                            *string
@@ -7324,6 +7337,71 @@ func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CountryRegex(countryReg
 	return r
 }
 
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterId(crIpaddressClusterId []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterId = &crIpaddressClusterId
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterIdEmpty(crIpaddressClusterIdEmpty bool) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterIdEmpty = &crIpaddressClusterIdEmpty
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterIdIc(crIpaddressClusterIdIc []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterIdIc = &crIpaddressClusterIdIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterIdIe(crIpaddressClusterIdIe []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterIdIe = &crIpaddressClusterIdIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterIdIew(crIpaddressClusterIdIew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterIdIew = &crIpaddressClusterIdIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterIdIregex(crIpaddressClusterIdIregex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterIdIregex = &crIpaddressClusterIdIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterIdIsw(crIpaddressClusterIdIsw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterIdIsw = &crIpaddressClusterIdIsw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterIdN(crIpaddressClusterIdN []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterIdN = &crIpaddressClusterIdN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterIdNic(crIpaddressClusterIdNic []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterIdNic = &crIpaddressClusterIdNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterIdNie(crIpaddressClusterIdNie []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterIdNie = &crIpaddressClusterIdNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterIdNiew(crIpaddressClusterIdNiew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterIdNiew = &crIpaddressClusterIdNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterIdNisw(crIpaddressClusterIdNisw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterIdNisw = &crIpaddressClusterIdNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressClusterIdRegex(crIpaddressClusterIdRegex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressClusterIdRegex = &crIpaddressClusterIdRegex
+	return r
+}
+
 func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressName(crIpaddressName []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
 	r.crIpaddressName = &crIpaddressName
 	return r
@@ -7451,6 +7529,71 @@ func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceNis
 
 func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressNamespaceRegex(crIpaddressNamespaceRegex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
 	r.crIpaddressNamespaceRegex = &crIpaddressNamespaceRegex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterId(crIpaddressclaimClusterId []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterId = &crIpaddressclaimClusterId
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterIdEmpty(crIpaddressclaimClusterIdEmpty bool) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterIdEmpty = &crIpaddressclaimClusterIdEmpty
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterIdIc(crIpaddressclaimClusterIdIc []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterIdIc = &crIpaddressclaimClusterIdIc
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterIdIe(crIpaddressclaimClusterIdIe []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterIdIe = &crIpaddressclaimClusterIdIe
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterIdIew(crIpaddressclaimClusterIdIew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterIdIew = &crIpaddressclaimClusterIdIew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterIdIregex(crIpaddressclaimClusterIdIregex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterIdIregex = &crIpaddressclaimClusterIdIregex
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterIdIsw(crIpaddressclaimClusterIdIsw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterIdIsw = &crIpaddressclaimClusterIdIsw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterIdN(crIpaddressclaimClusterIdN []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterIdN = &crIpaddressclaimClusterIdN
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterIdNic(crIpaddressclaimClusterIdNic []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterIdNic = &crIpaddressclaimClusterIdNic
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterIdNie(crIpaddressclaimClusterIdNie []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterIdNie = &crIpaddressclaimClusterIdNie
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterIdNiew(crIpaddressclaimClusterIdNiew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterIdNiew = &crIpaddressclaimClusterIdNiew
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterIdNisw(crIpaddressclaimClusterIdNisw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterIdNisw = &crIpaddressclaimClusterIdNisw
+	return r
+}
+
+func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) CrIpaddressclaimClusterIdRegex(crIpaddressclaimClusterIdRegex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
+	r.crIpaddressclaimClusterIdRegex = &crIpaddressclaimClusterIdRegex
 	return r
 }
 
@@ -7781,71 +7924,6 @@ func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) EnvironmentIdN(environm
 // IP Family
 func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) Family(family float32) ApiPluginsAirnityIpamSubnetipaddressListRequest {
 	r.family = &family
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterId(gkeClusterId []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterId = &gkeClusterId
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdEmpty(gkeClusterIdEmpty bool) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterIdEmpty = &gkeClusterIdEmpty
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdIc(gkeClusterIdIc []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterIdIc = &gkeClusterIdIc
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdIe(gkeClusterIdIe []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterIdIe = &gkeClusterIdIe
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdIew(gkeClusterIdIew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterIdIew = &gkeClusterIdIew
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdIregex(gkeClusterIdIregex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterIdIregex = &gkeClusterIdIregex
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdIsw(gkeClusterIdIsw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterIdIsw = &gkeClusterIdIsw
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdN(gkeClusterIdN []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterIdN = &gkeClusterIdN
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdNic(gkeClusterIdNic []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterIdNic = &gkeClusterIdNic
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdNie(gkeClusterIdNie []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterIdNie = &gkeClusterIdNie
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdNiew(gkeClusterIdNiew []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterIdNiew = &gkeClusterIdNiew
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdNisw(gkeClusterIdNisw []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterIdNisw = &gkeClusterIdNisw
-	return r
-}
-
-func (r ApiPluginsAirnityIpamSubnetipaddressListRequest) GkeClusterIdRegex(gkeClusterIdRegex []string) ApiPluginsAirnityIpamSubnetipaddressListRequest {
-	r.gkeClusterIdRegex = &gkeClusterIdRegex
 	return r
 }
 
@@ -8646,6 +8724,141 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetipaddressListExecute(r ApiPl
 			parameterAddToHeaderOrQuery(localVarQueryParams, "country__regex", t, "form", "multi")
 		}
 	}
+	if r.crIpaddressClusterId != nil {
+		t := *r.crIpaddressClusterId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressClusterIdEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__empty", r.crIpaddressClusterIdEmpty, "form", "")
+	}
+	if r.crIpaddressClusterIdIc != nil {
+		t := *r.crIpaddressClusterIdIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__ic", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressClusterIdIe != nil {
+		t := *r.crIpaddressClusterIdIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__ie", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressClusterIdIew != nil {
+		t := *r.crIpaddressClusterIdIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__iew", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressClusterIdIregex != nil {
+		t := *r.crIpaddressClusterIdIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__iregex", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressClusterIdIsw != nil {
+		t := *r.crIpaddressClusterIdIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__isw", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressClusterIdN != nil {
+		t := *r.crIpaddressClusterIdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__n", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressClusterIdNic != nil {
+		t := *r.crIpaddressClusterIdNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__nic", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressClusterIdNie != nil {
+		t := *r.crIpaddressClusterIdNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__nie", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressClusterIdNiew != nil {
+		t := *r.crIpaddressClusterIdNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__niew", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressClusterIdNisw != nil {
+		t := *r.crIpaddressClusterIdNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__nisw", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressClusterIdRegex != nil {
+		t := *r.crIpaddressClusterIdRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_cluster_id__regex", t, "form", "multi")
+		}
+	}
 	if r.crIpaddressName != nil {
 		t := *r.crIpaddressName
 		if reflect.TypeOf(t).Kind() == reflect.Slice {
@@ -8914,6 +9127,141 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetipaddressListExecute(r ApiPl
 			}
 		} else {
 			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddress_namespace__regex", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimClusterId != nil {
+		t := *r.crIpaddressclaimClusterId
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimClusterIdEmpty != nil {
+		parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__empty", r.crIpaddressclaimClusterIdEmpty, "form", "")
+	}
+	if r.crIpaddressclaimClusterIdIc != nil {
+		t := *r.crIpaddressclaimClusterIdIc
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__ic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__ic", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimClusterIdIe != nil {
+		t := *r.crIpaddressclaimClusterIdIe
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__ie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__ie", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimClusterIdIew != nil {
+		t := *r.crIpaddressclaimClusterIdIew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__iew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__iew", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimClusterIdIregex != nil {
+		t := *r.crIpaddressclaimClusterIdIregex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__iregex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__iregex", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimClusterIdIsw != nil {
+		t := *r.crIpaddressclaimClusterIdIsw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__isw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__isw", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimClusterIdN != nil {
+		t := *r.crIpaddressclaimClusterIdN
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__n", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__n", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimClusterIdNic != nil {
+		t := *r.crIpaddressclaimClusterIdNic
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__nic", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__nic", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimClusterIdNie != nil {
+		t := *r.crIpaddressclaimClusterIdNie
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__nie", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__nie", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimClusterIdNiew != nil {
+		t := *r.crIpaddressclaimClusterIdNiew
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__niew", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__niew", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimClusterIdNisw != nil {
+		t := *r.crIpaddressclaimClusterIdNisw
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__nisw", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__nisw", t, "form", "multi")
+		}
+	}
+	if r.crIpaddressclaimClusterIdRegex != nil {
+		t := *r.crIpaddressclaimClusterIdRegex
+		if reflect.TypeOf(t).Kind() == reflect.Slice {
+			s := reflect.ValueOf(t)
+			for i := 0; i < s.Len(); i++ {
+				parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__regex", s.Index(i).Interface(), "form", "multi")
+			}
+		} else {
+			parameterAddToHeaderOrQuery(localVarQueryParams, "cr_ipaddressclaim_cluster_id__regex", t, "form", "multi")
 		}
 	}
 	if r.crIpaddressclaimName != nil {
@@ -9582,141 +9930,6 @@ func (a *PluginsAPIService) PluginsAirnityIpamSubnetipaddressListExecute(r ApiPl
 	}
 	if r.family != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "family", r.family, "form", "")
-	}
-	if r.gkeClusterId != nil {
-		t := *r.gkeClusterId
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id", t, "form", "multi")
-		}
-	}
-	if r.gkeClusterIdEmpty != nil {
-		parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__empty", r.gkeClusterIdEmpty, "form", "")
-	}
-	if r.gkeClusterIdIc != nil {
-		t := *r.gkeClusterIdIc
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__ic", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__ic", t, "form", "multi")
-		}
-	}
-	if r.gkeClusterIdIe != nil {
-		t := *r.gkeClusterIdIe
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__ie", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__ie", t, "form", "multi")
-		}
-	}
-	if r.gkeClusterIdIew != nil {
-		t := *r.gkeClusterIdIew
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__iew", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__iew", t, "form", "multi")
-		}
-	}
-	if r.gkeClusterIdIregex != nil {
-		t := *r.gkeClusterIdIregex
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__iregex", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__iregex", t, "form", "multi")
-		}
-	}
-	if r.gkeClusterIdIsw != nil {
-		t := *r.gkeClusterIdIsw
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__isw", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__isw", t, "form", "multi")
-		}
-	}
-	if r.gkeClusterIdN != nil {
-		t := *r.gkeClusterIdN
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__n", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__n", t, "form", "multi")
-		}
-	}
-	if r.gkeClusterIdNic != nil {
-		t := *r.gkeClusterIdNic
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__nic", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__nic", t, "form", "multi")
-		}
-	}
-	if r.gkeClusterIdNie != nil {
-		t := *r.gkeClusterIdNie
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__nie", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__nie", t, "form", "multi")
-		}
-	}
-	if r.gkeClusterIdNiew != nil {
-		t := *r.gkeClusterIdNiew
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__niew", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__niew", t, "form", "multi")
-		}
-	}
-	if r.gkeClusterIdNisw != nil {
-		t := *r.gkeClusterIdNisw
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__nisw", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__nisw", t, "form", "multi")
-		}
-	}
-	if r.gkeClusterIdRegex != nil {
-		t := *r.gkeClusterIdRegex
-		if reflect.TypeOf(t).Kind() == reflect.Slice {
-			s := reflect.ValueOf(t)
-			for i := 0; i < s.Len(); i++ {
-				parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__regex", s.Index(i).Interface(), "form", "multi")
-			}
-		} else {
-			parameterAddToHeaderOrQuery(localVarQueryParams, "gke_cluster_id__regex", t, "form", "multi")
-		}
 	}
 	if r.hasNatInside != nil {
 		parameterAddToHeaderOrQuery(localVarQueryParams, "has_nat_inside", r.hasNatInside, "form", "")

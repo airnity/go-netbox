@@ -20,9 +20,10 @@ Name | Type | Description | Notes
 **Comments** | Pointer to **string** |  | [optional] 
 **Tags** | Pointer to [**[]NestedTagRequest**](NestedTagRequest.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
-**GkeClusterId** | Pointer to **NullableString** |  | [optional] 
+**CrIpaddressClusterId** | Pointer to **NullableString** |  | [optional] 
 **CrIpaddressName** | Pointer to **NullableString** |  | [optional] 
 **CrIpaddressNamespace** | Pointer to **NullableString** |  | [optional] 
+**CrIpaddressclaimClusterId** | Pointer to **NullableString** |  | [optional] 
 **CrIpaddressclaimName** | Pointer to **NullableString** |  | [optional] 
 **CrIpaddressclaimNamespace** | Pointer to **NullableString** |  | [optional] 
 
@@ -505,41 +506,41 @@ SetCustomFields sets CustomFields field to given value.
 
 HasCustomFields returns a boolean if a field has been set.
 
-### GetGkeClusterId
+### GetCrIpaddressClusterId
 
-`func (o *PatchedSubnetIPAddressRequest) GetGkeClusterId() string`
+`func (o *PatchedSubnetIPAddressRequest) GetCrIpaddressClusterId() string`
 
-GetGkeClusterId returns the GkeClusterId field if non-nil, zero value otherwise.
+GetCrIpaddressClusterId returns the CrIpaddressClusterId field if non-nil, zero value otherwise.
 
-### GetGkeClusterIdOk
+### GetCrIpaddressClusterIdOk
 
-`func (o *PatchedSubnetIPAddressRequest) GetGkeClusterIdOk() (*string, bool)`
+`func (o *PatchedSubnetIPAddressRequest) GetCrIpaddressClusterIdOk() (*string, bool)`
 
-GetGkeClusterIdOk returns a tuple with the GkeClusterId field if it's non-nil, zero value otherwise
+GetCrIpaddressClusterIdOk returns a tuple with the CrIpaddressClusterId field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
-### SetGkeClusterId
+### SetCrIpaddressClusterId
 
-`func (o *PatchedSubnetIPAddressRequest) SetGkeClusterId(v string)`
+`func (o *PatchedSubnetIPAddressRequest) SetCrIpaddressClusterId(v string)`
 
-SetGkeClusterId sets GkeClusterId field to given value.
+SetCrIpaddressClusterId sets CrIpaddressClusterId field to given value.
 
-### HasGkeClusterId
+### HasCrIpaddressClusterId
 
-`func (o *PatchedSubnetIPAddressRequest) HasGkeClusterId() bool`
+`func (o *PatchedSubnetIPAddressRequest) HasCrIpaddressClusterId() bool`
 
-HasGkeClusterId returns a boolean if a field has been set.
+HasCrIpaddressClusterId returns a boolean if a field has been set.
 
-### SetGkeClusterIdNil
+### SetCrIpaddressClusterIdNil
 
-`func (o *PatchedSubnetIPAddressRequest) SetGkeClusterIdNil(b bool)`
+`func (o *PatchedSubnetIPAddressRequest) SetCrIpaddressClusterIdNil(b bool)`
 
- SetGkeClusterIdNil sets the value for GkeClusterId to be an explicit nil
+ SetCrIpaddressClusterIdNil sets the value for CrIpaddressClusterId to be an explicit nil
 
-### UnsetGkeClusterId
-`func (o *PatchedSubnetIPAddressRequest) UnsetGkeClusterId()`
+### UnsetCrIpaddressClusterId
+`func (o *PatchedSubnetIPAddressRequest) UnsetCrIpaddressClusterId()`
 
-UnsetGkeClusterId ensures that no value is present for GkeClusterId, not even an explicit nil
+UnsetCrIpaddressClusterId ensures that no value is present for CrIpaddressClusterId, not even an explicit nil
 ### GetCrIpaddressName
 
 `func (o *PatchedSubnetIPAddressRequest) GetCrIpaddressName() string`
@@ -610,6 +611,41 @@ HasCrIpaddressNamespace returns a boolean if a field has been set.
 `func (o *PatchedSubnetIPAddressRequest) UnsetCrIpaddressNamespace()`
 
 UnsetCrIpaddressNamespace ensures that no value is present for CrIpaddressNamespace, not even an explicit nil
+### GetCrIpaddressclaimClusterId
+
+`func (o *PatchedSubnetIPAddressRequest) GetCrIpaddressclaimClusterId() string`
+
+GetCrIpaddressclaimClusterId returns the CrIpaddressclaimClusterId field if non-nil, zero value otherwise.
+
+### GetCrIpaddressclaimClusterIdOk
+
+`func (o *PatchedSubnetIPAddressRequest) GetCrIpaddressclaimClusterIdOk() (*string, bool)`
+
+GetCrIpaddressclaimClusterIdOk returns a tuple with the CrIpaddressclaimClusterId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCrIpaddressclaimClusterId
+
+`func (o *PatchedSubnetIPAddressRequest) SetCrIpaddressclaimClusterId(v string)`
+
+SetCrIpaddressclaimClusterId sets CrIpaddressclaimClusterId field to given value.
+
+### HasCrIpaddressclaimClusterId
+
+`func (o *PatchedSubnetIPAddressRequest) HasCrIpaddressclaimClusterId() bool`
+
+HasCrIpaddressclaimClusterId returns a boolean if a field has been set.
+
+### SetCrIpaddressclaimClusterIdNil
+
+`func (o *PatchedSubnetIPAddressRequest) SetCrIpaddressclaimClusterIdNil(b bool)`
+
+ SetCrIpaddressclaimClusterIdNil sets the value for CrIpaddressclaimClusterId to be an explicit nil
+
+### UnsetCrIpaddressclaimClusterId
+`func (o *PatchedSubnetIPAddressRequest) UnsetCrIpaddressclaimClusterId()`
+
+UnsetCrIpaddressclaimClusterId ensures that no value is present for CrIpaddressclaimClusterId, not even an explicit nil
 ### GetCrIpaddressclaimName
 
 `func (o *PatchedSubnetIPAddressRequest) GetCrIpaddressclaimName() string`
