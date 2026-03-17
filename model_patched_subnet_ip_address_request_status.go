@@ -15,7 +15,7 @@ import (
 	"fmt"
 )
 
-// PatchedSubnetIPAddressRequestStatus * `active` - Active * `reserved` - Reserved * `orphan` - Orphan * `deprecated` - Deprecated * `dhcp` - DHCP * `slaac` - SLAAC * `auto` - Auto
+// PatchedSubnetIPAddressRequestStatus * `active` - Active * `reserved` - Reserved * `orphan` - Orphan * `claiming` - Claiming... * `deprecated` - Deprecated * `dhcp` - DHCP * `slaac` - SLAAC * `auto` - Auto
 type PatchedSubnetIPAddressRequestStatus string
 
 // List of PatchedSubnetIPAddressRequest_status
@@ -23,6 +23,7 @@ const (
 	PATCHEDSUBNETIPADDRESSREQUESTSTATUS_ACTIVE     PatchedSubnetIPAddressRequestStatus = "active"
 	PATCHEDSUBNETIPADDRESSREQUESTSTATUS_RESERVED   PatchedSubnetIPAddressRequestStatus = "reserved"
 	PATCHEDSUBNETIPADDRESSREQUESTSTATUS_ORPHAN     PatchedSubnetIPAddressRequestStatus = "orphan"
+	PATCHEDSUBNETIPADDRESSREQUESTSTATUS_CLAIMING   PatchedSubnetIPAddressRequestStatus = "claiming"
 	PATCHEDSUBNETIPADDRESSREQUESTSTATUS_DEPRECATED PatchedSubnetIPAddressRequestStatus = "deprecated"
 	PATCHEDSUBNETIPADDRESSREQUESTSTATUS_DHCP       PatchedSubnetIPAddressRequestStatus = "dhcp"
 	PATCHEDSUBNETIPADDRESSREQUESTSTATUS_SLAAC      PatchedSubnetIPAddressRequestStatus = "slaac"
@@ -34,6 +35,7 @@ var AllowedPatchedSubnetIPAddressRequestStatusEnumValues = []PatchedSubnetIPAddr
 	"active",
 	"reserved",
 	"orphan",
+	"claiming",
 	"deprecated",
 	"dhcp",
 	"slaac",
