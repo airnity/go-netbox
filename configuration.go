@@ -89,7 +89,7 @@ type Configuration struct {
 func NewConfiguration() *Configuration {
 	cfg := &Configuration{
 		DefaultHeader: make(map[string]string),
-		UserAgent:     "go-netbox/4.5.4",
+		UserAgent:     "go-netbox/4.5.5",
 		Debug:         false,
 		Servers: ServerConfigurations{
 			{

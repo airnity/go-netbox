@@ -25,6 +25,7 @@ type SubnetWithPrefix struct {
 	Name                 *string                       `json:"name,omitempty" validate:"regexp=^[a-z0-9_-]+$"`
 	Purpose              NullableString                `json:"purpose,omitempty"`
 	Prefix               NullableSubnetPrefixForSubnet `json:"prefix,omitempty"`
+	Metadata             interface{}                   `json:"metadata,omitempty"`
 	AdditionalProperties map[string]interface{}
 }
 
@@ -190,6 +191,39 @@ func (o *SubnetWithPrefix) UnsetPrefix() {
 	o.Prefix.Unset()
 }
 
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SubnetWithPrefix) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Metadata
+}
+
+// GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SubnetWithPrefix) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
+		return nil, false
+	}
+	return &o.Metadata, true
+}
+
+// HasMetadata returns a boolean if a field has been set.
+func (o *SubnetWithPrefix) HasMetadata() bool {
+	if o != nil && !IsNil(o.Metadata) {
+		return true
+	}
+
+	return false
+}
+
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *SubnetWithPrefix) SetMetadata(v interface{}) {
+	o.Metadata = v
+}
+
 func (o SubnetWithPrefix) MarshalJSON() ([]byte, error) {
 	toSerialize, err := o.ToMap()
 	if err != nil {
@@ -209,6 +243,9 @@ func (o SubnetWithPrefix) ToMap() (map[string]interface{}, error) {
 	}
 	if o.Prefix.IsSet() {
 		toSerialize["prefix"] = o.Prefix.Get()
+	}
+	if o.Metadata != nil {
+		toSerialize["metadata"] = o.Metadata
 	}
 
 	for key, value := range o.AdditionalProperties {
@@ -273,6 +310,7 @@ func (o *SubnetWithPrefix) UnmarshalJSON(data []byte) (err error) {
 		delete(additionalProperties, "name")
 		delete(additionalProperties, "purpose")
 		delete(additionalProperties, "prefix")
+		delete(additionalProperties, "metadata")
 		o.AdditionalProperties = additionalProperties
 	}
 
