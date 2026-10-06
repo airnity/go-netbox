@@ -9,8 +9,8 @@ Name | Type | Description | Notes
 **Enabled** | Pointer to **bool** |  | [optional] 
 **EventTypes** | [**[]EventRuleEventTypesInner**](EventRuleEventTypesInner.md) | The types of event which will trigger this rule. | 
 **Conditions** | Pointer to **interface{}** | A set of conditions which determine whether the event will be generated. | [optional] 
-**ActionType** | Pointer to [**EventRuleActionTypeValue**](EventRuleActionTypeValue.md) |  | [optional] 
-**ActionObjectType** | **string** |  | 
+**ActionType** | [**EventRuleActionTypeValue**](EventRuleActionTypeValue.md) |  | 
+**ActionObjectType** | Pointer to **NullableString** |  | [optional] 
 **ActionObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -21,7 +21,7 @@ Name | Type | Description | Notes
 
 ### NewWritableEventRuleRequest
 
-`func NewWritableEventRuleRequest(objectTypes []string, name string, eventTypes []EventRuleEventTypesInner, actionObjectType string, ) *WritableEventRuleRequest`
+`func NewWritableEventRuleRequest(objectTypes []string, name string, eventTypes []EventRuleEventTypesInner, actionType EventRuleActionTypeValue, ) *WritableEventRuleRequest`
 
 NewWritableEventRuleRequest instantiates a new WritableEventRuleRequest object
 This constructor will assign default values to properties that have it defined,
@@ -175,11 +175,6 @@ and a boolean to check if the value has been set.
 
 SetActionType sets ActionType field to given value.
 
-### HasActionType
-
-`func (o *WritableEventRuleRequest) HasActionType() bool`
-
-HasActionType returns a boolean if a field has been set.
 
 ### GetActionObjectType
 
@@ -200,7 +195,22 @@ and a boolean to check if the value has been set.
 
 SetActionObjectType sets ActionObjectType field to given value.
 
+### HasActionObjectType
 
+`func (o *WritableEventRuleRequest) HasActionObjectType() bool`
+
+HasActionObjectType returns a boolean if a field has been set.
+
+### SetActionObjectTypeNil
+
+`func (o *WritableEventRuleRequest) SetActionObjectTypeNil(b bool)`
+
+ SetActionObjectTypeNil sets the value for ActionObjectType to be an explicit nil
+
+### UnsetActionObjectType
+`func (o *WritableEventRuleRequest) UnsetActionObjectType()`
+
+UnsetActionObjectType ensures that no value is present for ActionObjectType, not even an explicit nil
 ### GetActionObjectId
 
 `func (o *WritableEventRuleRequest) GetActionObjectId() int64`

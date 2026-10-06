@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 ## ExtrasCustomFieldsBulkPartialUpdate
 
-> []CustomField ExtrasCustomFieldsBulkPartialUpdate(ctx).CustomFieldRequest(customFieldRequest).Execute()
+> []CustomField ExtrasCustomFieldsBulkPartialUpdate(ctx).PatchedBulkCustomFieldRequest(patchedBulkCustomFieldRequest).Execute()
 
 
 
@@ -119,11 +119,11 @@ import (
 )
 
 func main() {
-	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, openapiclient.CustomField_type_value("text"), "Name_example")} // []CustomFieldRequest | 
+	patchedBulkCustomFieldRequest := []openapiclient.PatchedBulkCustomFieldRequest{*openapiclient.NewPatchedBulkCustomFieldRequest(int32(123))} // []PatchedBulkCustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExtrasAPI.ExtrasCustomFieldsBulkPartialUpdate(context.Background()).CustomFieldRequest(customFieldRequest).Execute()
+	resp, r, err := apiClient.ExtrasAPI.ExtrasCustomFieldsBulkPartialUpdate(context.Background()).PatchedBulkCustomFieldRequest(patchedBulkCustomFieldRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExtrasAPI.ExtrasCustomFieldsBulkPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -144,7 +144,7 @@ Other parameters are passed through a pointer to a apiExtrasCustomFieldsBulkPart
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customFieldRequest** | [**[]CustomFieldRequest**](CustomFieldRequest.md) |  | 
+ **patchedBulkCustomFieldRequest** | [**[]PatchedBulkCustomFieldRequest**](PatchedBulkCustomFieldRequest.md) |  | 
 
 ### Return type
 
@@ -166,7 +166,7 @@ Name | Type | Description  | Notes
 
 ## ExtrasCustomFieldsBulkUpdate
 
-> []CustomField ExtrasCustomFieldsBulkUpdate(ctx).CustomFieldRequest(customFieldRequest).Execute()
+> []CustomField ExtrasCustomFieldsBulkUpdate(ctx).BulkCustomFieldRequest(bulkCustomFieldRequest).Execute()
 
 
 
@@ -185,11 +185,11 @@ import (
 )
 
 func main() {
-	customFieldRequest := []openapiclient.CustomFieldRequest{*openapiclient.NewCustomFieldRequest([]string{"ObjectTypes_example"}, openapiclient.CustomField_type_value("text"), "Name_example")} // []CustomFieldRequest | 
+	bulkCustomFieldRequest := []openapiclient.BulkCustomFieldRequest{*openapiclient.NewBulkCustomFieldRequest(int32(123), []string{"ObjectTypes_example"}, openapiclient.CustomField_type_value("text"), "Name_example")} // []BulkCustomFieldRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExtrasAPI.ExtrasCustomFieldsBulkUpdate(context.Background()).CustomFieldRequest(customFieldRequest).Execute()
+	resp, r, err := apiClient.ExtrasAPI.ExtrasCustomFieldsBulkUpdate(context.Background()).BulkCustomFieldRequest(bulkCustomFieldRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExtrasAPI.ExtrasCustomFieldsBulkUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -210,7 +210,7 @@ Other parameters are passed through a pointer to a apiExtrasCustomFieldsBulkUpda
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customFieldRequest** | [**[]CustomFieldRequest**](CustomFieldRequest.md) |  | 
+ **bulkCustomFieldRequest** | [**[]BulkCustomFieldRequest**](BulkCustomFieldRequest.md) |  | 
 
 ### Return type
 
@@ -366,7 +366,7 @@ Name | Type | Description  | Notes
 
 ## ExtrasCustomFieldsList
 
-> PaginatedCustomFieldList ExtrasCustomFieldsList(ctx).ChoiceSet(choiceSet).ChoiceSetN(choiceSetN).ChoiceSetId(choiceSetId).ChoiceSetIdN(choiceSetIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).FilterLogic(filterLogic).FilterLogicEmpty(filterLogicEmpty).FilterLogicIc(filterLogicIc).FilterLogicIe(filterLogicIe).FilterLogicIew(filterLogicIew).FilterLogicIregex(filterLogicIregex).FilterLogicIsw(filterLogicIsw).FilterLogicN(filterLogicN).FilterLogicNic(filterLogicNic).FilterLogicNie(filterLogicNie).FilterLogicNiew(filterLogicNiew).FilterLogicNisw(filterLogicNisw).FilterLogicRegex(filterLogicRegex).GroupName(groupName).GroupNameEmpty(groupNameEmpty).GroupNameIc(groupNameIc).GroupNameIe(groupNameIe).GroupNameIew(groupNameIew).GroupNameIregex(groupNameIregex).GroupNameIsw(groupNameIsw).GroupNameN(groupNameN).GroupNameNic(groupNameNic).GroupNameNie(groupNameNie).GroupNameNiew(groupNameNiew).GroupNameNisw(groupNameNisw).GroupNameRegex(groupNameRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsCloneable(isCloneable).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIregex(labelIregex).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LabelRegex(labelRegex).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIregex(objectTypeIregex).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeRegex(objectTypeRegex).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).RelatedObjectType(relatedObjectType).RelatedObjectTypeN(relatedObjectTypeN).RelatedObjectTypeId(relatedObjectTypeId).RelatedObjectTypeIdN(relatedObjectTypeIdN).Required(required).SearchWeight(searchWeight).SearchWeightEmpty(searchWeightEmpty).SearchWeightGt(searchWeightGt).SearchWeightGte(searchWeightGte).SearchWeightLt(searchWeightLt).SearchWeightLte(searchWeightLte).SearchWeightN(searchWeightN).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIregex(typeIregex).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).TypeRegex(typeRegex).UiEditable(uiEditable).UiEditableEmpty(uiEditableEmpty).UiEditableIc(uiEditableIc).UiEditableIe(uiEditableIe).UiEditableIew(uiEditableIew).UiEditableIregex(uiEditableIregex).UiEditableIsw(uiEditableIsw).UiEditableN(uiEditableN).UiEditableNic(uiEditableNic).UiEditableNie(uiEditableNie).UiEditableNiew(uiEditableNiew).UiEditableNisw(uiEditableNisw).UiEditableRegex(uiEditableRegex).UiVisible(uiVisible).UiVisibleEmpty(uiVisibleEmpty).UiVisibleIc(uiVisibleIc).UiVisibleIe(uiVisibleIe).UiVisibleIew(uiVisibleIew).UiVisibleIregex(uiVisibleIregex).UiVisibleIsw(uiVisibleIsw).UiVisibleN(uiVisibleN).UiVisibleNic(uiVisibleNic).UiVisibleNie(uiVisibleNie).UiVisibleNiew(uiVisibleNiew).UiVisibleNisw(uiVisibleNisw).UiVisibleRegex(uiVisibleRegex).Unique(unique).UpdatedByRequest(updatedByRequest).ValidationMaximum(validationMaximum).ValidationMaximumEmpty(validationMaximumEmpty).ValidationMaximumGt(validationMaximumGt).ValidationMaximumGte(validationMaximumGte).ValidationMaximumLt(validationMaximumLt).ValidationMaximumLte(validationMaximumLte).ValidationMaximumN(validationMaximumN).ValidationMinimum(validationMinimum).ValidationMinimumEmpty(validationMinimumEmpty).ValidationMinimumGt(validationMinimumGt).ValidationMinimumGte(validationMinimumGte).ValidationMinimumLt(validationMinimumLt).ValidationMinimumLte(validationMinimumLte).ValidationMinimumN(validationMinimumN).ValidationRegex(validationRegex).ValidationRegexEmpty(validationRegexEmpty).ValidationRegexIc(validationRegexIc).ValidationRegexIe(validationRegexIe).ValidationRegexIew(validationRegexIew).ValidationRegexIregex(validationRegexIregex).ValidationRegexIsw(validationRegexIsw).ValidationRegexN(validationRegexN).ValidationRegexNic(validationRegexNic).ValidationRegexNie(validationRegexNie).ValidationRegexNiew(validationRegexNiew).ValidationRegexNisw(validationRegexNisw).ValidationRegexRegex(validationRegexRegex).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).Execute()
+> PaginatedCustomFieldList ExtrasCustomFieldsList(ctx).Brief(brief).ChoiceSet(choiceSet).ChoiceSetN(choiceSetN).ChoiceSetId(choiceSetId).ChoiceSetIdN(choiceSetIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Fields(fields).FilterLogic(filterLogic).FilterLogicEmpty(filterLogicEmpty).FilterLogicIc(filterLogicIc).FilterLogicIe(filterLogicIe).FilterLogicIew(filterLogicIew).FilterLogicIregex(filterLogicIregex).FilterLogicIsw(filterLogicIsw).FilterLogicN(filterLogicN).FilterLogicNic(filterLogicNic).FilterLogicNie(filterLogicNie).FilterLogicNiew(filterLogicNiew).FilterLogicNisw(filterLogicNisw).FilterLogicRegex(filterLogicRegex).GroupName(groupName).GroupNameEmpty(groupNameEmpty).GroupNameIc(groupNameIc).GroupNameIe(groupNameIe).GroupNameIew(groupNameIew).GroupNameIregex(groupNameIregex).GroupNameIsw(groupNameIsw).GroupNameN(groupNameN).GroupNameNic(groupNameNic).GroupNameNie(groupNameNie).GroupNameNiew(groupNameNiew).GroupNameNisw(groupNameNisw).GroupNameRegex(groupNameRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsCloneable(isCloneable).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIregex(labelIregex).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LabelRegex(labelRegex).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).NullsFirst(nullsFirst).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIregex(objectTypeIregex).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeRegex(objectTypeRegex).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).Offset(offset).Omit(omit).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).RelatedObjectType(relatedObjectType).RelatedObjectTypeN(relatedObjectTypeN).RelatedObjectTypeId(relatedObjectTypeId).RelatedObjectTypeIdN(relatedObjectTypeIdN).Required(required).SearchWeight(searchWeight).SearchWeightEmpty(searchWeightEmpty).SearchWeightGt(searchWeightGt).SearchWeightGte(searchWeightGte).SearchWeightLt(searchWeightLt).SearchWeightLte(searchWeightLte).SearchWeightN(searchWeightN).Start(start).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIregex(typeIregex).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).TypeRegex(typeRegex).UiEditable(uiEditable).UiEditableEmpty(uiEditableEmpty).UiEditableIc(uiEditableIc).UiEditableIe(uiEditableIe).UiEditableIew(uiEditableIew).UiEditableIregex(uiEditableIregex).UiEditableIsw(uiEditableIsw).UiEditableN(uiEditableN).UiEditableNic(uiEditableNic).UiEditableNie(uiEditableNie).UiEditableNiew(uiEditableNiew).UiEditableNisw(uiEditableNisw).UiEditableRegex(uiEditableRegex).UiVisible(uiVisible).UiVisibleEmpty(uiVisibleEmpty).UiVisibleIc(uiVisibleIc).UiVisibleIe(uiVisibleIe).UiVisibleIew(uiVisibleIew).UiVisibleIregex(uiVisibleIregex).UiVisibleIsw(uiVisibleIsw).UiVisibleN(uiVisibleN).UiVisibleNic(uiVisibleNic).UiVisibleNie(uiVisibleNie).UiVisibleNiew(uiVisibleNiew).UiVisibleNisw(uiVisibleNisw).UiVisibleRegex(uiVisibleRegex).Unique(unique).UpdatedByRequest(updatedByRequest).ValidationMaximum(validationMaximum).ValidationMaximumEmpty(validationMaximumEmpty).ValidationMaximumGt(validationMaximumGt).ValidationMaximumGte(validationMaximumGte).ValidationMaximumLt(validationMaximumLt).ValidationMaximumLte(validationMaximumLte).ValidationMaximumN(validationMaximumN).ValidationMinimum(validationMinimum).ValidationMinimumEmpty(validationMinimumEmpty).ValidationMinimumGt(validationMinimumGt).ValidationMinimumGte(validationMinimumGte).ValidationMinimumLt(validationMinimumLt).ValidationMinimumLte(validationMinimumLte).ValidationMinimumN(validationMinimumN).ValidationRegex(validationRegex).ValidationRegexEmpty(validationRegexEmpty).ValidationRegexIc(validationRegexIc).ValidationRegexIe(validationRegexIe).ValidationRegexIew(validationRegexIew).ValidationRegexIregex(validationRegexIregex).ValidationRegexIsw(validationRegexIsw).ValidationRegexN(validationRegexN).ValidationRegexNic(validationRegexNic).ValidationRegexNie(validationRegexNie).ValidationRegexNiew(validationRegexNiew).ValidationRegexNisw(validationRegexNisw).ValidationRegexRegex(validationRegexRegex).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).Execute()
 
 
 
@@ -386,6 +386,7 @@ import (
 )
 
 func main() {
+	brief := true // bool | Return only brief fields for each object. (optional)
 	choiceSet := []string{"Inner_example"} // []string |  (optional)
 	choiceSetN := []string{"Inner_example"} // []string |  (optional)
 	choiceSetId := []*int32{int32(123)} // []*int32 |  (optional)
@@ -411,6 +412,7 @@ func main() {
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	descriptionRegex := []string{"Inner_example"} // []string |  (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
 	filterLogic := openapiclient.extras_custom_fields_list_filter_logic_parameter("disabled") // ExtrasCustomFieldsListFilterLogicParameter | Loose matches any instance of a given string; exact matches the entire field.  * `disabled` - Disabled * `loose` - Loose * `exact` - Exact (optional)
 	filterLogicEmpty := true // bool |  (optional)
 	filterLogicIc := []string{"Inner_example"} // []string |  (optional)
@@ -480,6 +482,7 @@ func main() {
 	nameNiew := []string{"Inner_example"} // []string |  (optional)
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
+	nullsFirst := true // bool |  (optional)
 	objectType := []string{"Inner_example"} // []string |  (optional)
 	objectTypeIc := []string{"Inner_example"} // []string |  (optional)
 	objectTypeIe := []string{"Inner_example"} // []string |  (optional)
@@ -495,6 +498,7 @@ func main() {
 	objectTypeId := []int32{int32(123)} // []int32 |  (optional)
 	objectTypeIdN := []int32{int32(123)} // []int32 |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
 	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
@@ -517,6 +521,20 @@ func main() {
 	searchWeightLt := []int32{int32(123)} // []int32 |  (optional)
 	searchWeightLte := []int32{int32(123)} // []int32 |  (optional)
 	searchWeightN := []int32{int32(123)} // []int32 |  (optional)
+	start := int32(56) // int32 | Cursor-based pagination: return results with pk >= start, ordered by pk. Mutually exclusive with offset. (optional)
+	status := openapiclient.extras_custom_fields_list_status_parameter("active") // ExtrasCustomFieldsListStatusParameter | Operational state of the field  * `active` - Active * `provisioning` - Provisioning * `deleting` - Deleting (optional)
+	statusEmpty := true // bool |  (optional)
+	statusIc := []string{"Inner_example"} // []string |  (optional)
+	statusIe := []string{"Inner_example"} // []string |  (optional)
+	statusIew := []string{"Inner_example"} // []string |  (optional)
+	statusIregex := []string{"Inner_example"} // []string |  (optional)
+	statusIsw := []string{"Inner_example"} // []string |  (optional)
+	statusN := openapiclient.extras_custom_fields_list_status_parameter("active") // ExtrasCustomFieldsListStatusParameter | Operational state of the field  * `active` - Active * `provisioning` - Provisioning * `deleting` - Deleting (optional)
+	statusNic := []string{"Inner_example"} // []string |  (optional)
+	statusNie := []string{"Inner_example"} // []string |  (optional)
+	statusNiew := []string{"Inner_example"} // []string |  (optional)
+	statusNisw := []string{"Inner_example"} // []string |  (optional)
+	statusRegex := []string{"Inner_example"} // []string |  (optional)
 	type_ := []string{"Inner_example"} // []string | The type of data this custom field holds (optional)
 	typeEmpty := true // bool |  (optional)
 	typeIc := []string{"Inner_example"} // []string | The type of data this custom field holds (optional)
@@ -595,7 +613,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExtrasAPI.ExtrasCustomFieldsList(context.Background()).ChoiceSet(choiceSet).ChoiceSetN(choiceSetN).ChoiceSetId(choiceSetId).ChoiceSetIdN(choiceSetIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).FilterLogic(filterLogic).FilterLogicEmpty(filterLogicEmpty).FilterLogicIc(filterLogicIc).FilterLogicIe(filterLogicIe).FilterLogicIew(filterLogicIew).FilterLogicIregex(filterLogicIregex).FilterLogicIsw(filterLogicIsw).FilterLogicN(filterLogicN).FilterLogicNic(filterLogicNic).FilterLogicNie(filterLogicNie).FilterLogicNiew(filterLogicNiew).FilterLogicNisw(filterLogicNisw).FilterLogicRegex(filterLogicRegex).GroupName(groupName).GroupNameEmpty(groupNameEmpty).GroupNameIc(groupNameIc).GroupNameIe(groupNameIe).GroupNameIew(groupNameIew).GroupNameIregex(groupNameIregex).GroupNameIsw(groupNameIsw).GroupNameN(groupNameN).GroupNameNic(groupNameNic).GroupNameNie(groupNameNie).GroupNameNiew(groupNameNiew).GroupNameNisw(groupNameNisw).GroupNameRegex(groupNameRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsCloneable(isCloneable).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIregex(labelIregex).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LabelRegex(labelRegex).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIregex(objectTypeIregex).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeRegex(objectTypeRegex).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).RelatedObjectType(relatedObjectType).RelatedObjectTypeN(relatedObjectTypeN).RelatedObjectTypeId(relatedObjectTypeId).RelatedObjectTypeIdN(relatedObjectTypeIdN).Required(required).SearchWeight(searchWeight).SearchWeightEmpty(searchWeightEmpty).SearchWeightGt(searchWeightGt).SearchWeightGte(searchWeightGte).SearchWeightLt(searchWeightLt).SearchWeightLte(searchWeightLte).SearchWeightN(searchWeightN).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIregex(typeIregex).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).TypeRegex(typeRegex).UiEditable(uiEditable).UiEditableEmpty(uiEditableEmpty).UiEditableIc(uiEditableIc).UiEditableIe(uiEditableIe).UiEditableIew(uiEditableIew).UiEditableIregex(uiEditableIregex).UiEditableIsw(uiEditableIsw).UiEditableN(uiEditableN).UiEditableNic(uiEditableNic).UiEditableNie(uiEditableNie).UiEditableNiew(uiEditableNiew).UiEditableNisw(uiEditableNisw).UiEditableRegex(uiEditableRegex).UiVisible(uiVisible).UiVisibleEmpty(uiVisibleEmpty).UiVisibleIc(uiVisibleIc).UiVisibleIe(uiVisibleIe).UiVisibleIew(uiVisibleIew).UiVisibleIregex(uiVisibleIregex).UiVisibleIsw(uiVisibleIsw).UiVisibleN(uiVisibleN).UiVisibleNic(uiVisibleNic).UiVisibleNie(uiVisibleNie).UiVisibleNiew(uiVisibleNiew).UiVisibleNisw(uiVisibleNisw).UiVisibleRegex(uiVisibleRegex).Unique(unique).UpdatedByRequest(updatedByRequest).ValidationMaximum(validationMaximum).ValidationMaximumEmpty(validationMaximumEmpty).ValidationMaximumGt(validationMaximumGt).ValidationMaximumGte(validationMaximumGte).ValidationMaximumLt(validationMaximumLt).ValidationMaximumLte(validationMaximumLte).ValidationMaximumN(validationMaximumN).ValidationMinimum(validationMinimum).ValidationMinimumEmpty(validationMinimumEmpty).ValidationMinimumGt(validationMinimumGt).ValidationMinimumGte(validationMinimumGte).ValidationMinimumLt(validationMinimumLt).ValidationMinimumLte(validationMinimumLte).ValidationMinimumN(validationMinimumN).ValidationRegex(validationRegex).ValidationRegexEmpty(validationRegexEmpty).ValidationRegexIc(validationRegexIc).ValidationRegexIe(validationRegexIe).ValidationRegexIew(validationRegexIew).ValidationRegexIregex(validationRegexIregex).ValidationRegexIsw(validationRegexIsw).ValidationRegexN(validationRegexN).ValidationRegexNic(validationRegexNic).ValidationRegexNie(validationRegexNie).ValidationRegexNiew(validationRegexNiew).ValidationRegexNisw(validationRegexNisw).ValidationRegexRegex(validationRegexRegex).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).Execute()
+	resp, r, err := apiClient.ExtrasAPI.ExtrasCustomFieldsList(context.Background()).Brief(brief).ChoiceSet(choiceSet).ChoiceSetN(choiceSetN).ChoiceSetId(choiceSetId).ChoiceSetIdN(choiceSetIdN).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Fields(fields).FilterLogic(filterLogic).FilterLogicEmpty(filterLogicEmpty).FilterLogicIc(filterLogicIc).FilterLogicIe(filterLogicIe).FilterLogicIew(filterLogicIew).FilterLogicIregex(filterLogicIregex).FilterLogicIsw(filterLogicIsw).FilterLogicN(filterLogicN).FilterLogicNic(filterLogicNic).FilterLogicNie(filterLogicNie).FilterLogicNiew(filterLogicNiew).FilterLogicNisw(filterLogicNisw).FilterLogicRegex(filterLogicRegex).GroupName(groupName).GroupNameEmpty(groupNameEmpty).GroupNameIc(groupNameIc).GroupNameIe(groupNameIe).GroupNameIew(groupNameIew).GroupNameIregex(groupNameIregex).GroupNameIsw(groupNameIsw).GroupNameN(groupNameN).GroupNameNic(groupNameNic).GroupNameNie(groupNameNie).GroupNameNiew(groupNameNiew).GroupNameNisw(groupNameNisw).GroupNameRegex(groupNameRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsCloneable(isCloneable).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIregex(labelIregex).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LabelRegex(labelRegex).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).NullsFirst(nullsFirst).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIregex(objectTypeIregex).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeRegex(objectTypeRegex).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).Offset(offset).Omit(omit).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).RelatedObjectType(relatedObjectType).RelatedObjectTypeN(relatedObjectTypeN).RelatedObjectTypeId(relatedObjectTypeId).RelatedObjectTypeIdN(relatedObjectTypeIdN).Required(required).SearchWeight(searchWeight).SearchWeightEmpty(searchWeightEmpty).SearchWeightGt(searchWeightGt).SearchWeightGte(searchWeightGte).SearchWeightLt(searchWeightLt).SearchWeightLte(searchWeightLte).SearchWeightN(searchWeightN).Start(start).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Type_(type_).TypeEmpty(typeEmpty).TypeIc(typeIc).TypeIe(typeIe).TypeIew(typeIew).TypeIregex(typeIregex).TypeIsw(typeIsw).TypeN(typeN).TypeNic(typeNic).TypeNie(typeNie).TypeNiew(typeNiew).TypeNisw(typeNisw).TypeRegex(typeRegex).UiEditable(uiEditable).UiEditableEmpty(uiEditableEmpty).UiEditableIc(uiEditableIc).UiEditableIe(uiEditableIe).UiEditableIew(uiEditableIew).UiEditableIregex(uiEditableIregex).UiEditableIsw(uiEditableIsw).UiEditableN(uiEditableN).UiEditableNic(uiEditableNic).UiEditableNie(uiEditableNie).UiEditableNiew(uiEditableNiew).UiEditableNisw(uiEditableNisw).UiEditableRegex(uiEditableRegex).UiVisible(uiVisible).UiVisibleEmpty(uiVisibleEmpty).UiVisibleIc(uiVisibleIc).UiVisibleIe(uiVisibleIe).UiVisibleIew(uiVisibleIew).UiVisibleIregex(uiVisibleIregex).UiVisibleIsw(uiVisibleIsw).UiVisibleN(uiVisibleN).UiVisibleNic(uiVisibleNic).UiVisibleNie(uiVisibleNie).UiVisibleNiew(uiVisibleNiew).UiVisibleNisw(uiVisibleNisw).UiVisibleRegex(uiVisibleRegex).Unique(unique).UpdatedByRequest(updatedByRequest).ValidationMaximum(validationMaximum).ValidationMaximumEmpty(validationMaximumEmpty).ValidationMaximumGt(validationMaximumGt).ValidationMaximumGte(validationMaximumGte).ValidationMaximumLt(validationMaximumLt).ValidationMaximumLte(validationMaximumLte).ValidationMaximumN(validationMaximumN).ValidationMinimum(validationMinimum).ValidationMinimumEmpty(validationMinimumEmpty).ValidationMinimumGt(validationMinimumGt).ValidationMinimumGte(validationMinimumGte).ValidationMinimumLt(validationMinimumLt).ValidationMinimumLte(validationMinimumLte).ValidationMinimumN(validationMinimumN).ValidationRegex(validationRegex).ValidationRegexEmpty(validationRegexEmpty).ValidationRegexIc(validationRegexIc).ValidationRegexIe(validationRegexIe).ValidationRegexIew(validationRegexIew).ValidationRegexIregex(validationRegexIregex).ValidationRegexIsw(validationRegexIsw).ValidationRegexN(validationRegexN).ValidationRegexNic(validationRegexNic).ValidationRegexNie(validationRegexNie).ValidationRegexNiew(validationRegexNiew).ValidationRegexNisw(validationRegexNisw).ValidationRegexRegex(validationRegexRegex).Weight(weight).WeightEmpty(weightEmpty).WeightGt(weightGt).WeightGte(weightGte).WeightLt(weightLt).WeightLte(weightLte).WeightN(weightN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExtrasAPI.ExtrasCustomFieldsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -616,6 +634,7 @@ Other parameters are passed through a pointer to a apiExtrasCustomFieldsListRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **brief** | **bool** | Return only brief fields for each object. | 
  **choiceSet** | **[]string** |  | 
  **choiceSetN** | **[]string** |  | 
  **choiceSetId** | **[]int32** |  | 
@@ -641,6 +660,7 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **descriptionRegex** | **[]string** |  | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
  **filterLogic** | [**ExtrasCustomFieldsListFilterLogicParameter**](ExtrasCustomFieldsListFilterLogicParameter.md) | Loose matches any instance of a given string; exact matches the entire field.  * &#x60;disabled&#x60; - Disabled * &#x60;loose&#x60; - Loose * &#x60;exact&#x60; - Exact | 
  **filterLogicEmpty** | **bool** |  | 
  **filterLogicIc** | **[]string** |  | 
@@ -710,6 +730,7 @@ Name | Type | Description  | Notes
  **nameNiew** | **[]string** |  | 
  **nameNisw** | **[]string** |  | 
  **nameRegex** | **[]string** |  | 
+ **nullsFirst** | **bool** |  | 
  **objectType** | **[]string** |  | 
  **objectTypeIc** | **[]string** |  | 
  **objectTypeIe** | **[]string** |  | 
@@ -725,6 +746,7 @@ Name | Type | Description  | Notes
  **objectTypeId** | **[]int32** |  | 
  **objectTypeIdN** | **[]int32** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **owner** | **[]string** | Owner (name) | 
  **ownerN** | **[]string** | Owner (name) | 
@@ -747,6 +769,20 @@ Name | Type | Description  | Notes
  **searchWeightLt** | **[]int32** |  | 
  **searchWeightLte** | **[]int32** |  | 
  **searchWeightN** | **[]int32** |  | 
+ **start** | **int32** | Cursor-based pagination: return results with pk &gt;&#x3D; start, ordered by pk. Mutually exclusive with offset. | 
+ **status** | [**ExtrasCustomFieldsListStatusParameter**](ExtrasCustomFieldsListStatusParameter.md) | Operational state of the field  * &#x60;active&#x60; - Active * &#x60;provisioning&#x60; - Provisioning * &#x60;deleting&#x60; - Deleting | 
+ **statusEmpty** | **bool** |  | 
+ **statusIc** | **[]string** |  | 
+ **statusIe** | **[]string** |  | 
+ **statusIew** | **[]string** |  | 
+ **statusIregex** | **[]string** |  | 
+ **statusIsw** | **[]string** |  | 
+ **statusN** | [**ExtrasCustomFieldsListStatusParameter**](ExtrasCustomFieldsListStatusParameter.md) | Operational state of the field  * &#x60;active&#x60; - Active * &#x60;provisioning&#x60; - Provisioning * &#x60;deleting&#x60; - Deleting | 
+ **statusNic** | **[]string** |  | 
+ **statusNie** | **[]string** |  | 
+ **statusNiew** | **[]string** |  | 
+ **statusNisw** | **[]string** |  | 
+ **statusRegex** | **[]string** |  | 
  **type_** | **[]string** | The type of data this custom field holds | 
  **typeEmpty** | **bool** |  | 
  **typeIc** | **[]string** | The type of data this custom field holds | 
@@ -915,7 +951,7 @@ Name | Type | Description  | Notes
 
 ## ExtrasCustomFieldsRetrieve
 
-> CustomField ExtrasCustomFieldsRetrieve(ctx, id).Execute()
+> CustomField ExtrasCustomFieldsRetrieve(ctx, id).Brief(brief).Fields(fields).Omit(omit).Execute()
 
 
 
@@ -935,10 +971,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this custom field.
+	brief := true // bool | Return only brief fields for each object. (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExtrasAPI.ExtrasCustomFieldsRetrieve(context.Background(), id).Execute()
+	resp, r, err := apiClient.ExtrasAPI.ExtrasCustomFieldsRetrieve(context.Background(), id).Brief(brief).Fields(fields).Omit(omit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExtrasAPI.ExtrasCustomFieldsRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -964,6 +1003,9 @@ Other parameters are passed through a pointer to a apiExtrasCustomFieldsRetrieve
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **brief** | **bool** | Return only brief fields for each object. | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
 
 ### Return type
 
@@ -1076,7 +1118,7 @@ import (
 )
 
 func main() {
-	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, openapiclient.EventRule_action_type_value("webhook"), "ActionObjectType_example")} // []EventRuleRequest | 
+	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, openapiclient.EventRule_action_type_value("webhook"))} // []EventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1112,7 +1154,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1121,7 +1163,7 @@ Name | Type | Description  | Notes
 
 ## ExtrasEventRulesBulkPartialUpdate
 
-> []EventRule ExtrasEventRulesBulkPartialUpdate(ctx).EventRuleRequest(eventRuleRequest).Execute()
+> []EventRule ExtrasEventRulesBulkPartialUpdate(ctx).PatchedBulkEventRuleRequest(patchedBulkEventRuleRequest).Execute()
 
 
 
@@ -1140,11 +1182,11 @@ import (
 )
 
 func main() {
-	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, openapiclient.EventRule_action_type_value("webhook"), "ActionObjectType_example")} // []EventRuleRequest | 
+	patchedBulkEventRuleRequest := []openapiclient.PatchedBulkEventRuleRequest{*openapiclient.NewPatchedBulkEventRuleRequest(int32(123))} // []PatchedBulkEventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExtrasAPI.ExtrasEventRulesBulkPartialUpdate(context.Background()).EventRuleRequest(eventRuleRequest).Execute()
+	resp, r, err := apiClient.ExtrasAPI.ExtrasEventRulesBulkPartialUpdate(context.Background()).PatchedBulkEventRuleRequest(patchedBulkEventRuleRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExtrasAPI.ExtrasEventRulesBulkPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1165,7 +1207,7 @@ Other parameters are passed through a pointer to a apiExtrasEventRulesBulkPartia
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventRuleRequest** | [**[]EventRuleRequest**](EventRuleRequest.md) |  | 
+ **patchedBulkEventRuleRequest** | [**[]PatchedBulkEventRuleRequest**](PatchedBulkEventRuleRequest.md) |  | 
 
 ### Return type
 
@@ -1187,7 +1229,7 @@ Name | Type | Description  | Notes
 
 ## ExtrasEventRulesBulkUpdate
 
-> []EventRule ExtrasEventRulesBulkUpdate(ctx).EventRuleRequest(eventRuleRequest).Execute()
+> []EventRule ExtrasEventRulesBulkUpdate(ctx).BulkEventRuleRequest(bulkEventRuleRequest).Execute()
 
 
 
@@ -1206,11 +1248,11 @@ import (
 )
 
 func main() {
-	eventRuleRequest := []openapiclient.EventRuleRequest{*openapiclient.NewEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, openapiclient.EventRule_action_type_value("webhook"), "ActionObjectType_example")} // []EventRuleRequest | 
+	bulkEventRuleRequest := []openapiclient.BulkEventRuleRequest{*openapiclient.NewBulkEventRuleRequest(int32(123), []string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, openapiclient.EventRule_action_type_value("webhook"))} // []BulkEventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExtrasAPI.ExtrasEventRulesBulkUpdate(context.Background()).EventRuleRequest(eventRuleRequest).Execute()
+	resp, r, err := apiClient.ExtrasAPI.ExtrasEventRulesBulkUpdate(context.Background()).BulkEventRuleRequest(bulkEventRuleRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExtrasAPI.ExtrasEventRulesBulkUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1231,7 +1273,7 @@ Other parameters are passed through a pointer to a apiExtrasEventRulesBulkUpdate
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **eventRuleRequest** | [**[]EventRuleRequest**](EventRuleRequest.md) |  | 
+ **bulkEventRuleRequest** | [**[]BulkEventRuleRequest**](BulkEventRuleRequest.md) |  | 
 
 ### Return type
 
@@ -1272,7 +1314,7 @@ import (
 )
 
 func main() {
-	extrasEventRulesCreateRequest := openapiclient.extras_event_rules_create_request{WritableEventRuleRequest: openapiclient.NewWritableEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, "ActionObjectType_example")} // ExtrasEventRulesCreateRequest | 
+	extrasEventRulesCreateRequest := openapiclient.extras_event_rules_create_request{WritableEventRuleRequest: openapiclient.NewWritableEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, openapiclient.EventRule_action_type_value("webhook"))} // ExtrasEventRulesCreateRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1387,7 +1429,7 @@ Name | Type | Description  | Notes
 
 ## ExtrasEventRulesList
 
-> PaginatedEventRuleList ExtrasEventRulesList(ctx).ActionObjectId(actionObjectId).ActionObjectIdEmpty(actionObjectIdEmpty).ActionObjectIdGt(actionObjectIdGt).ActionObjectIdGte(actionObjectIdGte).ActionObjectIdLt(actionObjectIdLt).ActionObjectIdLte(actionObjectIdLte).ActionObjectIdN(actionObjectIdN).ActionObjectType(actionObjectType).ActionObjectTypeN(actionObjectTypeN).ActionType(actionType).ActionTypeEmpty(actionTypeEmpty).ActionTypeIc(actionTypeIc).ActionTypeIe(actionTypeIe).ActionTypeIew(actionTypeIew).ActionTypeIregex(actionTypeIregex).ActionTypeIsw(actionTypeIsw).ActionTypeN(actionTypeN).ActionTypeNic(actionTypeNic).ActionTypeNie(actionTypeNie).ActionTypeNiew(actionTypeNiew).ActionTypeNisw(actionTypeNisw).ActionTypeRegex(actionTypeRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).EventType(eventType).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIregex(objectTypeIregex).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeRegex(objectTypeRegex).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedEventRuleList ExtrasEventRulesList(ctx).ActionIsAvailable(actionIsAvailable).ActionObjectId(actionObjectId).ActionObjectIdEmpty(actionObjectIdEmpty).ActionObjectIdGt(actionObjectIdGt).ActionObjectIdGte(actionObjectIdGte).ActionObjectIdLt(actionObjectIdLt).ActionObjectIdLte(actionObjectIdLte).ActionObjectIdN(actionObjectIdN).ActionObjectType(actionObjectType).ActionObjectTypeN(actionObjectTypeN).ActionType(actionType).ActionTypeEmpty(actionTypeEmpty).ActionTypeIc(actionTypeIc).ActionTypeIe(actionTypeIe).ActionTypeIew(actionTypeIew).ActionTypeIregex(actionTypeIregex).ActionTypeIsw(actionTypeIsw).ActionTypeN(actionTypeN).ActionTypeNic(actionTypeNic).ActionTypeNie(actionTypeNie).ActionTypeNiew(actionTypeNiew).ActionTypeNisw(actionTypeNisw).ActionTypeRegex(actionTypeRegex).Brief(brief).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).EventType(eventType).Fields(fields).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIregex(objectTypeIregex).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeRegex(objectTypeRegex).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).Offset(offset).Omit(omit).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Start(start).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -1407,6 +1449,7 @@ import (
 )
 
 func main() {
+	actionIsAvailable := true // bool | Action available (optional)
 	actionObjectId := []int32{int32(123)} // []int32 |  (optional)
 	actionObjectIdEmpty := []int32{int32(123)} // []int32 |  (optional)
 	actionObjectIdGt := []int32{int32(123)} // []int32 |  (optional)
@@ -1429,6 +1472,7 @@ func main() {
 	actionTypeNiew := []string{"Inner_example"} // []string |  (optional)
 	actionTypeNisw := []string{"Inner_example"} // []string |  (optional)
 	actionTypeRegex := []string{"Inner_example"} // []string |  (optional)
+	brief := true // bool | Return only brief fields for each object. (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -1452,6 +1496,7 @@ func main() {
 	descriptionRegex := []string{"Inner_example"} // []string |  (optional)
 	enabled := true // bool |  (optional)
 	eventType := []string{"Inner_example"} // []string |  (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
 	idEmpty := true // bool |  (optional)
 	idGt := []int32{int32(123)} // []int32 |  (optional)
@@ -1496,6 +1541,7 @@ func main() {
 	objectTypeId := []int32{int32(123)} // []int32 |  (optional)
 	objectTypeIdN := []int32{int32(123)} // []int32 |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
 	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
@@ -1506,15 +1552,18 @@ func main() {
 	ownerId := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	ownerIdN := []*int32{int32(123)} // []*int32 | Owner (ID) (optional)
 	q := "q_example" // string | Search (optional)
+	start := int32(56) // int32 | Cursor-based pagination: return results with pk >= start, ordered by pk. Mutually exclusive with offset. (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
+	tagAny := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []string{"Inner_example"} // []string |  (optional)
-	tagIdN := []string{"Inner_example"} // []string |  (optional)
+	tagId := []int32{int32(123)} // []int32 |  (optional)
+	tagIdAny := []int32{int32(123)} // []int32 |  (optional)
+	tagIdN := []int32{int32(123)} // []int32 |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExtrasAPI.ExtrasEventRulesList(context.Background()).ActionObjectId(actionObjectId).ActionObjectIdEmpty(actionObjectIdEmpty).ActionObjectIdGt(actionObjectIdGt).ActionObjectIdGte(actionObjectIdGte).ActionObjectIdLt(actionObjectIdLt).ActionObjectIdLte(actionObjectIdLte).ActionObjectIdN(actionObjectIdN).ActionObjectType(actionObjectType).ActionObjectTypeN(actionObjectTypeN).ActionType(actionType).ActionTypeEmpty(actionTypeEmpty).ActionTypeIc(actionTypeIc).ActionTypeIe(actionTypeIe).ActionTypeIew(actionTypeIew).ActionTypeIregex(actionTypeIregex).ActionTypeIsw(actionTypeIsw).ActionTypeN(actionTypeN).ActionTypeNic(actionTypeNic).ActionTypeNie(actionTypeNie).ActionTypeNiew(actionTypeNiew).ActionTypeNisw(actionTypeNisw).ActionTypeRegex(actionTypeRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).EventType(eventType).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIregex(objectTypeIregex).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeRegex(objectTypeRegex).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.ExtrasAPI.ExtrasEventRulesList(context.Background()).ActionIsAvailable(actionIsAvailable).ActionObjectId(actionObjectId).ActionObjectIdEmpty(actionObjectIdEmpty).ActionObjectIdGt(actionObjectIdGt).ActionObjectIdGte(actionObjectIdGte).ActionObjectIdLt(actionObjectIdLt).ActionObjectIdLte(actionObjectIdLte).ActionObjectIdN(actionObjectIdN).ActionObjectType(actionObjectType).ActionObjectTypeN(actionObjectTypeN).ActionType(actionType).ActionTypeEmpty(actionTypeEmpty).ActionTypeIc(actionTypeIc).ActionTypeIe(actionTypeIe).ActionTypeIew(actionTypeIew).ActionTypeIregex(actionTypeIregex).ActionTypeIsw(actionTypeIsw).ActionTypeN(actionTypeN).ActionTypeNic(actionTypeNic).ActionTypeNie(actionTypeNie).ActionTypeNiew(actionTypeNiew).ActionTypeNisw(actionTypeNisw).ActionTypeRegex(actionTypeRegex).Brief(brief).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).EventType(eventType).Fields(fields).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIregex(objectTypeIregex).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeRegex(objectTypeRegex).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).Offset(offset).Omit(omit).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Start(start).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExtrasAPI.ExtrasEventRulesList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1535,6 +1584,7 @@ Other parameters are passed through a pointer to a apiExtrasEventRulesListReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **actionIsAvailable** | **bool** | Action available | 
  **actionObjectId** | **[]int32** |  | 
  **actionObjectIdEmpty** | **[]int32** |  | 
  **actionObjectIdGt** | **[]int32** |  | 
@@ -1557,6 +1607,7 @@ Name | Type | Description  | Notes
  **actionTypeNiew** | **[]string** |  | 
  **actionTypeNisw** | **[]string** |  | 
  **actionTypeRegex** | **[]string** |  | 
+ **brief** | **bool** | Return only brief fields for each object. | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -1580,6 +1631,7 @@ Name | Type | Description  | Notes
  **descriptionRegex** | **[]string** |  | 
  **enabled** | **bool** |  | 
  **eventType** | **[]string** |  | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
  **id** | **[]int32** |  | 
  **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
@@ -1624,6 +1676,7 @@ Name | Type | Description  | Notes
  **objectTypeId** | **[]int32** |  | 
  **objectTypeIdN** | **[]int32** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **owner** | **[]string** | Owner (name) | 
  **ownerN** | **[]string** | Owner (name) | 
@@ -1634,10 +1687,13 @@ Name | Type | Description  | Notes
  **ownerId** | **[]int32** | Owner (ID) | 
  **ownerIdN** | **[]int32** | Owner (ID) | 
  **q** | **string** | Search | 
+ **start** | **int32** | Cursor-based pagination: return results with pk &gt;&#x3D; start, ordered by pk. Mutually exclusive with offset. | 
  **tag** | **[]string** |  | 
+ **tagAny** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]string** |  | 
- **tagIdN** | **[]string** |  | 
+ **tagId** | **[]int32** |  | 
+ **tagIdAny** | **[]int32** |  | 
+ **tagIdN** | **[]int32** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -1732,7 +1788,7 @@ Name | Type | Description  | Notes
 
 ## ExtrasEventRulesRetrieve
 
-> EventRule ExtrasEventRulesRetrieve(ctx, id).Execute()
+> EventRule ExtrasEventRulesRetrieve(ctx, id).Brief(brief).Fields(fields).Omit(omit).Execute()
 
 
 
@@ -1752,10 +1808,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this event rule.
+	brief := true // bool | Return only brief fields for each object. (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExtrasAPI.ExtrasEventRulesRetrieve(context.Background(), id).Execute()
+	resp, r, err := apiClient.ExtrasAPI.ExtrasEventRulesRetrieve(context.Background(), id).Brief(brief).Fields(fields).Omit(omit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExtrasAPI.ExtrasEventRulesRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1781,6 +1840,9 @@ Other parameters are passed through a pointer to a apiExtrasEventRulesRetrieveRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **brief** | **bool** | Return only brief fields for each object. | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
 
 ### Return type
 
@@ -1822,7 +1884,7 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this event rule.
-	writableEventRuleRequest := *openapiclient.NewWritableEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, "ActionObjectType_example") // WritableEventRuleRequest | 
+	writableEventRuleRequest := *openapiclient.NewWritableEventRuleRequest([]string{"ObjectTypes_example"}, "Name_example", []openapiclient.EventRuleEventTypesInner{openapiclient.EventRule_event_types_inner("object_created")}, openapiclient.EventRule_action_type_value("webhook")) // WritableEventRuleRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
@@ -1929,7 +1991,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1938,7 +2000,7 @@ Name | Type | Description  | Notes
 
 ## ExtrasWebhooksBulkPartialUpdate
 
-> []Webhook ExtrasWebhooksBulkPartialUpdate(ctx).WebhookRequest(webhookRequest).Execute()
+> []Webhook ExtrasWebhooksBulkPartialUpdate(ctx).PatchedBulkWebhookRequest(patchedBulkWebhookRequest).Execute()
 
 
 
@@ -1957,11 +2019,11 @@ import (
 )
 
 func main() {
-	webhookRequest := []openapiclient.WebhookRequest{*openapiclient.NewWebhookRequest("Name_example", "PayloadUrl_example")} // []WebhookRequest | 
+	patchedBulkWebhookRequest := []openapiclient.PatchedBulkWebhookRequest{*openapiclient.NewPatchedBulkWebhookRequest(int32(123))} // []PatchedBulkWebhookRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExtrasAPI.ExtrasWebhooksBulkPartialUpdate(context.Background()).WebhookRequest(webhookRequest).Execute()
+	resp, r, err := apiClient.ExtrasAPI.ExtrasWebhooksBulkPartialUpdate(context.Background()).PatchedBulkWebhookRequest(patchedBulkWebhookRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExtrasAPI.ExtrasWebhooksBulkPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1982,7 +2044,7 @@ Other parameters are passed through a pointer to a apiExtrasWebhooksBulkPartialU
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookRequest** | [**[]WebhookRequest**](WebhookRequest.md) |  | 
+ **patchedBulkWebhookRequest** | [**[]PatchedBulkWebhookRequest**](PatchedBulkWebhookRequest.md) |  | 
 
 ### Return type
 
@@ -2004,7 +2066,7 @@ Name | Type | Description  | Notes
 
 ## ExtrasWebhooksBulkUpdate
 
-> []Webhook ExtrasWebhooksBulkUpdate(ctx).WebhookRequest(webhookRequest).Execute()
+> []Webhook ExtrasWebhooksBulkUpdate(ctx).BulkWebhookRequest(bulkWebhookRequest).Execute()
 
 
 
@@ -2023,11 +2085,11 @@ import (
 )
 
 func main() {
-	webhookRequest := []openapiclient.WebhookRequest{*openapiclient.NewWebhookRequest("Name_example", "PayloadUrl_example")} // []WebhookRequest | 
+	bulkWebhookRequest := []openapiclient.BulkWebhookRequest{*openapiclient.NewBulkWebhookRequest(int32(123), "Name_example", "PayloadUrl_example")} // []BulkWebhookRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExtrasAPI.ExtrasWebhooksBulkUpdate(context.Background()).WebhookRequest(webhookRequest).Execute()
+	resp, r, err := apiClient.ExtrasAPI.ExtrasWebhooksBulkUpdate(context.Background()).BulkWebhookRequest(bulkWebhookRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExtrasAPI.ExtrasWebhooksBulkUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2048,7 +2110,7 @@ Other parameters are passed through a pointer to a apiExtrasWebhooksBulkUpdateRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookRequest** | [**[]WebhookRequest**](WebhookRequest.md) |  | 
+ **bulkWebhookRequest** | [**[]BulkWebhookRequest**](BulkWebhookRequest.md) |  | 
 
 ### Return type
 
@@ -2204,7 +2266,7 @@ Name | Type | Description  | Notes
 
 ## ExtrasWebhooksList
 
-> PaginatedWebhookList ExtrasWebhooksList(ctx).CaFilePath(caFilePath).CaFilePathEmpty(caFilePathEmpty).CaFilePathIc(caFilePathIc).CaFilePathIe(caFilePathIe).CaFilePathIew(caFilePathIew).CaFilePathIregex(caFilePathIregex).CaFilePathIsw(caFilePathIsw).CaFilePathN(caFilePathN).CaFilePathNic(caFilePathNic).CaFilePathNie(caFilePathNie).CaFilePathNiew(caFilePathNiew).CaFilePathNisw(caFilePathNisw).CaFilePathRegex(caFilePathRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).HttpContentType(httpContentType).HttpContentTypeEmpty(httpContentTypeEmpty).HttpContentTypeIc(httpContentTypeIc).HttpContentTypeIe(httpContentTypeIe).HttpContentTypeIew(httpContentTypeIew).HttpContentTypeIregex(httpContentTypeIregex).HttpContentTypeIsw(httpContentTypeIsw).HttpContentTypeN(httpContentTypeN).HttpContentTypeNic(httpContentTypeNic).HttpContentTypeNie(httpContentTypeNie).HttpContentTypeNiew(httpContentTypeNiew).HttpContentTypeNisw(httpContentTypeNisw).HttpContentTypeRegex(httpContentTypeRegex).HttpMethod(httpMethod).HttpMethodEmpty(httpMethodEmpty).HttpMethodIc(httpMethodIc).HttpMethodIe(httpMethodIe).HttpMethodIew(httpMethodIew).HttpMethodIregex(httpMethodIregex).HttpMethodIsw(httpMethodIsw).HttpMethodN(httpMethodN).HttpMethodNic(httpMethodNic).HttpMethodNie(httpMethodNie).HttpMethodNiew(httpMethodNiew).HttpMethodNisw(httpMethodNisw).HttpMethodRegex(httpMethodRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).PayloadUrl(payloadUrl).Q(q).Secret(secret).SecretEmpty(secretEmpty).SecretIc(secretIc).SecretIe(secretIe).SecretIew(secretIew).SecretIregex(secretIregex).SecretIsw(secretIsw).SecretN(secretN).SecretNic(secretNic).SecretNie(secretNie).SecretNiew(secretNiew).SecretNisw(secretNisw).SecretRegex(secretRegex).SslVerification(sslVerification).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedWebhookList ExtrasWebhooksList(ctx).Brief(brief).CaFilePath(caFilePath).CaFilePathEmpty(caFilePathEmpty).CaFilePathIc(caFilePathIc).CaFilePathIe(caFilePathIe).CaFilePathIew(caFilePathIew).CaFilePathIregex(caFilePathIregex).CaFilePathIsw(caFilePathIsw).CaFilePathN(caFilePathN).CaFilePathNic(caFilePathNic).CaFilePathNie(caFilePathNie).CaFilePathNiew(caFilePathNiew).CaFilePathNisw(caFilePathNisw).CaFilePathRegex(caFilePathRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Fields(fields).HttpContentType(httpContentType).HttpContentTypeEmpty(httpContentTypeEmpty).HttpContentTypeIc(httpContentTypeIc).HttpContentTypeIe(httpContentTypeIe).HttpContentTypeIew(httpContentTypeIew).HttpContentTypeIregex(httpContentTypeIregex).HttpContentTypeIsw(httpContentTypeIsw).HttpContentTypeN(httpContentTypeN).HttpContentTypeNic(httpContentTypeNic).HttpContentTypeNie(httpContentTypeNie).HttpContentTypeNiew(httpContentTypeNiew).HttpContentTypeNisw(httpContentTypeNisw).HttpContentTypeRegex(httpContentTypeRegex).HttpMethod(httpMethod).HttpMethodEmpty(httpMethodEmpty).HttpMethodIc(httpMethodIc).HttpMethodIe(httpMethodIe).HttpMethodIew(httpMethodIew).HttpMethodIregex(httpMethodIregex).HttpMethodIsw(httpMethodIsw).HttpMethodN(httpMethodN).HttpMethodNic(httpMethodNic).HttpMethodNie(httpMethodNie).HttpMethodNiew(httpMethodNiew).HttpMethodNisw(httpMethodNisw).HttpMethodRegex(httpMethodRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Omit(omit).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).PayloadUrl(payloadUrl).Q(q).Secret(secret).SecretEmpty(secretEmpty).SecretIc(secretIc).SecretIe(secretIe).SecretIew(secretIew).SecretIregex(secretIregex).SecretIsw(secretIsw).SecretN(secretN).SecretNic(secretNic).SecretNie(secretNie).SecretNiew(secretNiew).SecretNisw(secretNisw).SecretRegex(secretRegex).SslVerification(sslVerification).Start(start).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).Timeout(timeout).TimeoutEmpty(timeoutEmpty).TimeoutGt(timeoutGt).TimeoutGte(timeoutGte).TimeoutLt(timeoutLt).TimeoutLte(timeoutLte).TimeoutN(timeoutN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -2224,6 +2286,7 @@ import (
 )
 
 func main() {
+	brief := true // bool | Return only brief fields for each object. (optional)
 	caFilePath := []string{"Inner_example"} // []string |  (optional)
 	caFilePathEmpty := true // bool |  (optional)
 	caFilePathIc := []string{"Inner_example"} // []string |  (optional)
@@ -2258,6 +2321,7 @@ func main() {
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	descriptionRegex := []string{"Inner_example"} // []string |  (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
 	httpContentType := []string{"Inner_example"} // []string |  (optional)
 	httpContentTypeEmpty := true // bool |  (optional)
 	httpContentTypeIc := []string{"Inner_example"} // []string |  (optional)
@@ -2314,6 +2378,7 @@ func main() {
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
 	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
@@ -2339,15 +2404,25 @@ func main() {
 	secretNisw := []string{"Inner_example"} // []string |  (optional)
 	secretRegex := []string{"Inner_example"} // []string |  (optional)
 	sslVerification := true // bool |  (optional)
+	start := int32(56) // int32 | Cursor-based pagination: return results with pk >= start, ordered by pk. Mutually exclusive with offset. (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
+	tagAny := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []string{"Inner_example"} // []string |  (optional)
-	tagIdN := []string{"Inner_example"} // []string |  (optional)
+	tagId := []int32{int32(123)} // []int32 |  (optional)
+	tagIdAny := []int32{int32(123)} // []int32 |  (optional)
+	tagIdN := []int32{int32(123)} // []int32 |  (optional)
+	timeout := []int32{int32(123)} // []int32 |  (optional)
+	timeoutEmpty := true // bool |  (optional)
+	timeoutGt := []int32{int32(123)} // []int32 |  (optional)
+	timeoutGte := []int32{int32(123)} // []int32 |  (optional)
+	timeoutLt := []int32{int32(123)} // []int32 |  (optional)
+	timeoutLte := []int32{int32(123)} // []int32 |  (optional)
+	timeoutN := []int32{int32(123)} // []int32 |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExtrasAPI.ExtrasWebhooksList(context.Background()).CaFilePath(caFilePath).CaFilePathEmpty(caFilePathEmpty).CaFilePathIc(caFilePathIc).CaFilePathIe(caFilePathIe).CaFilePathIew(caFilePathIew).CaFilePathIregex(caFilePathIregex).CaFilePathIsw(caFilePathIsw).CaFilePathN(caFilePathN).CaFilePathNic(caFilePathNic).CaFilePathNie(caFilePathNie).CaFilePathNiew(caFilePathNiew).CaFilePathNisw(caFilePathNisw).CaFilePathRegex(caFilePathRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).HttpContentType(httpContentType).HttpContentTypeEmpty(httpContentTypeEmpty).HttpContentTypeIc(httpContentTypeIc).HttpContentTypeIe(httpContentTypeIe).HttpContentTypeIew(httpContentTypeIew).HttpContentTypeIregex(httpContentTypeIregex).HttpContentTypeIsw(httpContentTypeIsw).HttpContentTypeN(httpContentTypeN).HttpContentTypeNic(httpContentTypeNic).HttpContentTypeNie(httpContentTypeNie).HttpContentTypeNiew(httpContentTypeNiew).HttpContentTypeNisw(httpContentTypeNisw).HttpContentTypeRegex(httpContentTypeRegex).HttpMethod(httpMethod).HttpMethodEmpty(httpMethodEmpty).HttpMethodIc(httpMethodIc).HttpMethodIe(httpMethodIe).HttpMethodIew(httpMethodIew).HttpMethodIregex(httpMethodIregex).HttpMethodIsw(httpMethodIsw).HttpMethodN(httpMethodN).HttpMethodNic(httpMethodNic).HttpMethodNie(httpMethodNie).HttpMethodNiew(httpMethodNiew).HttpMethodNisw(httpMethodNisw).HttpMethodRegex(httpMethodRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).PayloadUrl(payloadUrl).Q(q).Secret(secret).SecretEmpty(secretEmpty).SecretIc(secretIc).SecretIe(secretIe).SecretIew(secretIew).SecretIregex(secretIregex).SecretIsw(secretIsw).SecretN(secretN).SecretNic(secretNic).SecretNie(secretNie).SecretNiew(secretNiew).SecretNisw(secretNisw).SecretRegex(secretRegex).SslVerification(sslVerification).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.ExtrasAPI.ExtrasWebhooksList(context.Background()).Brief(brief).CaFilePath(caFilePath).CaFilePathEmpty(caFilePathEmpty).CaFilePathIc(caFilePathIc).CaFilePathIe(caFilePathIe).CaFilePathIew(caFilePathIew).CaFilePathIregex(caFilePathIregex).CaFilePathIsw(caFilePathIsw).CaFilePathN(caFilePathN).CaFilePathNic(caFilePathNic).CaFilePathNie(caFilePathNie).CaFilePathNiew(caFilePathNiew).CaFilePathNisw(caFilePathNisw).CaFilePathRegex(caFilePathRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Fields(fields).HttpContentType(httpContentType).HttpContentTypeEmpty(httpContentTypeEmpty).HttpContentTypeIc(httpContentTypeIc).HttpContentTypeIe(httpContentTypeIe).HttpContentTypeIew(httpContentTypeIew).HttpContentTypeIregex(httpContentTypeIregex).HttpContentTypeIsw(httpContentTypeIsw).HttpContentTypeN(httpContentTypeN).HttpContentTypeNic(httpContentTypeNic).HttpContentTypeNie(httpContentTypeNie).HttpContentTypeNiew(httpContentTypeNiew).HttpContentTypeNisw(httpContentTypeNisw).HttpContentTypeRegex(httpContentTypeRegex).HttpMethod(httpMethod).HttpMethodEmpty(httpMethodEmpty).HttpMethodIc(httpMethodIc).HttpMethodIe(httpMethodIe).HttpMethodIew(httpMethodIew).HttpMethodIregex(httpMethodIregex).HttpMethodIsw(httpMethodIsw).HttpMethodN(httpMethodN).HttpMethodNic(httpMethodNic).HttpMethodNie(httpMethodNie).HttpMethodNiew(httpMethodNiew).HttpMethodNisw(httpMethodNisw).HttpMethodRegex(httpMethodRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Omit(omit).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).PayloadUrl(payloadUrl).Q(q).Secret(secret).SecretEmpty(secretEmpty).SecretIc(secretIc).SecretIe(secretIe).SecretIew(secretIew).SecretIregex(secretIregex).SecretIsw(secretIsw).SecretN(secretN).SecretNic(secretNic).SecretNie(secretNie).SecretNiew(secretNiew).SecretNisw(secretNisw).SecretRegex(secretRegex).SslVerification(sslVerification).Start(start).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).Timeout(timeout).TimeoutEmpty(timeoutEmpty).TimeoutGt(timeoutGt).TimeoutGte(timeoutGte).TimeoutLt(timeoutLt).TimeoutLte(timeoutLte).TimeoutN(timeoutN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExtrasAPI.ExtrasWebhooksList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2368,6 +2443,7 @@ Other parameters are passed through a pointer to a apiExtrasWebhooksListRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **brief** | **bool** | Return only brief fields for each object. | 
  **caFilePath** | **[]string** |  | 
  **caFilePathEmpty** | **bool** |  | 
  **caFilePathIc** | **[]string** |  | 
@@ -2402,6 +2478,7 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **descriptionRegex** | **[]string** |  | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
  **httpContentType** | **[]string** |  | 
  **httpContentTypeEmpty** | **bool** |  | 
  **httpContentTypeIc** | **[]string** |  | 
@@ -2458,6 +2535,7 @@ Name | Type | Description  | Notes
  **nameNisw** | **[]string** |  | 
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **owner** | **[]string** | Owner (name) | 
  **ownerN** | **[]string** | Owner (name) | 
@@ -2483,10 +2561,20 @@ Name | Type | Description  | Notes
  **secretNisw** | **[]string** |  | 
  **secretRegex** | **[]string** |  | 
  **sslVerification** | **bool** |  | 
+ **start** | **int32** | Cursor-based pagination: return results with pk &gt;&#x3D; start, ordered by pk. Mutually exclusive with offset. | 
  **tag** | **[]string** |  | 
+ **tagAny** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]string** |  | 
- **tagIdN** | **[]string** |  | 
+ **tagId** | **[]int32** |  | 
+ **tagIdAny** | **[]int32** |  | 
+ **tagIdN** | **[]int32** |  | 
+ **timeout** | **[]int32** |  | 
+ **timeoutEmpty** | **bool** |  | 
+ **timeoutGt** | **[]int32** |  | 
+ **timeoutGte** | **[]int32** |  | 
+ **timeoutLt** | **[]int32** |  | 
+ **timeoutLte** | **[]int32** |  | 
+ **timeoutN** | **[]int32** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -2581,7 +2669,7 @@ Name | Type | Description  | Notes
 
 ## ExtrasWebhooksRetrieve
 
-> Webhook ExtrasWebhooksRetrieve(ctx, id).Execute()
+> Webhook ExtrasWebhooksRetrieve(ctx, id).Brief(brief).Fields(fields).Omit(omit).Execute()
 
 
 
@@ -2601,10 +2689,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this webhook.
+	brief := true // bool | Return only brief fields for each object. (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.ExtrasAPI.ExtrasWebhooksRetrieve(context.Background(), id).Execute()
+	resp, r, err := apiClient.ExtrasAPI.ExtrasWebhooksRetrieve(context.Background(), id).Brief(brief).Fields(fields).Omit(omit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `ExtrasAPI.ExtrasWebhooksRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2630,6 +2721,9 @@ Other parameters are passed through a pointer to a apiExtrasWebhooksRetrieveRequ
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **brief** | **bool** | Return only brief fields for each object. | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
 
 ### Return type
 

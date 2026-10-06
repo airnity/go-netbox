@@ -213,13 +213,35 @@ if MODELS_TO_FILTER:
             print(f"    Missing: {', '.join(op['missing'])}")
     else:
         print("✅ No missing dependencies!\n")
-        
+
+def collapse_string_one_of(prop):
+    """
+    NetBox >= 4.7 describes "pattern or blank" string fields as a oneOf of two
+    strings (the pattern, or maxLength 0). The Go generator turns that into a
+    wrapper struct, so collapse it back to a single string carrying the pattern.
+    """
+    variants = prop.get('oneOf')
+    if not variants or not all(isinstance(v, dict) and v.get('type') == 'string' for v in variants):
+        return
+    allowed = {'type', 'pattern', 'maxLength', 'minLength', 'format'}
+    if any(set(v) - allowed for v in variants):
+        return
+    prop.pop('oneOf')
+    prop['type'] = 'string'
+    for v in variants:
+        if 'pattern' in v:
+            prop['pattern'] = v['pattern']
+    max_lengths = [v['maxLength'] for v in variants if 'maxLength' in v]
+    if max_lengths:
+        prop['maxLength'] = max(max_lengths)
+
 # backup_openapi_file(SPEC_PATH)
 if 'components' in data and 'schemas' in data['components']:
     for name, schema in data['components']['schemas'].items():
         if 'properties' in schema:
             dynamic_non_required_props = []
             for propName, prop in schema['properties'].items():
+                collapse_string_one_of(prop)
                 if 'enum' in prop and None in prop['enum']:
                     prop['enum'].remove(None)
                 if 'properties' in prop and 'value' in prop['properties'] and 'enum' in prop['properties']['value'] and None in prop['properties']['value']['enum']:

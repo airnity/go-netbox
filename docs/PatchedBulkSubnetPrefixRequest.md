@@ -1,0 +1,305 @@
+# PatchedBulkSubnetPrefixRequest
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Id** | **int32** |  | 
+**Prefix** | Pointer to **string** |  | [optional] 
+**Label** | Pointer to **string** | Name of the Subnet | [optional] 
+**IsSecondary** | Pointer to **bool** | Set Prefix subnet as secondary | [optional] 
+**AutoReserveFirstIps** | Pointer to **bool** | Automatically reserve first IP addresses (network, gateway, etc.) | [optional] 
+**AutoReserveLastIps** | Pointer to **bool** | Automatically reserve last IP addresses (broadcast, etc.) | [optional] 
+**MarkUtilized** | Pointer to **bool** | Treat this prefix as fully utilized | [optional] 
+**Status** | Pointer to [**NestedSubnetPrefixStatusValue**](NestedSubnetPrefixStatusValue.md) |  | [optional] 
+**Metadata** | Pointer to **interface{}** |  | [optional] 
+**Hash** | Pointer to **NullableString** |  | [optional] 
+
+## Methods
+
+### NewPatchedBulkSubnetPrefixRequest
+
+`func NewPatchedBulkSubnetPrefixRequest(id int32, ) *PatchedBulkSubnetPrefixRequest`
+
+NewPatchedBulkSubnetPrefixRequest instantiates a new PatchedBulkSubnetPrefixRequest object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewPatchedBulkSubnetPrefixRequestWithDefaults
+
+`func NewPatchedBulkSubnetPrefixRequestWithDefaults() *PatchedBulkSubnetPrefixRequest`
+
+NewPatchedBulkSubnetPrefixRequestWithDefaults instantiates a new PatchedBulkSubnetPrefixRequest object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetId
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetId() int32`
+
+GetId returns the Id field if non-nil, zero value otherwise.
+
+### GetIdOk
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetIdOk() (*int32, bool)`
+
+GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetId
+
+`func (o *PatchedBulkSubnetPrefixRequest) SetId(v int32)`
+
+SetId sets Id field to given value.
+
+
+### GetPrefix
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetPrefix() string`
+
+GetPrefix returns the Prefix field if non-nil, zero value otherwise.
+
+### GetPrefixOk
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetPrefixOk() (*string, bool)`
+
+GetPrefixOk returns a tuple with the Prefix field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPrefix
+
+`func (o *PatchedBulkSubnetPrefixRequest) SetPrefix(v string)`
+
+SetPrefix sets Prefix field to given value.
+
+### HasPrefix
+
+`func (o *PatchedBulkSubnetPrefixRequest) HasPrefix() bool`
+
+HasPrefix returns a boolean if a field has been set.
+
+### GetLabel
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetLabel() string`
+
+GetLabel returns the Label field if non-nil, zero value otherwise.
+
+### GetLabelOk
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetLabelOk() (*string, bool)`
+
+GetLabelOk returns a tuple with the Label field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetLabel
+
+`func (o *PatchedBulkSubnetPrefixRequest) SetLabel(v string)`
+
+SetLabel sets Label field to given value.
+
+### HasLabel
+
+`func (o *PatchedBulkSubnetPrefixRequest) HasLabel() bool`
+
+HasLabel returns a boolean if a field has been set.
+
+### GetIsSecondary
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetIsSecondary() bool`
+
+GetIsSecondary returns the IsSecondary field if non-nil, zero value otherwise.
+
+### GetIsSecondaryOk
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetIsSecondaryOk() (*bool, bool)`
+
+GetIsSecondaryOk returns a tuple with the IsSecondary field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetIsSecondary
+
+`func (o *PatchedBulkSubnetPrefixRequest) SetIsSecondary(v bool)`
+
+SetIsSecondary sets IsSecondary field to given value.
+
+### HasIsSecondary
+
+`func (o *PatchedBulkSubnetPrefixRequest) HasIsSecondary() bool`
+
+HasIsSecondary returns a boolean if a field has been set.
+
+### GetAutoReserveFirstIps
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetAutoReserveFirstIps() bool`
+
+GetAutoReserveFirstIps returns the AutoReserveFirstIps field if non-nil, zero value otherwise.
+
+### GetAutoReserveFirstIpsOk
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetAutoReserveFirstIpsOk() (*bool, bool)`
+
+GetAutoReserveFirstIpsOk returns a tuple with the AutoReserveFirstIps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoReserveFirstIps
+
+`func (o *PatchedBulkSubnetPrefixRequest) SetAutoReserveFirstIps(v bool)`
+
+SetAutoReserveFirstIps sets AutoReserveFirstIps field to given value.
+
+### HasAutoReserveFirstIps
+
+`func (o *PatchedBulkSubnetPrefixRequest) HasAutoReserveFirstIps() bool`
+
+HasAutoReserveFirstIps returns a boolean if a field has been set.
+
+### GetAutoReserveLastIps
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetAutoReserveLastIps() bool`
+
+GetAutoReserveLastIps returns the AutoReserveLastIps field if non-nil, zero value otherwise.
+
+### GetAutoReserveLastIpsOk
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetAutoReserveLastIpsOk() (*bool, bool)`
+
+GetAutoReserveLastIpsOk returns a tuple with the AutoReserveLastIps field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoReserveLastIps
+
+`func (o *PatchedBulkSubnetPrefixRequest) SetAutoReserveLastIps(v bool)`
+
+SetAutoReserveLastIps sets AutoReserveLastIps field to given value.
+
+### HasAutoReserveLastIps
+
+`func (o *PatchedBulkSubnetPrefixRequest) HasAutoReserveLastIps() bool`
+
+HasAutoReserveLastIps returns a boolean if a field has been set.
+
+### GetMarkUtilized
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetMarkUtilized() bool`
+
+GetMarkUtilized returns the MarkUtilized field if non-nil, zero value otherwise.
+
+### GetMarkUtilizedOk
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetMarkUtilizedOk() (*bool, bool)`
+
+GetMarkUtilizedOk returns a tuple with the MarkUtilized field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMarkUtilized
+
+`func (o *PatchedBulkSubnetPrefixRequest) SetMarkUtilized(v bool)`
+
+SetMarkUtilized sets MarkUtilized field to given value.
+
+### HasMarkUtilized
+
+`func (o *PatchedBulkSubnetPrefixRequest) HasMarkUtilized() bool`
+
+HasMarkUtilized returns a boolean if a field has been set.
+
+### GetStatus
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetStatus() NestedSubnetPrefixStatusValue`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetStatusOk() (*NestedSubnetPrefixStatusValue, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *PatchedBulkSubnetPrefixRequest) SetStatus(v NestedSubnetPrefixStatusValue)`
+
+SetStatus sets Status field to given value.
+
+### HasStatus
+
+`func (o *PatchedBulkSubnetPrefixRequest) HasStatus() bool`
+
+HasStatus returns a boolean if a field has been set.
+
+### GetMetadata
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetMetadata() interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetMetadataOk() (*interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *PatchedBulkSubnetPrefixRequest) SetMetadata(v interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *PatchedBulkSubnetPrefixRequest) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
+### SetMetadataNil
+
+`func (o *PatchedBulkSubnetPrefixRequest) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *PatchedBulkSubnetPrefixRequest) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
+### GetHash
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetHash() string`
+
+GetHash returns the Hash field if non-nil, zero value otherwise.
+
+### GetHashOk
+
+`func (o *PatchedBulkSubnetPrefixRequest) GetHashOk() (*string, bool)`
+
+GetHashOk returns a tuple with the Hash field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetHash
+
+`func (o *PatchedBulkSubnetPrefixRequest) SetHash(v string)`
+
+SetHash sets Hash field to given value.
+
+### HasHash
+
+`func (o *PatchedBulkSubnetPrefixRequest) HasHash() bool`
+
+HasHash returns a boolean if a field has been set.
+
+### SetHashNil
+
+`func (o *PatchedBulkSubnetPrefixRequest) SetHashNil(b bool)`
+
+ SetHashNil sets the value for Hash to be an explicit nil
+
+### UnsetHash
+`func (o *PatchedBulkSubnetPrefixRequest) UnsetHash()`
+
+UnsetHash ensures that no value is present for Hash, not even an explicit nil
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

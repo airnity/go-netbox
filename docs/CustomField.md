@@ -23,13 +23,16 @@ Name | Type | Description | Notes
 **UiVisible** | Pointer to [**CustomFieldUiVisible**](CustomFieldUiVisible.md) |  | [optional] 
 **UiEditable** | Pointer to [**CustomFieldUiEditable**](CustomFieldUiEditable.md) |  | [optional] 
 **IsCloneable** | Pointer to **bool** | Replicate this value when cloning objects | [optional] 
+**NullsFirst** | Pointer to **bool** | Sort null values before non-null values when ordering by this field | [optional] 
 **Default** | Pointer to **interface{}** | Default value for the field (must be a JSON value). Encapsulate strings with double quotes (e.g. \&quot;Foo\&quot;). | [optional] 
 **RelatedObjectFilter** | Pointer to **interface{}** | Filter the object selection choices using a query_params dict (must be a JSON value).Encapsulate strings with double quotes (e.g. \&quot;Foo\&quot;). | [optional] 
 **Weight** | Pointer to **int32** | Fields with higher weights appear lower in a form. | [optional] 
 **ValidationMinimum** | Pointer to **NullableFloat64** | Minimum allowed value (for numeric fields) | [optional] 
 **ValidationMaximum** | Pointer to **NullableFloat64** | Maximum allowed value (for numeric fields) | [optional] 
 **ValidationRegex** | Pointer to **string** | Regular expression to enforce on text field values. Use ^ and $ to force matching of entire string. For example, &lt;code&gt;^[A-Z]{3}$&lt;/code&gt; will limit values to exactly three uppercase letters. | [optional] 
+**ValidationSchema** | Pointer to **interface{}** | A JSON schema definition for validating the custom field value | [optional] 
 **ChoiceSet** | Pointer to [**NullableBriefCustomFieldChoiceSet**](BriefCustomFieldChoiceSet.md) |  | [optional] 
+**Status** | [**CustomFieldStatus**](CustomFieldStatus.md) |  | 
 **Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -39,7 +42,7 @@ Name | Type | Description | Notes
 
 ### NewCustomField
 
-`func NewCustomField(id int32, url string, display string, objectTypes []string, type_ CustomFieldType, dataType string, name string, ) *CustomField`
+`func NewCustomField(id int32, url string, display string, objectTypes []string, type_ CustomFieldType, dataType string, name string, status CustomFieldStatus, ) *CustomField`
 
 NewCustomField instantiates a new CustomField object
 This constructor will assign default values to properties that have it defined,
@@ -504,6 +507,31 @@ SetIsCloneable sets IsCloneable field to given value.
 
 HasIsCloneable returns a boolean if a field has been set.
 
+### GetNullsFirst
+
+`func (o *CustomField) GetNullsFirst() bool`
+
+GetNullsFirst returns the NullsFirst field if non-nil, zero value otherwise.
+
+### GetNullsFirstOk
+
+`func (o *CustomField) GetNullsFirstOk() (*bool, bool)`
+
+GetNullsFirstOk returns a tuple with the NullsFirst field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetNullsFirst
+
+`func (o *CustomField) SetNullsFirst(v bool)`
+
+SetNullsFirst sets NullsFirst field to given value.
+
+### HasNullsFirst
+
+`func (o *CustomField) HasNullsFirst() bool`
+
+HasNullsFirst returns a boolean if a field has been set.
+
 ### GetDefault
 
 `func (o *CustomField) GetDefault() interface{}`
@@ -694,6 +722,41 @@ SetValidationRegex sets ValidationRegex field to given value.
 
 HasValidationRegex returns a boolean if a field has been set.
 
+### GetValidationSchema
+
+`func (o *CustomField) GetValidationSchema() interface{}`
+
+GetValidationSchema returns the ValidationSchema field if non-nil, zero value otherwise.
+
+### GetValidationSchemaOk
+
+`func (o *CustomField) GetValidationSchemaOk() (*interface{}, bool)`
+
+GetValidationSchemaOk returns a tuple with the ValidationSchema field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidationSchema
+
+`func (o *CustomField) SetValidationSchema(v interface{})`
+
+SetValidationSchema sets ValidationSchema field to given value.
+
+### HasValidationSchema
+
+`func (o *CustomField) HasValidationSchema() bool`
+
+HasValidationSchema returns a boolean if a field has been set.
+
+### SetValidationSchemaNil
+
+`func (o *CustomField) SetValidationSchemaNil(b bool)`
+
+ SetValidationSchemaNil sets the value for ValidationSchema to be an explicit nil
+
+### UnsetValidationSchema
+`func (o *CustomField) UnsetValidationSchema()`
+
+UnsetValidationSchema ensures that no value is present for ValidationSchema, not even an explicit nil
 ### GetChoiceSet
 
 `func (o *CustomField) GetChoiceSet() BriefCustomFieldChoiceSet`
@@ -729,6 +792,26 @@ HasChoiceSet returns a boolean if a field has been set.
 `func (o *CustomField) UnsetChoiceSet()`
 
 UnsetChoiceSet ensures that no value is present for ChoiceSet, not even an explicit nil
+### GetStatus
+
+`func (o *CustomField) GetStatus() CustomFieldStatus`
+
+GetStatus returns the Status field if non-nil, zero value otherwise.
+
+### GetStatusOk
+
+`func (o *CustomField) GetStatusOk() (*CustomFieldStatus, bool)`
+
+GetStatusOk returns a tuple with the Status field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetStatus
+
+`func (o *CustomField) SetStatus(v CustomFieldStatus)`
+
+SetStatus sets Status field to given value.
+
+
 ### GetOwner
 
 `func (o *CustomField) GetOwner() BriefOwner`

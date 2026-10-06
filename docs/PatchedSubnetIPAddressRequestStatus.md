@@ -9,6 +9,8 @@
 
 * `ORPHAN` (value: `"orphan"`)
 
+* `CLAIMING` (value: `"claiming"`)
+
 * `DEPRECATED` (value: `"deprecated"`)
 
 * `DHCP` (value: `"dhcp"`)

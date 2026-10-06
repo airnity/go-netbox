@@ -20,3 +20,29 @@ additionalProperties:
   packageVersion: "4"
   enumClassPrefix: "true"
   useDefaultValuesForRequiredVars: "true"
+
+# NetBox 4.7 introduced Bulk*Request schemas. Inline schemas are deduplicated
+# and named after the first parent in alphabetical order, which renamed the
+# types exposed since 4.5. Map them back to keep the client API stable.
+inlineSchemaNameMappings:
+  BulkCustomFieldRequest_choice_set: CustomFieldRequest_choice_set
+  BulkCustomFieldRequest_owner: CustomFieldRequest_owner
+  BulkCustomFieldRequest_filter_logic: CustomField_filter_logic_value
+  BulkCustomFieldRequest_type: CustomField_type_value
+  BulkCustomFieldRequest_ui_editable: CustomField_ui_editable_value
+  BulkCustomFieldRequest_ui_visible: CustomField_ui_visible_value
+  BulkEventRuleRequest_action_type: EventRule_action_type_value
+  BulkEventRuleRequest_event_types_inner: EventRule_event_types_inner
+  BulkSubnetPrefixRequest_status: NestedSubnetPrefix_status_value
+  BulkSubnetIPAddressRequest_country: PatchedSubnetIPAddressRequest_country
+  BulkSubnetIPAddressRequest_role: PatchedSubnetIPAddressRequest_role
+  BulkSubnetIPAddressRequest_status: PatchedSubnetIPAddressRequest_status
+  BulkSubnetIPAddressRequest_vpc: PatchedSubnetIPAddressRequest_vpc
+  BulkSiteRequest_tenant: PatchedSubnetIPAddressRequest_tenant
+  BulkSubnetRequest_purpose: PatchedSubnetRequest_purpose
+  BulkSubnetRequest_vpc: PatchedSubnetRequest_vpc
+  BulkSiteRequest_region: PatchedSubnetRequest_region
+  BulkTenantRequest_group: PatchedTenantRequest_group
+  BulkWebhookRequest_http_method: PatchedWebhookRequest_http_method
+  BulkSiteRequest_group: PatchedWritableSiteRequest_group
+  BulkSiteRequest_status: PatchedWritableSiteRequest_status
