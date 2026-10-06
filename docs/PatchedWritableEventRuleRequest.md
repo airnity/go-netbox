@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **EventTypes** | Pointer to [**[]EventRuleEventTypesInner**](EventRuleEventTypesInner.md) | The types of event which will trigger this rule. | [optional] 
 **Conditions** | Pointer to **interface{}** | A set of conditions which determine whether the event will be generated. | [optional] 
 **ActionType** | Pointer to [**EventRuleActionTypeValue**](EventRuleActionTypeValue.md) |  | [optional] 
-**ActionObjectType** | Pointer to **string** |  | [optional] 
+**ActionObjectType** | Pointer to **NullableString** |  | [optional] 
 **ActionObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **Description** | Pointer to **string** |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
@@ -221,6 +221,16 @@ SetActionObjectType sets ActionObjectType field to given value.
 
 HasActionObjectType returns a boolean if a field has been set.
 
+### SetActionObjectTypeNil
+
+`func (o *PatchedWritableEventRuleRequest) SetActionObjectTypeNil(b bool)`
+
+ SetActionObjectTypeNil sets the value for ActionObjectType to be an explicit nil
+
+### UnsetActionObjectType
+`func (o *PatchedWritableEventRuleRequest) UnsetActionObjectType()`
+
+UnsetActionObjectType ensures that no value is present for ActionObjectType, not even an explicit nil
 ### GetActionObjectId
 
 `func (o *PatchedWritableEventRuleRequest) GetActionObjectId() int64`

@@ -120,7 +120,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -129,7 +129,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamEnvironmentBulkPartialUpdate
 
-> []Environment PluginsAirnityIpamEnvironmentBulkPartialUpdate(ctx).EnvironmentRequest(environmentRequest).Execute()
+> []Environment PluginsAirnityIpamEnvironmentBulkPartialUpdate(ctx).PatchedBulkEnvironmentRequest(patchedBulkEnvironmentRequest).Execute()
 
 
 
@@ -148,11 +148,11 @@ import (
 )
 
 func main() {
-	environmentRequest := []openapiclient.EnvironmentRequest{*openapiclient.NewEnvironmentRequest("Name_example", "Slug_example")} // []EnvironmentRequest | 
+	patchedBulkEnvironmentRequest := []openapiclient.PatchedBulkEnvironmentRequest{*openapiclient.NewPatchedBulkEnvironmentRequest(int32(123))} // []PatchedBulkEnvironmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamEnvironmentBulkPartialUpdate(context.Background()).EnvironmentRequest(environmentRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamEnvironmentBulkPartialUpdate(context.Background()).PatchedBulkEnvironmentRequest(patchedBulkEnvironmentRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamEnvironmentBulkPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -173,7 +173,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamEnvironm
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **environmentRequest** | [**[]EnvironmentRequest**](EnvironmentRequest.md) |  | 
+ **patchedBulkEnvironmentRequest** | [**[]PatchedBulkEnvironmentRequest**](PatchedBulkEnvironmentRequest.md) |  | 
 
 ### Return type
 
@@ -195,7 +195,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamEnvironmentBulkUpdate
 
-> []Environment PluginsAirnityIpamEnvironmentBulkUpdate(ctx).EnvironmentRequest(environmentRequest).Execute()
+> []Environment PluginsAirnityIpamEnvironmentBulkUpdate(ctx).BulkEnvironmentRequest(bulkEnvironmentRequest).Execute()
 
 
 
@@ -214,11 +214,11 @@ import (
 )
 
 func main() {
-	environmentRequest := []openapiclient.EnvironmentRequest{*openapiclient.NewEnvironmentRequest("Name_example", "Slug_example")} // []EnvironmentRequest | 
+	bulkEnvironmentRequest := []openapiclient.BulkEnvironmentRequest{*openapiclient.NewBulkEnvironmentRequest(int32(123), "Name_example", "Slug_example")} // []BulkEnvironmentRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamEnvironmentBulkUpdate(context.Background()).EnvironmentRequest(environmentRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamEnvironmentBulkUpdate(context.Background()).BulkEnvironmentRequest(bulkEnvironmentRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamEnvironmentBulkUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -239,7 +239,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamEnvironm
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **environmentRequest** | [**[]EnvironmentRequest**](EnvironmentRequest.md) |  | 
+ **bulkEnvironmentRequest** | [**[]BulkEnvironmentRequest**](BulkEnvironmentRequest.md) |  | 
 
 ### Return type
 
@@ -395,7 +395,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamEnvironmentList
 
-> PaginatedEnvironmentList PluginsAirnityIpamEnvironmentList(ctx).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIregex(colorIregex).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).ColorRegex(colorRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedEnvironmentList PluginsAirnityIpamEnvironmentList(ctx).Brief(brief).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIregex(colorIregex).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).ColorRegex(colorRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Fields(fields).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Omit(omit).Ordering(ordering).Q(q).Start(start).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -415,6 +415,7 @@ import (
 )
 
 func main() {
+	brief := true // bool | Return only brief fields for each object. (optional)
 	color := []string{"Inner_example"} // []string |  (optional)
 	colorEmpty := true // bool |  (optional)
 	colorIc := []string{"Inner_example"} // []string |  (optional)
@@ -436,6 +437,7 @@ func main() {
 	createdLte := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdN := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
 	idEmpty := true // bool |  (optional)
 	idGt := []int32{int32(123)} // []int32 |  (optional)
@@ -466,17 +468,21 @@ func main() {
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
+	start := int32(56) // int32 | Cursor-based pagination: return results with pk >= start, ordered by pk. Mutually exclusive with offset. (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
+	tagAny := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []string{"Inner_example"} // []string |  (optional)
-	tagIdN := []string{"Inner_example"} // []string |  (optional)
+	tagId := []int32{int32(123)} // []int32 |  (optional)
+	tagIdAny := []int32{int32(123)} // []int32 |  (optional)
+	tagIdN := []int32{int32(123)} // []int32 |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamEnvironmentList(context.Background()).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIregex(colorIregex).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).ColorRegex(colorRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamEnvironmentList(context.Background()).Brief(brief).Color(color).ColorEmpty(colorEmpty).ColorIc(colorIc).ColorIe(colorIe).ColorIew(colorIew).ColorIregex(colorIregex).ColorIsw(colorIsw).ColorN(colorN).ColorNic(colorNic).ColorNie(colorNie).ColorNiew(colorNiew).ColorNisw(colorNisw).ColorRegex(colorRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Fields(fields).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Omit(omit).Ordering(ordering).Q(q).Start(start).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamEnvironmentList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -497,6 +503,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamEnvironm
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **brief** | **bool** | Return only brief fields for each object. | 
  **color** | **[]string** |  | 
  **colorEmpty** | **bool** |  | 
  **colorIc** | **[]string** |  | 
@@ -518,6 +525,7 @@ Name | Type | Description  | Notes
  **createdLte** | [**[]time.Time**](time.Time.md) |  | 
  **createdN** | [**[]time.Time**](time.Time.md) |  | 
  **createdByRequest** | **string** |  | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
  **id** | **[]int32** |  | 
  **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
@@ -548,12 +556,16 @@ Name | Type | Description  | Notes
  **nameNisw** | **[]string** |  | 
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
+ **start** | **int32** | Cursor-based pagination: return results with pk &gt;&#x3D; start, ordered by pk. Mutually exclusive with offset. | 
  **tag** | **[]string** |  | 
+ **tagAny** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]string** |  | 
- **tagIdN** | **[]string** |  | 
+ **tagId** | **[]int32** |  | 
+ **tagIdAny** | **[]int32** |  | 
+ **tagIdN** | **[]int32** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -648,7 +660,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamEnvironmentRetrieve
 
-> Environment PluginsAirnityIpamEnvironmentRetrieve(ctx, id).Execute()
+> Environment PluginsAirnityIpamEnvironmentRetrieve(ctx, id).Brief(brief).Fields(fields).Omit(omit).Execute()
 
 
 
@@ -668,10 +680,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this Environment.
+	brief := true // bool | Return only brief fields for each object. (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamEnvironmentRetrieve(context.Background(), id).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamEnvironmentRetrieve(context.Background(), id).Brief(brief).Fields(fields).Omit(omit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamEnvironmentRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -697,6 +712,9 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamEnvironm
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **brief** | **bool** | Return only brief fields for each object. | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
 
 ### Return type
 
@@ -845,7 +863,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -854,7 +872,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetBulkPartialUpdate
 
-> []Subnet PluginsAirnityIpamSubnetBulkPartialUpdate(ctx).SubnetRequest(subnetRequest).Execute()
+> []Subnet PluginsAirnityIpamSubnetBulkPartialUpdate(ctx).PatchedBulkSubnetRequest(patchedBulkSubnetRequest).Execute()
 
 
 
@@ -873,11 +891,11 @@ import (
 )
 
 func main() {
-	subnetRequest := []openapiclient.SubnetRequest{*openapiclient.NewSubnetRequest()} // []SubnetRequest | 
+	patchedBulkSubnetRequest := []openapiclient.PatchedBulkSubnetRequest{*openapiclient.NewPatchedBulkSubnetRequest(int32(123))} // []PatchedBulkSubnetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetBulkPartialUpdate(context.Background()).SubnetRequest(subnetRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetBulkPartialUpdate(context.Background()).PatchedBulkSubnetRequest(patchedBulkSubnetRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetBulkPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -898,7 +916,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetBu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subnetRequest** | [**[]SubnetRequest**](SubnetRequest.md) |  | 
+ **patchedBulkSubnetRequest** | [**[]PatchedBulkSubnetRequest**](PatchedBulkSubnetRequest.md) |  | 
 
 ### Return type
 
@@ -920,7 +938,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetBulkUpdate
 
-> []Subnet PluginsAirnityIpamSubnetBulkUpdate(ctx).SubnetRequest(subnetRequest).Execute()
+> []Subnet PluginsAirnityIpamSubnetBulkUpdate(ctx).BulkSubnetRequest(bulkSubnetRequest).Execute()
 
 
 
@@ -939,11 +957,11 @@ import (
 )
 
 func main() {
-	subnetRequest := []openapiclient.SubnetRequest{*openapiclient.NewSubnetRequest()} // []SubnetRequest | 
+	bulkSubnetRequest := []openapiclient.BulkSubnetRequest{*openapiclient.NewBulkSubnetRequest(int32(123))} // []BulkSubnetRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetBulkUpdate(context.Background()).SubnetRequest(subnetRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetBulkUpdate(context.Background()).BulkSubnetRequest(bulkSubnetRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetBulkUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -964,7 +982,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetBu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subnetRequest** | [**[]SubnetRequest**](SubnetRequest.md) |  | 
+ **bulkSubnetRequest** | [**[]BulkSubnetRequest**](BulkSubnetRequest.md) |  | 
 
 ### Return type
 
@@ -1120,7 +1138,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetList
 
-> PaginatedSubnetList PluginsAirnityIpamSubnetList(ctx).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Environment(environment).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).EnvironmentName(environmentName).EnvironmentNameEmpty(environmentNameEmpty).EnvironmentNameIc(environmentNameIc).EnvironmentNameIe(environmentNameIe).EnvironmentNameIew(environmentNameIew).EnvironmentNameIregex(environmentNameIregex).EnvironmentNameIsw(environmentNameIsw).EnvironmentNameN(environmentNameN).EnvironmentNameNic(environmentNameNic).EnvironmentNameNie(environmentNameNie).EnvironmentNameNiew(environmentNameNiew).EnvironmentNameNisw(environmentNameNisw).EnvironmentNameRegex(environmentNameRegex).HasPrefixes(hasPrefixes).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsSecondary(isSecondary).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Prefix(prefix).PrefixLabel(prefixLabel).PrefixStatus(prefixStatus).PrefixStatusEmpty(prefixStatusEmpty).PrefixStatusIc(prefixStatusIc).PrefixStatusIe(prefixStatusIe).PrefixStatusIew(prefixStatusIew).PrefixStatusIregex(prefixStatusIregex).PrefixStatusIsw(prefixStatusIsw).PrefixStatusN(prefixStatusN).PrefixStatusNic(prefixStatusNic).PrefixStatusNie(prefixStatusNie).PrefixStatusNiew(prefixStatusNiew).PrefixStatusNisw(prefixStatusNisw).PrefixStatusRegex(prefixStatusRegex).PresentInVpcId(presentInVpcId).Purpose(purpose).PurposeN(purposeN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vpc(vpc).VpcId(vpcId).VpcIdN(vpcIdN).VpcName(vpcName).VpcNameEmpty(vpcNameEmpty).VpcNameIc(vpcNameIc).VpcNameIe(vpcNameIe).VpcNameIew(vpcNameIew).VpcNameIregex(vpcNameIregex).VpcNameIsw(vpcNameIsw).VpcNameN(vpcNameN).VpcNameNic(vpcNameNic).VpcNameNie(vpcNameNie).VpcNameNiew(vpcNameNiew).VpcNameNisw(vpcNameNisw).VpcNameRegex(vpcNameRegex).Within(within).WithinInclude(withinInclude).Execute()
+> PaginatedSubnetList PluginsAirnityIpamSubnetList(ctx).Brief(brief).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Environment(environment).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).EnvironmentName(environmentName).EnvironmentNameEmpty(environmentNameEmpty).EnvironmentNameIc(environmentNameIc).EnvironmentNameIe(environmentNameIe).EnvironmentNameIew(environmentNameIew).EnvironmentNameIregex(environmentNameIregex).EnvironmentNameIsw(environmentNameIsw).EnvironmentNameN(environmentNameN).EnvironmentNameNic(environmentNameNic).EnvironmentNameNie(environmentNameNie).EnvironmentNameNiew(environmentNameNiew).EnvironmentNameNisw(environmentNameNisw).EnvironmentNameRegex(environmentNameRegex).Fields(fields).HasPrefixes(hasPrefixes).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsSecondary(isSecondary).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Omit(omit).Ordering(ordering).Prefix(prefix).PrefixLabel(prefixLabel).PrefixStatus(prefixStatus).PrefixStatusEmpty(prefixStatusEmpty).PrefixStatusIc(prefixStatusIc).PrefixStatusIe(prefixStatusIe).PrefixStatusIew(prefixStatusIew).PrefixStatusIregex(prefixStatusIregex).PrefixStatusIsw(prefixStatusIsw).PrefixStatusN(prefixStatusN).PrefixStatusNic(prefixStatusNic).PrefixStatusNie(prefixStatusNie).PrefixStatusNiew(prefixStatusNiew).PrefixStatusNisw(prefixStatusNisw).PrefixStatusRegex(prefixStatusRegex).PresentInVpcId(presentInVpcId).Purpose(purpose).PurposeN(purposeN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Start(start).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vpc(vpc).VpcId(vpcId).VpcIdN(vpcIdN).VpcName(vpcName).VpcNameEmpty(vpcNameEmpty).VpcNameIc(vpcNameIc).VpcNameIe(vpcNameIe).VpcNameIew(vpcNameIew).VpcNameIregex(vpcNameIregex).VpcNameIsw(vpcNameIsw).VpcNameN(vpcNameN).VpcNameNic(vpcNameNic).VpcNameNie(vpcNameNie).VpcNameNiew(vpcNameNiew).VpcNameNisw(vpcNameNisw).VpcNameRegex(vpcNameRegex).Within(within).WithinInclude(withinInclude).Execute()
 
 
 
@@ -1140,6 +1158,7 @@ import (
 )
 
 func main() {
+	brief := true // bool | Return only brief fields for each object. (optional)
 	contact := []int32{int32(123)} // []int32 | Contact (optional)
 	contactN := []int32{int32(123)} // []int32 | Contact (optional)
 	contactGroup := []string{"Inner_example"} // []string |  (optional)
@@ -1184,6 +1203,7 @@ func main() {
 	environmentNameNiew := []string{"Inner_example"} // []string |  (optional)
 	environmentNameNisw := []string{"Inner_example"} // []string |  (optional)
 	environmentNameRegex := []string{"Inner_example"} // []string |  (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
 	hasPrefixes := true // bool | Has prefixes (optional)
 	hash := "hash_example" // string |  (optional)
 	hashIc := "hashIc_example" // string |  (optional)
@@ -1235,6 +1255,7 @@ func main() {
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	prefix := []string{"Inner_example"} // []string |  (optional)
 	prefixLabel := "prefixLabel_example" // string | Prefix label (optional)
@@ -1269,10 +1290,13 @@ func main() {
 	siteGroupIdN := []string{"Inner_example"} // []string |  (optional)
 	siteId := []int32{int32(123)} // []int32 | Site (ID) (optional)
 	siteIdN := []int32{int32(123)} // []int32 | Site (ID) (optional)
+	start := int32(56) // int32 | Cursor-based pagination: return results with pk >= start, ordered by pk. Mutually exclusive with offset. (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
+	tagAny := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []string{"Inner_example"} // []string |  (optional)
-	tagIdN := []string{"Inner_example"} // []string |  (optional)
+	tagId := []int32{int32(123)} // []int32 |  (optional)
+	tagIdAny := []int32{int32(123)} // []int32 |  (optional)
+	tagIdN := []int32{int32(123)} // []int32 |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -1303,7 +1327,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetList(context.Background()).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Environment(environment).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).EnvironmentName(environmentName).EnvironmentNameEmpty(environmentNameEmpty).EnvironmentNameIc(environmentNameIc).EnvironmentNameIe(environmentNameIe).EnvironmentNameIew(environmentNameIew).EnvironmentNameIregex(environmentNameIregex).EnvironmentNameIsw(environmentNameIsw).EnvironmentNameN(environmentNameN).EnvironmentNameNic(environmentNameNic).EnvironmentNameNie(environmentNameNie).EnvironmentNameNiew(environmentNameNiew).EnvironmentNameNisw(environmentNameNisw).EnvironmentNameRegex(environmentNameRegex).HasPrefixes(hasPrefixes).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsSecondary(isSecondary).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Prefix(prefix).PrefixLabel(prefixLabel).PrefixStatus(prefixStatus).PrefixStatusEmpty(prefixStatusEmpty).PrefixStatusIc(prefixStatusIc).PrefixStatusIe(prefixStatusIe).PrefixStatusIew(prefixStatusIew).PrefixStatusIregex(prefixStatusIregex).PrefixStatusIsw(prefixStatusIsw).PrefixStatusN(prefixStatusN).PrefixStatusNic(prefixStatusNic).PrefixStatusNie(prefixStatusNie).PrefixStatusNiew(prefixStatusNiew).PrefixStatusNisw(prefixStatusNisw).PrefixStatusRegex(prefixStatusRegex).PresentInVpcId(presentInVpcId).Purpose(purpose).PurposeN(purposeN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vpc(vpc).VpcId(vpcId).VpcIdN(vpcIdN).VpcName(vpcName).VpcNameEmpty(vpcNameEmpty).VpcNameIc(vpcNameIc).VpcNameIe(vpcNameIe).VpcNameIew(vpcNameIew).VpcNameIregex(vpcNameIregex).VpcNameIsw(vpcNameIsw).VpcNameN(vpcNameN).VpcNameNic(vpcNameNic).VpcNameNie(vpcNameNie).VpcNameNiew(vpcNameNiew).VpcNameNisw(vpcNameNisw).VpcNameRegex(vpcNameRegex).Within(within).WithinInclude(withinInclude).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetList(context.Background()).Brief(brief).Contact(contact).ContactN(contactN).ContactGroup(contactGroup).ContactGroupN(contactGroupN).ContactRole(contactRole).ContactRoleN(contactRoleN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Environment(environment).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).EnvironmentName(environmentName).EnvironmentNameEmpty(environmentNameEmpty).EnvironmentNameIc(environmentNameIc).EnvironmentNameIe(environmentNameIe).EnvironmentNameIew(environmentNameIew).EnvironmentNameIregex(environmentNameIregex).EnvironmentNameIsw(environmentNameIsw).EnvironmentNameN(environmentNameN).EnvironmentNameNic(environmentNameNic).EnvironmentNameNie(environmentNameNie).EnvironmentNameNiew(environmentNameNiew).EnvironmentNameNisw(environmentNameNisw).EnvironmentNameRegex(environmentNameRegex).Fields(fields).HasPrefixes(hasPrefixes).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsSecondary(isSecondary).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).Location(location).LocationN(locationN).LocationId(locationId).LocationIdN(locationIdN).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Omit(omit).Ordering(ordering).Prefix(prefix).PrefixLabel(prefixLabel).PrefixStatus(prefixStatus).PrefixStatusEmpty(prefixStatusEmpty).PrefixStatusIc(prefixStatusIc).PrefixStatusIe(prefixStatusIe).PrefixStatusIew(prefixStatusIew).PrefixStatusIregex(prefixStatusIregex).PrefixStatusIsw(prefixStatusIsw).PrefixStatusN(prefixStatusN).PrefixStatusNic(prefixStatusNic).PrefixStatusNie(prefixStatusNie).PrefixStatusNiew(prefixStatusNiew).PrefixStatusNisw(prefixStatusNisw).PrefixStatusRegex(prefixStatusRegex).PresentInVpcId(presentInVpcId).Purpose(purpose).PurposeN(purposeN).Q(q).Region(region).RegionN(regionN).RegionId(regionId).RegionIdN(regionIdN).ScopeType(scopeType).ScopeTypeN(scopeTypeN).Site(site).SiteN(siteN).SiteGroup(siteGroup).SiteGroupN(siteGroupN).SiteGroupId(siteGroupId).SiteGroupIdN(siteGroupIdN).SiteId(siteId).SiteIdN(siteIdN).Start(start).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vpc(vpc).VpcId(vpcId).VpcIdN(vpcIdN).VpcName(vpcName).VpcNameEmpty(vpcNameEmpty).VpcNameIc(vpcNameIc).VpcNameIe(vpcNameIe).VpcNameIew(vpcNameIew).VpcNameIregex(vpcNameIregex).VpcNameIsw(vpcNameIsw).VpcNameN(vpcNameN).VpcNameNic(vpcNameNic).VpcNameNie(vpcNameNie).VpcNameNiew(vpcNameNiew).VpcNameNisw(vpcNameNisw).VpcNameRegex(vpcNameRegex).Within(within).WithinInclude(withinInclude).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1324,6 +1348,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetLi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **brief** | **bool** | Return only brief fields for each object. | 
  **contact** | **[]int32** | Contact | 
  **contactN** | **[]int32** | Contact | 
  **contactGroup** | **[]string** |  | 
@@ -1368,6 +1393,7 @@ Name | Type | Description  | Notes
  **environmentNameNiew** | **[]string** |  | 
  **environmentNameNisw** | **[]string** |  | 
  **environmentNameRegex** | **[]string** |  | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
  **hasPrefixes** | **bool** | Has prefixes | 
  **hash** | **string** |  | 
  **hashIc** | **string** |  | 
@@ -1419,6 +1445,7 @@ Name | Type | Description  | Notes
  **nameNisw** | **[]string** |  | 
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **prefix** | **[]string** |  | 
  **prefixLabel** | **string** | Prefix label | 
@@ -1453,10 +1480,13 @@ Name | Type | Description  | Notes
  **siteGroupIdN** | **[]string** |  | 
  **siteId** | **[]int32** | Site (ID) | 
  **siteIdN** | **[]int32** | Site (ID) | 
+ **start** | **int32** | Cursor-based pagination: return results with pk &gt;&#x3D; start, ordered by pk. Mutually exclusive with offset. | 
  **tag** | **[]string** |  | 
+ **tagAny** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]string** |  | 
- **tagIdN** | **[]string** |  | 
+ **tagId** | **[]int32** |  | 
+ **tagIdAny** | **[]int32** |  | 
+ **tagIdN** | **[]int32** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -1577,7 +1607,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetRetrieve
 
-> Subnet PluginsAirnityIpamSubnetRetrieve(ctx, id).Execute()
+> Subnet PluginsAirnityIpamSubnetRetrieve(ctx, id).Brief(brief).Fields(fields).Omit(omit).Execute()
 
 
 
@@ -1597,10 +1627,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this subnet.
+	brief := true // bool | Return only brief fields for each object. (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetRetrieve(context.Background(), id).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetRetrieve(context.Background(), id).Brief(brief).Fields(fields).Omit(omit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1626,6 +1659,9 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **brief** | **bool** | Return only brief fields for each object. | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
 
 ### Return type
 
@@ -1774,7 +1810,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -1783,7 +1819,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetipaddressBulkPartialUpdate
 
-> []SubnetIPAddress PluginsAirnityIpamSubnetipaddressBulkPartialUpdate(ctx).SubnetIPAddressRequest(subnetIPAddressRequest).Execute()
+> []SubnetIPAddress PluginsAirnityIpamSubnetipaddressBulkPartialUpdate(ctx).PatchedBulkSubnetIPAddressRequest(patchedBulkSubnetIPAddressRequest).Execute()
 
 
 
@@ -1802,11 +1838,11 @@ import (
 )
 
 func main() {
-	subnetIPAddressRequest := []openapiclient.SubnetIPAddressRequest{*openapiclient.NewSubnetIPAddressRequest("Address_example", int32(123))} // []SubnetIPAddressRequest | 
+	patchedBulkSubnetIPAddressRequest := []openapiclient.PatchedBulkSubnetIPAddressRequest{*openapiclient.NewPatchedBulkSubnetIPAddressRequest(int32(123))} // []PatchedBulkSubnetIPAddressRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetipaddressBulkPartialUpdate(context.Background()).SubnetIPAddressRequest(subnetIPAddressRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetipaddressBulkPartialUpdate(context.Background()).PatchedBulkSubnetIPAddressRequest(patchedBulkSubnetIPAddressRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetipaddressBulkPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1827,7 +1863,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetip
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subnetIPAddressRequest** | [**[]SubnetIPAddressRequest**](SubnetIPAddressRequest.md) |  | 
+ **patchedBulkSubnetIPAddressRequest** | [**[]PatchedBulkSubnetIPAddressRequest**](PatchedBulkSubnetIPAddressRequest.md) |  | 
 
 ### Return type
 
@@ -1849,7 +1885,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetipaddressBulkUpdate
 
-> []SubnetIPAddress PluginsAirnityIpamSubnetipaddressBulkUpdate(ctx).SubnetIPAddressRequest(subnetIPAddressRequest).Execute()
+> []SubnetIPAddress PluginsAirnityIpamSubnetipaddressBulkUpdate(ctx).BulkSubnetIPAddressRequest(bulkSubnetIPAddressRequest).Execute()
 
 
 
@@ -1868,11 +1904,11 @@ import (
 )
 
 func main() {
-	subnetIPAddressRequest := []openapiclient.SubnetIPAddressRequest{*openapiclient.NewSubnetIPAddressRequest("Address_example", int32(123))} // []SubnetIPAddressRequest | 
+	bulkSubnetIPAddressRequest := []openapiclient.BulkSubnetIPAddressRequest{*openapiclient.NewBulkSubnetIPAddressRequest(int32(123), "Address_example", int32(123))} // []BulkSubnetIPAddressRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetipaddressBulkUpdate(context.Background()).SubnetIPAddressRequest(subnetIPAddressRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetipaddressBulkUpdate(context.Background()).BulkSubnetIPAddressRequest(bulkSubnetIPAddressRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetipaddressBulkUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1893,7 +1929,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetip
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subnetIPAddressRequest** | [**[]SubnetIPAddressRequest**](SubnetIPAddressRequest.md) |  | 
+ **bulkSubnetIPAddressRequest** | [**[]BulkSubnetIPAddressRequest**](BulkSubnetIPAddressRequest.md) |  | 
 
 ### Return type
 
@@ -2049,7 +2085,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetipaddressList
 
-> PaginatedSubnetIPAddressList PluginsAirnityIpamSubnetipaddressList(ctx).Address(address).ClaimedBy(claimedBy).ClaimedByEmpty(claimedByEmpty).ClaimedByIc(claimedByIc).ClaimedByIe(claimedByIe).ClaimedByIew(claimedByIew).ClaimedByIregex(claimedByIregex).ClaimedByIsw(claimedByIsw).ClaimedByN(claimedByN).ClaimedByNic(claimedByNic).ClaimedByNie(claimedByNie).ClaimedByNiew(claimedByNiew).ClaimedByNisw(claimedByNisw).ClaimedByRegex(claimedByRegex).Country(country).CountryEmpty(countryEmpty).CountryIc(countryIc).CountryIe(countryIe).CountryIew(countryIew).CountryIregex(countryIregex).CountryIsw(countryIsw).CountryN(countryN).CountryNic(countryNic).CountryNie(countryNie).CountryNiew(countryNiew).CountryNisw(countryNisw).CountryRegex(countryRegex).CrIpaddressClusterId(crIpaddressClusterId).CrIpaddressClusterIdEmpty(crIpaddressClusterIdEmpty).CrIpaddressClusterIdIc(crIpaddressClusterIdIc).CrIpaddressClusterIdIe(crIpaddressClusterIdIe).CrIpaddressClusterIdIew(crIpaddressClusterIdIew).CrIpaddressClusterIdIregex(crIpaddressClusterIdIregex).CrIpaddressClusterIdIsw(crIpaddressClusterIdIsw).CrIpaddressClusterIdN(crIpaddressClusterIdN).CrIpaddressClusterIdNic(crIpaddressClusterIdNic).CrIpaddressClusterIdNie(crIpaddressClusterIdNie).CrIpaddressClusterIdNiew(crIpaddressClusterIdNiew).CrIpaddressClusterIdNisw(crIpaddressClusterIdNisw).CrIpaddressClusterIdRegex(crIpaddressClusterIdRegex).CrIpaddressName(crIpaddressName).CrIpaddressNameEmpty(crIpaddressNameEmpty).CrIpaddressNameIc(crIpaddressNameIc).CrIpaddressNameIe(crIpaddressNameIe).CrIpaddressNameIew(crIpaddressNameIew).CrIpaddressNameIregex(crIpaddressNameIregex).CrIpaddressNameIsw(crIpaddressNameIsw).CrIpaddressNameN(crIpaddressNameN).CrIpaddressNameNic(crIpaddressNameNic).CrIpaddressNameNie(crIpaddressNameNie).CrIpaddressNameNiew(crIpaddressNameNiew).CrIpaddressNameNisw(crIpaddressNameNisw).CrIpaddressNameRegex(crIpaddressNameRegex).CrIpaddressNamespace(crIpaddressNamespace).CrIpaddressNamespaceEmpty(crIpaddressNamespaceEmpty).CrIpaddressNamespaceIc(crIpaddressNamespaceIc).CrIpaddressNamespaceIe(crIpaddressNamespaceIe).CrIpaddressNamespaceIew(crIpaddressNamespaceIew).CrIpaddressNamespaceIregex(crIpaddressNamespaceIregex).CrIpaddressNamespaceIsw(crIpaddressNamespaceIsw).CrIpaddressNamespaceN(crIpaddressNamespaceN).CrIpaddressNamespaceNic(crIpaddressNamespaceNic).CrIpaddressNamespaceNie(crIpaddressNamespaceNie).CrIpaddressNamespaceNiew(crIpaddressNamespaceNiew).CrIpaddressNamespaceNisw(crIpaddressNamespaceNisw).CrIpaddressNamespaceRegex(crIpaddressNamespaceRegex).CrIpaddressclaimClusterId(crIpaddressclaimClusterId).CrIpaddressclaimClusterIdEmpty(crIpaddressclaimClusterIdEmpty).CrIpaddressclaimClusterIdIc(crIpaddressclaimClusterIdIc).CrIpaddressclaimClusterIdIe(crIpaddressclaimClusterIdIe).CrIpaddressclaimClusterIdIew(crIpaddressclaimClusterIdIew).CrIpaddressclaimClusterIdIregex(crIpaddressclaimClusterIdIregex).CrIpaddressclaimClusterIdIsw(crIpaddressclaimClusterIdIsw).CrIpaddressclaimClusterIdN(crIpaddressclaimClusterIdN).CrIpaddressclaimClusterIdNic(crIpaddressclaimClusterIdNic).CrIpaddressclaimClusterIdNie(crIpaddressclaimClusterIdNie).CrIpaddressclaimClusterIdNiew(crIpaddressclaimClusterIdNiew).CrIpaddressclaimClusterIdNisw(crIpaddressclaimClusterIdNisw).CrIpaddressclaimClusterIdRegex(crIpaddressclaimClusterIdRegex).CrIpaddressclaimName(crIpaddressclaimName).CrIpaddressclaimNameEmpty(crIpaddressclaimNameEmpty).CrIpaddressclaimNameIc(crIpaddressclaimNameIc).CrIpaddressclaimNameIe(crIpaddressclaimNameIe).CrIpaddressclaimNameIew(crIpaddressclaimNameIew).CrIpaddressclaimNameIregex(crIpaddressclaimNameIregex).CrIpaddressclaimNameIsw(crIpaddressclaimNameIsw).CrIpaddressclaimNameN(crIpaddressclaimNameN).CrIpaddressclaimNameNic(crIpaddressclaimNameNic).CrIpaddressclaimNameNie(crIpaddressclaimNameNie).CrIpaddressclaimNameNiew(crIpaddressclaimNameNiew).CrIpaddressclaimNameNisw(crIpaddressclaimNameNisw).CrIpaddressclaimNameRegex(crIpaddressclaimNameRegex).CrIpaddressclaimNamespace(crIpaddressclaimNamespace).CrIpaddressclaimNamespaceEmpty(crIpaddressclaimNamespaceEmpty).CrIpaddressclaimNamespaceIc(crIpaddressclaimNamespaceIc).CrIpaddressclaimNamespaceIe(crIpaddressclaimNamespaceIe).CrIpaddressclaimNamespaceIew(crIpaddressclaimNamespaceIew).CrIpaddressclaimNamespaceIregex(crIpaddressclaimNamespaceIregex).CrIpaddressclaimNamespaceIsw(crIpaddressclaimNamespaceIsw).CrIpaddressclaimNamespaceN(crIpaddressclaimNamespaceN).CrIpaddressclaimNamespaceNic(crIpaddressclaimNamespaceNic).CrIpaddressclaimNamespaceNie(crIpaddressclaimNamespaceNie).CrIpaddressclaimNamespaceNiew(crIpaddressclaimNamespaceNiew).CrIpaddressclaimNamespaceNisw(crIpaddressclaimNamespaceNisw).CrIpaddressclaimNamespaceRegex(crIpaddressclaimNamespaceRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIregex(dnsNameIregex).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).DnsNameRegex(dnsNameRegex).Environment(environment).EnvironmentN(environmentN).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).Family(family).HasNatInside(hasNatInside).HasNatOutside(hasNatOutside).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleEmpty(roleEmpty).RoleIc(roleIc).RoleIe(roleIe).RoleIew(roleIew).RoleIregex(roleIregex).RoleIsw(roleIsw).RoleN(roleN).RoleNic(roleNic).RoleNie(roleNie).RoleNiew(roleNiew).RoleNisw(roleNisw).RoleRegex(roleRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Subnet(subnet).SubnetN(subnetN).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetPrefix(subnetPrefix).SubnetPrefixId(subnetPrefixId).SubnetPrefixIdN(subnetPrefixIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vpc(vpc).VpcN(vpcN).VpcId(vpcId).VpcIdN(vpcIdN).Execute()
+> PaginatedSubnetIPAddressList PluginsAirnityIpamSubnetipaddressList(ctx).Address(address).Brief(brief).ClaimedBy(claimedBy).ClaimedByEmpty(claimedByEmpty).ClaimedByIc(claimedByIc).ClaimedByIe(claimedByIe).ClaimedByIew(claimedByIew).ClaimedByIregex(claimedByIregex).ClaimedByIsw(claimedByIsw).ClaimedByN(claimedByN).ClaimedByNic(claimedByNic).ClaimedByNie(claimedByNie).ClaimedByNiew(claimedByNiew).ClaimedByNisw(claimedByNisw).ClaimedByRegex(claimedByRegex).Country(country).CountryEmpty(countryEmpty).CountryIc(countryIc).CountryIe(countryIe).CountryIew(countryIew).CountryIregex(countryIregex).CountryIsw(countryIsw).CountryN(countryN).CountryNic(countryNic).CountryNie(countryNie).CountryNiew(countryNiew).CountryNisw(countryNisw).CountryRegex(countryRegex).CrIpaddressClusterId(crIpaddressClusterId).CrIpaddressClusterIdEmpty(crIpaddressClusterIdEmpty).CrIpaddressClusterIdIc(crIpaddressClusterIdIc).CrIpaddressClusterIdIe(crIpaddressClusterIdIe).CrIpaddressClusterIdIew(crIpaddressClusterIdIew).CrIpaddressClusterIdIregex(crIpaddressClusterIdIregex).CrIpaddressClusterIdIsw(crIpaddressClusterIdIsw).CrIpaddressClusterIdN(crIpaddressClusterIdN).CrIpaddressClusterIdNic(crIpaddressClusterIdNic).CrIpaddressClusterIdNie(crIpaddressClusterIdNie).CrIpaddressClusterIdNiew(crIpaddressClusterIdNiew).CrIpaddressClusterIdNisw(crIpaddressClusterIdNisw).CrIpaddressClusterIdRegex(crIpaddressClusterIdRegex).CrIpaddressName(crIpaddressName).CrIpaddressNameEmpty(crIpaddressNameEmpty).CrIpaddressNameIc(crIpaddressNameIc).CrIpaddressNameIe(crIpaddressNameIe).CrIpaddressNameIew(crIpaddressNameIew).CrIpaddressNameIregex(crIpaddressNameIregex).CrIpaddressNameIsw(crIpaddressNameIsw).CrIpaddressNameN(crIpaddressNameN).CrIpaddressNameNic(crIpaddressNameNic).CrIpaddressNameNie(crIpaddressNameNie).CrIpaddressNameNiew(crIpaddressNameNiew).CrIpaddressNameNisw(crIpaddressNameNisw).CrIpaddressNameRegex(crIpaddressNameRegex).CrIpaddressNamespace(crIpaddressNamespace).CrIpaddressNamespaceEmpty(crIpaddressNamespaceEmpty).CrIpaddressNamespaceIc(crIpaddressNamespaceIc).CrIpaddressNamespaceIe(crIpaddressNamespaceIe).CrIpaddressNamespaceIew(crIpaddressNamespaceIew).CrIpaddressNamespaceIregex(crIpaddressNamespaceIregex).CrIpaddressNamespaceIsw(crIpaddressNamespaceIsw).CrIpaddressNamespaceN(crIpaddressNamespaceN).CrIpaddressNamespaceNic(crIpaddressNamespaceNic).CrIpaddressNamespaceNie(crIpaddressNamespaceNie).CrIpaddressNamespaceNiew(crIpaddressNamespaceNiew).CrIpaddressNamespaceNisw(crIpaddressNamespaceNisw).CrIpaddressNamespaceRegex(crIpaddressNamespaceRegex).CrIpaddressclaimClusterId(crIpaddressclaimClusterId).CrIpaddressclaimClusterIdEmpty(crIpaddressclaimClusterIdEmpty).CrIpaddressclaimClusterIdIc(crIpaddressclaimClusterIdIc).CrIpaddressclaimClusterIdIe(crIpaddressclaimClusterIdIe).CrIpaddressclaimClusterIdIew(crIpaddressclaimClusterIdIew).CrIpaddressclaimClusterIdIregex(crIpaddressclaimClusterIdIregex).CrIpaddressclaimClusterIdIsw(crIpaddressclaimClusterIdIsw).CrIpaddressclaimClusterIdN(crIpaddressclaimClusterIdN).CrIpaddressclaimClusterIdNic(crIpaddressclaimClusterIdNic).CrIpaddressclaimClusterIdNie(crIpaddressclaimClusterIdNie).CrIpaddressclaimClusterIdNiew(crIpaddressclaimClusterIdNiew).CrIpaddressclaimClusterIdNisw(crIpaddressclaimClusterIdNisw).CrIpaddressclaimClusterIdRegex(crIpaddressclaimClusterIdRegex).CrIpaddressclaimName(crIpaddressclaimName).CrIpaddressclaimNameEmpty(crIpaddressclaimNameEmpty).CrIpaddressclaimNameIc(crIpaddressclaimNameIc).CrIpaddressclaimNameIe(crIpaddressclaimNameIe).CrIpaddressclaimNameIew(crIpaddressclaimNameIew).CrIpaddressclaimNameIregex(crIpaddressclaimNameIregex).CrIpaddressclaimNameIsw(crIpaddressclaimNameIsw).CrIpaddressclaimNameN(crIpaddressclaimNameN).CrIpaddressclaimNameNic(crIpaddressclaimNameNic).CrIpaddressclaimNameNie(crIpaddressclaimNameNie).CrIpaddressclaimNameNiew(crIpaddressclaimNameNiew).CrIpaddressclaimNameNisw(crIpaddressclaimNameNisw).CrIpaddressclaimNameRegex(crIpaddressclaimNameRegex).CrIpaddressclaimNamespace(crIpaddressclaimNamespace).CrIpaddressclaimNamespaceEmpty(crIpaddressclaimNamespaceEmpty).CrIpaddressclaimNamespaceIc(crIpaddressclaimNamespaceIc).CrIpaddressclaimNamespaceIe(crIpaddressclaimNamespaceIe).CrIpaddressclaimNamespaceIew(crIpaddressclaimNamespaceIew).CrIpaddressclaimNamespaceIregex(crIpaddressclaimNamespaceIregex).CrIpaddressclaimNamespaceIsw(crIpaddressclaimNamespaceIsw).CrIpaddressclaimNamespaceN(crIpaddressclaimNamespaceN).CrIpaddressclaimNamespaceNic(crIpaddressclaimNamespaceNic).CrIpaddressclaimNamespaceNie(crIpaddressclaimNamespaceNie).CrIpaddressclaimNamespaceNiew(crIpaddressclaimNamespaceNiew).CrIpaddressclaimNamespaceNisw(crIpaddressclaimNamespaceNisw).CrIpaddressclaimNamespaceRegex(crIpaddressclaimNamespaceRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIregex(dnsNameIregex).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).DnsNameRegex(dnsNameRegex).Environment(environment).EnvironmentN(environmentN).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).Family(family).Fields(fields).HasNatInside(hasNatInside).HasNatOutside(hasNatOutside).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Omit(omit).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleEmpty(roleEmpty).RoleIc(roleIc).RoleIe(roleIe).RoleIew(roleIew).RoleIregex(roleIregex).RoleIsw(roleIsw).RoleN(roleN).RoleNic(roleNic).RoleNie(roleNie).RoleNiew(roleNiew).RoleNisw(roleNisw).RoleRegex(roleRegex).Start(start).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Subnet(subnet).SubnetN(subnetN).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetPrefix(subnetPrefix).SubnetPrefixId(subnetPrefixId).SubnetPrefixIdN(subnetPrefixIdN).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vpc(vpc).VpcN(vpcN).VpcId(vpcId).VpcIdN(vpcIdN).Execute()
 
 
 
@@ -2070,6 +2106,7 @@ import (
 
 func main() {
 	address := []string{"Inner_example"} // []string |  (optional)
+	brief := true // bool | Return only brief fields for each object. (optional)
 	claimedBy := []string{"Inner_example"} // []string |  (optional)
 	claimedByEmpty := true // bool |  (optional)
 	claimedByIc := []string{"Inner_example"} // []string |  (optional)
@@ -2213,6 +2250,7 @@ func main() {
 	environmentId := []*int32{int32(123)} // []*int32 | Environment (optional)
 	environmentIdN := []*int32{int32(123)} // []*int32 | Environment (optional)
 	family := float32(8.14) // float32 | IP Family (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
 	hasNatInside := true // bool | Has NAT inside (optional)
 	hasNatOutside := true // bool | Has NAT outside (optional)
 	hash := "hash_example" // string |  (optional)
@@ -2249,6 +2287,7 @@ func main() {
 	natInsideId := []int32{int32(123)} // []int32 | NAT inside IP address (ID) (optional)
 	natInsideIdN := []int32{int32(123)} // []int32 | NAT inside IP address (ID) (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	parent := []string{"Inner_example"} // []string |  (optional)
 	q := "q_example" // string | Search (optional)
@@ -2265,6 +2304,7 @@ func main() {
 	roleNiew := []string{"Inner_example"} // []string | The functional role of this IP (optional)
 	roleNisw := []string{"Inner_example"} // []string | The functional role of this IP (optional)
 	roleRegex := []string{"Inner_example"} // []string | The functional role of this IP (optional)
+	start := int32(56) // int32 | Cursor-based pagination: return results with pk >= start, ordered by pk. Mutually exclusive with offset. (optional)
 	status := []string{"Inner_example"} // []string | The operational status of this IP (optional)
 	statusEmpty := true // bool |  (optional)
 	statusIc := []string{"Inner_example"} // []string | The operational status of this IP (optional)
@@ -2286,9 +2326,11 @@ func main() {
 	subnetPrefixId := []int32{int32(123)} // []int32 | Subnet Prefix (ID) (optional)
 	subnetPrefixIdN := []int32{int32(123)} // []int32 | Subnet Prefix (ID) (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
+	tagAny := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []string{"Inner_example"} // []string |  (optional)
-	tagIdN := []string{"Inner_example"} // []string |  (optional)
+	tagId := []int32{int32(123)} // []int32 |  (optional)
+	tagIdAny := []int32{int32(123)} // []int32 |  (optional)
+	tagIdN := []int32{int32(123)} // []int32 |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -2305,7 +2347,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetipaddressList(context.Background()).Address(address).ClaimedBy(claimedBy).ClaimedByEmpty(claimedByEmpty).ClaimedByIc(claimedByIc).ClaimedByIe(claimedByIe).ClaimedByIew(claimedByIew).ClaimedByIregex(claimedByIregex).ClaimedByIsw(claimedByIsw).ClaimedByN(claimedByN).ClaimedByNic(claimedByNic).ClaimedByNie(claimedByNie).ClaimedByNiew(claimedByNiew).ClaimedByNisw(claimedByNisw).ClaimedByRegex(claimedByRegex).Country(country).CountryEmpty(countryEmpty).CountryIc(countryIc).CountryIe(countryIe).CountryIew(countryIew).CountryIregex(countryIregex).CountryIsw(countryIsw).CountryN(countryN).CountryNic(countryNic).CountryNie(countryNie).CountryNiew(countryNiew).CountryNisw(countryNisw).CountryRegex(countryRegex).CrIpaddressClusterId(crIpaddressClusterId).CrIpaddressClusterIdEmpty(crIpaddressClusterIdEmpty).CrIpaddressClusterIdIc(crIpaddressClusterIdIc).CrIpaddressClusterIdIe(crIpaddressClusterIdIe).CrIpaddressClusterIdIew(crIpaddressClusterIdIew).CrIpaddressClusterIdIregex(crIpaddressClusterIdIregex).CrIpaddressClusterIdIsw(crIpaddressClusterIdIsw).CrIpaddressClusterIdN(crIpaddressClusterIdN).CrIpaddressClusterIdNic(crIpaddressClusterIdNic).CrIpaddressClusterIdNie(crIpaddressClusterIdNie).CrIpaddressClusterIdNiew(crIpaddressClusterIdNiew).CrIpaddressClusterIdNisw(crIpaddressClusterIdNisw).CrIpaddressClusterIdRegex(crIpaddressClusterIdRegex).CrIpaddressName(crIpaddressName).CrIpaddressNameEmpty(crIpaddressNameEmpty).CrIpaddressNameIc(crIpaddressNameIc).CrIpaddressNameIe(crIpaddressNameIe).CrIpaddressNameIew(crIpaddressNameIew).CrIpaddressNameIregex(crIpaddressNameIregex).CrIpaddressNameIsw(crIpaddressNameIsw).CrIpaddressNameN(crIpaddressNameN).CrIpaddressNameNic(crIpaddressNameNic).CrIpaddressNameNie(crIpaddressNameNie).CrIpaddressNameNiew(crIpaddressNameNiew).CrIpaddressNameNisw(crIpaddressNameNisw).CrIpaddressNameRegex(crIpaddressNameRegex).CrIpaddressNamespace(crIpaddressNamespace).CrIpaddressNamespaceEmpty(crIpaddressNamespaceEmpty).CrIpaddressNamespaceIc(crIpaddressNamespaceIc).CrIpaddressNamespaceIe(crIpaddressNamespaceIe).CrIpaddressNamespaceIew(crIpaddressNamespaceIew).CrIpaddressNamespaceIregex(crIpaddressNamespaceIregex).CrIpaddressNamespaceIsw(crIpaddressNamespaceIsw).CrIpaddressNamespaceN(crIpaddressNamespaceN).CrIpaddressNamespaceNic(crIpaddressNamespaceNic).CrIpaddressNamespaceNie(crIpaddressNamespaceNie).CrIpaddressNamespaceNiew(crIpaddressNamespaceNiew).CrIpaddressNamespaceNisw(crIpaddressNamespaceNisw).CrIpaddressNamespaceRegex(crIpaddressNamespaceRegex).CrIpaddressclaimClusterId(crIpaddressclaimClusterId).CrIpaddressclaimClusterIdEmpty(crIpaddressclaimClusterIdEmpty).CrIpaddressclaimClusterIdIc(crIpaddressclaimClusterIdIc).CrIpaddressclaimClusterIdIe(crIpaddressclaimClusterIdIe).CrIpaddressclaimClusterIdIew(crIpaddressclaimClusterIdIew).CrIpaddressclaimClusterIdIregex(crIpaddressclaimClusterIdIregex).CrIpaddressclaimClusterIdIsw(crIpaddressclaimClusterIdIsw).CrIpaddressclaimClusterIdN(crIpaddressclaimClusterIdN).CrIpaddressclaimClusterIdNic(crIpaddressclaimClusterIdNic).CrIpaddressclaimClusterIdNie(crIpaddressclaimClusterIdNie).CrIpaddressclaimClusterIdNiew(crIpaddressclaimClusterIdNiew).CrIpaddressclaimClusterIdNisw(crIpaddressclaimClusterIdNisw).CrIpaddressclaimClusterIdRegex(crIpaddressclaimClusterIdRegex).CrIpaddressclaimName(crIpaddressclaimName).CrIpaddressclaimNameEmpty(crIpaddressclaimNameEmpty).CrIpaddressclaimNameIc(crIpaddressclaimNameIc).CrIpaddressclaimNameIe(crIpaddressclaimNameIe).CrIpaddressclaimNameIew(crIpaddressclaimNameIew).CrIpaddressclaimNameIregex(crIpaddressclaimNameIregex).CrIpaddressclaimNameIsw(crIpaddressclaimNameIsw).CrIpaddressclaimNameN(crIpaddressclaimNameN).CrIpaddressclaimNameNic(crIpaddressclaimNameNic).CrIpaddressclaimNameNie(crIpaddressclaimNameNie).CrIpaddressclaimNameNiew(crIpaddressclaimNameNiew).CrIpaddressclaimNameNisw(crIpaddressclaimNameNisw).CrIpaddressclaimNameRegex(crIpaddressclaimNameRegex).CrIpaddressclaimNamespace(crIpaddressclaimNamespace).CrIpaddressclaimNamespaceEmpty(crIpaddressclaimNamespaceEmpty).CrIpaddressclaimNamespaceIc(crIpaddressclaimNamespaceIc).CrIpaddressclaimNamespaceIe(crIpaddressclaimNamespaceIe).CrIpaddressclaimNamespaceIew(crIpaddressclaimNamespaceIew).CrIpaddressclaimNamespaceIregex(crIpaddressclaimNamespaceIregex).CrIpaddressclaimNamespaceIsw(crIpaddressclaimNamespaceIsw).CrIpaddressclaimNamespaceN(crIpaddressclaimNamespaceN).CrIpaddressclaimNamespaceNic(crIpaddressclaimNamespaceNic).CrIpaddressclaimNamespaceNie(crIpaddressclaimNamespaceNie).CrIpaddressclaimNamespaceNiew(crIpaddressclaimNamespaceNiew).CrIpaddressclaimNamespaceNisw(crIpaddressclaimNamespaceNisw).CrIpaddressclaimNamespaceRegex(crIpaddressclaimNamespaceRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIregex(dnsNameIregex).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).DnsNameRegex(dnsNameRegex).Environment(environment).EnvironmentN(environmentN).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).Family(family).HasNatInside(hasNatInside).HasNatOutside(hasNatOutside).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleEmpty(roleEmpty).RoleIc(roleIc).RoleIe(roleIe).RoleIew(roleIew).RoleIregex(roleIregex).RoleIsw(roleIsw).RoleN(roleN).RoleNic(roleNic).RoleNie(roleNie).RoleNiew(roleNiew).RoleNisw(roleNisw).RoleRegex(roleRegex).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Subnet(subnet).SubnetN(subnetN).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetPrefix(subnetPrefix).SubnetPrefixId(subnetPrefixId).SubnetPrefixIdN(subnetPrefixIdN).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vpc(vpc).VpcN(vpcN).VpcId(vpcId).VpcIdN(vpcIdN).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetipaddressList(context.Background()).Address(address).Brief(brief).ClaimedBy(claimedBy).ClaimedByEmpty(claimedByEmpty).ClaimedByIc(claimedByIc).ClaimedByIe(claimedByIe).ClaimedByIew(claimedByIew).ClaimedByIregex(claimedByIregex).ClaimedByIsw(claimedByIsw).ClaimedByN(claimedByN).ClaimedByNic(claimedByNic).ClaimedByNie(claimedByNie).ClaimedByNiew(claimedByNiew).ClaimedByNisw(claimedByNisw).ClaimedByRegex(claimedByRegex).Country(country).CountryEmpty(countryEmpty).CountryIc(countryIc).CountryIe(countryIe).CountryIew(countryIew).CountryIregex(countryIregex).CountryIsw(countryIsw).CountryN(countryN).CountryNic(countryNic).CountryNie(countryNie).CountryNiew(countryNiew).CountryNisw(countryNisw).CountryRegex(countryRegex).CrIpaddressClusterId(crIpaddressClusterId).CrIpaddressClusterIdEmpty(crIpaddressClusterIdEmpty).CrIpaddressClusterIdIc(crIpaddressClusterIdIc).CrIpaddressClusterIdIe(crIpaddressClusterIdIe).CrIpaddressClusterIdIew(crIpaddressClusterIdIew).CrIpaddressClusterIdIregex(crIpaddressClusterIdIregex).CrIpaddressClusterIdIsw(crIpaddressClusterIdIsw).CrIpaddressClusterIdN(crIpaddressClusterIdN).CrIpaddressClusterIdNic(crIpaddressClusterIdNic).CrIpaddressClusterIdNie(crIpaddressClusterIdNie).CrIpaddressClusterIdNiew(crIpaddressClusterIdNiew).CrIpaddressClusterIdNisw(crIpaddressClusterIdNisw).CrIpaddressClusterIdRegex(crIpaddressClusterIdRegex).CrIpaddressName(crIpaddressName).CrIpaddressNameEmpty(crIpaddressNameEmpty).CrIpaddressNameIc(crIpaddressNameIc).CrIpaddressNameIe(crIpaddressNameIe).CrIpaddressNameIew(crIpaddressNameIew).CrIpaddressNameIregex(crIpaddressNameIregex).CrIpaddressNameIsw(crIpaddressNameIsw).CrIpaddressNameN(crIpaddressNameN).CrIpaddressNameNic(crIpaddressNameNic).CrIpaddressNameNie(crIpaddressNameNie).CrIpaddressNameNiew(crIpaddressNameNiew).CrIpaddressNameNisw(crIpaddressNameNisw).CrIpaddressNameRegex(crIpaddressNameRegex).CrIpaddressNamespace(crIpaddressNamespace).CrIpaddressNamespaceEmpty(crIpaddressNamespaceEmpty).CrIpaddressNamespaceIc(crIpaddressNamespaceIc).CrIpaddressNamespaceIe(crIpaddressNamespaceIe).CrIpaddressNamespaceIew(crIpaddressNamespaceIew).CrIpaddressNamespaceIregex(crIpaddressNamespaceIregex).CrIpaddressNamespaceIsw(crIpaddressNamespaceIsw).CrIpaddressNamespaceN(crIpaddressNamespaceN).CrIpaddressNamespaceNic(crIpaddressNamespaceNic).CrIpaddressNamespaceNie(crIpaddressNamespaceNie).CrIpaddressNamespaceNiew(crIpaddressNamespaceNiew).CrIpaddressNamespaceNisw(crIpaddressNamespaceNisw).CrIpaddressNamespaceRegex(crIpaddressNamespaceRegex).CrIpaddressclaimClusterId(crIpaddressclaimClusterId).CrIpaddressclaimClusterIdEmpty(crIpaddressclaimClusterIdEmpty).CrIpaddressclaimClusterIdIc(crIpaddressclaimClusterIdIc).CrIpaddressclaimClusterIdIe(crIpaddressclaimClusterIdIe).CrIpaddressclaimClusterIdIew(crIpaddressclaimClusterIdIew).CrIpaddressclaimClusterIdIregex(crIpaddressclaimClusterIdIregex).CrIpaddressclaimClusterIdIsw(crIpaddressclaimClusterIdIsw).CrIpaddressclaimClusterIdN(crIpaddressclaimClusterIdN).CrIpaddressclaimClusterIdNic(crIpaddressclaimClusterIdNic).CrIpaddressclaimClusterIdNie(crIpaddressclaimClusterIdNie).CrIpaddressclaimClusterIdNiew(crIpaddressclaimClusterIdNiew).CrIpaddressclaimClusterIdNisw(crIpaddressclaimClusterIdNisw).CrIpaddressclaimClusterIdRegex(crIpaddressclaimClusterIdRegex).CrIpaddressclaimName(crIpaddressclaimName).CrIpaddressclaimNameEmpty(crIpaddressclaimNameEmpty).CrIpaddressclaimNameIc(crIpaddressclaimNameIc).CrIpaddressclaimNameIe(crIpaddressclaimNameIe).CrIpaddressclaimNameIew(crIpaddressclaimNameIew).CrIpaddressclaimNameIregex(crIpaddressclaimNameIregex).CrIpaddressclaimNameIsw(crIpaddressclaimNameIsw).CrIpaddressclaimNameN(crIpaddressclaimNameN).CrIpaddressclaimNameNic(crIpaddressclaimNameNic).CrIpaddressclaimNameNie(crIpaddressclaimNameNie).CrIpaddressclaimNameNiew(crIpaddressclaimNameNiew).CrIpaddressclaimNameNisw(crIpaddressclaimNameNisw).CrIpaddressclaimNameRegex(crIpaddressclaimNameRegex).CrIpaddressclaimNamespace(crIpaddressclaimNamespace).CrIpaddressclaimNamespaceEmpty(crIpaddressclaimNamespaceEmpty).CrIpaddressclaimNamespaceIc(crIpaddressclaimNamespaceIc).CrIpaddressclaimNamespaceIe(crIpaddressclaimNamespaceIe).CrIpaddressclaimNamespaceIew(crIpaddressclaimNamespaceIew).CrIpaddressclaimNamespaceIregex(crIpaddressclaimNamespaceIregex).CrIpaddressclaimNamespaceIsw(crIpaddressclaimNamespaceIsw).CrIpaddressclaimNamespaceN(crIpaddressclaimNamespaceN).CrIpaddressclaimNamespaceNic(crIpaddressclaimNamespaceNic).CrIpaddressclaimNamespaceNie(crIpaddressclaimNamespaceNie).CrIpaddressclaimNamespaceNiew(crIpaddressclaimNamespaceNiew).CrIpaddressclaimNamespaceNisw(crIpaddressclaimNamespaceNisw).CrIpaddressclaimNamespaceRegex(crIpaddressclaimNamespaceRegex).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).DnsName(dnsName).DnsNameEmpty(dnsNameEmpty).DnsNameIc(dnsNameIc).DnsNameIe(dnsNameIe).DnsNameIew(dnsNameIew).DnsNameIregex(dnsNameIregex).DnsNameIsw(dnsNameIsw).DnsNameN(dnsNameN).DnsNameNic(dnsNameNic).DnsNameNie(dnsNameNie).DnsNameNiew(dnsNameNiew).DnsNameNisw(dnsNameNisw).DnsNameRegex(dnsNameRegex).Environment(environment).EnvironmentN(environmentN).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).Family(family).Fields(fields).HasNatInside(hasNatInside).HasNatOutside(hasNatOutside).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).NatInsideId(natInsideId).NatInsideIdN(natInsideIdN).Offset(offset).Omit(omit).Ordering(ordering).Parent(parent).Q(q).Role(role).RoleEmpty(roleEmpty).RoleIc(roleIc).RoleIe(roleIe).RoleIew(roleIew).RoleIregex(roleIregex).RoleIsw(roleIsw).RoleN(roleN).RoleNic(roleNic).RoleNie(roleNie).RoleNiew(roleNiew).RoleNisw(roleNisw).RoleRegex(roleRegex).Start(start).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).Subnet(subnet).SubnetN(subnetN).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetPrefix(subnetPrefix).SubnetPrefixId(subnetPrefixId).SubnetPrefixIdN(subnetPrefixIdN).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Vpc(vpc).VpcN(vpcN).VpcId(vpcId).VpcIdN(vpcIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetipaddressList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2327,6 +2369,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetip
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **address** | **[]string** |  | 
+ **brief** | **bool** | Return only brief fields for each object. | 
  **claimedBy** | **[]string** |  | 
  **claimedByEmpty** | **bool** |  | 
  **claimedByIc** | **[]string** |  | 
@@ -2470,6 +2513,7 @@ Name | Type | Description  | Notes
  **environmentId** | **[]int32** | Environment | 
  **environmentIdN** | **[]int32** | Environment | 
  **family** | **float32** | IP Family | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
  **hasNatInside** | **bool** | Has NAT inside | 
  **hasNatOutside** | **bool** | Has NAT outside | 
  **hash** | **string** |  | 
@@ -2506,6 +2550,7 @@ Name | Type | Description  | Notes
  **natInsideId** | **[]int32** | NAT inside IP address (ID) | 
  **natInsideIdN** | **[]int32** | NAT inside IP address (ID) | 
  **offset** | **int32** | The initial index from which to return the results. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **parent** | **[]string** |  | 
  **q** | **string** | Search | 
@@ -2522,6 +2567,7 @@ Name | Type | Description  | Notes
  **roleNiew** | **[]string** | The functional role of this IP | 
  **roleNisw** | **[]string** | The functional role of this IP | 
  **roleRegex** | **[]string** | The functional role of this IP | 
+ **start** | **int32** | Cursor-based pagination: return results with pk &gt;&#x3D; start, ordered by pk. Mutually exclusive with offset. | 
  **status** | **[]string** | The operational status of this IP | 
  **statusEmpty** | **bool** |  | 
  **statusIc** | **[]string** | The operational status of this IP | 
@@ -2543,9 +2589,11 @@ Name | Type | Description  | Notes
  **subnetPrefixId** | **[]int32** | Subnet Prefix (ID) | 
  **subnetPrefixIdN** | **[]int32** | Subnet Prefix (ID) | 
  **tag** | **[]string** |  | 
+ **tagAny** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]string** |  | 
- **tagIdN** | **[]string** |  | 
+ **tagId** | **[]int32** |  | 
+ **tagIdAny** | **[]int32** |  | 
+ **tagIdN** | **[]int32** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -2652,7 +2700,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetipaddressRetrieve
 
-> SubnetIPAddress PluginsAirnityIpamSubnetipaddressRetrieve(ctx, id).Execute()
+> SubnetIPAddress PluginsAirnityIpamSubnetipaddressRetrieve(ctx, id).Brief(brief).Fields(fields).Omit(omit).Execute()
 
 
 
@@ -2672,10 +2720,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this IP address.
+	brief := true // bool | Return only brief fields for each object. (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetipaddressRetrieve(context.Background(), id).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetipaddressRetrieve(context.Background(), id).Brief(brief).Fields(fields).Omit(omit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetipaddressRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2701,6 +2752,9 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetip
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **brief** | **bool** | Return only brief fields for each object. | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
 
 ### Return type
 
@@ -2866,7 +2920,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetprefixAvailableIpsList
 
-> []AvailablePrefixIP PluginsAirnityIpamSubnetprefixAvailableIpsList(ctx, id).Execute()
+> []AvailablePrefixIP PluginsAirnityIpamSubnetprefixAvailableIpsList(ctx, id).Brief(brief).Fields(fields).Omit(omit).Execute()
 
 
 
@@ -2886,10 +2940,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | 
+	brief := true // bool | Return only brief fields for each object. (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixAvailableIpsList(context.Background(), id).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixAvailableIpsList(context.Background(), id).Brief(brief).Fields(fields).Omit(omit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetprefixAvailableIpsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2915,6 +2972,9 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetpr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **brief** | **bool** | Return only brief fields for each object. | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
 
 ### Return type
 
@@ -2991,7 +3051,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3000,7 +3060,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetprefixBulkPartialUpdate
 
-> []SubnetPrefix PluginsAirnityIpamSubnetprefixBulkPartialUpdate(ctx).SubnetPrefixRequest(subnetPrefixRequest).Execute()
+> []SubnetPrefix PluginsAirnityIpamSubnetprefixBulkPartialUpdate(ctx).PatchedBulkSubnetPrefixRequest(patchedBulkSubnetPrefixRequest).Execute()
 
 
 
@@ -3019,11 +3079,11 @@ import (
 )
 
 func main() {
-	subnetPrefixRequest := []openapiclient.SubnetPrefixRequest{*openapiclient.NewSubnetPrefixRequest("Prefix_example")} // []SubnetPrefixRequest | 
+	patchedBulkSubnetPrefixRequest := []openapiclient.PatchedBulkSubnetPrefixRequest{*openapiclient.NewPatchedBulkSubnetPrefixRequest(int32(123))} // []PatchedBulkSubnetPrefixRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixBulkPartialUpdate(context.Background()).SubnetPrefixRequest(subnetPrefixRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixBulkPartialUpdate(context.Background()).PatchedBulkSubnetPrefixRequest(patchedBulkSubnetPrefixRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetprefixBulkPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3044,7 +3104,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetpr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subnetPrefixRequest** | [**[]SubnetPrefixRequest**](SubnetPrefixRequest.md) |  | 
+ **patchedBulkSubnetPrefixRequest** | [**[]PatchedBulkSubnetPrefixRequest**](PatchedBulkSubnetPrefixRequest.md) |  | 
 
 ### Return type
 
@@ -3066,7 +3126,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetprefixBulkUpdate
 
-> []SubnetPrefix PluginsAirnityIpamSubnetprefixBulkUpdate(ctx).SubnetPrefixRequest(subnetPrefixRequest).Execute()
+> []SubnetPrefix PluginsAirnityIpamSubnetprefixBulkUpdate(ctx).BulkSubnetPrefixRequest(bulkSubnetPrefixRequest).Execute()
 
 
 
@@ -3085,11 +3145,11 @@ import (
 )
 
 func main() {
-	subnetPrefixRequest := []openapiclient.SubnetPrefixRequest{*openapiclient.NewSubnetPrefixRequest("Prefix_example")} // []SubnetPrefixRequest | 
+	bulkSubnetPrefixRequest := []openapiclient.BulkSubnetPrefixRequest{*openapiclient.NewBulkSubnetPrefixRequest(int32(123), "Prefix_example")} // []BulkSubnetPrefixRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixBulkUpdate(context.Background()).SubnetPrefixRequest(subnetPrefixRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixBulkUpdate(context.Background()).BulkSubnetPrefixRequest(bulkSubnetPrefixRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetprefixBulkUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3110,7 +3170,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetpr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subnetPrefixRequest** | [**[]SubnetPrefixRequest**](SubnetPrefixRequest.md) |  | 
+ **bulkSubnetPrefixRequest** | [**[]BulkSubnetPrefixRequest**](BulkSubnetPrefixRequest.md) |  | 
 
 ### Return type
 
@@ -3266,7 +3326,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetprefixList
 
-> PaginatedSubnetPrefixList PluginsAirnityIpamSubnetprefixList(ctx).AutoReserveFirstIps(autoReserveFirstIps).AutoReserveLastIps(autoReserveLastIps).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Family(family).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsFull(isFull).IsSecondary(isSecondary).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIregex(labelIregex).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LabelRegex(labelRegex).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).PresentInVpcId(presentInVpcId).Purpose(purpose).PurposeN(purposeN).PurposeId(purposeId).PurposeIdN(purposeIdN).Q(q).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetName(subnetName).SubnetNameEmpty(subnetNameEmpty).SubnetNameIc(subnetNameIc).SubnetNameIe(subnetNameIe).SubnetNameIew(subnetNameIew).SubnetNameIregex(subnetNameIregex).SubnetNameIsw(subnetNameIsw).SubnetNameN(subnetNameN).SubnetNameNic(subnetNameNic).SubnetNameNie(subnetNameNie).SubnetNameNiew(subnetNameNiew).SubnetNameNisw(subnetNameNisw).SubnetNameRegex(subnetNameRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VpcId(vpcId).VpcIdN(vpcIdN).VpcName(vpcName).VpcNameEmpty(vpcNameEmpty).VpcNameIc(vpcNameIc).VpcNameIe(vpcNameIe).VpcNameIew(vpcNameIew).VpcNameIregex(vpcNameIregex).VpcNameIsw(vpcNameIsw).VpcNameN(vpcNameN).VpcNameNic(vpcNameNic).VpcNameNie(vpcNameNie).VpcNameNiew(vpcNameNiew).VpcNameNisw(vpcNameNisw).VpcNameRegex(vpcNameRegex).Within(within).WithinInclude(withinInclude).Execute()
+> PaginatedSubnetPrefixList PluginsAirnityIpamSubnetprefixList(ctx).AutoReserveFirstIps(autoReserveFirstIps).AutoReserveLastIps(autoReserveLastIps).Brief(brief).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Family(family).Fields(fields).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsFull(isFull).IsSecondary(isSecondary).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIregex(labelIregex).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LabelRegex(labelRegex).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Omit(omit).Ordering(ordering).Prefix(prefix).PresentInVpcId(presentInVpcId).Purpose(purpose).PurposeN(purposeN).PurposeId(purposeId).PurposeIdN(purposeIdN).Q(q).Start(start).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetName(subnetName).SubnetNameEmpty(subnetNameEmpty).SubnetNameIc(subnetNameIc).SubnetNameIe(subnetNameIe).SubnetNameIew(subnetNameIew).SubnetNameIregex(subnetNameIregex).SubnetNameIsw(subnetNameIsw).SubnetNameN(subnetNameN).SubnetNameNic(subnetNameNic).SubnetNameNie(subnetNameNie).SubnetNameNiew(subnetNameNiew).SubnetNameNisw(subnetNameNisw).SubnetNameRegex(subnetNameRegex).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VpcId(vpcId).VpcIdN(vpcIdN).VpcName(vpcName).VpcNameEmpty(vpcNameEmpty).VpcNameIc(vpcNameIc).VpcNameIe(vpcNameIe).VpcNameIew(vpcNameIew).VpcNameIregex(vpcNameIregex).VpcNameIsw(vpcNameIsw).VpcNameN(vpcNameN).VpcNameNic(vpcNameNic).VpcNameNie(vpcNameNie).VpcNameNiew(vpcNameNiew).VpcNameNisw(vpcNameNisw).VpcNameRegex(vpcNameRegex).Within(within).WithinInclude(withinInclude).Execute()
 
 
 
@@ -3288,6 +3348,7 @@ import (
 func main() {
 	autoReserveFirstIps := true // bool |  (optional)
 	autoReserveLastIps := true // bool |  (optional)
+	brief := true // bool | Return only brief fields for each object. (optional)
 	children := []int32{int32(123)} // []int32 |  (optional)
 	childrenEmpty := []int32{int32(123)} // []int32 |  (optional)
 	childrenGt := []int32{int32(123)} // []int32 |  (optional)
@@ -3312,6 +3373,7 @@ func main() {
 	depthLte := []int32{int32(123)} // []int32 |  (optional)
 	depthN := []int32{int32(123)} // []int32 |  (optional)
 	family := float32(8.14) // float32 |  (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
 	hash := "hash_example" // string |  (optional)
 	hashIc := "hashIc_example" // string |  (optional)
 	hashIe := "hashIe_example" // string |  (optional)
@@ -3360,6 +3422,7 @@ func main() {
 	maskLengthLte := float32(8.14) // float32 |  (optional)
 	modifiedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	prefix := []string{"Inner_example"} // []string |  (optional)
 	presentInVpcId := "presentInVpcId_example" // string |  (optional)
@@ -3368,6 +3431,7 @@ func main() {
 	purposeId := []int32{int32(123)} // []int32 | Purpose (ID) (optional)
 	purposeIdN := []int32{int32(123)} // []int32 | Purpose (ID) (optional)
 	q := "q_example" // string | Search (optional)
+	start := int32(56) // int32 | Cursor-based pagination: return results with pk >= start, ordered by pk. Mutually exclusive with offset. (optional)
 	status := []string{"Inner_example"} // []string | Operational status of this prefix (optional)
 	statusEmpty := true // bool |  (optional)
 	statusIc := []string{"Inner_example"} // []string | Operational status of this prefix (optional)
@@ -3397,9 +3461,11 @@ func main() {
 	subnetNameNisw := []string{"Inner_example"} // []string |  (optional)
 	subnetNameRegex := []string{"Inner_example"} // []string |  (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
+	tagAny := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []string{"Inner_example"} // []string |  (optional)
-	tagIdN := []string{"Inner_example"} // []string |  (optional)
+	tagId := []int32{int32(123)} // []int32 |  (optional)
+	tagIdAny := []int32{int32(123)} // []int32 |  (optional)
+	tagIdN := []int32{int32(123)} // []int32 |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 	vpcId := []*int32{int32(123)} // []*int32 | VPC (optional)
 	vpcIdN := []*int32{int32(123)} // []*int32 | VPC (optional)
@@ -3421,7 +3487,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixList(context.Background()).AutoReserveFirstIps(autoReserveFirstIps).AutoReserveLastIps(autoReserveLastIps).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Family(family).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsFull(isFull).IsSecondary(isSecondary).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIregex(labelIregex).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LabelRegex(labelRegex).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Ordering(ordering).Prefix(prefix).PresentInVpcId(presentInVpcId).Purpose(purpose).PurposeN(purposeN).PurposeId(purposeId).PurposeIdN(purposeIdN).Q(q).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetName(subnetName).SubnetNameEmpty(subnetNameEmpty).SubnetNameIc(subnetNameIc).SubnetNameIe(subnetNameIe).SubnetNameIew(subnetNameIew).SubnetNameIregex(subnetNameIregex).SubnetNameIsw(subnetNameIsw).SubnetNameN(subnetNameN).SubnetNameNic(subnetNameNic).SubnetNameNie(subnetNameNie).SubnetNameNiew(subnetNameNiew).SubnetNameNisw(subnetNameNisw).SubnetNameRegex(subnetNameRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VpcId(vpcId).VpcIdN(vpcIdN).VpcName(vpcName).VpcNameEmpty(vpcNameEmpty).VpcNameIc(vpcNameIc).VpcNameIe(vpcNameIe).VpcNameIew(vpcNameIew).VpcNameIregex(vpcNameIregex).VpcNameIsw(vpcNameIsw).VpcNameN(vpcNameN).VpcNameNic(vpcNameNic).VpcNameNie(vpcNameNie).VpcNameNiew(vpcNameNiew).VpcNameNisw(vpcNameNisw).VpcNameRegex(vpcNameRegex).Within(within).WithinInclude(withinInclude).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixList(context.Background()).AutoReserveFirstIps(autoReserveFirstIps).AutoReserveLastIps(autoReserveLastIps).Brief(brief).Children(children).ChildrenEmpty(childrenEmpty).ChildrenGt(childrenGt).ChildrenGte(childrenGte).ChildrenLt(childrenLt).ChildrenLte(childrenLte).ChildrenN(childrenN).Contains(contains).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Depth(depth).DepthEmpty(depthEmpty).DepthGt(depthGt).DepthGte(depthGte).DepthLt(depthLt).DepthLte(depthLte).DepthN(depthN).Family(family).Fields(fields).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).IsFull(isFull).IsSecondary(isSecondary).Label(label).LabelEmpty(labelEmpty).LabelIc(labelIc).LabelIe(labelIe).LabelIew(labelIew).LabelIregex(labelIregex).LabelIsw(labelIsw).LabelN(labelN).LabelNic(labelNic).LabelNie(labelNie).LabelNiew(labelNiew).LabelNisw(labelNisw).LabelRegex(labelRegex).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).MarkUtilized(markUtilized).MaskLength(maskLength).MaskLengthGte(maskLengthGte).MaskLengthLte(maskLengthLte).ModifiedByRequest(modifiedByRequest).Offset(offset).Omit(omit).Ordering(ordering).Prefix(prefix).PresentInVpcId(presentInVpcId).Purpose(purpose).PurposeN(purposeN).PurposeId(purposeId).PurposeIdN(purposeIdN).Q(q).Start(start).Status(status).StatusEmpty(statusEmpty).StatusIc(statusIc).StatusIe(statusIe).StatusIew(statusIew).StatusIregex(statusIregex).StatusIsw(statusIsw).StatusN(statusN).StatusNic(statusNic).StatusNie(statusNie).StatusNiew(statusNiew).StatusNisw(statusNisw).StatusRegex(statusRegex).SubnetId(subnetId).SubnetIdN(subnetIdN).SubnetName(subnetName).SubnetNameEmpty(subnetNameEmpty).SubnetNameIc(subnetNameIc).SubnetNameIe(subnetNameIe).SubnetNameIew(subnetNameIew).SubnetNameIregex(subnetNameIregex).SubnetNameIsw(subnetNameIsw).SubnetNameN(subnetNameN).SubnetNameNic(subnetNameNic).SubnetNameNie(subnetNameNie).SubnetNameNiew(subnetNameNiew).SubnetNameNisw(subnetNameNisw).SubnetNameRegex(subnetNameRegex).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).VpcId(vpcId).VpcIdN(vpcIdN).VpcName(vpcName).VpcNameEmpty(vpcNameEmpty).VpcNameIc(vpcNameIc).VpcNameIe(vpcNameIe).VpcNameIew(vpcNameIew).VpcNameIregex(vpcNameIregex).VpcNameIsw(vpcNameIsw).VpcNameN(vpcNameN).VpcNameNic(vpcNameNic).VpcNameNie(vpcNameNie).VpcNameNiew(vpcNameNiew).VpcNameNisw(vpcNameNisw).VpcNameRegex(vpcNameRegex).Within(within).WithinInclude(withinInclude).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetprefixList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3444,6 +3510,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **autoReserveFirstIps** | **bool** |  | 
  **autoReserveLastIps** | **bool** |  | 
+ **brief** | **bool** | Return only brief fields for each object. | 
  **children** | **[]int32** |  | 
  **childrenEmpty** | **[]int32** |  | 
  **childrenGt** | **[]int32** |  | 
@@ -3468,6 +3535,7 @@ Name | Type | Description  | Notes
  **depthLte** | **[]int32** |  | 
  **depthN** | **[]int32** |  | 
  **family** | **float32** |  | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
  **hash** | **string** |  | 
  **hashIc** | **string** |  | 
  **hashIe** | **string** |  | 
@@ -3516,6 +3584,7 @@ Name | Type | Description  | Notes
  **maskLengthLte** | **float32** |  | 
  **modifiedByRequest** | **string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **prefix** | **[]string** |  | 
  **presentInVpcId** | **string** |  | 
@@ -3524,6 +3593,7 @@ Name | Type | Description  | Notes
  **purposeId** | **[]int32** | Purpose (ID) | 
  **purposeIdN** | **[]int32** | Purpose (ID) | 
  **q** | **string** | Search | 
+ **start** | **int32** | Cursor-based pagination: return results with pk &gt;&#x3D; start, ordered by pk. Mutually exclusive with offset. | 
  **status** | **[]string** | Operational status of this prefix | 
  **statusEmpty** | **bool** |  | 
  **statusIc** | **[]string** | Operational status of this prefix | 
@@ -3553,9 +3623,11 @@ Name | Type | Description  | Notes
  **subnetNameNisw** | **[]string** |  | 
  **subnetNameRegex** | **[]string** |  | 
  **tag** | **[]string** |  | 
+ **tagAny** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]string** |  | 
- **tagIdN** | **[]string** |  | 
+ **tagId** | **[]int32** |  | 
+ **tagIdAny** | **[]int32** |  | 
+ **tagIdN** | **[]int32** |  | 
  **updatedByRequest** | **string** |  | 
  **vpcId** | **[]int32** | VPC | 
  **vpcIdN** | **[]int32** | VPC | 
@@ -3667,7 +3739,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetprefixRetrieve
 
-> SubnetPrefix PluginsAirnityIpamSubnetprefixRetrieve(ctx, id).Execute()
+> SubnetPrefix PluginsAirnityIpamSubnetprefixRetrieve(ctx, id).Brief(brief).Fields(fields).Omit(omit).Execute()
 
 
 
@@ -3687,10 +3759,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this subnet prefix.
+	brief := true // bool | Return only brief fields for each object. (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixRetrieve(context.Background(), id).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetprefixRetrieve(context.Background(), id).Brief(brief).Fields(fields).Omit(omit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetprefixRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3716,6 +3791,9 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetpr
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **brief** | **bool** | Return only brief fields for each object. | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
 
 ### Return type
 
@@ -3864,7 +3942,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -3873,7 +3951,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetpurposeBulkPartialUpdate
 
-> []SubnetPurpose PluginsAirnityIpamSubnetpurposeBulkPartialUpdate(ctx).SubnetPurposeRequest(subnetPurposeRequest).Execute()
+> []SubnetPurpose PluginsAirnityIpamSubnetpurposeBulkPartialUpdate(ctx).PatchedBulkSubnetPurposeRequest(patchedBulkSubnetPurposeRequest).Execute()
 
 
 
@@ -3892,11 +3970,11 @@ import (
 )
 
 func main() {
-	subnetPurposeRequest := []openapiclient.SubnetPurposeRequest{*openapiclient.NewSubnetPurposeRequest("Name_example", "Slug_example")} // []SubnetPurposeRequest | 
+	patchedBulkSubnetPurposeRequest := []openapiclient.PatchedBulkSubnetPurposeRequest{*openapiclient.NewPatchedBulkSubnetPurposeRequest(int32(123))} // []PatchedBulkSubnetPurposeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetpurposeBulkPartialUpdate(context.Background()).SubnetPurposeRequest(subnetPurposeRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetpurposeBulkPartialUpdate(context.Background()).PatchedBulkSubnetPurposeRequest(patchedBulkSubnetPurposeRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetpurposeBulkPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3917,7 +3995,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetpu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subnetPurposeRequest** | [**[]SubnetPurposeRequest**](SubnetPurposeRequest.md) |  | 
+ **patchedBulkSubnetPurposeRequest** | [**[]PatchedBulkSubnetPurposeRequest**](PatchedBulkSubnetPurposeRequest.md) |  | 
 
 ### Return type
 
@@ -3939,7 +4017,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetpurposeBulkUpdate
 
-> []SubnetPurpose PluginsAirnityIpamSubnetpurposeBulkUpdate(ctx).SubnetPurposeRequest(subnetPurposeRequest).Execute()
+> []SubnetPurpose PluginsAirnityIpamSubnetpurposeBulkUpdate(ctx).BulkSubnetPurposeRequest(bulkSubnetPurposeRequest).Execute()
 
 
 
@@ -3958,11 +4036,11 @@ import (
 )
 
 func main() {
-	subnetPurposeRequest := []openapiclient.SubnetPurposeRequest{*openapiclient.NewSubnetPurposeRequest("Name_example", "Slug_example")} // []SubnetPurposeRequest | 
+	bulkSubnetPurposeRequest := []openapiclient.BulkSubnetPurposeRequest{*openapiclient.NewBulkSubnetPurposeRequest(int32(123), "Name_example", "Slug_example")} // []BulkSubnetPurposeRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetpurposeBulkUpdate(context.Background()).SubnetPurposeRequest(subnetPurposeRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetpurposeBulkUpdate(context.Background()).BulkSubnetPurposeRequest(bulkSubnetPurposeRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetpurposeBulkUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3983,7 +4061,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetpu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **subnetPurposeRequest** | [**[]SubnetPurposeRequest**](SubnetPurposeRequest.md) |  | 
+ **bulkSubnetPurposeRequest** | [**[]BulkSubnetPurposeRequest**](BulkSubnetPurposeRequest.md) |  | 
 
 ### Return type
 
@@ -4139,7 +4217,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetpurposeList
 
-> PaginatedSubnetPurposeList PluginsAirnityIpamSubnetpurposeList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedSubnetPurposeList PluginsAirnityIpamSubnetpurposeList(ctx).Brief(brief).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Fields(fields).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Omit(omit).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Start(start).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -4159,6 +4237,7 @@ import (
 )
 
 func main() {
+	brief := true // bool | Return only brief fields for each object. (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4180,6 +4259,7 @@ func main() {
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	descriptionRegex := []string{"Inner_example"} // []string |  (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
 	idEmpty := true // bool |  (optional)
 	idGt := []int32{int32(123)} // []int32 |  (optional)
@@ -4210,6 +4290,7 @@ func main() {
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
 	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
@@ -4233,15 +4314,18 @@ func main() {
 	slugNiew := []string{"Inner_example"} // []string |  (optional)
 	slugNisw := []string{"Inner_example"} // []string |  (optional)
 	slugRegex := []string{"Inner_example"} // []string |  (optional)
+	start := int32(56) // int32 | Cursor-based pagination: return results with pk >= start, ordered by pk. Mutually exclusive with offset. (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
+	tagAny := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []string{"Inner_example"} // []string |  (optional)
-	tagIdN := []string{"Inner_example"} // []string |  (optional)
+	tagId := []int32{int32(123)} // []int32 |  (optional)
+	tagIdAny := []int32{int32(123)} // []int32 |  (optional)
+	tagIdN := []int32{int32(123)} // []int32 |  (optional)
 	updatedByRequest := "38400000-8cf0-11bd-b23e-10b96e4ef00d" // string |  (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetpurposeList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetpurposeList(context.Background()).Brief(brief).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Fields(fields).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Omit(omit).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerGroup(ownerGroup).OwnerGroupN(ownerGroupN).OwnerGroupId(ownerGroupId).OwnerGroupIdN(ownerGroupIdN).OwnerId(ownerId).OwnerIdN(ownerIdN).Q(q).Slug(slug).SlugEmpty(slugEmpty).SlugIc(slugIc).SlugIe(slugIe).SlugIew(slugIew).SlugIregex(slugIregex).SlugIsw(slugIsw).SlugN(slugN).SlugNic(slugNic).SlugNie(slugNie).SlugNiew(slugNiew).SlugNisw(slugNisw).SlugRegex(slugRegex).Start(start).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetpurposeList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4262,6 +4346,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetpu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **brief** | **bool** | Return only brief fields for each object. | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -4283,6 +4368,7 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **descriptionRegex** | **[]string** |  | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
  **id** | **[]int32** |  | 
  **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
@@ -4313,6 +4399,7 @@ Name | Type | Description  | Notes
  **nameNisw** | **[]string** |  | 
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **owner** | **[]string** | Owner (name) | 
  **ownerN** | **[]string** | Owner (name) | 
@@ -4336,10 +4423,13 @@ Name | Type | Description  | Notes
  **slugNiew** | **[]string** |  | 
  **slugNisw** | **[]string** |  | 
  **slugRegex** | **[]string** |  | 
+ **start** | **int32** | Cursor-based pagination: return results with pk &gt;&#x3D; start, ordered by pk. Mutually exclusive with offset. | 
  **tag** | **[]string** |  | 
+ **tagAny** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]string** |  | 
- **tagIdN** | **[]string** |  | 
+ **tagId** | **[]int32** |  | 
+ **tagIdAny** | **[]int32** |  | 
+ **tagIdN** | **[]int32** |  | 
  **updatedByRequest** | **string** |  | 
 
 ### Return type
@@ -4434,7 +4524,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamSubnetpurposeRetrieve
 
-> SubnetPurpose PluginsAirnityIpamSubnetpurposeRetrieve(ctx, id).Execute()
+> SubnetPurpose PluginsAirnityIpamSubnetpurposeRetrieve(ctx, id).Brief(brief).Fields(fields).Omit(omit).Execute()
 
 
 
@@ -4454,10 +4544,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this Subnet Purpose.
+	brief := true // bool | Return only brief fields for each object. (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetpurposeRetrieve(context.Background(), id).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamSubnetpurposeRetrieve(context.Background(), id).Brief(brief).Fields(fields).Omit(omit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamSubnetpurposeRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4483,6 +4576,9 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamSubnetpu
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **brief** | **bool** | Return only brief fields for each object. | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
 
 ### Return type
 
@@ -4631,7 +4727,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -4640,7 +4736,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamVpcBulkPartialUpdate
 
-> []VPC PluginsAirnityIpamVpcBulkPartialUpdate(ctx).VPCRequest(vPCRequest).Execute()
+> []VPC PluginsAirnityIpamVpcBulkPartialUpdate(ctx).PatchedBulkVPCRequest(patchedBulkVPCRequest).Execute()
 
 
 
@@ -4659,11 +4755,11 @@ import (
 )
 
 func main() {
-	vPCRequest := []openapiclient.VPCRequest{*openapiclient.NewVPCRequest("Name_example")} // []VPCRequest | 
+	patchedBulkVPCRequest := []openapiclient.PatchedBulkVPCRequest{*openapiclient.NewPatchedBulkVPCRequest(int32(123))} // []PatchedBulkVPCRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamVpcBulkPartialUpdate(context.Background()).VPCRequest(vPCRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamVpcBulkPartialUpdate(context.Background()).PatchedBulkVPCRequest(patchedBulkVPCRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamVpcBulkPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4684,7 +4780,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamVpcBulkP
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vPCRequest** | [**[]VPCRequest**](VPCRequest.md) |  | 
+ **patchedBulkVPCRequest** | [**[]PatchedBulkVPCRequest**](PatchedBulkVPCRequest.md) |  | 
 
 ### Return type
 
@@ -4706,7 +4802,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamVpcBulkUpdate
 
-> []VPC PluginsAirnityIpamVpcBulkUpdate(ctx).VPCRequest(vPCRequest).Execute()
+> []VPC PluginsAirnityIpamVpcBulkUpdate(ctx).BulkVPCRequest(bulkVPCRequest).Execute()
 
 
 
@@ -4725,11 +4821,11 @@ import (
 )
 
 func main() {
-	vPCRequest := []openapiclient.VPCRequest{*openapiclient.NewVPCRequest("Name_example")} // []VPCRequest | 
+	bulkVPCRequest := []openapiclient.BulkVPCRequest{*openapiclient.NewBulkVPCRequest(int32(123), "Name_example")} // []BulkVPCRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamVpcBulkUpdate(context.Background()).VPCRequest(vPCRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamVpcBulkUpdate(context.Background()).BulkVPCRequest(bulkVPCRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamVpcBulkUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4750,7 +4846,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamVpcBulkU
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **vPCRequest** | [**[]VPCRequest**](VPCRequest.md) |  | 
+ **bulkVPCRequest** | [**[]BulkVPCRequest**](BulkVPCRequest.md) |  | 
 
 ### Return type
 
@@ -4906,7 +5002,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamVpcList
 
-> PaginatedVPCList PluginsAirnityIpamVpcList(ctx).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EnforceUnique(enforceUnique).Environment(environment).EnvironmentN(environmentN).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+> PaginatedVPCList PluginsAirnityIpamVpcList(ctx).Brief(brief).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EnforceUnique(enforceUnique).Environment(environment).EnvironmentN(environmentN).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).Fields(fields).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Omit(omit).Ordering(ordering).Q(q).Start(start).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 
 
 
@@ -4926,6 +5022,7 @@ import (
 )
 
 func main() {
+	brief := true // bool | Return only brief fields for each object. (optional)
 	created := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdEmpty := []time.Time{time.Now()} // []time.Time |  (optional)
 	createdGt := []time.Time{time.Now()} // []time.Time |  (optional)
@@ -4952,6 +5049,7 @@ func main() {
 	environmentN := []string{"Inner_example"} // []string | Environment (name) (optional)
 	environmentId := []int32{int32(123)} // []int32 | Environment (optional)
 	environmentIdN := []int32{int32(123)} // []int32 | Environment (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
 	hash := "hash_example" // string |  (optional)
 	hashIc := "hashIc_example" // string |  (optional)
 	hashIe := "hashIe_example" // string |  (optional)
@@ -4994,12 +5092,16 @@ func main() {
 	nameNisw := []string{"Inner_example"} // []string |  (optional)
 	nameRegex := []string{"Inner_example"} // []string |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
+	start := int32(56) // int32 | Cursor-based pagination: return results with pk >= start, ordered by pk. Mutually exclusive with offset. (optional)
 	tag := []string{"Inner_example"} // []string |  (optional)
+	tagAny := []string{"Inner_example"} // []string |  (optional)
 	tagN := []string{"Inner_example"} // []string |  (optional)
-	tagId := []string{"Inner_example"} // []string |  (optional)
-	tagIdN := []string{"Inner_example"} // []string |  (optional)
+	tagId := []int32{int32(123)} // []int32 |  (optional)
+	tagIdAny := []int32{int32(123)} // []int32 |  (optional)
+	tagIdN := []int32{int32(123)} // []int32 |  (optional)
 	tenant := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantN := []string{"Inner_example"} // []string | Tenant (slug) (optional)
 	tenantGroup := []string{"Inner_example"} // []string |  (optional)
@@ -5012,7 +5114,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamVpcList(context.Background()).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EnforceUnique(enforceUnique).Environment(environment).EnvironmentN(environmentN).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Ordering(ordering).Q(q).Tag(tag).TagN(tagN).TagId(tagId).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamVpcList(context.Background()).Brief(brief).Created(created).CreatedEmpty(createdEmpty).CreatedGt(createdGt).CreatedGte(createdGte).CreatedLt(createdLt).CreatedLte(createdLte).CreatedN(createdN).CreatedByRequest(createdByRequest).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).EnforceUnique(enforceUnique).Environment(environment).EnvironmentN(environmentN).EnvironmentId(environmentId).EnvironmentIdN(environmentIdN).Fields(fields).Hash(hash).HashIc(hashIc).HashIe(hashIe).HashIew(hashIew).HashIregex(hashIregex).HashIsw(hashIsw).HashN(hashN).HashNic(hashNic).HashNie(hashNie).HashNiew(hashNiew).HashNisw(hashNisw).HashRegex(hashRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).LastUpdated(lastUpdated).LastUpdatedEmpty(lastUpdatedEmpty).LastUpdatedGt(lastUpdatedGt).LastUpdatedGte(lastUpdatedGte).LastUpdatedLt(lastUpdatedLt).LastUpdatedLte(lastUpdatedLte).LastUpdatedN(lastUpdatedN).Limit(limit).ModifiedByRequest(modifiedByRequest).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).Offset(offset).Omit(omit).Ordering(ordering).Q(q).Start(start).Tag(tag).TagAny(tagAny).TagN(tagN).TagId(tagId).TagIdAny(tagIdAny).TagIdN(tagIdN).Tenant(tenant).TenantN(tenantN).TenantGroup(tenantGroup).TenantGroupN(tenantGroupN).TenantGroupId(tenantGroupId).TenantGroupIdN(tenantGroupIdN).TenantId(tenantId).TenantIdN(tenantIdN).UpdatedByRequest(updatedByRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamVpcList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5033,6 +5135,7 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamVpcListR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **brief** | **bool** | Return only brief fields for each object. | 
  **created** | [**[]time.Time**](time.Time.md) |  | 
  **createdEmpty** | [**[]time.Time**](time.Time.md) |  | 
  **createdGt** | [**[]time.Time**](time.Time.md) |  | 
@@ -5059,6 +5162,7 @@ Name | Type | Description  | Notes
  **environmentN** | **[]string** | Environment (name) | 
  **environmentId** | **[]int32** | Environment | 
  **environmentIdN** | **[]int32** | Environment | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
  **hash** | **string** |  | 
  **hashIc** | **string** |  | 
  **hashIe** | **string** |  | 
@@ -5101,12 +5205,16 @@ Name | Type | Description  | Notes
  **nameNisw** | **[]string** |  | 
  **nameRegex** | **[]string** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
+ **start** | **int32** | Cursor-based pagination: return results with pk &gt;&#x3D; start, ordered by pk. Mutually exclusive with offset. | 
  **tag** | **[]string** |  | 
+ **tagAny** | **[]string** |  | 
  **tagN** | **[]string** |  | 
- **tagId** | **[]string** |  | 
- **tagIdN** | **[]string** |  | 
+ **tagId** | **[]int32** |  | 
+ **tagIdAny** | **[]int32** |  | 
+ **tagIdN** | **[]int32** |  | 
  **tenant** | **[]string** | Tenant (slug) | 
  **tenantN** | **[]string** | Tenant (slug) | 
  **tenantGroup** | **[]string** |  | 
@@ -5209,7 +5317,7 @@ Name | Type | Description  | Notes
 
 ## PluginsAirnityIpamVpcRetrieve
 
-> VPC PluginsAirnityIpamVpcRetrieve(ctx, id).Execute()
+> VPC PluginsAirnityIpamVpcRetrieve(ctx, id).Brief(brief).Fields(fields).Omit(omit).Execute()
 
 
 
@@ -5229,10 +5337,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this VPC.
+	brief := true // bool | Return only brief fields for each object. (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamVpcRetrieve(context.Background(), id).Execute()
+	resp, r, err := apiClient.PluginsAPI.PluginsAirnityIpamVpcRetrieve(context.Background(), id).Brief(brief).Fields(fields).Omit(omit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `PluginsAPI.PluginsAirnityIpamVpcRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5258,6 +5369,9 @@ Other parameters are passed through a pointer to a apiPluginsAirnityIpamVpcRetri
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **brief** | **bool** | Return only brief fields for each object. | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
 
 ### Return type
 

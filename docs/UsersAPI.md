@@ -82,7 +82,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -91,7 +91,7 @@ Name | Type | Description  | Notes
 
 ## UsersGroupsBulkPartialUpdate
 
-> []Group UsersGroupsBulkPartialUpdate(ctx).GroupRequest(groupRequest).Execute()
+> []Group UsersGroupsBulkPartialUpdate(ctx).PatchedBulkGroupRequest(patchedBulkGroupRequest).Execute()
 
 
 
@@ -110,11 +110,11 @@ import (
 )
 
 func main() {
-	groupRequest := []openapiclient.GroupRequest{*openapiclient.NewGroupRequest("Name_example")} // []GroupRequest | 
+	patchedBulkGroupRequest := []openapiclient.PatchedBulkGroupRequest{*openapiclient.NewPatchedBulkGroupRequest(int32(123))} // []PatchedBulkGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersGroupsBulkPartialUpdate(context.Background()).GroupRequest(groupRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersGroupsBulkPartialUpdate(context.Background()).PatchedBulkGroupRequest(patchedBulkGroupRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsBulkPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -135,7 +135,7 @@ Other parameters are passed through a pointer to a apiUsersGroupsBulkPartialUpda
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupRequest** | [**[]GroupRequest**](GroupRequest.md) |  | 
+ **patchedBulkGroupRequest** | [**[]PatchedBulkGroupRequest**](PatchedBulkGroupRequest.md) |  | 
 
 ### Return type
 
@@ -157,7 +157,7 @@ Name | Type | Description  | Notes
 
 ## UsersGroupsBulkUpdate
 
-> []Group UsersGroupsBulkUpdate(ctx).GroupRequest(groupRequest).Execute()
+> []Group UsersGroupsBulkUpdate(ctx).BulkGroupRequest(bulkGroupRequest).Execute()
 
 
 
@@ -176,11 +176,11 @@ import (
 )
 
 func main() {
-	groupRequest := []openapiclient.GroupRequest{*openapiclient.NewGroupRequest("Name_example")} // []GroupRequest | 
+	bulkGroupRequest := []openapiclient.BulkGroupRequest{*openapiclient.NewBulkGroupRequest(int32(123), "Name_example")} // []BulkGroupRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersGroupsBulkUpdate(context.Background()).GroupRequest(groupRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersGroupsBulkUpdate(context.Background()).BulkGroupRequest(bulkGroupRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsBulkUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -201,7 +201,7 @@ Other parameters are passed through a pointer to a apiUsersGroupsBulkUpdateReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **groupRequest** | [**[]GroupRequest**](GroupRequest.md) |  | 
+ **bulkGroupRequest** | [**[]BulkGroupRequest**](BulkGroupRequest.md) |  | 
 
 ### Return type
 
@@ -357,7 +357,7 @@ Name | Type | Description  | Notes
 
 ## UsersGroupsList
 
-> PaginatedGroupList UsersGroupsList(ctx).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerId(ownerId).OwnerIdN(ownerIdN).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).UserId(userId).UserIdN(userIdN).Execute()
+> PaginatedGroupList UsersGroupsList(ctx).Brief(brief).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Fields(fields).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Omit(omit).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerId(ownerId).OwnerIdN(ownerIdN).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).Start(start).UserId(userId).UserIdN(userIdN).Execute()
 
 
 
@@ -376,6 +376,7 @@ import (
 )
 
 func main() {
+	brief := true // bool | Return only brief fields for each object. (optional)
 	description := []string{"Inner_example"} // []string |  (optional)
 	descriptionEmpty := true // bool |  (optional)
 	descriptionIc := []string{"Inner_example"} // []string |  (optional)
@@ -389,6 +390,7 @@ func main() {
 	descriptionNiew := []string{"Inner_example"} // []string |  (optional)
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	descriptionRegex := []string{"Inner_example"} // []string |  (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
 	id := []int32{int32(123)} // []int32 |  (optional)
 	idEmpty := true // bool |  (optional)
 	idGt := []int32{int32(123)} // []int32 |  (optional)
@@ -413,6 +415,7 @@ func main() {
 	notificationGroupId := []int32{int32(123)} // []int32 | Notification group (ID) (optional)
 	notificationGroupIdN := []int32{int32(123)} // []int32 | Notification group (ID) (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	owner := []string{"Inner_example"} // []string | Owner (name) (optional)
 	ownerN := []string{"Inner_example"} // []string | Owner (name) (optional)
@@ -421,12 +424,13 @@ func main() {
 	permissionId := []int32{int32(123)} // []int32 | Permission (ID) (optional)
 	permissionIdN := []int32{int32(123)} // []int32 | Permission (ID) (optional)
 	q := "q_example" // string | Search (optional)
+	start := int32(56) // int32 | Cursor-based pagination: return results with pk >= start, ordered by pk. Mutually exclusive with offset. (optional)
 	userId := []int32{int32(123)} // []int32 | User (ID) (optional)
 	userIdN := []int32{int32(123)} // []int32 | User (ID) (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersGroupsList(context.Background()).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerId(ownerId).OwnerIdN(ownerIdN).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).UserId(userId).UserIdN(userIdN).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersGroupsList(context.Background()).Brief(brief).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Fields(fields).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).NotificationGroupId(notificationGroupId).NotificationGroupIdN(notificationGroupIdN).Offset(offset).Omit(omit).Ordering(ordering).Owner(owner).OwnerN(ownerN).OwnerId(ownerId).OwnerIdN(ownerIdN).PermissionId(permissionId).PermissionIdN(permissionIdN).Q(q).Start(start).UserId(userId).UserIdN(userIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -447,6 +451,7 @@ Other parameters are passed through a pointer to a apiUsersGroupsListRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **brief** | **bool** | Return only brief fields for each object. | 
  **description** | **[]string** |  | 
  **descriptionEmpty** | **bool** |  | 
  **descriptionIc** | **[]string** |  | 
@@ -460,6 +465,7 @@ Name | Type | Description  | Notes
  **descriptionNiew** | **[]string** |  | 
  **descriptionNisw** | **[]string** |  | 
  **descriptionRegex** | **[]string** |  | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
  **id** | **[]int32** |  | 
  **idEmpty** | **bool** |  | 
  **idGt** | **[]int32** |  | 
@@ -484,6 +490,7 @@ Name | Type | Description  | Notes
  **notificationGroupId** | **[]int32** | Notification group (ID) | 
  **notificationGroupIdN** | **[]int32** | Notification group (ID) | 
  **offset** | **int32** | The initial index from which to return the results. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **owner** | **[]string** | Owner (name) | 
  **ownerN** | **[]string** | Owner (name) | 
@@ -492,6 +499,7 @@ Name | Type | Description  | Notes
  **permissionId** | **[]int32** | Permission (ID) | 
  **permissionIdN** | **[]int32** | Permission (ID) | 
  **q** | **string** | Search | 
+ **start** | **int32** | Cursor-based pagination: return results with pk &gt;&#x3D; start, ordered by pk. Mutually exclusive with offset. | 
  **userId** | **[]int32** | User (ID) | 
  **userIdN** | **[]int32** | User (ID) | 
 
@@ -587,7 +595,7 @@ Name | Type | Description  | Notes
 
 ## UsersGroupsRetrieve
 
-> Group UsersGroupsRetrieve(ctx, id).Execute()
+> Group UsersGroupsRetrieve(ctx, id).Brief(brief).Fields(fields).Omit(omit).Execute()
 
 
 
@@ -607,10 +615,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this group.
+	brief := true // bool | Return only brief fields for each object. (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersGroupsRetrieve(context.Background(), id).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersGroupsRetrieve(context.Background(), id).Brief(brief).Fields(fields).Omit(omit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersGroupsRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -636,6 +647,9 @@ Other parameters are passed through a pointer to a apiUsersGroupsRetrieveRequest
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **brief** | **bool** | Return only brief fields for each object. | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
 
 ### Return type
 
@@ -784,7 +798,7 @@ Name | Type | Description  | Notes
 ### HTTP request headers
 
 - **Content-Type**: application/json, multipart/form-data
-- **Accept**: Not defined
+- **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -793,7 +807,7 @@ Name | Type | Description  | Notes
 
 ## UsersPermissionsBulkPartialUpdate
 
-> []ObjectPermission UsersPermissionsBulkPartialUpdate(ctx).ObjectPermissionRequest(objectPermissionRequest).Execute()
+> []ObjectPermission UsersPermissionsBulkPartialUpdate(ctx).PatchedBulkObjectPermissionRequest(patchedBulkObjectPermissionRequest).Execute()
 
 
 
@@ -812,11 +826,11 @@ import (
 )
 
 func main() {
-	objectPermissionRequest := []openapiclient.ObjectPermissionRequest{*openapiclient.NewObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"})} // []ObjectPermissionRequest | 
+	patchedBulkObjectPermissionRequest := []openapiclient.PatchedBulkObjectPermissionRequest{*openapiclient.NewPatchedBulkObjectPermissionRequest(int32(123))} // []PatchedBulkObjectPermissionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersPermissionsBulkPartialUpdate(context.Background()).ObjectPermissionRequest(objectPermissionRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersPermissionsBulkPartialUpdate(context.Background()).PatchedBulkObjectPermissionRequest(patchedBulkObjectPermissionRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsBulkPartialUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -837,7 +851,7 @@ Other parameters are passed through a pointer to a apiUsersPermissionsBulkPartia
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **objectPermissionRequest** | [**[]ObjectPermissionRequest**](ObjectPermissionRequest.md) |  | 
+ **patchedBulkObjectPermissionRequest** | [**[]PatchedBulkObjectPermissionRequest**](PatchedBulkObjectPermissionRequest.md) |  | 
 
 ### Return type
 
@@ -859,7 +873,7 @@ Name | Type | Description  | Notes
 
 ## UsersPermissionsBulkUpdate
 
-> []ObjectPermission UsersPermissionsBulkUpdate(ctx).ObjectPermissionRequest(objectPermissionRequest).Execute()
+> []ObjectPermission UsersPermissionsBulkUpdate(ctx).BulkObjectPermissionRequest(bulkObjectPermissionRequest).Execute()
 
 
 
@@ -878,11 +892,11 @@ import (
 )
 
 func main() {
-	objectPermissionRequest := []openapiclient.ObjectPermissionRequest{*openapiclient.NewObjectPermissionRequest("Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"})} // []ObjectPermissionRequest | 
+	bulkObjectPermissionRequest := []openapiclient.BulkObjectPermissionRequest{*openapiclient.NewBulkObjectPermissionRequest(int32(123), "Name_example", []string{"ObjectTypes_example"}, []string{"Actions_example"})} // []BulkObjectPermissionRequest | 
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersPermissionsBulkUpdate(context.Background()).ObjectPermissionRequest(objectPermissionRequest).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersPermissionsBulkUpdate(context.Background()).BulkObjectPermissionRequest(bulkObjectPermissionRequest).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsBulkUpdate``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -903,7 +917,7 @@ Other parameters are passed through a pointer to a apiUsersPermissionsBulkUpdate
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **objectPermissionRequest** | [**[]ObjectPermissionRequest**](ObjectPermissionRequest.md) |  | 
+ **bulkObjectPermissionRequest** | [**[]BulkObjectPermissionRequest**](BulkObjectPermissionRequest.md) |  | 
 
 ### Return type
 
@@ -1059,7 +1073,7 @@ Name | Type | Description  | Notes
 
 ## UsersPermissionsList
 
-> PaginatedObjectPermissionList UsersPermissionsList(ctx).CanAdd(canAdd).CanChange(canChange).CanDelete(canDelete).CanView(canView).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIregex(objectTypeIregex).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeRegex(objectTypeRegex).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).ObjectTypes(objectTypes).ObjectTypesN(objectTypesN).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
+> PaginatedObjectPermissionList UsersPermissionsList(ctx).Brief(brief).CanAdd(canAdd).CanChange(canChange).CanDelete(canDelete).CanView(canView).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Fields(fields).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIregex(objectTypeIregex).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeRegex(objectTypeRegex).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).ObjectTypes(objectTypes).ObjectTypesN(objectTypesN).Offset(offset).Omit(omit).Ordering(ordering).Q(q).Start(start).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
 
 
 
@@ -1078,6 +1092,7 @@ import (
 )
 
 func main() {
+	brief := true // bool | Return only brief fields for each object. (optional)
 	canAdd := true // bool |  (optional)
 	canChange := true // bool |  (optional)
 	canDelete := true // bool |  (optional)
@@ -1096,6 +1111,7 @@ func main() {
 	descriptionNisw := []string{"Inner_example"} // []string |  (optional)
 	descriptionRegex := []string{"Inner_example"} // []string |  (optional)
 	enabled := true // bool |  (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
 	group := []string{"Inner_example"} // []string | Group (name) (optional)
 	groupN := []string{"Inner_example"} // []string | Group (name) (optional)
 	groupId := []int32{int32(123)} // []int32 | Group (optional)
@@ -1138,8 +1154,10 @@ func main() {
 	objectTypes := []int32{int32(123)} // []int32 |  (optional)
 	objectTypesN := []int32{int32(123)} // []int32 |  (optional)
 	offset := int32(56) // int32 | The initial index from which to return the results. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 	ordering := "ordering_example" // string | Which field to use when ordering the results. (optional)
 	q := "q_example" // string | Search (optional)
+	start := int32(56) // int32 | Cursor-based pagination: return results with pk >= start, ordered by pk. Mutually exclusive with offset. (optional)
 	user := []string{"Inner_example"} // []string | User (name) (optional)
 	userN := []string{"Inner_example"} // []string | User (name) (optional)
 	userId := []int32{int32(123)} // []int32 | User (optional)
@@ -1147,7 +1165,7 @@ func main() {
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersPermissionsList(context.Background()).CanAdd(canAdd).CanChange(canChange).CanDelete(canDelete).CanView(canView).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIregex(objectTypeIregex).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeRegex(objectTypeRegex).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).ObjectTypes(objectTypes).ObjectTypesN(objectTypesN).Offset(offset).Ordering(ordering).Q(q).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersPermissionsList(context.Background()).Brief(brief).CanAdd(canAdd).CanChange(canChange).CanDelete(canDelete).CanView(canView).Description(description).DescriptionEmpty(descriptionEmpty).DescriptionIc(descriptionIc).DescriptionIe(descriptionIe).DescriptionIew(descriptionIew).DescriptionIregex(descriptionIregex).DescriptionIsw(descriptionIsw).DescriptionN(descriptionN).DescriptionNic(descriptionNic).DescriptionNie(descriptionNie).DescriptionNiew(descriptionNiew).DescriptionNisw(descriptionNisw).DescriptionRegex(descriptionRegex).Enabled(enabled).Fields(fields).Group(group).GroupN(groupN).GroupId(groupId).GroupIdN(groupIdN).Id(id).IdEmpty(idEmpty).IdGt(idGt).IdGte(idGte).IdLt(idLt).IdLte(idLte).IdN(idN).Limit(limit).Name(name).NameEmpty(nameEmpty).NameIc(nameIc).NameIe(nameIe).NameIew(nameIew).NameIregex(nameIregex).NameIsw(nameIsw).NameN(nameN).NameNic(nameNic).NameNie(nameNie).NameNiew(nameNiew).NameNisw(nameNisw).NameRegex(nameRegex).ObjectType(objectType).ObjectTypeIc(objectTypeIc).ObjectTypeIe(objectTypeIe).ObjectTypeIew(objectTypeIew).ObjectTypeIregex(objectTypeIregex).ObjectTypeIsw(objectTypeIsw).ObjectTypeN(objectTypeN).ObjectTypeNic(objectTypeNic).ObjectTypeNie(objectTypeNie).ObjectTypeNiew(objectTypeNiew).ObjectTypeNisw(objectTypeNisw).ObjectTypeRegex(objectTypeRegex).ObjectTypeId(objectTypeId).ObjectTypeIdN(objectTypeIdN).ObjectTypes(objectTypes).ObjectTypesN(objectTypesN).Offset(offset).Omit(omit).Ordering(ordering).Q(q).Start(start).User(user).UserN(userN).UserId(userId).UserIdN(userIdN).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsList``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1168,6 +1186,7 @@ Other parameters are passed through a pointer to a apiUsersPermissionsListReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **brief** | **bool** | Return only brief fields for each object. | 
  **canAdd** | **bool** |  | 
  **canChange** | **bool** |  | 
  **canDelete** | **bool** |  | 
@@ -1186,6 +1205,7 @@ Name | Type | Description  | Notes
  **descriptionNisw** | **[]string** |  | 
  **descriptionRegex** | **[]string** |  | 
  **enabled** | **bool** |  | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
  **group** | **[]string** | Group (name) | 
  **groupN** | **[]string** | Group (name) | 
  **groupId** | **[]int32** | Group | 
@@ -1228,8 +1248,10 @@ Name | Type | Description  | Notes
  **objectTypes** | **[]int32** |  | 
  **objectTypesN** | **[]int32** |  | 
  **offset** | **int32** | The initial index from which to return the results. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
  **ordering** | **string** | Which field to use when ordering the results. | 
  **q** | **string** | Search | 
+ **start** | **int32** | Cursor-based pagination: return results with pk &gt;&#x3D; start, ordered by pk. Mutually exclusive with offset. | 
  **user** | **[]string** | User (name) | 
  **userN** | **[]string** | User (name) | 
  **userId** | **[]int32** | User | 
@@ -1327,7 +1349,7 @@ Name | Type | Description  | Notes
 
 ## UsersPermissionsRetrieve
 
-> ObjectPermission UsersPermissionsRetrieve(ctx, id).Execute()
+> ObjectPermission UsersPermissionsRetrieve(ctx, id).Brief(brief).Fields(fields).Omit(omit).Execute()
 
 
 
@@ -1347,10 +1369,13 @@ import (
 
 func main() {
 	id := int32(56) // int32 | A unique integer value identifying this permission.
+	brief := true // bool | Return only brief fields for each object. (optional)
+	fields := "fields_example" // string | Comma-separated list of fields to include in the response. Example: `fields=id,name`. (optional)
+	omit := "omit_example" // string | Comma-separated list of fields to exclude from the response. Example: `omit=description,tags`. (optional)
 
 	configuration := openapiclient.NewConfiguration()
 	apiClient := openapiclient.NewAPIClient(configuration)
-	resp, r, err := apiClient.UsersAPI.UsersPermissionsRetrieve(context.Background(), id).Execute()
+	resp, r, err := apiClient.UsersAPI.UsersPermissionsRetrieve(context.Background(), id).Brief(brief).Fields(fields).Omit(omit).Execute()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error when calling `UsersAPI.UsersPermissionsRetrieve``: %v\n", err)
 		fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1376,6 +1401,9 @@ Other parameters are passed through a pointer to a apiUsersPermissionsRetrieveRe
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 
+ **brief** | **bool** | Return only brief fields for each object. | 
+ **fields** | **string** | Comma-separated list of fields to include in the response. Example: &#x60;fields&#x3D;id,name&#x60;. | 
+ **omit** | **string** | Comma-separated list of fields to exclude from the response. Example: &#x60;omit&#x3D;description,tags&#x60;. | 
 
 ### Return type
 

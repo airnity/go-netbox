@@ -14,9 +14,10 @@ Name | Type | Description | Notes
 **EventTypes** | [**[]EventRuleEventTypesInner**](EventRuleEventTypesInner.md) | The types of event which will trigger this rule. | 
 **Conditions** | Pointer to **interface{}** | A set of conditions which determine whether the event will be generated. | [optional] 
 **ActionType** | [**EventRuleActionType**](EventRuleActionType.md) |  | 
-**ActionObjectType** | **string** |  | 
+**ActionObjectType** | Pointer to **NullableString** |  | [optional] 
 **ActionObjectId** | Pointer to **NullableInt64** |  | [optional] 
 **ActionObject** | Pointer to **interface{}** |  | [optional] [readonly] 
+**ActionIsAvailable** | **bool** |  | [readonly] 
 **Description** | Pointer to **string** |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
@@ -28,7 +29,7 @@ Name | Type | Description | Notes
 
 ### NewEventRule
 
-`func NewEventRule(id int32, url string, display string, objectTypes []string, name string, eventTypes []EventRuleEventTypesInner, actionType EventRuleActionType, actionObjectType string, ) *EventRule`
+`func NewEventRule(id int32, url string, display string, objectTypes []string, name string, eventTypes []EventRuleEventTypesInner, actionType EventRuleActionType, actionIsAvailable bool, ) *EventRule`
 
 NewEventRule instantiates a new EventRule object
 This constructor will assign default values to properties that have it defined,
@@ -287,7 +288,22 @@ and a boolean to check if the value has been set.
 
 SetActionObjectType sets ActionObjectType field to given value.
 
+### HasActionObjectType
 
+`func (o *EventRule) HasActionObjectType() bool`
+
+HasActionObjectType returns a boolean if a field has been set.
+
+### SetActionObjectTypeNil
+
+`func (o *EventRule) SetActionObjectTypeNil(b bool)`
+
+ SetActionObjectTypeNil sets the value for ActionObjectType to be an explicit nil
+
+### UnsetActionObjectType
+`func (o *EventRule) UnsetActionObjectType()`
+
+UnsetActionObjectType ensures that no value is present for ActionObjectType, not even an explicit nil
 ### GetActionObjectId
 
 `func (o *EventRule) GetActionObjectId() int64`
@@ -358,6 +374,26 @@ HasActionObject returns a boolean if a field has been set.
 `func (o *EventRule) UnsetActionObject()`
 
 UnsetActionObject ensures that no value is present for ActionObject, not even an explicit nil
+### GetActionIsAvailable
+
+`func (o *EventRule) GetActionIsAvailable() bool`
+
+GetActionIsAvailable returns the ActionIsAvailable field if non-nil, zero value otherwise.
+
+### GetActionIsAvailableOk
+
+`func (o *EventRule) GetActionIsAvailableOk() (*bool, bool)`
+
+GetActionIsAvailableOk returns a tuple with the ActionIsAvailable field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetActionIsAvailable
+
+`func (o *EventRule) SetActionIsAvailable(v bool)`
+
+SetActionIsAvailable sets ActionIsAvailable field to given value.
+
+
 ### GetDescription
 
 `func (o *EventRule) GetDescription() string`

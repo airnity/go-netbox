@@ -10,7 +10,7 @@ Name | Type | Description | Notes
 **Display** | **string** |  | [readonly] 
 **Name** | **string** |  | 
 **Description** | Pointer to **string** |  | [optional] 
-**Permissions** | Pointer to [**[]ObjectPermission**](ObjectPermission.md) |  | [optional] 
+**Permissions** | Pointer to [**[]BriefObjectPermission**](BriefObjectPermission.md) |  | [optional] 
 **UserCount** | Pointer to **int32** |  | [optional] [readonly] 
 
 ## Methods
@@ -164,20 +164,20 @@ HasDescription returns a boolean if a field has been set.
 
 ### GetPermissions
 
-`func (o *Group) GetPermissions() []ObjectPermission`
+`func (o *Group) GetPermissions() []BriefObjectPermission`
 
 GetPermissions returns the Permissions field if non-nil, zero value otherwise.
 
 ### GetPermissionsOk
 
-`func (o *Group) GetPermissionsOk() (*[]ObjectPermission, bool)`
+`func (o *Group) GetPermissionsOk() (*[]BriefObjectPermission, bool)`
 
 GetPermissionsOk returns a tuple with the Permissions field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPermissions
 
-`func (o *Group) SetPermissions(v []ObjectPermission)`
+`func (o *Group) SetPermissions(v []BriefObjectPermission)`
 
 SetPermissions sets Permissions field to given value.
 

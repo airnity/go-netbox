@@ -23,7 +23,7 @@ Name | Type | Description | Notes
 **Longitude** | Pointer to **NullableFloat64** | GPS coordinate in decimal format (xx.yyyyyy) | [optional] 
 **Owner** | Pointer to [**NullableBriefOwner**](BriefOwner.md) |  | [optional] 
 **Comments** | Pointer to **string** |  | [optional] 
-**Asns** | Pointer to [**[]ASN**](ASN.md) |  | [optional] 
+**Asns** | Pointer to [**[]BriefASN**](BriefASN.md) |  | [optional] 
 **Tags** | Pointer to [**[]NestedTag**](NestedTag.md) |  | [optional] 
 **CustomFields** | Pointer to **map[string]interface{}** |  | [optional] 
 **Created** | Pointer to **NullableTime** |  | [optional] [readonly] 
@@ -576,20 +576,20 @@ HasComments returns a boolean if a field has been set.
 
 ### GetAsns
 
-`func (o *Site) GetAsns() []ASN`
+`func (o *Site) GetAsns() []BriefASN`
 
 GetAsns returns the Asns field if non-nil, zero value otherwise.
 
 ### GetAsnsOk
 
-`func (o *Site) GetAsnsOk() (*[]ASN, bool)`
+`func (o *Site) GetAsnsOk() (*[]BriefASN, bool)`
 
 GetAsnsOk returns a tuple with the Asns field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAsns
 
-`func (o *Site) SetAsns(v []ASN)`
+`func (o *Site) SetAsns(v []BriefASN)`
 
 SetAsns sets Asns field to given value.
 
